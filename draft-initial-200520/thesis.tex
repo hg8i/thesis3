@@ -1,0 +1,42 @@
+\documentclass[12pt]{report}
+
+% linking and coloring
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\title{Searches for the rare decay of the Higgs boson to two leptons and for new physics in dilepton final states with the ATLAS Experiment}
+\author{Aaron White}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\input{sections/introduction.tex}
+\input{sections/theory.tex}
+\input{sections/experiment.tex}
+\input{sections/objectsDatasets.tex}
+\input{sections/hmumu.tex}
+\input{sections/contactInteractions.tex}
+\input{sections/summary.tex}
+\input{sections/prospect.tex}
+
+\appendix
+\addcontentsline{toc}{chapter}{Appendices}
+
+\input{appendices/csmHardware.tex}
+\input{appendices/dilepton.tex}
+\input{appendices/hmumu.tex}
+\input{appendices/hmumuOtherCats.tex}
+
+
+
+
+
+\end{document}
