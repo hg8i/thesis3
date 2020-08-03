@@ -19,7 +19,17 @@
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
 
+\usepackage{physics}
+\usepackage{braket} % include after physics
+
+
+% feynman diagrams
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+\usepackage{rotating}
 
 
 
@@ -33,3 +43,7 @@
 
 % variables
 \newcommand*{\met}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+
+\newcommand*{\half}{\ensuremath{\frac{1}{2}}\xspace}
+\newcommand*{\as}{\ensuremath{\alpha_s\xspace}}
+
