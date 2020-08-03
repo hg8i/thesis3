@@ -1,0 +1,49 @@
+% linking and coloring
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+\usepackage[margin=2.5cm]{geometry}
+
+
+\usepackage{upgreek}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{upgreek}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+
+\usepackage{physics}
+\usepackage{braket} % include after physics
+
+
+% feynman diagrams
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+\usepackage{rotating}
+
+
+
+% particles
+\newcommand*{\pp}{\ensuremath{pp}\xspace}
+\newcommand*{\mm}{\ensuremath{\upmu\upmu}\xspace}
+\newcommand*{\ee}{\ensuremath{ee}\xspace}
+
+% processes
+\newcommand*{\hmm}{\ensuremath{H\to\mm}\xspace}
+
+% variables
+\newcommand*{\met}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+
+\newcommand*{\half}{\ensuremath{\frac{1}{2}}\xspace}
+\newcommand*{\as}{\ensuremath{\alpha_s\xspace}}
+
