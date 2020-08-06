@@ -1,0 +1,479 @@
+% ##############################################################
+\section{Mathematical Structures}
+% ##############################################################
+
+In the present usage, a mathematical structure consists of objects and the relations between them.
+This statement is made with highest degree of abstraction. The mathematical structure is defined without regard to \emph{what} the objects are.
+Despite the degree of abstraction, the concept of a mathematical structure is very useful in the study of physical systems.
+In many cases, a mathematical structure can be found whose objects and relations, through analogy, describe the components and interactions of a physical system.
+In this case, by studying the mathematical structure, it is possible to analogously study the physical system.
+This is what makes mathematics such a powerful tool for the study of physical systems.
+
+A very broad class of mathematical structures are classified as \emph{Groups}.
+This class will be the focus of the remainder of this section.
+
+\subsection{Groups and their Properties}
+
+\subsubsection{Group Definition}
+A Group is comprised by a set of elements, $G=\{g_i,g_j,...\}$, and a relation between them, ``$\circ$''. 
+As mentioned earlier, the elements and the relations are completely abstract notions.
+While the relation is often called a \emph{product rule}, any suitable function $\circ(g_i,g_j)\equiv g_ig_j=g_k$ that maps two Group members onto a third Group member is acceptable.
+
+There are four requirements of the Group elements and product rule.
+\begin{enumerate}
+    \item Closure: the product of any two elements in the Group yields an element that is also in the Group. Concisely, $g_ig_j=g_k\in G$, $\forall g_i,g_j\in G$.
+    \item Associativity: the sequence of the application of the product rule does not change the result. In other words, $g_i(g_jg_k)=(g_ig_j)g_k$, $\forall g_i,g_j,g_k\in G$.
+    \item Identity: There is a unique element, $e$, in the Group whose product with any other element results in the latter. Explicitly, $\exists!e\in G$ such that $eg_i=g_ie=g_i$, $\forall g_i\in G$. The element $e$ is labeled the \emph{identity element}, or the \emph{identity}.
+    \item Invertibility: For every element in the Group, there also exists an element whose product with the first element yields the identity element. Symbolically, $\forall g_i\in G$, $\exists g_j\in G$ such that $g_ig_j=e$. The element $g_j$ is called the inverse of $g_i$ and is denoted as $g_i^{-}$.
+\end{enumerate}
+This short set of requirements is all that is needed to define the concept of a Group.
+
+There are several terms that are useful when discussing groups.
+A Group is called \emph{Abelian} if a product of elements yields the same result regardless of their order: $g_ig_j=g_jg_i$, $\forall g_i,g_j\in G$.
+Likewise, a Group is called \emph{non-Abelian} if $g_ig_j\ne g_jg_i$ for any elements of the Group.
+These definitions hint at the utility of the \emph{commutator} function $[g_i,g_j]$, which will gain an explicit form when $g_i$ and $g_j$ are represented by square matrices.
+
+The set of elements that makes up the Group can be finite or infinite.
+In both cases, the number of elements in the Group is called the Group's \emph{order}.
+Furthermore, the elements of a Group can be discrete or continuous.
+In the continuous case, the label $i$ in $g_i$ is a continuous variable that identifies the Group element.
+Such Groups form a class called called \emph{Lie Groups}.
+If a Group is parameterized by one real continuous variable $i$ within a given interval, and with a unique value of $i=i_0$ corresponding to the identity element, then this Group is a \emph{one-parameter} Group. 
+One-parameter Groups are of particular interest within particle physics.
+The number of parameters needed to specify an element in the group is the group's \emph{dimension}.
+
+The definition given here is sufficient to investigate the nature of Groups. The tables in Figure \ref{tab:cayley} show the relations between the elements of several Groups.
+The relations are shown for the Groups of order 1 (Table \ref{tab:cayley1}), order 2 (Table \ref{tab:cayley2}), and order 3 (Table \ref{tab:cayley3}), which all happen to be uniquely defined by their order.
+These tables are generalized versions of arithmetic multiplication tables.
+They specify the two components of a Group: the elements along the row/column headers, and the relations between them. 
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subcaptionbox{One element group\label{tab:cayley1}}{
+    \begin{tabular}{c|c c c c}\toprule
+    $\circ$ & $e$ \\ \hline
+    $e$     & $e$ \\
+    \bottomrule\end{tabular} 
+    \hspace{0.20\textwidth}%
+}
+\subcaptionbox{Two element group\label{tab:cayley2}}{
+    \begin{tabular}{c|c c c c}\toprule
+    $\circ$ & $e$   & $g_2$ \\ \hline
+    $e$     & $e$   & $g_2$ \\
+    $g_2$   & $g_2$ & $e$   \\
+    \bottomrule\end{tabular} 
+    \hspace{0.10\textwidth}%
+}
+\subcaptionbox{Three element group\label{tab:cayley3}}{
+    \begin{tabular}{c|c c c c}\toprule
+    $\circ$ & $e$   & $g_2$ & $g_3$  \\ \hline
+    $e$     & $e$   & $g_2$ & $g_3$ \\
+    $g_2$   & $g_2$ & $g_3$ & $e$   \\
+    $g_3$   & $g_3$ & $g_3$ & $g_2$ \\
+    \bottomrule\end{tabular} 
+    \hspace{0.10\textwidth}%
+}
+\caption{Cayley tables for the first three Groups by their order. These tables show the result of the product between each element of the group. Since the first three Groups are Abelian, the order of the column and row elements in the product does not change the result. These Groups are uniquely defined by their order, without mention of the product rule. The first (a) group contains only the identity due to the third Group property listed in the text. The second (b) and third (c) Group structures are derived from the requirements for invertibility of the elements. Groups of higher order are identified by their product rule as well.}
+\label{tab:cayley}
+\end{figure}
+
+\subsubsection{Representations}\label{sec:representations}
+A Group, consisting of a set of elements $G$ and a product rule $\circ$, is denoted $(G,\circ)$. 
+The elements $g_i\in G$ are not numbers, or matrices, or any other concrete object.
+Nevertheless, sets of concrete objects and associated product rules can be found that satisfy the same relationships as the elements of Group $(G,\circ)$.
+In such a case, the concrete set and product rules form a \emph{representation} of the corresponding Group.
+It can be said that a representation is isomorphic to the group that it represents.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subcaptionbox{Two element group}{
+    \begin{tabular}{c|c c c c}\toprule
+    $\circ$ & $e$   & $g_2$ \\ \hline
+    $e$     & $e$   & $g_2$ \\
+    $g_2$   & $g_2$ & $e$   \\
+    \bottomrule\end{tabular} 
+    \hspace{0.10\textwidth}%
+}
+\subcaptionbox{Representation under addition\label{tab:repAddition}}{
+    \begin{tabular}{c|c c c c}\toprule
+    +\%2  & 0   & 1 \\ \hline
+    0     & 0   & 1 \\
+    1   & 1 & 0   \\
+    \bottomrule\end{tabular} 
+    \hspace{0.10\textwidth}%
+}
+\subcaptionbox{Representation under multiplication\label{tab:repMultiplication}}{
+    \begin{tabular}{c|c c c c}\toprule
+    $\times$     & 1   & -1 \\ \hline
+    1       & 1   & -1 \\
+    -1      & -1  & 1   \\
+    \bottomrule\end{tabular} 
+    \hspace{0.10\textwidth}%
+}
+\caption{Cayley tables for the group with two elements (a), and for two different representations (b) and (c).}
+\label{tab:representations}
+\end{figure}
+
+Groups have infinite numbers of representations.
+For example, consider the group of order 2, sometimes called the cyclic group $C_2$, from Table \ref{tab:cayley2}.
+One representation of this group is real numbers under addition modulo 2.
+This representation has elements $\{0,1\}$, and the product rule ``addition modulo 2'' (+\%2), and can be labeled $(\{0,1\},+\%2)$.
+The identity element under addition in this representation is $0$.
+This representation is illustrated in the Cayley Table \ref{tab:repAddition}. Here, the abstract Group elements and product rule have been replaced with the elements and rule of the representation:
+\begin{equation}\begin{split}
+    \circ\to+\%2; \quad e\to0; \quad g_2\to1 \\
+\end{split}\end{equation} 
+%
+Another representation of $C_2$ is the set of integers $\{-1,1\}$ under multiplication, or $(\{1,-1\},\times)$.
+In contrast to the first representation, the identity element for multiplication is $1$.
+This representation is illustrated in Table \ref{tab:repMultiplication}. Here, the mapping between group components and representation components is different:
+\begin{equation}\begin{split}
+    \circ\to\times; \quad e\to1; \quad g_2\to-1 \\
+\end{split}\end{equation} 
+%
+This comparison illustrates several important points.
+First, groups can have multiple representations. While Figure \ref{tab:representations} shows two mathematical representations, Table \label{tab:repAddition} clearly describes the idealized behavior of a logical \code{XOR} gate, another representation of $C_2$.
+Second although representations $(\{0,1\},+\%2)$ and $(\{1,-1\},\times)$ express themselves differently, their isomorphism to $C_2$ means that knowledge of $C_2$ can be applied to each representation.
+These points are true for every Group and every representation, including those that will become physically meaningful later on.
+
+If each element of one Group, $G_b$, is also an element of another Group, $G_a$, then $G_b$ is called a \emph{subgroup} of $G_a$.
+Immediately it is clear that every Group has at least two, trivial, subgroups: the Group itself, and the single element identity group shown in Table \ref{tab:cayley}.
+
+Finally, two groups $G_a$ and $G_b$ can be combined to form a third group $G_c$ called a \emph{product group}.
+This group simply has elements $(g_a,g_b)\in G_c$ for all $g_a\in G_a$ and $g_b\in G_b$.
+The elements of Group $G_c$ transform independently according to their parent group.
+This product is denoted $G_c=G_a\otimes G_b$.
+A similar concept is that of the \emph{semidirect product} between two subgroups of $G_c$.
+$G_c$ is the semidirect product $G_a$ and $G_b$ if for every element $g\in G_c$, there are unique elements of $G_a$ and $G_b$ whose product is $g$.
+
+\subsubsection{Algebras}\label{sec:algebras}
+
+The elements of an Group $G$ of $\text{order}(G)=n$ can be associated with orthonormal unit vectors. 
+For every element $g_i\in G$, there is an associated unit vector $\ket{g_i}$.
+The space spanned by basis vectors $\ket{g_i}$ is called an \emph{algebra} of the group:
+\begin{equation}\begin{split}\label{eqn:algebra}
+    C[G]\equiv\left\{\sum_{i=0}^{n-1}c_i\ket{g_i}\vert c_i\in \mathbb{C} \forall i\right\}
+\end{split}\end{equation} 
+Where $c_i$ are complex numbers. The dimension of the algebra is the dimension of the vector space.
+
+The algebra of a Lie Group is referred to as a \emph{Lie algebra}.
+Conceptually, the Lie algabra is a vector space whose product satisfies the Jacobi identity (Eqn. \ref{eqn:jacobi}).
+The explicit definition of a Lie algebra has four requirements for the elements of its vector space $\mathfrak{g}$:
+\begin{enumerate}
+    \item The commutation $[a,b]\in\mathfrak{g}$ for all elements $a,b\in\mathfrak{g}$.
+    \item The commutation relationship $[a,b]=-[b,a]$ holds for all elements $a,b\in\mathfrak{g}$. \footnote[1]{In general, there is an explicit requirement that $[a,a]=0$. However for the Lie algebras under consideration here this has been implied by $[a,b]=-[b,a]$. \cite{pfeifer}}
+    \item The linearity of commutators: $[c_1a+c_2b,c]=c_1[a,c]+c_2[b,c]$.
+    \item The elements satisfy the Jacobi identity,
+    \begin{equation}\begin{split}\label{eqn:jacobi}
+        [a,[b,c]]+[b,[c,a]]+[c,[a,b]]=0,
+    \end{split}\end{equation} 
+    for all elements $a,b,c\in\mathfrak{g}$.
+\end{enumerate}
+Because the Lie algebra is a vector space, the linear combination of two elements remaining in the space ($c_1a+c_2b\in\mathfrak{g}$ $\forall a,b\in\mathfrak{g}$ and  $\forall c_1,c_2\in\reals$) is implied.
+
+Lie algebras are particularly useful due to Ado's Theorem, which makes two important statements. First, every Lie algebra of finite dimension is isomorphic to a Lie algebra of matrices. Second, the commutation relationship is:
+\begin{equation}\begin{split}\label{eqn:commutator}
+    [a,b]=ab-ba; \quad(\forall a,b\in\mathfrak{g}).
+\end{split}\end{equation}
+These statements justify the following focus on the representation of Groups with square matrices, and their algebras with matrices as basis vectors.
+
+It is useful to consider an explicit example of a Lie Group and algebra.
+Unlike the discrete groups specified in Section \ref{sec:representations}, such Groups are parameterized by one or more continuous variables.
+The number of parameters needed to specify an element is synonymous with the group's \emph{rank}.
+Because the parameters are continuous, they identify an infinite number of elements within the Group.
+The General Linear Group $\text{GL}(1,\reals)$ is represented by reals numbers under addition, or $(\reals,+)$. \check
+This can be thought of as translations along a single dimension. For any two elements of the representation $x,a\in\reals$, their sum
+is also in the representation: $x+a\in\reals$. This defines a transformation,
+\begin{equation}\begin{split}\label{eqn:simpleTransform}
+    x\to x'=x+a,
+\end{split}\end{equation} 
+which is identified as a \emph{translation} through space.
+
+The Lie algebra of $\text{GL}(1,\reals)$ is all the real numbers.
+Equation \ref{eqn:algebra} expresses this set of real numbers as the set of all possible sums of real numbers.
+There are several issues that make this particular expression of the set difficult to work with.
+First, this definition contains many duplicate entries.
+Additionally, this means that the order of the Group matches the infinite number of the set of real numbers.
+\footnote{As a side note, this also makes means that a Cayley table such as those in Figure \ref{tab:cayley} impractical.}
+However the dimension of \reals is 1, and all the elements of the space can be represented by a single basis vector $\ket{x}$.
+In this trivial example, any real number can be chosen as a basis vector.
+Equation \ref{eqn:algebra} can be rewritten:
+\begin{equation}\begin{split}\label{eqn:algebra2}
+    C[\text{GL}(1,\reals)]=&\left\{\sum_{i=0}^{\infty}c_i\ket{g_i}\eval c_i\in \reals \forall i\right\} \\
+                          =&\{i\ket{x}|\forall i\in\reals\}.
+\end{split}\end{equation}
+Hence the Lie algebra of a group with infinite elements can be described by a finite basis.
+This is a particularly useful fact that will be used in the following section.
+
+% Modules
+The square $n\times n$ matrices of a Lie algebra can form a product with $1\times n$ vectors, resulting in a new vector. 
+The vector is said to \emph{transform} due to the element of the algebra.
+% Equation \ref{eqn:simpleTransform} can be reinterpreted in this view if $x$ is considered to be a $1\time1$ vector, and $
+This is apparent in the case of the group SO(2), whose representations describe rotation on a two dimensional plane.
+This group is a one-parameter group, with $\theta\in[0,2\pi)$.
+Elements of the group, $g_\theta$ are mapped to a representation through a function function $D(g_\theta)$.
+In this instance, $D(g_\theta)$ maps group elements onto a representation of $2\times2$ matrices:
+\begin{equation}\begin{split}\label{eqn:so2Rep}
+    D(g_\theta) = \begin{pmatrix}
+        \cos\theta &-\sin\theta \\
+        \sin\theta & \cos\theta \\
+    \end{pmatrix}.
+\end{split}\end{equation} 
+Matrices such as $g(\theta)$ can both act on other elements of the representation, 
+\begin{equation}\begin{split}
+    \begin{pmatrix}
+        \cos\theta_1 &-\sin\theta_1 \\
+        \sin\theta_1 & \cos\theta_1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \cos\theta_2 &-\sin\theta_2 \\
+        \sin\theta_2 & \cos\theta_2 \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \cos(\theta_1+\theta_2) &-\sin(\theta_1+\theta_2) \\
+        \sin(\theta_1+\theta_2) & \cos(\theta_1+\theta_2) \\
+    \end{pmatrix},
+\end{split}\end{equation} 
+as well as on $1\time2$ vectors,
+\begin{equation}\begin{split}
+    \begin{pmatrix}
+        \cos\theta &-\sin\theta \\
+        \sin\theta & \cos\theta \\
+    \end{pmatrix}
+    \begin{pmatrix}a\\b\end{pmatrix}
+    =
+    \begin{pmatrix}a\cos\theta-b\sin\theta\\a\sin\theta+b\cos\theta\end{pmatrix}.
+\end{split}\end{equation} 
+In the first case, an $2\time2$ matrix element of the representation transformed a second element of the representation into a third element of the representation.
+In the second case, an element of the representation transformed a corresponding vector into a different vector.
+Linear combinations of the objects that can be transformed by a given representation also form a vector space called a \emph{module}.
+
+% reducible:
+An invariant subspace is a region of a larger space that has closure under any transformation in a group: points in the space can only transform into other points in the space.
+A representation is labeled as reducible when its module contains a subspace in which elements transform only into themselves.
+Likewise, a representation is irreducible if this is not the case. 
+A module $M_a$ corresponding to a reducible representation, with two subspaces $M_b$ and $M_c$, is denoted as the direct sum $M_a=M_b\oplus M_c$. The same is true for elements of groups.
+% A reducible representation can constructed through the \emph{direct sum} of two representations 
+
+There are three commonly named representations.
+These are named here, and defined in the following sections.
+%
+The first is the trivial or \emph{singlet} representation.
+In this case, the map $D(g)=\ident$ for all elements of the Group.
+It is debatable whether this is actually a representation, but it is nevertheless useful.
+% Fundamental
+The second is the \emph{fundamental} representation, which is based on infinitesimal changes in the algebra.
+This representation will be defined in Section \ref{sec:generators}.
+% & Adjoint
+The third is the \emph{adjoint} representation, which is based on the relationships between elements of the fundamental representation.
+The adjoint will be defined in Section \ref{sec:adjoint}.
+
+
+
+\subsubsection{Generators}\label{sec:generators}
+The definition of algebras as a vector space naturally raises the question what basis vectors span the algebra.
+For a particular representation, it is convenient to define the basis infinitesimally close to the identity, \ident.
+Here representation is defined by the map $D(g_{\theta})$, where $g_{\theta}$ is an element of a one parameter Lie Group.
+The parameter is defined such that $D(g_{\theta})\eval_{\theta=0}$.
+Expanding the representation for a parameter $\delta\theta$ close to the identity via a Taylor series yields:
+\begin{equation}\begin{split}\label{eqn:taylorRep}
+    D(g_{\delta\theta})\approx&\mathbb{I}+\delta\theta\frac{\partial D(g_{\theta})}{\partial\theta}\eval_{\theta=0} +...\\
+    \approx&\mathbb{I}+i\delta\theta T+... \\
+\end{split}\end{equation}
+With the definition
+\begin{equation}\begin{split}\label{eqn:generator}
+    T\equiv&-i\frac{\partial D(g_{\delta\theta})}{\partial\theta}\eval_{\theta=0}. \\
+\end{split}\end{equation} 
+This gives an approximation of the representation, for small divergences $\delta$ from the identity.
+The term $T$ are identified as the \emph{infinitesimal generators}, or simply generators, for the representation.
+The generators will be used to build a used to build a basis to span the algebra.
+This is readily generalized to groups with multiple parameters by expanding for one parameter at a time.
+
+The generators defined in Equation \label{eqn:generator} define infinitesimal transformations.
+The generators are in fact tangent vectors to the ``direction'' that a point in the algebra will be carried by a succession of infinitesimal transformations.
+This corresponds to a small deviation from the identity element. In the case a matrix representation is the diagonal identity matrix \ident.
+Within a representation, the matrix corresponding to an infinitesimal transformation is $(\ident+i\delta T)$.
+It is useful to represent not just infinitesimal transformations, but finite ones as well.
+This can be achieved by in the large limit of $N$ infinitesimal transformations.
+First, small parameter $\delta\theta$ is redefined as a fraction of a finite parameter $\theta$ as $\delta\theta=\theta/N$.
+Then, multiple successive transformations close to the identity, $(\ident+i\delta\theta T)^N$, take the form in the limit of large $N$:
+\begin{equation}\begin{split}
+\lim_{N\to\infty}(\ident+i\frac{\theta}{N}T)^N\equiv e^{i\theta X_i}. \\
+\end{split}\end{equation}
+Therefore, the transformation corresponding to any parameter $\theta$ can be represented with a generator $T$ in the form $e^{i\theta X_i}$.
+
+The SO(2) representation presented in Section \ref{sec:algebras} provides a concrete example of how generators work.
+Taking the derivative of Equation \ref{eqn:so2Rep} as suggested in Equation \label{eqn:generator} yields the generator $T=-i\begin{pmatrix}0&-1\\1&0\end{pmatrix}$.
+The representation $e^{i\theta X_i}$ can then be expanded in a Taylor series:
+\begin{equation}\begin{split}
+e^{i\theta X_i} = & 
+            \begin{pmatrix}1&0\\0&1\end{pmatrix} +  % 1
+            \begin{pmatrix}0&-\theta\\\theta&0\end{pmatrix} +  % x
+            \frac{1}{2!}\begin{pmatrix}-\theta&0\\0&-\theta\end{pmatrix} + % x**2/2
+            \frac{1}{3!}\begin{pmatrix}0&\theta\\-\theta&0\end{pmatrix} + % x**3/6
+            \frac{1}{4!}\begin{pmatrix}\theta&0\\0&\theta\end{pmatrix} + ..., % x**4/4!
+\end{split}\end{equation}
+which is simply the Taylor expansion of the representation in Equation \ref{eqn:so2Rep}.
+
+While the group SO(2) has one parameter, this process is readily generalized for groups with multiple parameters. Each parameter will result in a distinct generator.
+The number of generators for a representation is equivalent to the dimension of a group.
+The generators defined in Equation \ref{eqn:generator} form a representation designated the fundamental representation.
+
+
+
+\subsubsection{Structure Constants and Adjoint}\label{sec:adjoint}
+According to the first requirement listed for Lie algebras, the commutator yields a result that is in the group.
+Without making any assumption further assumption, this means that the commutator can be expressed as a linear combination of the basis vectors of the algebra.
+In Section \ref{sec:generators} the generators $T^i$ were selected as a suitable basis for a representation with rank $n$, with the label $i$ running through $i\in\{0,1,...,n-1\}$.
+Consequently,
+\begin{equation}\begin{split}
+    [T^i,T^j]=\sum_{k=0}^{n-1}if_{ijk}T^k.
+\end{split}\end{equation} \footnote{Later, the position of the indices will be meaningful, but that is not the case here.}
+The numbers $f_{ijk}$ are \emph{structure constants}. 
+The structure constants depend on the given basis of the Lie algebra, and so must be defined together.
+The basis vectors and structure constants, together, uniquely identify their Group.
+It should also be noted that in the case of Abelian groups, with zero commutators, the structure constants vanish.
+
+Once a suitable choice of matrices to represent the generators has been made, the values $f_{ijk}$ are fixed.
+For non-Abelian groups, the structure constants do not vanish, and can therefore be used to define the adjoint representation.
+This entails defining the $n\times n$ elements of $n$ matrices.
+For a matrix $A^i$, it's elements are defined
+\begin{equation}\begin{split}
+[A^i]_{bc}\equiv-if_{abc}
+\end{split}\end{equation} 
+Since there is an Adjoint representation matrix for each structure constant, the Adjoint representation has a dimension equal to the rank of the group.
+
+\subsection{Groups in Particle Physics}
+
+This section presents the groups that are relevant to studying particles.
+The groups can be divided conceptually into two sets.
+First are the groups related to spacetime.
+These are groups that describe rotations, translations, and boosts.
+Together, these spacetime groups form the \emph{\poincare Group}.
+Next are the groups related to particles an their interactions, named SU(3), SU(2), and U(1).
+The Group product of these is the basis of the Standard Model.
+All of these groups will be defined and described in this section.
+
+\subsubsection{\poincare Group}
+
+The \poincare Group is composed of several subgroups, which are described here.
+
+% Translations
+The three dimensional translation group, $T(3)$, describes displacements in three dimensional space.
+Representations of the one dimensional version of this group, $T(1)$, was presented as an example in Equation \ref{eqn:simpleTransform}.
+The representation of T(3) has an algebra of diagonal $3\times3$ matrices. \check
+The module of this representation, on which elements can act, is 3-vectors.
+This representation is unintuitive, and a more intuitive $4\times4$ matrix representation exists:
+\begin{equation}\begin{split}
+\begin{pmatrix}
+x\\y\\z\\1
+\end{pmatrix}\to
+\begin{pmatrix}
+1& & & a_x \\
+ &1& & a_y \\
+ & &1& a_z \\
+ & & & 1   \\
+\end{pmatrix}
+\begin{pmatrix}
+x\\y\\z\\1
+\end{pmatrix}=
+\begin{pmatrix}
+x+a_x\\y+a_y\\z+a_z\\1
+\end{pmatrix}
+\end{split}\end{equation} 
+The invariant quantity under translations is the displacement between two vectors $x_1-x_2$.
+Since T(3) elements are identified by three continuous angles, T(3) has rank 3.
+Since translations commute, the group is Abelian, and hence does not have an adjoint representation.
+
+% Rotations
+The orthogonal group, O(3), describes transformations in three dimensional space that preserve distance.
+Such transformations include both rotations as well as reflections. 
+This is made clear by introducing an invariant quantity, a squared distance $x^2=x^T\cdot x=x_1^2+x_2^2+x_3^2$ where $x$ is a 3-vector representing distance in space. 
+Any inner product between two vectors could be considered, but for illustration $x^2$ is used.
+Of course, this requirement can also be generalized for groups O($n$), where $x$ becomes an $n$-vector.
+% In this example, the space of vectors $x$ is the module of the 
+In a matrix representation, the algebra of O(3) is composed of $3\times3$ rotation/inversion matrices.
+The vectors $x\in\mathbb{R}^3$ form the module for the representation.
+These and their transpose transform under the elements of the algebra, $R$, as:
+\begin{equation}\begin{split}
+    x^T\to&x'^T=x^TR^T \\
+    x\to&x'=Rr \\
+    % x^2\to&x^TR^TRr=x \\
+\end{split}\end{equation}
+Therefore the squared quantity transforms as $x^2\to x^TR^TRr$.
+For this to be invariant, $R^TR=\ident$, meaning the elements of the algebra $R$ are orthogonal matrices with determinant equal to $\pm1$.
+Since the elements of O(3) are identified by three continuous rotation angles, and a discrete parity index, O(3) has rank 4.
+Since rotations do not commute, the group is non-Abelian.
+
+A subgroup of O(3) is the \emph{special orthogonal group} SO(3).
+This group only contains the subset of elements of O(3) with representations having determinant equal to $+1$.
+Matrices with determinants $-1$ invert parity, so SO(3) describes only rotations, while O(3) describes rotations and reflections.
+
+The Euclidean group, $E(3)$ is the semidirect product of the two subgroups $\text{O}(3)\rtimes\text{T}(3)$.
+E(3) is an intermediate step towards building the \poincare group.
+This group describes translations, reflections, and rotations.
+It has rank 7, and is non-Abelian.
+
+% Lorentz
+While Euclidean group is concerned with three space dimensions, the \emph{Lorentz} group is additionally concerned with time.
+The Lorentz group, also called O(1;3), is a generalization of the O(3) group. 
+While a group O($n$) keeps the quantity $x^2=x_1^2+x_2^2+...+x_{n}^2$ invariant under transformations, the transformations under group SO(m,n) keep the quantity \mbox{$x^2=-x_1^2-...-x_{m}^2+x_{m+1}^2+...+x_{m+n}^2$} unchanged.
+This is simplified by the introduction of the metric tensor:
+\begin{equation}\begin{split}\label{eqn:metric}
+    \eta^{\mu\nu}\equiv\begin{pmatrix}1&&&\\&-1&&\\&&-1&\\&&&-1\end{pmatrix}
+\end{split}\end{equation}
+Transformations under O(1;3) are represented by $4\times4$ matrices $L$.
+In the module of the representation, a 4-vector $x$ transforms as $x^\mu\to x'^\mu=L_\nu^\mu x^\nu$, where repeated indices are summed in accordance with Einstein notation.
+In the defining used here, the first element of the 4-vector represents the time dimension, and the remaining represent space dimensions.
+Using the tensor in Equation \ref{eqn:metric}, the inner product between two vectors is then $x_\mu y^\mu=x_\mu\eta^\mu_\nu y^\nu$.
+This inner product transforms as $x_\mu y^\mu\to x_\alpha [\eta^{\mu\nu}L_\mu^\alpha L_\nu^\beta] y_\beta=x_\alpha\eta^{\alpha\beta}y_\beta$.
+Then the constraint on matrices $L$ is that the quantity in the square brackets is:
+\begin{equation}\begin{split}\label{eqn:lorentzReq}
+    \eta^{\mu\nu}L_\mu^\alpha L_\nu^\beta=\eta^{\alpha\beta}.
+\end{split}\end{equation} 
+Two matrices that satisfy this requirement are $\eta^{\mu\nu}$ and $-\eta^{\mu\nu}$.
+The former inverts the space dimensions, and represents a parity transformation, the latter inverts the time dimension, and represents time reversal.
+To exclude these transformations, a further restriction that the determinant of the transformation matrix be positive.
+This defines a subgroup of O(1;3) called SO(1;3), which will replace the Lorentz group from now on.
+Another group of matrices that satisfy Equation \ref{eqn:lorentzReq} are the matrices that also represent rotations in the SO(3) Group.
+These $3\times3$ matrices $\pmb R$ will satisfy Equation \ref{eqn:lorentzReq} embedded into $4\times4$ matrices $\begin{pmatrix}1&\\&\pmb R\end{pmatrix}$. \check
+Finally, a new set of matrices that satisfy Equation \ref{eqn:lorentzReq} can be represented with the general form shown in Equation \ref{eqn:lorentzTrans}.
+\begin{equation}\begin{split}\label{eqn:lorentzTrans}
+L^{\mu\nu} = 
+\begin{pmatrix}
+\cosh\rho_i & ... & \sinh\rho_i & ... \\
+... & 1 & ... \\
+\sinh\rho_i & ... & \cosh\rho_i & ... \\
+... & & ... & 1 \\
+\end{pmatrix}
+\end{split}\end{equation} 
+Where ``$...$'' indicates that the non-zero terms are arranged at the vertices of a square.
+Inspection of Equation \ref{eqn:lorentzTrans} reveals that three parameters $\rho_i$ can be used to identify any transformation.
+For physical transformations, the parameters will be defined by the corresponding Lorentz factor, $\gamma$, via $\gamma=\text{cosh}^{-1}(\rho)$. \check
+Applying the matrix specified in Equation \ref{eqn:lorentzTrans} corresponding to $i=1$ to a 4-vector yields the familiar Lorentz transformations.
+\begin{equation}\begin{split}
+\begin{pmatrix}x_0\\x_1\\...\end{pmatrix}\to
+\begin{pmatrix}
+    \cosh\rho_1 & \sinh\rho_1 & ... \\
+    \sinh\rho_1 & \cosh\rho_1 & ... \\
+    ... & ... & ... \\
+\end{pmatrix}
+\begin{pmatrix}x_0\\x_1\\...\end{pmatrix} =
+\begin{pmatrix}
+    x_0\cosh{\rho_1}+x_1\sinh{\rho_1} \\
+    x_1\cosh{\rho_1}+x_0\sinh{\rho_1} \\
+    ... \\
+\end{pmatrix}
+\end{split}\end{equation} 
+Elements of the Lorentz group can be identified as rotations, described by three continuous angles, boosts, described by three continuous parameters $\rho$.
+The rank, and the total parameters to specify an element of the Lorentz Group is therefor six.
+The group is non-Abelian.
+
+% Poincare group
+The \poincare Group is the semidirect product of the translations T(4) and the Lorentz group SO(1;3): $\text{T}(4)\rtimes\text{SO}(1;3)$.
+Following the definition of semidirect products, this means that every element of the \poincare Group is equivalent to successive translations and Lorentz transformations.
+T(4) is used instead of T(3) discussed earlier, because the Lorentz group has introduced time as an additional dimension in which translations are allowed, bringing the total to four.
+Since the rank of T(4) is four, and the rank of SO(1;3) is six, the total rank of the Lorentz Group is ten.
