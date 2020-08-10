@@ -328,7 +328,6 @@ The number of generators for a representation is equivalent to the dimension of 
 The generators defined in Equation \ref{eqn:generator} form a representation designated the fundamental representation.
 
 
-
 \subsubsection{Structure Constants and Adjoint}\label{sec:adjoint}
 According to the first requirement listed for Lie algebras, the commutator yields a result that is in the group.
 Without making any assumption further assumption, this means that the commutator can be expressed as a linear combination of the basis vectors of the algebra.
@@ -350,6 +349,19 @@ For a matrix $A^i$, it's elements are defined
 [A^i]_{bc}\equiv-if_{abc}
 \end{split}\end{equation} 
 Since there is an Adjoint representation matrix for each structure constant, the Adjoint representation has a dimension equal to the rank of the group.
+
+\subsubsection{Root Space}
+A subset of generators of a representation can be simultaneously diagonalized.
+As a result, these diagonal generators commute with each other, and form the basis for an Abelian \emph{Cartan subalgebra}.
+The generators are called \emph{Cartan generators} $H^i$ with $i\in\{1,...,n\}$.
+The remaining generators are non-Cartan generators $E^i$ with $i\in\{1,...,m\}$.
+Each generator $T^a$ for the algebra has an eigenvector, and each Cartan generator $H^i$ has an eigenvalue for the eigenvector of $T^a$.
+For each of the $m+n$ eigenvectors, a \emph{weight vector} is defined with a component for each Cartan generator.
+The values of the components are the eigenvalues of the Cartan generator for the vector's corresponding eigenvector.
+For example, the weight vector $t_i$ is defined for eigenvector $i\in\{1,...,m+n\}$:
+\begin{equation}\begin{split}
+t_i\equiv \begin{pmatrix}t_i^1&t_i^2&t_i^3&...&t_i^{n}\end{pmatrix}
+\end{split}\end{equation} 
 
 \subsection{Groups in Particle Physics}
 
@@ -641,42 +653,67 @@ SU(3)                  &  \\
 \end{table}
 
 
-\subsection{Physics with Lagrangians}
+% \subsection{Physics with Lagrangians}
 
-A \emph{Lagrangian density}, often shortened to a \emph{Lagrangian}, is a mathematical representation of a physical system.
-They have an explicit form that depends on the system that they represent.
-Every mathematical representation is invariant under some transformations.
-In the trivial case, all Lagrangians are invariant under the identity transformation.
-If a Lagrangian is invariant under some transformations that form a group, it is said that the Lagrangian is \emph{symmetric} under that group.
-For each such symmetry, Noether's Theorem identifies conserved quantities.
-The rank of the group corresponds to the number of conserved quantities.
+% The previous section dealt with the abstract notions of groups and relations.
+% Representations of these groups to provide a useful description of the physical world.
+% This section will discuss how these representations used with physics.
+% This is done through the framework of Quantum Field Theory (QFT).
+% To begin, three definitions need to be made:
+% \begin{itemize}
+%     \item Fields, and more precisely operator valued fields
+%     \item Lagrangian action and density
+%     \item Equations of motion, which describe the dynamics of the fields over time.
+% \end{itemize}
 
-This section will identify and describe Lagrangian in particle physics.
+% \begin{table}[htp]
+% \begin{center}
+% {\footnotesize
+% \begin{tabular}{l | l l l l}
+% \toprule
+% Field & Symbol & Transformation & Equation of motion\\
+% Dirac & $\Psi(x)$ & & \\
+% Weyl & $\psi(x)$ & & \\
+% Vector & $A(x)$ & & \\
+% Scalar & $\phi(x)$ & & \\
+% \midrule
+% \bottomrule
+% \end{tabular}
+% }
+% \label{tab:groupSum}
+% \caption{Summary fields and their transformations. In some cases, additional symbols will be used to avoid ambiguity.}
+% \end{center}
+% \end{table}
 
-\subsubsection{Fields}
+% % Fields
+% In QFT, \emph{operators} are introduced for each point in spacetime $x$.
+% These operators, $\phi$, are labeled by their corresponding point as $\phi(x)$.
+% As in quantum mechanics operators can intuitively thought of as representing a measurement. In this case, they represent a measurement of the corresponding field strength.
+% The operators act on \emph{state} vectors that represent the physical system.
+% For example, the operator $\phi$ can act on the vector representing the vacuum state, $\ket{0}$, at location $x$. This is denoted as $\phi(x)\ket{0}$.
+% The behavior of fields is described by the Lagrangian.
 
-In Quantum Field Theory (QFT), operators are introduced for each point in spacetime $x^\mu$.
-These \emph{operators}, $\phi$, are labeled by their corresponding point as $\phi(x)$.
-As in quantum mechanics operators can intuitively thought of as representing a measurement. In this case, they represent a measurement of the corresponding field strength.
-The operators act on \emph{state} vectors that represent the physical system.
-For example, the operator $\phi$ can act on the vector representing the vacuum state, $\ket{0}$, at location $x$. This is denoted as $\phi(x)\ket{0}$.
-The behavior of fields is described by the Lagrangian.
+% % Define lagrangian
+% In the Lagrangian formulation of physics, a system is considered to evolve between two points in spacetime, $x_0$ and $x_1$.
+% The \emph{action} is defined as a path integral between these points of a function of the path, $\mathcal{L}(\phi,\partial_\mu\phi)$.
+% $\mathcal{L}$ is a function of the full path, and is called the \emph{Lagrangian density}, often shortened to a \emph{Lagrangian}.
+% \begin{equation}\begin{split}
+% S=\int_{x_0}^{x^1} d^4x\mathcal{L}(\phi,\partial_\mu\phi)
+% \end{split}\end{equation}
+% Hamilton's principle states that action $S$ is minimized when the fields $\phi(x)$ follow their equation of motion.
+% This minimization results in the Euler-Lagrange equation:
+% \begin{equation}\begin{split}\label{eqn:el}
+%     \frac{\partial\mathcal{L}}{\partial\phi}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\delta_\mu\phi)}\right)=0
+% \end{split}\end{equation} 
+% Solving Equation \ref{eqn:el} for a given Lagrangian density yields the \emph{equations of motion} for each field.
 
-\begin{table}[htp]
-\begin{center}
-{\footnotesize
-\begin{tabular}{l | l l l}
-\toprule
-Field & Generic Symbol & Transformation \\
-Dirac & $\Psi(x)$ & \\
-Weyl & $\psi(x)$ & \\
-Vector & $A(x)$ & \\
-Scalar & $\phi(x)$ & \\
-\midrule
-\bottomrule
-\end{tabular}
-}
-\label{tab:groupSum}
-\caption{Summary fields and their transformations. In some cases, additional symbols will be used to avoid ambiguity.}
-\end{center}
-\end{table}
+% % Lagrangian density
+% A Lagrangian density is a mathematical representation of a physical system.
+% It has an explicit form that is chosen depending the system that it represents.
+% Every mathematical representation is invariant under some transformations.
+% In the trivial case, all Lagrangians are invariant under the identity transformation.
+% If a Lagrangian is invariant under some transformations that form a group, it is said that the Lagrangian is \emph{symmetric} under that group.
+% For each such symmetry, Noether's Theorem identifies conserved quantities.
+% The rank of the group corresponds to the number of conserved quantities.
+
+% The equations of motion that result from solving Equation \ref{eqn:el} describe the time evolution of the involved fields.
