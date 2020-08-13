@@ -1,4 +1,4 @@
-\subsection{Physics with Lagrangians}
+\subsection{Physics with Lagrangians}\label{sec:smMath}
 
 The previous section dealt with the abstract notions of groups and relations.
 Representations of these groups to provide a useful description of the physical world.
@@ -90,7 +90,7 @@ Vector & $A^\mu(x)$   & $\partial_\mu F^{\mu\nu}=0$  \\
 \bottomrule
 \end{tabular}
 }
-\caption{Summary fields and their transformations. In some cases, additional symbols will be used to avoid ambiguity.}
+\caption{Summary of fields and their transformations. In some cases, additional symbols will be used to avoid ambiguity.}
 \label{tab:fields}
 \end{center}
 \end{table}
@@ -98,7 +98,7 @@ Vector & $A^\mu(x)$   & $\partial_\mu F^{\mu\nu}=0$  \\
 The Lagrangians of Equations \ref{eqn:scalarLagrangian}, \ref{eqn:diracLagrangian}, and \ref{eqn:vectorLagrangian} all describe freely propagating particles; scalar, Dirac, and vector particles respectively.
 Interactions between particles complicate the Lagrangian with additional terms containing multiple fields in a single term.
 
-\subsubsection{The Matrix Element}
+\subsubsection{The Matrix Element}\label{sec:me}
 
 The Lagrangian formalism set out in Section \ref{sec:lagrangian} allows the definition of a model.
 The next step is to extract the observable predictions of the model.
@@ -115,13 +115,13 @@ The Hamiltonian is derived from a given Lagrangian through a process called \emp
 To find the probability that an initial state with two particles $\ket{p_1;p_2}$ to evolve into a final state with multiple particles $\ket{k_1;...;k_n}$, the projection of the latter onto the former is calculated in the distant future.
 \begin{equation}\begin{split}\label{eqn:ifProj}
 \braket{i|f}=\braket{k_1;...;k_n|p_1;p_2}|_{t=\infty}=&_{t=\infty}|\bra{k_1;...;k_n}e^{itH}\ket{p_1;p_2}|_{t=-\infty} \\
-=&|\mathcal{M}|(2\pi)^4\delta^{(4)}(p_1+p_2-\sum^n_{i=1} k_i) \\
+=&|\mathcal{M}|(2\pi)^4\delta^{(4)}\left(p_1+p_2-\sum^n_{i=1} k_i\right) \\
 \end{split}\end{equation} 
 Here, the complexities of the Hamiltonian's action on the initial state $\ket{p_1;p_2}$ has been conveniently rolled into the \emph{matrix element}, $|\mathcal{M}|$.
 
 Equation \ref{eqn:ifProj} shows a projection of one state onto another.
 The proper probability to evolve from the initial state to the final state must be normalized.
-Again, the canonical quantization is used to calculate $\braket{i|i}=4E_{p_1}E_{p_2}V^2$ and $\braket{f|f}=\prod_{i=1}^n2E_{k_i}V$ where $V$ is the volume of the box in which the experiment takes pace.
+Again, the canonical quantization is used to calculate $\braket{i|i}=4E_{p_1}E_{p_2}V^2$ and $\braket{f|f}=\prod_{i=1}^n2E_{k_i}V$ where $V$ is the volume of the box in which the experiment takes pace over time $T$.
 The full probability is
 \begin{equation}\begin{split}\label{eqn:ifProb}
     \mathcal{P}_{i\to f}=\frac{\braket{f|i}^2}{\braket{i|i}\braket{f|f}}=\frac{|\mathcal{M}|^2(2\pi)^4TV\delta^{(4)}(p_1+p_2-\sum^n_{i=1} k_i)}{4E_{p_1}E_{p_2}V^2\prod_{i=1}^n[2E_{k_i}V]}.
@@ -141,11 +141,82 @@ Instantaneous luminosity benefits from no such useful shorthand, and is commonly
 
 The cross-section is replaces $\mathcal{P}_{i\to f}$ as the measurable prediction of the model.
 The fourth term in Equation \ref{eqn:nCollisions} connects the cross-section back to the subject of the matrix element $|\mathcal{M}|$.
-It is useful to calculate the differential contribution cross-section $d\sigma$ given in Equation \ref{eqn:diffCrossSection}.
+It is useful to calculate the differential contribution to the cross-section $d\sigma$ given in Equation \ref{eqn:diffCrossSection}.
 \begin{equation}\begin{split}\label{eqn:diffCrossSection}
 d\sigma=&\frac{|\mathcal{M}|^2}{4E_{p_1}E_{p_2}|\vec{p}_1||\vec{p}_1|}d\Phi_n \\
 d\Phi_n=&(2\pi)^2\delta^{(4)}\left(p_1+p_2-\sum^n_{i=1}k_i\right)\prod^n_{i=1}\left[\frac{d^3\vec{k}_i}{(2\pi)^32E_i}\right] \\
 \end{split}\end{equation} 
 The volume terms in Equation \ref{eqn:ifProb}, which arose from the integrating the projections of states over all space, have canceled with volume terms that arose from integrating $\mathcal{P}_{i\to f}$ over all space.
 Equation \ref{eqn:diffCrossSection} defines $d\sigma$ in terms of the differential phase space $d\Phi_n$. 
-In simple $2\to2$ processes with center of mass energy $E'$, the differential phase space is greatly simplified as $d\Phi_2=\frac{k_1}{(4\pi)^2E'}d\phi d(\cos\theta)$.
+In a simple $2\to2$ process with center of mass energy $E'$, the differential phase space is greatly simplified as $d\Phi_2=\frac{k_1}{(4\pi)^2E'}d\phi d(\cos\theta)$.
+
+\subsubsection{Particle Decay}
+{\color{red} [Could do a derivation here]}
+
+An useful corollary to the prediction of the cross section described in Section \ref{sec:me} is the description of particle decays derived from a model.
+Most massive particles are able to \emph{decay} to lower mass final states.
+This process takes place in a characteristic mean lifetime, $\tau$, within the particle's rest frame.
+The probability for a particle to have decayed after a time $t$, and moving in a frame with Lorentz factor $\gamma$, is given in Equation \ref{eqn:decay}.
+\begin{equation}\begin{split}\label{eqn:decay}
+    P(t)=&1-e^{-\gamma t/\tau}
+\end{split}\end{equation} 
+The reciprocal of the lifetime is the \emph{decay width} or \emph{decay rate}, $\Gamma$.
+The fraction of initial state $i$ decays resulting in a particular final state $f$ is called the \emph{branching fraction}, and is denoted $\text{BR}(i\to f)$.
+
+
+The final state, $\bra{f}$ is projected onto the initial state $\ket{i}$ evolved to the same time.
+For a particular particle with mass $m_i$, its differential width is derived following the same procedure described in Section \ref{sec:me}.
+The result is the analog to Equation \ref{eqn:diffCrossSection} with one particle in the initial state shown in Equation \ref{eqn:diffWidth}.
+\begin{equation}\begin{split}\label{eqn:diffWidth}
+    d\Gamma=&\frac{1}{2m_i}|\mathcal{M}|^2d\Phi_n \\
+    d\Phi_n=&(2\pi)^4\delta^{(4)}(p-\sum_ik_i)\prod^n_{i=1}\left(\frac{d^3\vec{k}_i}{(2\pi)^32E_i}\right) \\
+\end{split}\end{equation} 
+For a two-body decay, with two particles in the final state with masses $m_{f,1}$ and $m_{f,2}$, the expression for $d\Gamma$ is simplified.
+\begin{equation}\begin{split}
+    d\Gamma=&\frac{K}{32\pi^2m_i}|\mathcal{M}|^2d\phi_1d(\cos{\theta_1}) \\
+    d\Phi_2=&\frac{K}{16\pi^2m_i}d\phi_1d(\cos{\theta_1}) \\
+\end{split}\end{equation}
+Where $K$ is the momentum of the final state such that energy is conserved.
+The decays relevant to this thesis have two decay products with equal mass, $m_{f,1}=m_{f,2}\equiv m_f$.
+In this case, a further simplification of $d\Gamma$ can be made, giving
+\begin{equation}\begin{split}
+    d\Gamma=&\frac{|\mathcal{M}|^2}{64\pi^2m_i^2}\sqrt{1-4\frac{m_f^2}{m_i^2}}d\phi_1d(\cos\theta_1)
+\end{split}\end{equation}
+This result allows the calculation of two-body decays.
+The details of the model are contained in the matrix element $\mathcal{M}$.
+
+\subsubsection{Feynman Rules}\label{sec:feynmanRules}
+The calculations of cross sections and differential widths in the preceding sections are, in principle, carried out through the expansion of the involved fields into expressions of creation and annihilation operators.
+The Hamiltonian from Equation \ref{eqn:ifProj} is in turn expressed in terms of these operators. 
+The non-commuting relationships between the creation/annihilation operators lead to a non-zero matrix element in Equations for the differential cross-section (Equation \ref{eqn:diffCrossSection}) and partial width (Equation \ref{eqn:diffWidth}).
+This process is complicated, but fortunately particular leading terms of the matrix element can often be abstracted and represented graphically with \emph{Feynman diagrams}.
+These diagrams consist of \emph{vertices} that correspond to interactions between more than two particles, and \emph{lines} that correspond to the free propagation of an individual particle.
+
+The Feynman rules can be determined for a particular Lagrangian.
+A general an interaction term containing $n$ different types of fields $\Phi^i_j$, each repeated $m_i$ times ($i\in\{1,...,n\}$, $j\in\{1,...,m_i\}$) can be written:
+\begin{equation}\begin{split}\label{eqn:feynmanRuleInt}
+\mathcal{L}_\text{int}=-\frac{\lambda}{\prod_{i=1}^n (m_i!)}\prod_{i=1}^n\prod_{j=1}^{m_i}\Phi^i_j.
+\end{split}\end{equation} 
+The part of the Hamiltonian $H_\text{int}$ that corresponds to the interaction is $H_\text{int}=-\int\mathcal{L}_\text{int}d^3\vec{x}$.
+The coupling constant in Equation \label{eqn:feynmanRuleInt} therefore appears in the Hamiltonian along with combinatorial factors that cancel the denominator. 
+This is in turn is used to calculate the Feynman rule for the interaction term's contribution to the matrix element is $-i\lambda$.
+Interactions are represented graphically in a Feynman diagram by a vertex showing the intersection of lines corresponding to each field $\Phi^i_j$.
+
+A term in a Lagrangian is called a \emph{free} term if it includes the same field $\Phi$ exactly twice.
+A general free term for a complex field may be written with an implicit sum over repeated indices.
+\begin{equation}\begin{split}\label{eqn:feynmanRuleProp}
+\mathcal{L}_\text{free}=(\Phi^\dagger)_iP_{ij}\Phi
+\end{split}\end{equation} 
+Here, indices represent the components of the field $\Phi$.
+The matrix $P$ includes constants and spacetime derivatives. A one dimensional example for scalar fields is $P=-\partial^\mu\partial_\mu-m^2$.
+Free terms describe the free propagation of a field, without interactions.
+The part of the Hamiltonian $H_0$ that corresponds to the free term acts on the states in Equation \ref{eqn:ifProj}, which are eigenvectors of $H_0$.
+The eigenvalues of $H_0$ combine to form what is called the \emph{propagator}.
+The Feynman rule for the contribution of a free term to the matrix element is $i(P^{-1})_{ij}$, where spacial derivatives $\partial_\mu$ are replaced with the particle's momentum $-ip_\mu$.
+Propagators are represented by lines in Feynman diagrams, connected to vertices on either side. The vertices are labeled with $i$ and $j$ respectively.
+
+Finally, the fields in the Lagrangian are expanded in term of creation and annihilation operators.
+When these operators in the expansion of $H_\text{int}$ act on the initial or final states (depending on the operator), the coefficient is introduced into the matrix element.
+These must coefficients for a basis for the equation of motion.
+A coefficient is introduced corresponding to each particle in the initial and final state.
+In Feynman diagrams, these are represented by external lines that do not connect to a vertex on one end.

@@ -269,7 +269,7 @@ These are named here, and defined in the following sections.
 The first is the trivial or \emph{singlet} representation.
 In this case, the map $D(g)=\ident$ for all elements of the Group, with multiplication as the product rule.
 % Fundamental
-The second is the \emph{fundamental} representation, which is based on infinitesimal changes in the algebra.
+The next is the \emph{fundamental} representation, which is based on infinitesimal changes in the algebra.
 This representation will be defined in Section \ref{sec:generators}.
 % The elements of a module for such a more 
 % & Adjoint
@@ -297,7 +297,7 @@ The term $T$ are identified as the \emph{infinitesimal generators}, or simply ge
 The generators will be used to build a used to build a basis to span the algebra.
 This is readily generalized to groups with multiple parameters by expanding for one parameter at a time.
 
-The generators defined in Equation \label{eqn:generator} define infinitesimal transformations.
+The generators defined in Equation \ref{eqn:generator} define infinitesimal transformations.
 The generators are in fact tangent vectors to the ``direction'' that a point in the algebra will be carried by a succession of infinitesimal transformations.
 This corresponds to a small deviation from the identity element. In the case a matrix representation is the diagonal identity matrix \ident.
 Within a representation, the matrix corresponding to an infinitesimal transformation is $(\ident+i\delta T)$.
@@ -311,7 +311,7 @@ Then, multiple successive transformations close to the identity, $(\ident+i\delt
 Therefore, the transformation corresponding to any parameter $\theta$ can be represented with a generator $T$ in the form $e^{i\theta X_i}$.
 
 The SO(2) representation presented in Section \ref{sec:algebras} provides a concrete example of how generators work.
-Taking the derivative of Equation \ref{eqn:so2Rep} as suggested in Equation \label{eqn:generator} yields the generator $T=-i\begin{pmatrix}0&-1\\1&0\end{pmatrix}$.
+Taking the derivative of Equation \ref{eqn:so2Rep} as suggested in Equation \ref{eqn:generator} yields the generator $T=-i\begin{pmatrix}0&-1\\1&0\end{pmatrix}$.
 The representation $e^{i\theta X_i}$ can then be expanded in a Taylor series:
 \begin{equation}\begin{split}
 e^{i\theta X_i} = & 
@@ -327,15 +327,21 @@ While the group SO(2) has one parameter, this process is readily generalized for
 The number of generators for a representation is equivalent to the dimension of a group.
 The generators defined in Equation \ref{eqn:generator} form a representation designated the fundamental representation.
 
+In practice the representation contains \nxn matrices, which act on elements of the representation, and of its module, through normal matrix multiplication. {\color{red} [Find several definitions, is this correct]}
+The action $g^j\cdot g^i$ is $A^i\to B^jA^i$ for an elements of the representation $D(g^i)=A^i$ and $D(g^j)=B^j$.
+Likewise, the module transforms under the matrix multiplication of the \nxn matrix representation to the n-vector element of the module. \check
+
+
+
 
 \subsubsection{Structure Constants and Adjoint}\label{sec:adjoint}
-According to the first requirement listed for Lie algebras, the commutator yields a result that is in the group.
+According to the first requirement listed for Lie algebras, the commutation of the group elements yields a result that is in the group.
 Without making any assumption further assumption, this means that the commutator can be expressed as a linear combination of the basis vectors of the algebra.
 In Section \ref{sec:generators} the generators $T^i$ were selected as a suitable basis for a representation with rank $n$, with the label $i$ running through $i\in\{0,1,...,n-1\}$.
-Consequently,
+Consequently\footnote{Later, the position of the indices will be meaningful, but that is not the case here.},
 \begin{equation}\begin{split}\label{eqn:structure}
     [T^i,T^j]=\sum_{k=0}^{n-1}if_{ijk}T^k.
-\end{split}\end{equation} \footnote{Later, the position of the indices will be meaningful, but that is not the case here.}
+\end{split}\end{equation} 
 The numbers $f_{ijk}$ are \emph{structure constants}. 
 The structure constants depend on the given basis of the Lie algebra, and so must be defined together.
 The basis vectors and structure constants, together, uniquely identify their Group.
@@ -348,7 +354,11 @@ For a matrix $A^i$, it's elements are defined
 \begin{equation}\begin{split}\label{eqn:adjoint}
 [A^i]_{bc}\equiv-if_{abc}
 \end{split}\end{equation} 
-Since there is an Adjoint representation matrix for each structure constant, the Adjoint representation has a dimension equal to the rank of the group.
+Since there is an adjoint representation matrix for each structure constant, the adjoint representation has a dimension equal to the rank of the group.
+
+Finally, the action of elements of the adjoint is not normal matrix multiplication, as was the case with the fundamental representation.
+Instead, the action $g^j\cdot g^i$ is $A^i\to B^jA^iB^{j\dagger}$ for an elements of the representation $D(g^i)=A^i$ and $D(g^j)=B^j$. \check
+Likewise, the module of the adjoint representation consists of \nxn matrices, which transform in the same way.
 
 \subsubsection{Root Space}
 A subset of generators of a representation can be simultaneously diagonalized.

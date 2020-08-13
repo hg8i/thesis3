@@ -1,0 +1,121 @@
+\subsection{The Standard Model}
+
+The Standard Model of Particle Physics is the most descriptive and predictive theory of fundamental particles.
+The theory is formulated in the terms described in Section \ref{sec:smMath}.
+It is a theory whose components are operator valued fields.
+These fields act as representations of the group $\text(SU)(3)\otimes\text{SU}(2)\otimes\text{U}(1)$.
+This section will define the Standard Model in pieces, which will then be combined to yield the full theory.
+\begin{itemize}
+    \item First, Quantum Electrodynamics, the theory of electromagnetic interactions between the photon and electrically charged fermions.
+    \item Next, Quantum Chromodynamics, the theory of the strong interaction mediated by gluons and exchanging momentum between color charged particles.
+    \item Finally, the Electroweak Interaction, the combination of weak interactions mediated by the \W and \Z bosons with the electromagnetic interaction.
+\end{itemize}
+
+\subsubsection{Quantum Electrodynamics}
+
+Quantum Electrodynamics, or QED, is a field theory that describes the interactions between photons and electrically charged fermions.
+It is the simplest of the field theories which build up the standard model.
+The theory predictions of the theory are invariant under the \poincare group transformations.
+In addition, the predictions are also invariant under U(1) transformations, parameterized by a continuous angle $\theta$.
+
+There are two components of the theory: photons and fermion fields.
+Photons are identified as elements of the U(1) algebra, $A_\mu$.
+Meanwhile fermion fields $\Psi$ and $\overline{\Psi}$, with electric charge $Q$ are identified as elements of the module on which those generators may act.
+Both of these objects transform under elements of the U(1) representation:
+\begin{equation}\begin{split}
+    \Psi\to& e^{iQ\theta}\Psi \\
+    A_\mu\to& A_\mu-\frac{1}{e}\partial_\mu\theta \\
+\end{split}\end{equation}
+In the first line, a unitary element of U(1) is represented by a complex scalar $e^{iQ\theta}$.
+This is the fundamental representation for U(1). \check
+This element can act on the 4-vector $\Psi$, which is an element of the representation's module.
+% The fermion field $\Psi$ has four components, but it transforms under U(1) 
+In the second line, the gauge field $A_\mu$, represented by $4\times4$ matrices, transforms under the adjoint representation of U(1) as a connection.
+The reason for this transformation are provided in Appendix \ref{sec:appendixVectorField}.
+
+These fields can be combined to produce a Lagrangian consisting of a free component, and an interaction term.
+An example is shown in Equation \ref{eqn:qedLagrangian} with one photon field, and one fermion field.
+This is readily generalizable to models with more charged fermion fields, or indeed more photon fields. 
+\begin{flalign}\label{eqn:qedLagrangian}
+\mathcal{L}_\text{0}=&-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+\overline{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi; & \text{free Lagrangian} \notag\\
+\mathcal{L}_\text{int}=&-eQ\overline{\Psi}\gamma^\mu\Psi A_\mu; & \text{interaction Lagrangian} \notag\\
+\mathcal{L}=&\mathcal{L}_\text{0}+\mathcal{L}_\text{int}; & \text{full Lagrangian} 
+\end{flalign}
+Here $J^\mu=Q\overline{\Psi}\gamma^\mu\Psi$ is the electric current density $J^\mu=(\rho,\vec{J})$.
+The object $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ is the \emph{electromagnetic field tensor}.
+The charge of the electron, $e$, is the (energy dependant running) coupling.
+It is related to the fine structure constant $\alpha\equiv\frac{e^2}{4\pi}=1/137...$.
+
+Although the fields transform under elements of the group U(1), physical predictions of the theory (the Lagrangian) are invariant under these transformations.
+To use the Language of group theory, the Lagrangian is a singlet, described by a trivial representation of the group. 
+This means the parameter $\theta$ is free to be selected for the convenience of calculation. 
+A common gauge choice selects $\theta(x^\mu)$ to be a function of spacetime such that $\partial_\mu A^\mu=0$.\footnote{Although the contracted indices make this gauge choice Lorentz invariant, it is called the Lorenz gauge after Ludvig Lorenz. The two physicists independently developed the Lorentz-Lorenz equation.}
+\check
+
+The fields $A_\mu$, $\Psi$, and $\overline{\Psi}$ can be decomposed in terms of creation/annihilated operators as shown in Equation \ref{eqn:qedFields}.
+\begin{equation}\begin{split}\label{eqn:qedFields}
+A_\mu=&\sum_{\lambda=0}^3\int d\tilde{p}[\epsilon_\mu(p,\lambda)e^{i\vec{p}\cdot\vec{x}}a_{\vec{p},\lambda}+\epsilon^*_\mu(p,\lambda)e^{-i\vec{p}\cdot\vec{x}}a^\dagger_{\vec{p},\lambda}] \\
+\Psi(\vec{x})=&\sum_{s=1}^2\int d\tilde{p}[u(p,s)e^{i\vec{p}\cdot\vec{x}}b_{\vec{p},s}+v(p,s)e^{-i\vec{p}\cdot\vec{x}}d^\dagger_{\vec{p},s}] \\
+\overline{\Psi}(\vec{x})=&\sum_{s=1}^2\int d\tilde{p}[\overline{u}(p,s)e^{-i\vec{p}\cdot\vec{x}}b^\dagger_{\vec{p},s}+\overline{v}(p,s)e^{i\vec{p}\cdot\vec{x}}d_{\vec{p},s}] \\
+\end{split}\end{equation}
+Where $u(p,s)$, $v(p,s)$, $\overline{u}(p,s)$, $\overline{v}(p,s)$ are a basis for solutions to the Dirac equation in Table \ref{tab:fields}.
+The creation and annihilation operators are defined:  \\
+    \begin{center}
+        \begin{tabular}{l l}\toprule
+        $d_{\vec{p},s}^\dagger$ & Anti-fermion creator operator \\
+        $d_{\vec{p},s}$ & Anti-fermion annihilation operator    \\
+        $b_{\vec{p},s}^\dagger$ & Fermion creator operator \\
+        $b_{\vec{p},s}$ & Fermion annihilation operator    \\
+        \bottomrule\end{tabular} \\
+    \end{center} 
+The creation operators add the appropriate particle to a state they act on, while the annihilation operators remove a particle.
+For both fermions and anti-fermions, the annihilation operator acting on the vacuum state is equal to zero: $d_{\vec{p},s}\ket{0}=0$ and $b_{\vec{p},s}\ket{0}=0$.
+These have anti-commutation relationships \mbox{$\{b_{\vec{p},s},b_{\vec{k},r}^\dagger\}=\{d_{\vec{p},s},d_{\vec{k},r}^\dagger\}=(2\pi)^32E_{\vec{p}}\delta^{(3)}(\vec{p}-\vec{k})\delta_{sr}$}.
+
+The polarization of the photon field is described by orthonormal 4-vectors:
+\begin{equation}\begin{split}
+\epsilon^\mu(p,\lambda)\epsilon^*_\mu(p,\lambda') = \begin{cases}
+    +1 &\lambda=\lambda'=0\\
+    -1 &\lambda=\lambda'\in[1,2,3]\\
+     0 &\lambda\ne\lambda'\\
+\end{cases}
+\end{split}\end{equation}
+A gauge choice can be made such that $\epsilon^\mu=(0,\vec{\epsilon})$. 
+Since the polarization is orthogonal to momentum 3-vector, $p_\mu\epsilon^\mu=0$.
+
+Finally, the Lagrangian in Equation \ref{eqn:qedLagrangian} is typically simplified by introducing the covariant derivative $D_\mu\equiv\partial_\mu+iQeA_\mu$.
+\begin{equation}\begin{split}\label{eqn:qedLagrangian2}
+\mathcal{L}=&-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+i\overline{\Psi}\slashed{D}\Psi-m\overline{\Psi}\Psi; \quad\text{Lagrangian}
+\end{split}\end{equation}
+The material in Equation \ref{eqn:qedLagrangian2}, and the expansions of the fields in Equations \ref{eqn:qedFields}, along with the creation/annihilation operator anti-commutators, is sufficient to calculate predictions of the model.
+However, it is very helpful to introduce Feynman rules to represent this.
+This follows the prescription from Section \ref{sec:feynmanRules} and is summarized in Table \ref{tab:qedRules}.
+
+% First, consider the interaction term $-eQ\overline{\Psi}\gamma^\mu\Psi A_\mu$ in Equation \ref{eqn:qedLagrangian}.
+
+
+
+\begin{table}[htp]
+\begin{center}
+{\footnotesize
+\begin{tabular}{l | l | l l l}
+\toprule
+Name & Lagrangian Term & Drawing & Rule \\
+\midrule
+Photon-fermion interaction & $-eQ\overline{\Psi}\gamma^\mu\Psi A_\mu$ &  $\feynmandiagram [small,baseline=(d.base), horizontal=d to b] { a -- [fermion] b -- [fermion] c, b -- [boson] d [particle=\(\gamma\)], };$ & $-ieQ\gamma^\mu$  \\[1.0em]
+Photon propagator & $-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}$ &  $\feynmandiagram [small,baseline=(d.base), horizontal=d to b] {b -- [boson] d , };$ & $\displaystyle\frac{i}{p^2+i\epsilon}\left[-g_{\mu\nu}+(1-\xi)\frac{p_\mu p_\nu}{p^2}\right]$  \\[1.0em]
+Fermion propagator & $\overline{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi$ &  $\feynmandiagram [small,baseline=(d.base), horizontal=b to d] {b -- [fermion] d , };$ & $\displaystyle\frac{i(\slashed{p}+m)}{p^2-m^2+i\epsilon}$  \\[1.0em]
+Initial state fermion      & & $\feynmandiagram [small,baseline=(d.base), horizontal=b to d] {b -- [fermion] d [blob]};$ & $u(p,s)$ \\[1.0em]
+Initial state anti-fermion & & $\feynmandiagram [small,baseline=(d.base), horizontal=d to b] {b[blob] -- [fermion] d };$ & $\overline{v}(p,s)$ \\[1.0em]
+Final state anti-fermion   & & $\feynmandiagram [small,baseline=(d.base), horizontal=d to b] {b -- [fermion] d [blob]};$ & $\overline{u}(p,s)$ \\[1.0em]
+Final state fermion        & & $\feynmandiagram [small,baseline=(d.base), horizontal=b to d] {b[blob] -- [fermion] d };$ & $v(p,s)$ \\[1.0em]
+Initial state photon       & & $\feynmandiagram [small,baseline=(d.base), horizontal=b to d] {b -- [boson] d [blob]};$ & $\epsilon_\mu(p,\lambda)$ \\[1.0em]
+Final state photon         & & $\feynmandiagram [small,baseline=(d.base), horizontal=b to d] {b[blob] -- [boson] d };$ & $\epsilon^*_\mu(p,\lambda)$ \\[1.0em]
+\bottomrule
+\end{tabular}
+}
+\caption{Summary of the Feynman rules for QED. For each loop in the diagram with undefined momentum, an integration over the momenta contributes to the matrix element: $\int \frac{d^4k}{(4\pi)^4}$. Each closed fermion loop contributes a $-1$ factor, as does each odd permutation of the spinors $u$, $v$, $\overline{u}$, and $\overline{v}$. If there is ambiguity such that placement of the internal lines can have $N$ permutations, a factor or $1/N$ is added to remove double counting. The number $\xi$ is free to choose as a guage choice, and $\epsilon$ in the propagators is infinitesimal.}
+\label{tab:qedRules}
+\end{center}
+\end{table}
+

@@ -21,6 +21,10 @@
 \usepackage{slashed}
 \usepackage{mathalfa}
 
+\usepackage{physics}
+\usepackage{braket} % include after physics
+\usepackage{xspace}
+
 \usepackage{multirow}
 \usepackage{indentfirst}
 
@@ -28,9 +32,6 @@
 \usepackage{subcaption}
 
 
-\usepackage{physics}
-\usepackage{braket} % include after physics
-\usepackage{xspace}
 
 \def\code#1{\texttt{#1}}
 
@@ -69,4 +70,13 @@
 \newcommand*{\vtheta}{\ensuremath{\vec{\theta}}\xspace}
 \newcommand*{\poincare}{Poincar\^e\xspace}
 \renewcommand*{\check}{{\color{red}[check]}\xspace}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% \usepackage[showframe, textwidth = 15cm, nomarginpar, noheadfoot]{geometry}
+\usepackage{mathtools}
+\newcommand{\shortnote}[1]{ &  & \text{\small\llap{#1}}}
+\newcommand{\longeqnote}[1]{& & \\ \notag  &  &  &  &  & \text{\small\llap{#1}}}
 

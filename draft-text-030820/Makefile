@@ -2,24 +2,24 @@
 postUrl:=http://www.hg8i.com/thesisPageCount/?pass=4&pageupdate=
 
 default: thesis.tex 
-	pdflatex thesis.tex $<
+	lualatex thesis.tex $<
 	# ==================================================
 	# Finished:
-	# * pdflatex
+	# * lualatex
 	# (To run bibtex also, "make full")
 	# ==================================================
 
 full: thesis.tex 
-	pdflatex thesis.tex $<
+	lualatex thesis.tex $<
 	-bibtex  $(basename $<)
-	pdflatex thesis.tex $<
-	pdflatex thesis.tex $<
+	lualatex thesis.tex $<
+	lualatex thesis.tex $<
 	# Post thesis length to website!
 	pdfinfo thesis.pdf | grep Pages | awk '{print "http://www.hg8i.com/thesisPageCount/?pass=4&pageupdate=" $$2}' | xargs curl --silent --output /dev/null $$1
 
 	# ==================================================
 	# Finished:
-	# * pdflatex
+	# * lualatex
 	# * bibtex
 	# * Post thesis length to http://www.hg8i.com/thesisPageCount
 	# ==================================================
