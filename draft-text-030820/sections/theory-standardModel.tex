@@ -395,3 +395,72 @@ In addition, a three point interaction between the lepton and Higgs appears, wit
 The other fermions, excluding neutrinos, gain their mass through similar Yukawa couplings\footnote{Quarks benefit from additional mass from chiral symmetry breaking.}.
 Equations \ref{eqn:yukawaMass} and \ref{eqn:yukawaCoupling} are particularly relevant to the subject of this thesis.
 The former shows that the muon gains its mass as a result of the scalar field $\Psi$, and the latter is the topic of measurement in Chapter \ref{sec:hmumu}.
+
+The addition of the scalar field to the Lagrangian adds new Feynman rules, and these are summarized in Tables \ref{tab:ewRules1} and \ref{tab:ewRules2}.
+
+\begin{table}[H]
+% \begin{table}[htp]
+\begin{center}
+{\footnotesize
+\begin{tabular}{l | l | l l l}
+\toprule
+Name & Lagrangian Term & Drawing & Rule \\
+\midrule
+\centered{\W propagator}      &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to b] { a[particle=\(\mu\)] --[charged boson] b[particle=\(\nu\)] }; $} & \centered{$\frac{i}{p^2-m_W^2+i\epsilon}\left[-g_{\mu\nu}+\frac{p_\mu p_\nu}{m_W^2}\right]$} \\ [1.0em]
+\centered{\Z propagator}      &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to b] { a[particle=\(\mu\)] --[charged boson] b[particle=\(\nu\)] }; $} & \centered{$\frac{i}{p^2-m_Z^2+i\epsilon}\left[-g_{\mu\nu}+\frac{p_\mu p_\nu}{m_Z^2}\right]$} \\ [1.0em]
+\centered{Fermion-Higgs\\interaction}      &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(\ell\)]} --[fermion] v , v --[fermion]  b[particle=\(\ell\)] , {d[particle=\(h\)]} --[scalar] v  };$} & \centered{$-iy_\ell/\sqrt{2}$} \\ [1.0em]
+\centered{$W^+W^-H$\\interaction}      &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\nu\)]} --[charged boson] v , v --[charged boson]  b[particle=\(W^\mu\)] , {d[particle=\(h\)]} --[scalar] v  }; $} & \centered{$ig^{\mu\nu}gv/2$} \\ [1.0em]
+\centered{$ZZH$\\interaction}      &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(Z^\nu\)]} --[charged boson] v , v --[charged boson]  b[particle=\(Z^\mu\)] , {d[particle=\(h\)]} --[scalar] v  }; $} & \centered{$ig^{\mu\nu}(g^2+g'^2v/2$} \\ [1.0em]
+\centered{Three Higgs\\interaction}        &  & \centered{$\feynmandiagram [ssmall,baseline=(d.base), horizontal=d to v] { c[particle=\(h\)] -- [scalar] v , a[particle=\(h\)] -- [scalar] v, d[particle=\(h\)] -- [scalar] v , };$} & \centered{$-i6\lambda v$} \\ [1.0em]
+\centered{Four Higgs\\interaction}         &  & \centered{$\feynmandiagram [ssmall,baseline=(d.base), horizontal=a to c] { {a[particle=\(h\)],b[particle=\(h\)]} --[scalar] v --[scalar] {c[particle=\(h\)],d[particle=\(h\)]} };$} & \centered{$-i6\lambda$}  \\[1.0em]
+\centered{$WWHH$\\interaction}             &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] { {a[particle=\(W^\mu\)]} --[charged boson] v --[charged boson] b[particle=\(W^\nu\)], v --[scalar] {c[particle=\(h\)],d[particle=\(h\)]} };$} & \centered{$ig^{\mu\nu}g^2/2$}  \\[1.0em]
+\centered{$ZZHH$\\interaction}             &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] { {a[particle=\(Z^\mu\)]} --[charged boson] v --[charged boson] b[particle=\(Z^\nu\)], v --[scalar] {c[particle=\(h\)],d[particle=\(h\)]} };$} & \centered{$ig^{\mu\nu}(g^2+g'^2)/2$}  \\[1.0em]
+\bottomrule
+\end{tabular}
+}
+\caption{Summary of the Feynman rules for the EW Lagrangian, including the scalar Higgs field. }
+\label{tab:ewRules1}
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+% \begin{table}[htp]
+\begin{center}
+{\footnotesize
+\begin{tabular}{l | l | l l l}
+\toprule
+Name & Lagrangian Term & Drawing & Rule \\
+\midrule
+\centered{$\gamma W^+W^-$\\interaction}    &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson,momentum=\(k\)] v , b[particle=\(W^\nu\)] --[charged boson,momentum=\(q\)] v, {d[particle=\(A_\mu\)]} --[boson,momentum=\(p\)] v  };$} & \centered{$ie[g^{\mu\nu}(p-q)^\rho+$\\$~~~g^{\nu\rho}(q-k)^\mu+$\\$~~~g^{\rho\mu}(k-p)^\nu]$}  \\[1.0em]
+\centered{$Z W^+W^-$\\interaction}         &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson,momentum=\(k\)] v , b[particle=\(W^\nu\)] --[charged boson,momentum=\(q\)] v, {d[particle=\(Z_\mu\)]} --[boson,momentum=\(p\)] v  };$} & \centered{$ig\cos(\theta_W)[g^{\mu\nu}(p-q)^\rho+$\\$~~~~~~~~~~~~~~g^{\nu\rho}(q-k)^\mu+$\\$~~~~~~~~~~~~~~g^{\rho\mu}(k-p)^\nu]$}  \\[1.0em]
+\centered{$W^+W^-W^+W^-$\\interaction}     &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] {{a[particle=\(W^\sigma\)]} --[charged boson] v --[charged boson] b[particle=\(W^\mu\)], c[particle=\(W^\rho\)] --[charged boson] v --[charged boson] d[particle=\(W^\nu\)] }; $} & \centered{$ig^2X^{\mu\nu,\rho\sigma}$}  \\[1.0em]
+\centered{$\gamma\gamma WW$\\interaction}  &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] {{a[particle=\(A^\nu\)]} --[boson] v --[boson] b[particle=\(A^\mu\)], c[particle=\(W^\rho\)] --[charged boson] v --[charged boson] d[particle=\(W^\sigma\)] }; $} & \centered{$-ie^2X^{\mu\nu,\rho\sigma}$}  \\[1.0em]
+\centered{$ZZW^+W^-$\\interaction}         &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] {{a[particle=\(Z^\nu\)]} --[charged boson] v --[charged boson] b[particle=\(Z^\mu\)], c[particle=\(W^\rho\)] --[charged boson] v --[charged boson] d[particle=\(W^\sigma\)] }; $} & \centered{$-ig^2\cos^2(\theta_W)X^{\mu\nu,\rho\sigma}$}  \\[1.0em]
+\centered{$\gamma ZWW$\\interaction}       &  & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=a to c] {{a[particle=\(Z^\nu\)]} --[charged boson] v --[charged boson] b[particle=\(A^\mu\)], c[particle=\(W^\rho\)] --[charged boson] v --[charged boson] d[particle=\(W^\sigma\)] }; $} & \centered{$-ig^2\cos(\theta_W)\sin(\theta_W)X^{\mu\nu,\rho\sigma}$}  \\[1.0em]
+\bottomrule
+\end{tabular}
+}
+\caption{Summary of the Feynman rules for the EW Lagrangian, including the scalar Higgs field. $X^{\mu\nu,\rho\sigma}\equiv2g^{\mu\nu}g^{\rho\sigma}-g^{\mu\rho}g^{\nu\sigma}-g^{\mu\sigma}g^{\nu\rho}$}
+\label{tab:ewRules2}
+\end{center}
+\end{table}
+
+
+\subsubsection{Summary}
+
+Electroweak symmetry breaking is the final piece of the Standard Model.
+In this section, the full SM Lagrangian is constructed, and the remaining Feynman rules are presented.
+
+Since the discovery of the Higgs boson, the full SM Lagrangian is often presented in the compact form of Equation \ref{eqn:smLagrangian}.
+\begin{flalign}\label{eqn:smLagrangian}
+~&~& \mathcal{L}_\text{SM} =& -\frac{1}{4}F^a_{\mu\nu}F^{a,\mu\nu}               &\text{gauge fields} &~ \notag\\
+~&~&                        & +i\overline{\Psi}_i\slashed{D}\Psi_i+\text{h.c.}   &\text{covariant derivatives} &~ \notag\\
+~&~&                        & +\Psi_iy_{ij}\Psi_j\Phi+\text{h.c.}                &\text{Yukawa couplings} &~ \notag\\
+~&~&                        & +D_\mu\Phi D^\mu\Phi-V(\Phi,\Phi^\dagger);         &\text{Higgs terms} &~ 
+\end{flalign} 
+This form of the Lagrangian begins with a sum over the contracted the gauge field strength tensors $F^a$.
+The next line contains the covariant derivatives acting on fermion fields $\Psi_i$. There is an implicit sum over index $i$ covering all fermions.
+The third line contains Yukawa couplings for each fermion, again summed over indices $i$ and $j$. \footnote{Here the Yukawa coupling constants from Equation \ref{eqn:yukawaCoupling} have been replaced with matrices, as the fields $\Psi$ are guage eigenstates, rather than mass eigenstates.}
+The final line contains the scalar kinetic term, and the Higgs potential.
+

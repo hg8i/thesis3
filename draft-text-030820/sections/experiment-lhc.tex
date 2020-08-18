@@ -1,393 +1,342 @@
-\section{Introduction/Overview info}
-\begin{itemize}
-    \item The LHC is the largest single machine in the world. It's the largest machine ever constructed by humans.
-    \item Note about how the LHC enables ATLAS physics, is a unique laboratory environment, and a towering achievement of humankind.
-    \item Grateful for people's effort in building such a large machine.
-    \item Building the LHC is not just an impressive feat in absolute terms, it is also impressive compared to humanity's other accelerators. Three other large superconducting accelerators: Tevatron, HERA, RHIC use Nb-Ti superconductor, at about 4.2K, and fields around 5 T. How to increase to 8 T? \cite{lyndon}
-    \item Technical facts to illustrate this challenge.
-    \begin{itemize}
-        \item 26.7 km circumference
-        \item SPS injects at 450 GeV \cite{lyndon}
-        \item Designed luminosity $1.0\times10^{34}cm^{-2}s^{-1}$ \cite{lyndon}
-        \item Designed energy 14 TeV \cite{lyndon}
-        \item It takes 15 days to cool or warm a sector. This can be speed up using two cooling stations \cite{lyndon}
-        \item LHC is first hadron machine with non-negligible synchrotron radiation. Influenced design of cryo and vacuum systems \cite{lyndon}
-    \end{itemize}
-    \item LHC is built from subsystems: magnets, vacuum, cryogenics, RF, power, injection, extraction, beam instrumentation, collimation, controls. \cite{lyndon} These will be described here.
-    \item LHC is a machine under continuous development. The only place to improve the LHC is at the LHC. Therefore will discuss the history of LHC in final section.
-\end{itemize}
+\section{The Large Hadron Collider}
 
-\section{Civil Engineering}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{figures/notes-experiment/lhcLepLayout.png}
-\end{center}
-\begin{itemize}
-    \item Before building the accelerator, civil infrastructure is needed
-    \item The Tevatron is buried less than 10m deep, which could be accomplished by cut-and-fill. RHIC is primarily above ground. Neither approach was suitable for the original LEP tunnel. 
-    \item A different approach was needed for LEP based on the area's \textbf{geology}:
-    \begin{itemize}\scriptsize
-        \item Land here is layer of moraine (unconsolidated loose rock) over molasse (soft sediment, sometimes contains ground water). \cite{lhcDesignV2}
-        \item 23km of tunnel in Lemanic basin molasse. This is Cenozoic and formed from marine deposites. \cite{lhcDesignV2}
-        \item The Jura side is Mesozoic, limestone \cite{lhcDesignV2}
-    \end{itemize}
-    \item LEP was buried 45-170m, so a cut-and-fill approach was not possible.
-    \item Beginning in 1985, the tunnel was mostly dug with three tunnel bores. When the molasse was unsuitable explosives were used.
-    \item CERN has a long history of building accelerator and civil infrastructure. The design of the LHC leveraged this to reduce costs.
-    \item Every LEP building has been reused for the LHC. Much of the civil infrastructure was reused as well. What was already built from LEP:
-    \begin{itemize}\scriptsize
-        \item \textbf{physical details:}
-        \item Tunnel diameter 3.8 m, too small to hold separate rings \cite{lyndon}
-        \item Tunnel depth 45-170m. 1.42\% slope towards the lake. The slope avoids a deep moraine near airport \cite{lhcDesignV2}
-        \item Tunnel has 8 arcs, 8 straight sections of approx 528m length. \cite{lyndon}
-        \begin{itemize}\scriptsize
-            \item 4 straight sections for experiments \cite{lyndon}
-            \item others used for RF, collimation, abort, utilities \cite{lyndon}
-            \item ATLAS at p1 \cite{lyndon}
-            \item CMS and TOTEM at p5 \cite{lyndon}
-            \item ALICE p2 \cite{lyndon}
-            \item LHCb p8 \cite{lyndon}
-            \item Injection at p2 and p8 \cite{lyndon}
-            \item Collimation at p3, p7 straight sections. p3 momentum collimation, p7 beam halo (betatron) \cite{lyndon}
-            \item p4 has RF , one for each beam, operating at 2x injection frequency (RF is 400Hz) \cite{lyndon}
-            \item p6 has abort systems, extract beam and dump into absorbers \cite{lyndon}
-        \end{itemize}
-    \end{itemize}
-    \item Additional infrastructure was required for the LHC.
-    \begin{itemize}\scriptsize
-        \item Major expansion of tunnels: mostly for new injection lines, and beam dumps. \cite{lhcDesignV2}
-        \item Additional new caverns needed for ATLAS and CMS (ALICE and LHCb reuse existing caverns). Each has two main caverns. \cite{lhcDesignV2}
-        \item Two new injection tunnels leading from SPS, with internal diameter 3.76m, excavated diameter 4.5m. The length of each is approx 2.5km. \cite{lhcDesignV2}
-        \item LEP flooded on two occasions. To avoid, steps including additional draining. Water is pumped to the surface. \cite{lhcDesignV2}
-        \item For CMS, the moraine layer is thicker, and a freezing technique was used. Not use for ATLAS \cite{lhcDesignV2}
-    \end{itemize}
-    \item Building process timeline:
-    \begin{itemize}\scriptsize
-        \item Civil engineering lasted 5 years, except CMS which took 6.5. \cite{lhcDesignV2}
-        \item P1 work began April 1998 \cite{lhcDesignV2}
-        \item In addition to existing buildings, 8 new building built at P1. \cite{lhcDesignV2}
-        \item P1 has 2 new shafts over experimental cavern, 1 over each service cavern. \cite{lhcDesignV2}
-    \end{itemize}
-\end{itemize}
+Located in the Lemanic basin, straddling the border between Switzerland and France, the Large Hadron Collider is the largest machine built by humans.
+The LHC provides the unique laboratory conditions in which detectors like ATLAS investigate the fundamental nature of our Universe.
+The construction, maintenance, and operation of the LHC continues to be an enormous task carried out by thousands of dedicated scientists and engineers. Without their ongoing efforts, the achievements of ATLAS and the other LHC experiments would be impossible.
 
-\section{Machine Layout}
-\includegraphics[width=0.5\textwidth]{figures/notes-experiment/lhcLepLayout.png}
-\begin{itemize}
-    \item Built in tunnel, on the outer side of the tunnel.
-    \item Not completely circular, instead there are 4 straight sections, and 4 curved sections. \cite{lyndon}
-    \item Experiments, RF, collimation, abort/beamdump, utilities, and services are located in straight sections \cite{lyndon}
-    \begin{enumerate}\scriptsize
-        \item p1: ATLAS
-        \item p2: ALICE, clockwise injection
-        \item p3: Momentum collimation
-        \item p4: RF, one for each beam
-        \item p5: CMS and TOTEM
-        \item p6: Abort systems to extract beam and dump into absorbers
-        \item p7: beam halo (betatron) {\color{blue} ???}
-        \item p8: LHCb
-    \end{enumerate}
-\end{itemize}
+The LHC is impressive not just in absolute terms, but also in comparison to previous accelerators.
+The three other large superconducting accelerators, the Tevatron\footnote{Decommissioned in 2011.}, HERA, and RHIC, all operate with fields of approximately 5~T. The LHC exceeds this with fields of 8~T.
+The machine is also enormous. It has a circumference of 26.7~km. It takes 15 days to cool down a sector.
+The LHC, designed to reach collision energies of 14 TeV, is also the first hadron accelerator with enough synchrotron radiation to effect the design of the cooling and vacuum systems \cite{lyndon}.
 
-\section{Accelerator Design}
+The LHC is composed of a number of subsystems, each of which is complex and essential in its own right.
+In particular, the following systems will be described here:
 \begin{itemize}
-    \item The heart of the LHC is the accelerator.
-    \item Acceleration takes place only in a short section of p4
-    \item The circular design of the LHC means beams repeatedly through the same accelerator, so not much acceleration is needed per turn.
-    \item For hadrons, not much energy is lost in a revolution from synchrotron radiation, so the accelerator segment only needs to exceed the energy lost.
-    \item Synchrotron beam radiation loss is only 3.7 kW/beam (in planned operation, lumi). Each cavity provides 32kW to increase the beam energy. The RF power is not determined by beam power, but by the required RF voltage. \cite{boussard}
-    \item The principle behind the LHC acceleration is RF cavities, described earlier.
-    \item Independent systems for individual control of beams \cite{lyndon}
-    \item Physical description of cavities
-    \begin{itemize}\scriptsize
-        \item Cavities are copper, sputtered with niobium(vapor deposition technique, ``microscopic particles of a solid material are ejected from its surface, after the material is itself bombarded by energetic particles of a plasma or gas''). {\color{blue} From \url{https://accelconf.web.cern.ch/SRF91/papers/srf91e11.pdf}, better than solid niobium for thermal conductivity. Niobium is superconductive, so better RF performance. Also, is cheaper to use super thin layer.} \cite{lyndon}
-        \item Choice for superconducting: high field, small machine impedance, high stored energy. {\color{blue} Not clear yet what means} \cite{boussard}
-        \item Operating temp 4.5 k, each cryomodule has its own helium tank. \cite{boussard}
-        \item The phase modulation $\delta\phi$ has max value: $\delta\phi\le0.5(R/Q)\omega_0(I_b/V)\tau$, for gap length $\tau$. $R/Q$ si geometric cavity parameter, $\omega_0/2\pi$ is RF frequency, $I_b$ is RF from beam current, V is cavity voltage. Phase modulation $\delta\phi$ leads to IP displacement. The superconductive cavities allow the R/Q to be smaller. Q may be \emph{quality factor} or peak energy / energy lost per cycle. R may be resistance across the cavity, but am unsure. \cite{boussard}
-        \item R/Q = $44\Omega$, 2MV/cell, 11.8MV/m.  \cite{boussard}
-        \item Sputtered by magneton sputtering, 1-2 microns thick  \cite{boussard}
-        \item The caveties can be mechanically distorted by tuners. Tuner is used to compensate beamloading {\color{blue} inaccuracy? Arrival time?} \cite{boussard}
-    \end{itemize}
-    \item Physical description of groups of cavities
-    \begin{itemize}\scriptsize
-        \item Eight single cell cavities per beam, each 2 MV (5.3 MV/m. Frequency 400 MHz. Total is 16MV per beam. \cite{boussard}
-    \end{itemize}
-    \item Powering the cavities
-    \begin{itemize}\scriptsize
-        \item RF power is supplied to the cavities by a variable power coupler. This consists of a waveguide of adjustable length. Adjusting the length modifies the cavities external Q factor. A voltageof 3kV is applied to the antenna to reduce multipactor (electron avalanche). \cite{boussard}
-        \item Cavities have two couplers attached, one of which coupler is connected to 500 kW 400MHz klystron. The other is attached to a resistive load. {\color{blue} Should check current config, this was a test} \cite{boussard}
-        \item One klystron per cavity, which needs to be capable of supplying 200kW. \cite{boussard}
-    \end{itemize}
-    \item Before manufacturing, a prototype with 2 cavities was built. Also tested was cryostat \cite{boussard} \\
-    \begin{center}
-        \includegraphics[width=1\textwidth]{figures/notes-experiment/rfproto.png}
-    \end{center}
+    \item The magnet system, which is responsible for bending the beam around the path of the machine.
+    \item The vacuum system, which evacuates the beampipe.
+    \item The radio-frequency system, which accelerate the beams. 
+    \item The power system that powers the machine.
+    \item The beam instrumentation, collimation, and control systems that monitors and adjusts the beam.
+    \item The beam injection and extraction systems.
 \end{itemize}
+The LHC is a machine under continuous development. The only place to study improvements for the LHC is at the LHC.
+As a result, the history of the LHC development is also the history of the experimental environment of the ATLAS detector.
+This story begins with the tunnel and infrastructure that house the LHC.
 
-\section{Magnet Design}
+\subsection{Civil Engineering}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.9\textwidth]{figures/experiment/lhcLepLayout.png}
+\caption{The LHC infrastructure layout. Figure from the LHC Design Report \cite{lhcDesignV2}.}
+\label{figure:lhcLayout}
+\end{figure}
+
+
+The first step in building a collider is civil infrastructure.
+This takes the form of building that house services for the accelerator, and a space for the machine itself.
+For economical reasons, much of the infrastructure for the LHC is reused from the earlier LEP project.
+
+The largest piece of infrastructure is the tunnel built to house LEP.
+The Tevatron is buried less than 10~m deep in the flat expanse of the Illinois prairie. This shallow tunnel could be constructed with a cut-and-fill approach.
+RHIC is primarily build at surface level in a tunnel that was later covered with dirt.
+Neither of these approaches were suitable in the context of the geology of the region.
+The land near CERN consists of a layer of moraine (loose unconsolidated rock) resting atop a layer of molasse (soft sedimentary rock).
+LEP was buried in the sedimentary layer for stability, but this is too deep for excavation.
+Instead, beginning in 1985, the tunnel was dug using tunnel bores and explosives.
+In the Cenozoic molasse of the Lemanic basin, tunnel bores were the fastest option.
+The tunnel bores were unsuitable for the fractured Mesozoic limestone beneath the Jura mountain, and explosives were used instead.
+The resulting tunnel's internal diameter is 3.8~m, and it is buried at a depth of 45-170~m.
+The tunnel slopes downward at 1.42 degrees in the direction of Lake Leman, in order to remain within the molasse layer.
+
+The tunnel has eight curved arcs, separated by eight straight sections with length 528~m. \cite{lyndon}
+Four straight sections house the ATLAS, CMS, ALICE, and LHCb experiments. These are 
+The other four straight sections house the RF system, collimation controls, beam abort, and other utilities.
+The eight straight sections arrayed as shown in Figure \ref{figure:lhcLayout} numbered p$i$ with $i\in\{1,...,8\}$.
+The primary uses of each point is:
 \begin{itemize}
-    \item If the accelerator is the heart of the LHC, the magnets are the body of the LHC.
-    % ####################
-    % Description of all magnets
-    % ####################
-    \item Magnets serve multiple purposes \cite{lyndon}
-    \begin{itemize}\scriptsize
-        \item Dipole magnets to bend the beam around the curved sections. There are 1232 main dipoles
-        \item Quadrupole magnets to focus and defocus the beam. Each quadrupole simultaneously focuses in one direction and defocuses in an orthogonal direction. There are 392 arc quadrupoles throughout the LHC.
-        \item Sextupole for correcting chromaticity introduced by quadrupoles, there are 2464
-        \item Other magnets such as octupole and decapole correctors fill in the remaining 7000 superconducting magnets.
-    \end{itemize}
-    \begin{center}
-        \includegraphics[width=0.6\textwidth]{figures/notes-experiment/listmagnets.png}
-    \end{center}
-    % ####################
-    % Description of dipole
-    % ####################
-    \item The job of bending the beam around the LHC is performed by the dipole magnets.
-    \begin{itemize}\scriptsize
-        \item b-field of dipoles is 8.3 T \cite{lyndon}
-        \item Superconducting material is NbTi \cite{lyndon}
-        \item Two sets of magnet coils in common yoke and cryostat \cite{lyndon}
-        \item Dipole length 14.2m of magnet, 15m total. Dipoles wired in series. \cite{lyndon}
-        \item Coils held in austenitic (non-magnetic, stainless steel, low permeability steel) steel collar, surrounded by a yoke of low carbon steel to carry magnetic flux. Field: \cite{lyndon}
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{figures/notes-experiment/field.png}
-        \end{center}
-        \item Coils wound in two layers, in 6 blocks. Copper wedges separate. Optimized to keep pure dipole field. \cite{lyndon}
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{figures/notes-experiment/coils.png}
-        \end{center}
-    \end{itemize}
-    % ####################
-    % Magnet periods
-    % ####################
-    \item Magnets are grouped in periods. Each period (identical focusing properties) is 106.9m long, and has 6 dipoles, and 2 6.6m \emph{short straight sections} (SSS) that contain quadrupoles and lattice correctors. \cite{lyndon}
-    \item Each SSS also contain sextupoles for chromaticity control, and orbit correction dipoles. Also sometimes contain octupoles or trim/skew quadrupoles. \cite{lyndon}
-    % ####################
-    % After finishing arc
-    % ####################
-    \item After arc, ``dispersion suppressor'': adapts orbit to shape of tunnel, cancel horizontal dispersion from the arc, match beams between the arcs and straight sections. {\color{blue} See notes in next section \url{https://accelconf.web.cern.ch/p79/PDF/PAC1979_3493.PDF}} \cite{lyndon}
-    % ####################
-    % Cryo system
-    % ####################
-    \item Supporting the magnets is an elaborate cryosystem
-    \begin{itemize}\scriptsize
-        \item Three other large superconducting accelerators: Tevatron, HERA, RHIC use Nb-Ti superconductor, at about 4.2K, and fields around 5 T. How to increase to 8 T? \cite{lyndon}
-        \item Considered Nb3Sn, but this is brittle and needs to be heated for many hours at 600 degrees \cite{lyndon}
-        \item 1.8K NbTi has about 10\% heat capacity than it does at 4.5K, meaning it can heat faster and quench more \cite{lyndon}
-        \item Cryo system in run 1 was most faulty, followed by injector systems. 25-30\% of fault time. \cite{lhcRun1}
-        \item Dipoles operation 1.9 K superfluid helium. Total 100 tons. Helium's phase transition at 2.17k to become superfluid \cite{lyndon}
-        \item LHC is first hadron machine with non-negligible synchrotron radiation. Influenced design of cryo and vacuum systems due to heat load \cite{lyndon}
-        \item \textbf{Quench protection:} if a quench is detected, capacity bank is ``fired'' into the coil to make it resistive. The current is diverted through a diode. Then the power is shut off. \cite{lyndon}
-        \item \textbf{Cryo. System} Superfluid helium's low viscosity allows it to permeate coil insulation, and directly cool superconductor. This also increases the specific heat of the system, as its specific heat is 2000 times that of the superconductor. It effectively transports heat out. \cite{lyndon}
-        \item Magnets are surrounded by 1bar LHe, and a pressurized 15mbar pipe of LHe is pumped past as a heat exchanger. This keeps the LHe in the coil permanently liquid - no vapor \cite{lyndon}
-        \item It takes 15 days to cool or warm a sector. This can be speed up using two cooling stations \cite{lyndon}
-        \item When planning the required quality of LHC magnets, simulations were run with random and systematic magnet imperfections. The requirement was the for the ``dynamic aperture'' of the beam to be 6sigma smaller than the beam pipe after 10e6 turns (several minutes) \cite{lyndon}
-    \end{itemize}
+    \item \textbf{p1} hosts the ATLAS experiment
+    \item \textbf{p2} injection, and the ALICE experiment
+    \item \textbf{p3} hosts momentum collimation
+    \item \textbf{p4} hosts RF systems
+    \item \textbf{p6} hosts beam abort, and beam dump
+    \item \textbf{p5} hosts the CMS and TOTEM experiments
+    \item \textbf{p7} hosts betatron collimation
+    \item \textbf{p8} injection, and the LHCb experiment
 \end{itemize}
+The eight curved sections host magnets with the purpose of bending the beam around the path of the machine.
+The accelerator itself is built along the outer edge of the tunnel. In several locations, concentric outer tunnels house services for the accelerator.
 
+After below ground infrastructure, the next largest infrastructure for the LHC is surface buildings.
+Every LEP building has been reused for the LHC.
+
+New infrastructure was built to accommodate the LHC.
+First, a major expansion of the tunnels was undertaken to carry the beam from the SPS to the injection points of the LHC. Two new tunnels with internal diameter of 3.75~m and length of 2.5~km were dug to connect points p2 and p8 to the SPS.
+While ALICE and LHCb reuse existing LEP era caverns, new caverns were built to house ATLAS and CMS.
+In the case of the cavern for CMS, the water logged moraine above the cavern had to be frozen with liquid nitrogen before excavation could be completed.
+To avoid further flooding\footnote{LEP flooded twice, at one time filling with 20~cm of sediment. A plan to waterproof the tunnel with a steel tube called ``the submarine'' was rejected.} existing draining tunnels were enlarged, and new tunnels were added.
+
+In total, the new infrastructure lasted five years, with the exception of the CMS cavern.
+Work at p1 for the three ATLAS caverns began in April of 1998.
+Four new shafts, two over the experimental cavern and one over each service cavern were dug.
+Eight new surface building were constructed to hold offices and experimental equipment.
+
+\subsection{Accelerator Design}
+The heart of the LHC is the accelerator.
+The purpose of this system is to accelerate beams to their collision energy, and then maintain their energy to compensate for losses over time.
+Beams are accelerated only in a short section of p4.
+The circular design of the LHC means that beams repeatedly pass through the same acceleration section.
+During the design operation, synchrotron radiation energy loss is 3.7 kW/beam: not much acceleration is lost in a revolution.
+The acceleration system needs only to make up for a small amount of lost energy per turn.
+
+The principle of acceleration is based on radio-frequency (RF) cavities.
+Independent RF systems control the acceleration of each beam.
+% Each cavity provides 32kW to increase the beam energy.
+Cavities are made of copper, sputtered\footnote{A vapor deposition technique, in magneton sputtering a material (niobium) is vaporized by particle bombardment and bound to a substrate (copper) resulting in a 1-2 mircon thin - and cheap - coating.} with niobium.
+This is advantageous over solid niobium for its thermal conductivity, but also superconductive to enhance the RF performance.\cite{lyndon}
+The operation of the superconducting cavities requires temperatures of 4.5~k, so cavities are enclosed in cryomodules with their own helium tanks. \cite{boussard}
+The resonant properties of the cavities can adjusted during operation by mechanically distorting their shape.
+
+Each cavity operates with a voltage of 2~MV (5.3 MV/m), and is powered by a 500~kW klystron.
+The klystrons are coupled to the cavities by a waveguide of adjustable length.
+Adjusting the length of the waveguide in turn adjusts the \emph{quality factor}\footnote{Peak energy lost per cycle, which can be used to adjust the peak voltage in the cavity.} of the cavity.
+The cavity is kept at a 3~kV bias to reduce the rate of electron avalanches (multipactor effect).
+During normal operation, the klystrons drive the cavities at 400~MHz and supply 200~kW.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+    \includegraphics[width=1\textwidth]{figures/experiment/rfproto.png}
+\caption{Schematic of a prototype RF cryostat, containing only two cavities. Figure from the The LHC Superconducting RF System \cite{boussard}.}
+\label{fig:cavities}
+\end{figure}
+
+There are eight single cell cavities per beam.
+Four cavities are grouped to share a single cryostat, which maintains their superconducting temperature.
+The resulting total voltage gradient is 16~MV per beam.
+A simplified schematic is shown in Figure \ref{fig:cavities}.
+The driving frequency is supplied through the couplings on top of the cryostat.
+The cryostats are too large to sit next to each other in the tunnel, so they are staggered.
+
+\subsection{Magnet Design}
+If the accelerator is the heart of the LHC, the magnets compose its body.
+Magnets serve multiple purposes in handling the beam.
 \begin{itemize}
-    \item Amplitude function $\beta$ may be transverse beam size? \cite{boussard}
+    \item Dipole magnets bend the beam around the curved sections.  There are 1232 main dipoles.
+    \item Quadrupole magnets focus and defocus the beam. Each quadrupole simultaneously focuses in one direction and defocuses in an orthogonal direction. There are 392 arc quadrupoles throughout the LHC.
+    \item Sextupole for correcting chromaticity introduced by quadrupoles. There are 2464 in total.
+    \item Other magnets such as octupole and decapole correctors fill in the remaining 7000 superconducting magnets.
 \end{itemize}
+Together these magnets steer the beam into the LHC and maintain the beam's orbit during collisions.
+At the end of the beam's lifetime, kicker magnets steer the beam safely into the beamdump.
 
-\section{Bunch Structure/Beam Design}
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subcaptionbox{One element group\label{fig:dipoleFlux2}}{
+    \includegraphics[width=0.4\textwidth]{figures/experiment/coils.png}
+}
+\subcaptionbox{One element group\label{fig:dipoleFlux1}}{
+    \includegraphics[width=0.4\textwidth]{figures/experiment/field.png}
+}
+\caption{Illustration of the magnetic flux in the dipole magnets. Figure from the The Large Hadron Collider \cite{lyndon}}
+\label{fig:dipoleFlux}
+\end{figure}
+
+% Dipole system
+The job of bending the beam around the LHC is performed by the dipole magnets.
+Because the counter circulating beams are both positively charged, magnetic fields of opposite directions are needed to steer them.
+In the dipole magnets, two sets of superconducting coils are wound from niobium-titanium (Nb-Ti) alloy wires\footnote{Although niobium-tin (Nb$_3$Si) has many desirable advantages over Nb-Ti, it is brittle and requires many hours of heat treatment at 970~k. On the other hand, Nb-Ti has low heat capacity at 1.8~k, so it is susceptible to rapid heating and quenching}.
+The coils are arranged in inner and outer layers as shown in Figure \ref{fig:dipoleFlux2}.
+This configuration produces a homogeneous, purely dipole field.
+The coils for each beam are positioned side-by-side, such that the field of one can augment that of the other.
+These coils share a common yoke made from low carbon steel with high magnetic permeability, chosen to conduct the magnetic flux between the coils.
+This is illustrated by the black arrows in Figure \ref{fig:dipoleFlux1}.
+The coil and yoke assembly is held in place by collar plates of austenitic (low permeability) steel.
+The resulting magnetic field has an incredible strength 8.3~T.
+Each of the main dipole magnets has a length of 14.2~m (15~m including connections between the magnets).
+
+% Cryosystem
+In order to operate at superconducting temperatures, the magnets are housed elaborate cryosystems.
+These are challenging systems: during the LHC's Run 1, the cryosystem was responsible for 25-30\% of fault time.\cite{lhcRun1}
+It is the task of the cryosystem to maintain the magnet at 1.9~k using superfluid helium. A total of 100 tons is used throughout the LHC.
+Helium is used because its low viscosity allows it to permeate the coil insulation and contact directly with the superconducting wire.
+Since superfluid helium has a specific heat roughly 2000 times that of the Nb-Ti, this has the important benefit of increasing the specific heat of the system.
+Helium is also effective at quickly transporting heat away from the wired.
+The magnets are submerged in a bath of 1~bar liquid helium. A pipe with is pumped with low pressure 15~mbar liquid helium to pull heat away from the bath.
+This is done to keep prevent vapor bubbles from developing in the bath, which could lead to the coil heating and subsequent quenching.
+In the event of a quench, a capacitor bank is fired into series with the coil to make it resistive. The current is diverted through a diode while the power is ramped down.
+
+Magnets are grouped together into ``periods'' with identical magnetic properties.
+Each period is 106.9~m long and consists of six main dipoles, and two 6.6~m ``short straight sections'' (SSS).
+Each SSS contains quadrupole magnets that re-focus the beam after being steered by the dipoles.
+In addition, each SSS also contains sextupoles that control chromaticity, and small dipoles for orbit corrections.
+Some SSS also contain octupoles, and trip/skew quadrupoles for fine tuning the beam characteristics.
+Perturbations in the trajectory of the beam are introduced by the magnets and are called \emph{dispersion}.
+After completing one of the eight arcs, the magnet of the dispersion suppressor system cancel horizontal dispersion introduced by during the bending.
+
+\subsection{Beam Structure and Design}
+The achievement of building the LHC pales in comparison to the achievement of producing and maintaining its beams.
+The LHC was designed to collide two counter-rotating beams, at precise locations, with the enormous instantaneous luminosity of $10^{34}cm^{-2}s^{-1}$.
+The energy of each beam exceeds that of a large truck traveling at highway speeds.
+This is more than one hundred fold the stored beam energy of any previous machine. \cite{lyndon}
+The beam is an object of enormous energy, and surpassing delicacy.
+There are numerous technical considerations that must be addressed in order for the beam to useful for the experiments.
+The beams at the LHC are characterized by a number of parameters that describe its stability and utility.
+These parameters are described in this section.
+
+The first parameter to consider is the \emph{emittance}, $\epsilon$, defined in Equation \ref{eqn:emittance}.
+It is a measure of the distribution of the particles in a beam in position-momentum phasespace.
+The emittance is given as
+\begin{equation}\begin{split}\label{eqn:emittance}
+\epsilon = \frac{6\pi}{B}(w^2-D^2(\frac{dp}{p})^2),
+\end{split}\end{equation} 
+where $w$ is the RMS beam width, $D$ is the dispersion, $B\approx(w/\epsilon)$ is the beta function, and $\frac{dp}{p}$ is the relative momentum spread.
+The emittance is often divided into longitudinal and transverse components.
+If the emittance is too small, then intra-beam interactions destabilize the beam. 
+During injection, the beam has a longitudinal emittance of 0.6-1 eV, and this is increased to 2.5 eV during acceleration for stability.
+Conversely, if the transverse emittance is too large then colliding beams pass through each other without interacting.
+\cite{boussard}\cite{lyndon}\cite{pdgAccelSection}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.4\textwidth]{figures/experiment/tune.png}
+\caption{Tune diagram for the LHC. The horizontal and vertical tunes are displayed. First order resonances shown in red, second order resonances shown in blue, and higher order resonances shown in black. Figure from \emph{Tune and Chromaticity Diagnostics} \cite{steinhagen}}
+\label{fig:tune}
+\end{figure}
+
+Related to the transverse emittance are \emph{betatron oscillations}: harmonic motion in the transverse plane as the beam makes an orbit.\cite{pdgAccelSection}
+This is a problematic source of intra-beam scattering of protons through coulomb forces.
+The frequency of betatron oscillations is higher than that of the orbit.
+The number of vertical or horizontal betatron oscillations made during one orbit is called the vertical or horizontal \emph{tune} respectively.
+The horizontal and vertical tunes must be carefully picked using a tune diagram, such as shown in Figure \ref{fig:tune}.
+Resonances are illustrated as lines, and the tunes must be selected together to avoid disruptive resonances.
+
+Related to the longitudinal emittance are \emph{synchrotron oscillations}: longitudinal oscillation along the direction of the beam.
+This takes place at a much lower frequency than that of betatron oscillations: at the LHC it is less than one oscillation per orbit.
+As with betatron oscillations, the synchrotron oscillation frequency must be carefully controlled to limit intra-beam scattering, and maintain beam stability.\cite{pdgAccelSection}
+
+\emph{Chromaticity} describes the dependence of the tune on a change of momentum.
+In optics, light rays of different wavelengths are focused differently by a glass focusing lens.
+There is a persistent analogy between optics and beam dynamics (often called beam optics). Like light, beams are bent and focused by magnets. 
+Particles with large momentum experience weaker focusing strength from focusing quadrupoles, a process called \emph{chromatic aberration}.
+Chromaticity quantifies this momentum dependence.
+To put it explicitly, chromaticity $Q'$ is the tune change $\Delta Q$ caused by a momentum change $\Delta p/p$. \cite{fuchsberger}
+\begin{equation}
+    \Delta Q = Q'\frac{\Delta p}{p},
+\end{equation}
+where
+\begin{equation}
+\begin{split}
+    \frac{\Delta p}{p} = \frac{\frac{\Delta f}{f}}{\eta}; \quad\text{and}\quad \eta = \frac{1}{\gamma_r}-\alpha_c. \\
+\end{split}
+\end{equation}
+Here, $\Delta f$ is change in RF frequency, and $f$ is the nominal frequency \footnote{400,788,860 Hz at the LHC.} 
+$\gamma_r$ is relativistic gamma function, and $\alpha_c$ is momentum compaction factor equal to $3.225\times10^{-4}$ at the LHC.
+Chromaticity is unitless as it defines a change in the tune.
+At the LHC, sextupoles are used to control the beam's correct chromatic aberration after passing through focusing quadrupoles and dispersion suppression. \cite{frascati} \cite{bruno}
+The chromaticity is visualized on a tune diagram, such as Figure \ref{fig:tune}, as the area occupied by the beam.
+Reducing the beam's chromaticity makes it easier to find a stable setting for the tune.
+% From Jorg
+Beams with a chromaticity that is too small, however, suffer from instability related interaction with the beampipe.
+The momentum spread of a beam with high chromaticity makes it more efficient to absorb reflected EM fields without perturbing the beam.
+An important task is to find a balance for the chromaticity in order to maximize the useful life of the beam.
+
+% Bunches
+Because the RF cavities produce alternating field gradients, the beam is naturally organised into occupied \emph{bunches} and empty space.
+The time interval between these, the bunch spacing, is a multiple of the RF frequency.
+At the LHC the nominal bunch spacing is 24.96~ns, or ten times the RF frequency. The corresponding bunch length is 7.5~cm. \cite{boussard}
+Bunches are collected into trains, patterns of occupied and empty bunches.
+Several trains comprise the beam.
+Several bunches are always left unoccupied, called the abort gap. The length of the gap corresponds to the ramp time of the extraction kicker magnet.
+The bunch design choice depends on the function of the beam. Some patterns are useful for, example, cleaning the beampipe of electron clouds, while others are useful for optimizing physics collisions.
+
+% Lumi
+From a physics perspective, the most important beam characteristic is the instantaneous luminosity of collisions.
+This is defined as $L\equiv N/\sigma_{pp}$, where $N$ is the collisions per second and $\sigma_{pp}$ is the poorly defined proton-proton collision cross-section\footnote{This is poorly defined because in some sense protons always scatter off each other, so the definition depends on what constitutes a collision. Traditionally, values of $\sigma_{pp}\sim10^{14}\text{fb}$ are used.} \cite{lyndon}
+More precisely in the context of the LHC, the luminosity is defined in Equation \ref{eqn:lumi}.\cite{lyndon}
+\begin{equation}\label{eqn:lumi}
+    L=\frac{N_b^2nf_r\gamma}{4\pi\epsilon_n\beta^*}
+\end{equation}
+Here, $N_b$ is number of particles per bunch, and $n$ is the number of bunches per beam.
+$f_r$ is is revolution frequency, which is 11.245 kHz for the LHC.
+The other terms are the previously mentioned relativistic $\gamma$, the transverse emittance $\epsilon_n$, and the beta function at the collision point $\beta^*$.
+The two beams must be steered into each other at a crossing angle $\theta_c$.
+This results in a luminosity reduction factor,
+\begin{equation}\label{eqn:lumiReduce}
+    F=1/\sqrt{1+\frac{\theta_c\sigma_Z}{2\sigma^*}}
+\end{equation}
+where $\sigma_z$ is the RMS bunch length, and $\sigma^*$ is the transverse RMS beam size at the interaction point.
+In fact, $\sigma^*$ is specifically minimized by focusing the beam before the collisions, and defocusing it afterwards.
+
+The challenge during the operation of the LHC is to keep the beam in a stable orbit for many hours.
+A number of issues can effect the stability of the beam during this time. \cite{lyndon}
 \begin{itemize}
-    \item The achievement of building the LHC pales in comparison to the achievement of producing and maintaining the beam.
-    \item Designed luminosity $10^{34}cm^{-2}s^{-1}$ \cite{lyndon}
-    \item Energy of each beam more than 3.50 MJ (80 kg of TNT), more than 100x previous stored energy of any machine (has plot) \cite{lyndon}
-    % ####################
-    % Beam theory
-    % ####################
-    \item There are central concepts related to understanding the beam
-    \begin{enumerate}\scriptsize
-        % ----------------------
-        % Transverse emittance, $\epsilon$
-        % ----------------------
-        \item Transverse emittance, $\epsilon$
-        \begin{itemize}\scriptsize
-            \item Longitudinal emittance of beam from SPS is about 1 eV {\color{blue} \cite{boussard} indicates 0.63 eV}. Increases to 2.5 eV in acceleration. This reduces the phase-space density of the bunch, impeding intra-beam interactions. \cite{lyndon}
-            \item $\epsilon$ is transverse emittance. Minimize for higher lumi \cite{pdgAccelSection}
-        \end{itemize}
-        % ----------------------
-        % The amplitude function, $\beta$
-        % ----------------------
-        \item The amplitude function, $\beta$
-        \begin{itemize}\scriptsize
-            \item \textbf{Betatron oscillation} is oscillations along the design trajectory \cite{pdgAccelSection}
-            \item $\beta$ is amplitude function. Minimize for higher lumi \cite{pdgAccelSection}
-        \end{itemize}
-        % ----------------------
-        % Tune
-        % ----------------------
-        \item Tune
-        \begin{itemize}\scriptsize
-            \item Tune diagram, resonances to avoid
-            \item \emph{Tune} is number of betatron oscillations per turn \cite{pdgAccelSection}
-        \end{itemize}
-        % ----------------------
-        % Chromaticity, $Q$
-        % ----------------------
-        \item Chromaticity, $Q$
-        \begin{itemize}\scriptsize
-            \item \textbf{Chromaticity}
-            \begin{itemize}\scriptsize
-                \item Chromaticity is measured by changing the RF frequency (hence changing beam energy), and observing the change in the tune. \cite{fuchsberger}
-                \item Tune is measured by transverse beam motions. \cite{fuchsberger}
-                \item Definition of Chromaticity Q' describes a tune change $\Delta Q$ from a momentum change $\Delta p/p$ \cite{fuchsberger}
-                \begin{equation}
-                    \Delta Q = Q'\frac{\Delta p}{p}
-                \end{equation}
-                Where
-                \begin{equation}
-                \begin{split}
-                    \frac{\Delta p}{p} = \frac{\frac{\Delta f}{f}}{\eta} \\
-                    \eta = \frac{1}{\gamma_r}-\alpha_c \\
-                \end{split}
-                \end{equation}
-                \begin{itemize}\scriptsize
-                    \item $\Delta f$ is change in RF frequency, and $f$ is the nominal frequency, 400,788,860 Hz (this may be heavy ion freq)
-                    \item $\gamma_r$ is relativistic gamma
-                    \item $\alpha_c$ is momentum compaction factor for LHC, 3.225e-4
-                \end{itemize}
-                \item Is unitless, defined in terms of the change in tune.
-            \end{itemize}
-            \item \textbf{ 2nd source on chromaticity} \cite{frascati}
-            \begin{itemize}\scriptsize
-                \item In optics, rays of different wavelength refract differently in a lens. Similar in storage ring. \cite{frascati}
-                \item Basically particles of different momentum are focused differently by quadraples. Leads to different betatron freq. \cite{frascati}
-                \item Definition: variation in betatron tune Q with respect to relative momentum deviation $\delta=\delta P/p$ \cite{frascati}
-                \begin{equation} % recall split
-                \begin{split}
-                    Q'   =& dQ/d\delta \\
-                    \zeta=&Q'/Q \text{ (relative chromaticity)}
-                \end{split}
-                \end{equation}
-                \item Chromaticity leads to wide tune spot on tune diagram. \cite{frascati}
-                \item Main source of chromaticity is from quadraples, which introduce a momentum dependant defocusing effect. \cite{frascati}
-                \item Particles with large momentum see weaker focusing strength from quad.  \cite{frascati}
-                \item Introduce the sextupole, which focuses based on displacement from center. There is a simple relation between the strength of the quadraple and the needed sextupole strength. \cite{frascati}
-                \item \emph{Dynamic aperture} is the region of phasespace that results in stable orbits. \cite{frascati}
-            \end{itemize}
-        \end{itemize}
-        % ----------------------
-        % Dispersion
-        % ----------------------
-        \item Dispersion
-        \begin{itemize}\scriptsize
-            \item Define $\alpha_p$ as momentum dispersion function \cite{bruno}
-            \item Define $\alpha_p'$ as momentum dispersion function's azimuthal derivative  \cite{bruno}
-            \item Impossible for both $\alpha_p=0$ and $\alpha_p'=0$. \cite{bruno}
-        \end{itemize}
-        % ----------------------
-        % Synchrotron oscillations
-        % ----------------------
-        \item Synchrotron oscillations
-        \begin{itemize}\scriptsize
-            \item \textbf{Synchrotron oscillations}, when particles arrive earlier or later than the ideal. It's a longitudinal DoF. Approximated by harmonic oscillations. It is also expressed as an oscillation in energy with a related amplitude. Usually, the frequency oscillations/turn is $\ll1$. \cite{pdgAccelSection}
-            \item At LHC, synchrotron radiation power is $7.8\times10^{-3}E^4/\rho$ KeV per turn, where $E$ is in TeV and $\rho$ is the radius in km. \cite{pdgAccelSection}
-        \end{itemize}
-        % ----------------------
-        % Bunches
-        % ----------------------
-        \item Bunches
-        \begin{itemize}\scriptsize
-            \item Although linac2 produces continuous proton beam, bunches are essential for acceleration with RF
-            \item Bunch length is defined by $l=c\sigma_{\delta t}$, where $\sigma_{\delta t}$ is the standard deviation of the time distribution. To max lumi, minimize bunch length.  \cite{pdgAccelSection}
-            \item Bunches are collected together in trains
-            \item A beam consists of some number of trains
-            \item Different bunch structures can be useful, for example abort gap or for e-cloud cleaning.
-            \item Concerns of spacing: injection kickers, beamdump kicker. Gaps must be left in between bunches to accommodate the ramp times for these. \cite{boussard}
-            \item Bunches are steered together from each beam to collide
-            \item The nominal 24.96 ns bunch spacing at the LHC defines a clock that the experiments run off of.
-            \item Bunch length, 7.5 cm \cite{boussard}
-            \item Bunch spacing 24.96 ns, which is 10 RF periods \cite{boussard}
-        \end{itemize}
-        % ----------------------
-        % Luminosity
-        % ----------------------
-        \item Luminosity
-        \begin{itemize}\scriptsize
-            \item Events per second $N=L\sigma$, sigma is cross section, L is luminosity \cite{lyndon}
-            \item Luminosity for Gaussian beam profile \cite{lyndon}
-            \begin{equation}
-                L=\frac{N_b^2nf_r\gamma}{4\pi\epsilon_n\beta^*}
-            \end{equation}
-            \begin{itemize}\scriptsize
-                \item Where $N_b$ is number of particles per bunch \cite{lyndon}
-                \item n is number of bunches per beam \cite{lyndon}
-                \item $f_r$ is revolution frequency 11.245 kHz \cite{lyndon}
-                \item $\gamma$ is relativistic gamma factor \cite{lyndon}
-                \item $\epsilon_n$ is normalized transverse emittance \cite{lyndon}
-                \item $\beta^*$ is beta function at collision point \cite{lyndon}
-            \end{itemize}
-            \item Beam-beam interaction is reduced by having a crossing angle. This gives a luminosity reduction \cite{lyndon}
-            \begin{equation}
-                F=1/\sqrt{1+\frac{\theta_c\sigma_Z}{2\sigma^*}}
-            \end{equation}
-            \begin{itemize}\scriptsize
-                \item Where $\theta_c$ is the full crossing angle at the IP \cite{lyndon}
-                \item $\sigma_z$ is the rms bunch length \cite{lyndon}
-                \item $\sigma^*$ is the transverse rms beam size at IP \cite{lyndon}
-            \end{itemize}
-        \end{itemize}
-    \end{enumerate}
-    % ####################
-    % Beam challenges
-    % ####################
-    \item Huge challenge to keep a beam in a stable orbit for multiple hours.
-    \item The issues that effect the beam stability
-    \begin{enumerate}\scriptsize
-        \item \textbf{Beam-beam interaction:} force from electromagnetic field from one beam on another.  \cite{lyndon}
-        \item Beam-beam interaction is reduced by having a crossing angle. This gives a luminosity reduction \cite{lyndon}
-        \item \textbf{Intra-beam interaction:} coulomb scattering during betatron and synchrotron oscillations. Knocks protons into different betatron opbit. \cite{lyndon}
-        \item Chromaticity control
-        \item Coherent instabilities. The beam interacts with its environment, generating EM fields, that act on the beam. This is mitigated by smoothing the vacuum chamber as much as possible, even in the interconnects. \cite{lyndon}
-        \item \textbf{Electron cloud:} accumulation of electrons in beam pipe. Source is: 1) ionization of gas in pipe, 2) excitation from synchrotron radiation and beam pipe. The issue is that these free electrons can be hit by the beam, accelerated, and produce a shower in the beampipe, leading to exponential growth of cloud. This is especially problem if the mean drift time for electrons is resonant with beam bunch spacing. This heats up the cryo equipment. This is a major concern for picking the bunch separations. \cite{lyndon}
-        \begin{itemize}\scriptsize
-            \item All warm chambers, including in detector, are coated with TiZrV, a getter material. {\color{blue} \url{https://www.sciencedirect.com/science/article/pii/S0042207X00002463} shows more info, in particular, the getter helps pump vacuum and absorb electron clouds.} \cite{lyndon}
-        \end{itemize}
-    \end{enumerate}
+    \item \textbf{Beam-beam interaction:} the force from electromagnetic field from one beam on another. Beam-beam interaction can be reduced by increasing the crossing angle $\theta_c$, but this reduces the luminosity as shown in Equation \ref{eqn:lumiReduce}.
+    \item \textbf{Intra-beam interaction:} coulomb scattering during betatron and synchrotron oscillations. While protons migrate within a bunch, they can knock other protons into different betatron orbits. 
+    \item \textbf{Coherent instabilities:} the beam interacts with its environment, generating EM fields, that in turn act on the beam. The induced fields are mitigated by smoothing the beampipe as much as possible, to the extent where interconnects are covered with smooth segments. The impact of coherent instabilities on the beam is decreased by increasing chromaticity.
+    \item \textbf{Electron clouds:} the accumulation of electrons in beam pipe. The major sources are ionization of gas in pipe, and excitation from synchrotron radiation knocking electrons off beam pipe. The issue is that the beam can collide with these free electrons, and accelerate them. The energetic electrons then collide with the beampipe and produce an electron shower, leading to exponential growth of the cloud. This is especially problem if the mean drift time for electrons is resonant with beam bunch spacing. Electron clouds are a large source of heat for the cryogenic equipment. Electron clouds are combatted by improving the vacuum, and picking bunch structures that do not resonate with with the clouds. As a further measure, warm chambers (including in the detectors) are coated with TiZrV, a ``getter'' material that passively pump vacuum and absorbs electron clouds.
 \end{itemize}
 
 
-\section{Beam Dump}
-\begin{itemize}
-    \item While producing and maintaining the beam is important, safely despising the beam is also important.
-    \item The beam dump is crucial for two reasons \cite{lhcDesignV1}
-    \begin{enumerate}\scriptsize
-        \item Dispose the beam at a planned dump
-        \item Safely remove beam from LHC if a problem is detected
-    \end{enumerate}
-    \item There are three main steps \cite{lhcDesignV1}
-    \begin{itemize}\scriptsize
-        \item Extract the beam from both rings
-        \item Dilute the beam's spacial density
-        \item Absorb the beam in a material and dissipate the beam's energy and 
-    \end{itemize}
-    \item Following the path of the beam through the system
-    \begin{itemize}\scriptsize
-        \item First step is extraction kicker system (MKD), that are powered by capacitors. There are 15 of these (only 14 needed). The field rises in under 3.0 microseconds (designed for 2.85 microseconds). The magnets stay on for 90 microseconds (one revolution). Field strength 0.34 T. The magnet is not superconducting, wires are OFE copper (oxygen free). \cite{lhcDesignV1}
-        \item Diluter kickers (MKB) spread out beam. Beams trace ``e'' shape on beamdump, to spread out energy. Build from 4 horizontal and 6 vertical magnets. The magnets are sinusoidally powered. Similar construction to MKD. There is one ``e`` traced for one revolution. \cite{lhcDesignV1}
-        {\color{red} Plot taken from \url{https://www.semanticscholar.org/paper/A-Large-Diameter-Entrance-Window-for-the-LHC-Beam-Presland-Ramos/9344cf28c4853af4c4db01bce19d264d99ed2198}}\\
-        \includegraphics[width=0.5\textwidth]{figures/notes-experiment/beamdump.png}
-        \item Extraction Septum magnets (MSD). Wrapped with OFHC copper (oxygen free high thermal conductivity). These magnets have a septum (gap) for the extracted beam, and a low-field hole drilled through the yoke for the circulating beam. These are preceded by a diluter block to protect them from asynchronous fire of MKD kickers. Similar treatment for quadraples. \cite{lhcDesignV1}
-        \item Finally, the Beam Dump Absorber Block (TDE). Consists of carbon due to high melting temp, and thermal shock resistance. In particular, Polycrystalline Grapphite cylinders (PG) and Flexible Graphite (FG). Layout: 0.7m PG, 3.5m FG, 3.5m PG. Total 7.7m long. Cooled by water. Further sourrounded by sheilding blocks of dipole yokes filled with concrete. \cite{lhcDesignV1}
-    \end{itemize}
-    \item Notes about the magnets
-    \begin{itemize}\scriptsize
-        \item MKB and MKD field strength determined by beam energy. \cite{lhcDesignV1}
-        \item MSD and MSI coils are OFHC copper, with circular cooling hole. Coated with resin epoxy. \cite{bidon}
-        \item For beamdump: Horizontally deflecting kicker magnets (MKD) and vertically deflecting steel septum magnets (MSD) \cite{bidon}
-        \item For injection: Vertically deflecting kicker magnets (MKD) and horizontally deflecting steel septum magnets (MSD) \cite{bidon}
-    \end{itemize}
-    \item Even in case of asynchronous dump (not during abort gap), no damage is expected except for quench of some magnets. There are absorbers in front of some magnets. \cite{lhcDesignV1}
-\end{itemize}
+\subsection{Beam Abort}
 
-\section{History of the LHC}
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.5\textwidth]{figures/experiment/beamdump.png}
+\caption{\url{https://www.semanticscholar.org/paper/A-Large-Diameter-Entrance-Window-for-the-LHC-Beam-Presland-Ramos/9344cf28c4853af4c4db01bce19d264d99ed2198}}
+\label{fig:beamdump}
+\end{figure}
+
+When the beam has degraded to the point where it is no longer useful, it must be disposed of safely.
+Over the course of several hours, the beam will loose intensity to the point where it is more efficient to dump the beam and replace it.
+Occasionally an error in one of the LHC subsystems will be detected, and the beam is dumped as a precaution.
+In both cases, the beam dump system is used to remove the beam from the machine while minimizing damage to its components.
+
+There are three steps in disposing the beam. 
+The first is to extract the beam from it's nominal orbit.
+The second is to dilute the beam's density.
+Finally the beam is absorbed in a material, where its energy is converted to radiation and heat. \cite{lhcDesignV1}
+
+Focusing on one beam, it begins in its nominal orbit, when an abort is triggered. 
+If the beam is in a safe state, the abort system will wait until the abort gap arrives to ramp up the extraction kicker magnets (MKD).
+If the beam needs to be dumped immediately, the MKDs can ramp up outside the abort gap with minimal damage to the system.
+The 15 copper wound magnets are powered by a bank of capacitors that can quickly energize the magnets in under 3.0~$\mu s$ to produce a field of 0.34~T. 
+Once energized, the MKDs deflect the beam horizontally out of the ring.
+The magnets remain on for 90~$\mu s$ to allow the full beam to exit the ring.
+
+Next, the diluter kicker magnets (MKB) sweep out the beam in an ``e'' pattern as shown in Figure \ref{fig:beamdump}.
+This spreads out the area where the beam will deposit its energy.
+The diluter is built from four horizontal, and six vertical magnets that are powered by a sinusoidal current to produce the shape.
+Like the MKDs, the MKBs are non-superconducting low-oxygen coper wound magnets.
+
+The extraction septum magnets (MSD) have a septum (gap) for the extracted beam.
+To allow the passage of the circulating beam, a low-field hole is drilled through the yoke.
+The MSDs are responsible for deflecting the beam vertically.
+
+Finally, beam comes to the Beam Dump Absorber Block (TDE).
+This consists of carbon cylinders due to its high melting temperature and thermal shock resistance.
+In particular, alternating layers of solid polycrystalline graphite cylinders and flexible graphite are used for a balance of solidity and flexibility.
+The total length of carbon material is 7.7~m long.
+To help reduce the thermal stress on the carbon, the TDE is cooled by water pipes.
+Finally, the assembly is surrounded shielding made from old dipole yokes filled with concrete.
+
+The MKD and MSD magnets used in the beam abort share a design with the magnets used to steer the beam into the rings during injection.
+At the beam dump, the MKDs deflect horizontally while the MSDs deflect vertically.
+At the injection points, it is reversed and the MKDs steer the beam horizontally while the MSDs steer it vertically.
+
+\newpage
+
+\subsection{History of the LHC}
 \begin{itemize}
     \item LHC is an interesting story
     \item Run 1 lead to the physics discoveries that motivated VH
     \item Run 1 also lead to the development of the machine that enabled Run 2
 \end{itemize}
-\subsection{Run 1}
+\subsubsection{Run 1}
 This is important because of the developments and understandings that lead to Run 2. But also for discovery of Higgs
 \begin{itemize}
     \item Between 2010 and 2013, energies of 3.5-4 TeV \cite{lhcRun1}
@@ -429,7 +378,7 @@ This is important because of the developments and understandings that lead to Ru
     \item Cryo system in run 1 was most faulty, followed by injector systems. 25-30\% of fault time. \cite{lhcRun1}
     \item Best week in run 1 was june 2012, where 1.35 fb$^{-1}$ delivered. \cite{lhcRun1}
     \item Run 1 luminosity (page 7)\\ \cite{lhcRun1}
-    \includegraphics[width=0.8\textwidth]{figures/notes-experiment/run1Lumi.png}
+    \includegraphics[width=0.8\textwidth]{figures/experiment/run1Lumi.png}
     \item \textbf{Beam Cycle} (probably, should use run2 resource) \cite{lhcRun1}
     \begin{itemize}
         \item Injection. Beam is ``scraped'' by transfer line collimator's. In run 1, about 2-4\% of the beam is lost. This done in SPS. The collimator jaws heat and outgas, so these are opened as soon as injection is finished. Rings are filled consecutively (as opposed to alternating bunches) because ALICE requested it (it reduces their background??). \cite{lhcRun1}
@@ -441,7 +390,7 @@ This is important because of the developments and understandings that lead to Ru
     \end{itemize}
 \end{itemize}
 
-\subsection{Run 2}
+\subsubsection{Run 2}
 \begin{itemize}
     \item Between 2015 and 2018, beam energies of 6.5 TeV and provided lumi for 160 fb$^{-1}$. \cite{lhcRun2}
     \item Peak lumi is twice design, due to small emmitance and $\beta*$ of 30 cm. \cite{lhcRun2}
@@ -501,7 +450,7 @@ This is important because of the developments and understandings that lead to Ru
     \item Run 2 history: \cite{lhcRun2}
     \item Remember the marmot! \cite{lhcRun2}
     \begin{center}
-    \includegraphics[width=1\textwidth]{figures/notes-experiment/run2History.png}
+    \includegraphics[width=1\textwidth]{figures/experiment/run2History.png}
     \end{center}
     \item Key points from table \cite{lhcRun2}
     \begin{itemize}
@@ -553,7 +502,7 @@ This is important because of the developments and understandings that lead to Ru
         \item \textbf{Luminosity leveling} leveled to target 1.5e34$cm^{-2}s^{-1}$ when possible. Anti-leveling by adjusting crossing angle started in 2017 in steps of 10microradians. Leveling of beta* from 30cm to 27cm to 25cm added in 2018. \cite{lhcRun2}
         \item \textbf{Beam oscillations} Observed dipolar disturbances in beams during stable beams. Earthquakes were measured from as far away as New Zealand. Tidal deformation also observed. Distortions due to mechanical resonances as well. HL-LHC civil engineering also detected due to ground compactors. \\ \cite{lhcRun2}
         \begin{center}
-        \includegraphics[width=0.6\textwidth]{figures/notes-experiment/orbit.png}
+        \includegraphics[width=0.6\textwidth]{figures/experiment/orbit.png}
         \end{center}
     \end{enumerate}
     \item UFO rates between 1-20 per hour, but only 4 dumps caused by UFO's in 2018. Sometimes due to quenches. \cite{lhcRun2}
