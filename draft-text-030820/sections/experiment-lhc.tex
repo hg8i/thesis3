@@ -213,6 +213,7 @@ The frequency of betatron oscillations is higher than that of the orbit.
 The number of vertical or horizontal betatron oscillations made during one orbit is called the vertical or horizontal \emph{tune} respectively.
 The horizontal and vertical tunes must be carefully picked using a tune diagram, such as shown in Figure \ref{fig:tune}.
 Resonances are illustrated as lines, and the tunes must be selected together to avoid disruptive resonances.
+In practice, tunes are continually over the course of beam injection, ramping up beam energy, and eventual collisions.
 
 Related to the longitudinal emittance are \emph{synchrotron oscillations}: longitudinal oscillation along the direction of the beam.
 This takes place at a much lower frequency than that of betatron oscillations: at the LHC it is less than one oscillation per orbit.
@@ -275,9 +276,9 @@ The challenge during the operation of the LHC is to keep the beam in a stable or
 A number of issues can effect the stability of the beam during this time. \cite{lyndon}
 \begin{itemize}
     \item \textbf{Beam-beam interaction:} the force from electromagnetic field from one beam on another. Beam-beam interaction can be reduced by increasing the crossing angle $\theta_c$, but this reduces the luminosity as shown in Equation \ref{eqn:lumiReduce}.
-    \item \textbf{Intra-beam interaction:} coulomb scattering during betatron and synchrotron oscillations. While protons migrate within a bunch, they can knock other protons into different betatron orbits. 
+    \item \textbf{Intra-beam interaction:} coulomb scattering during betatron and synchrotron oscillations. While protons migrate within a bunch, they can knock other protons into different betatron orbits. At the LHC intra-beam leads to a growth in horizontal emittance of 0.3-0.5~$\mu$m/hour.
     \item \textbf{Coherent instabilities:} the beam interacts with its environment, generating EM fields, that in turn act on the beam. The induced fields are mitigated by smoothing the beampipe as much as possible, to the extent where interconnects are covered with smooth segments. The impact of coherent instabilities on the beam is decreased by increasing chromaticity.
-    \item \textbf{Electron clouds:} the accumulation of electrons in beam pipe. The major sources are ionization of gas in pipe, and excitation from synchrotron radiation knocking electrons off beam pipe. The issue is that the beam can collide with these free electrons, and accelerate them. The energetic electrons then collide with the beampipe and produce an electron shower, leading to exponential growth of the cloud. This is especially problem if the mean drift time for electrons is resonant with beam bunch spacing. Electron clouds are a large source of heat for the cryogenic equipment. Electron clouds are combatted by improving the vacuum, and picking bunch structures that do not resonate with with the clouds. As a further measure, warm chambers (including in the detectors) are coated with TiZrV, a ``getter'' material that passively pump vacuum and absorbs electron clouds.
+    \item \textbf{Electron clouds:} (e-clouds) the accumulation of electrons in beam pipe. The major sources are ionization of gas in pipe, and excitation from synchrotron radiation knocking electrons off beam pipe. The issue is that the beam can collide with these free electrons, and accelerate them. The energetic electrons then collide with the beampipe and produce an electron shower, leading to exponential growth of the cloud. This is especially problem if the mean drift time for electrons is resonant with beam bunch spacing. E-clouds are a large source of heat for the cryogenic equipment. E-clouds are combatted by improving the vacuum, and picking bunch structures that do not resonate with with the clouds. As a further measure, warm chambers (including in the detectors) are coated with TiZrV, a ``getter'' material that passively pump vacuum and absorbs electron clouds.
 \end{itemize}
 
 
@@ -287,7 +288,7 @@ A number of issues can effect the stability of the beam during this time. \cite{
 \captionsetup[subfigure]{position=b}
 \centering
 \includegraphics[width=0.5\textwidth]{figures/experiment/beamdump.png}
-\caption{\url{https://www.semanticscholar.org/paper/A-Large-Diameter-Entrance-Window-for-the-LHC-Beam-Presland-Ramos/9344cf28c4853af4c4db01bce19d264d99ed2198}}
+\caption{The trace of the beam across the beam dump TDE. Figure from A Large Diameter Entrance Window for the LHC Beam Dump Line \cite{beamdump}.}
 \label{fig:beamdump}
 \end{figure}
 
@@ -321,198 +322,224 @@ Finally, beam comes to the Beam Dump Absorber Block (TDE).
 This consists of carbon cylinders due to its high melting temperature and thermal shock resistance.
 In particular, alternating layers of solid polycrystalline graphite cylinders and flexible graphite are used for a balance of solidity and flexibility.
 The total length of carbon material is 7.7~m long.
-To help reduce the thermal stress on the carbon, the TDE is cooled by water pipes.
+The TDE is kept at atmospheric pressure. This raises the question: how is the TDE isolated from the vacuum of the beamline? A layer of low-Z carbon composite is used to separate the two, while a thin layer of vacuum insulation prevents small leaks. \cite{beamdump}
+To help reduce the thermal stress on the carbon, the TDE jacket is cooled by water pipes.
 Finally, the assembly is surrounded shielding made from old dipole yokes filled with concrete.
 
 The MKD and MSD magnets used in the beam abort share a design with the magnets used to steer the beam into the rings during injection.
 At the beam dump, the MKDs deflect horizontally while the MSDs deflect vertically.
 At the injection points, it is reversed and the MKDs steer the beam horizontally while the MSDs steer it vertically.
 
-\newpage
 
 \subsection{History of the LHC}
-\begin{itemize}
-    \item LHC is an interesting story
-    \item Run 1 lead to the physics discoveries that motivated VH
-    \item Run 1 also lead to the development of the machine that enabled Run 2
-\end{itemize}
+The history of physics runs of LHC is the description of the laboratory conditions under which ATLAS collected data.
+It is also an interesting narrative of a tightly coupled process of developing and testing collider engineering principles.
+The dramatic improvement of the machine's performance over the years of its operation is a testament to the efficacy of this strategy.
+
+This section will first describe the LHC's first round of operation, Run 1.
+During Run 1, the physics discovery was made that motivates the search for \vhmm reported in Chapter \ref{sec:hmumu}.
+Crucial machine developments were also made in Run 1 that lead to energy and luminosity increases during Run 2 that enhanced the precision of the non-resonant search reported in Chapter \ref{sec:ci}.
+This section proceeds to describe the second round of operation, Run 2.
+During Run 2, the machine provided collisions that are the basis of the data used for this thesis.
+
+\newpage
+
 \subsubsection{Run 1}
-This is important because of the developments and understandings that lead to Run 2. But also for discovery of Higgs
-\begin{itemize}
-    \item Between 2010 and 2013, energies of 3.5-4 TeV \cite{lhcRun1}
-    \item Bunch structure: bunches are 150ns (2010), 75ns (2011) and 50ns (2011/2012). \cite{lhcRun1}
-    \item Beams consist of bunches, grouped together in trains. \cite{lhcRun1}
-    \item \textbf{2010:} \cite{lhcRun1}
-    \begin{itemize}
-        \item Energy 3.5 TeV \cite{lhcRun1}
-        \item Commissioning run at 1.2 TeV. Physics run at 3.5 TeV. \cite{lhcRun1}
-        \item First injection February 27. First collisions march 30 2010, with two bunches. \cite{lhcRun1}
-        \item Over the course of months, the number of bunches, and number of particles per bunch were increased. Reached 368 bunches October 10. \cite{lhcRun1}
-        \item Beam losses, caused by UFO (unidentified falling objects).  Lead to about 60 beams being dumped. \cite{lhcRun1}
-        \item Unexpected oscillations in beam tune continued from 2009 to 2010. Unclear of source. Called the hump. \cite{lhcRun1}
-        \item Reached bunch spacing of 50 ns towards end \cite{lhcRun1}
-    \end{itemize}
-    \item \textbf{2011:} \cite{lhcRun1}
-    \begin{itemize}
-        \item Energy 3.5 TeV \cite{lhcRun1}
-        \item First beams feb 19. 3 weeks recommissioning. \cite{lhcRun1}
-        \item First physics beams march 13 with 32 bunches. Ramped up to 200 bunches, 75ns bunch spacing. \cite{lhcRun1}
-        \item April 21 2011 luminosity of 4.6e33 $cm^{-2}s^{-1}$, which broke hadron lumi record from Tevatron. \cite{lhcRun1}
-        \item Increased bunch intensities to 1.34$\times10^{11}$ ppb. \cite{lhcRun1}
-        \item The hump disappears. \cite{lhcRun1}
-        \item Mean stable beam time of 6.1 hrs. 33\% efficiency for stable beams. \cite{lhcRun1}
-        \item 5.6 fb$^{-1}$ provided. \cite{lhcRun1}
-    \end{itemize}
-    \item \textbf{2012,2013:} \cite{lhcRun1}
-    \begin{itemize}
-        \item Energy increased to 4 TeV to increase Higgs production cross section. \cite{lhcRun1}
-        \item First stable 4 TeV beams, 3 bunches, in April 5 2012 \cite{lhcRun1}
-        \item First physics beam May 4. During this time, Higgs boson was discovered. \cite{lhcRun1}
-        \item Nominal scheme was 1374 bunches, 50ns spacing. Due to gaps, this means 1368 colliding bunches in ATLAS. \cite{lhcRun1}
-        \item There was a plan to have private bunches colliding only in LHCb. {\color{blue}Why?} \cite{lhcRun1}
-        \item Bunch intensity peaked at 1.7e11 ppb. \cite{lhcRun1}
-        \item 201 days with physics collisions, 36.5\% efficient stable beams. \cite{lhcRun1}
-        \item 23.3 fb$^{-1}$ provided. \cite{lhcRun1}
-        \item Typical emittance is 2-2.5 microns \cite{lhcRun1}
-    \end{itemize}
-    \item Cryo system in run 1 was most faulty, followed by injector systems. 25-30\% of fault time. \cite{lhcRun1}
-    \item Best week in run 1 was june 2012, where 1.35 fb$^{-1}$ delivered. \cite{lhcRun1}
-    \item Run 1 luminosity (page 7)\\ \cite{lhcRun1}
-    \includegraphics[width=0.8\textwidth]{figures/experiment/run1Lumi.png}
-    \item \textbf{Beam Cycle} (probably, should use run2 resource) \cite{lhcRun1}
-    \begin{itemize}
-        \item Injection. Beam is ``scraped'' by transfer line collimator's. In run 1, about 2-4\% of the beam is lost. This done in SPS. The collimator jaws heat and outgas, so these are opened as soon as injection is finished. Rings are filled consecutively (as opposed to alternating bunches) because ALICE requested it (it reduces their background??). \cite{lhcRun1}
-        \item Ramp. The ramping speed is limited by dipole current ramp rate of 10 A/s, which corresponds to 6 GeV/s. A ``flat top'' of 300 s, during which the tune decay is corrected for. \cite{lhcRun1}
-        \item Separation/crossing angles. {\color{red} Warning, confused} Crossing angle is 170 micro radians. Separation is on the order of mm. Horizontal separation in P1,P2. Vertical in P5,P8. Hence in IR1 beam 1 moves downward/inside. \cite{lhcRun1}
-        \item Collisions. When start, tails of bunches are expelled, leading to a brief drop in expected beam lifetime. The expected lifetime of the beam is optimized by reducing the chromaticity {\color{blue} \url{https://cds.cern.ch/record/302491/files/p77.pdf}(the change in linear parameters of transverse motion with beam energy).} HOW do they reduce chromaticity? \cite{lhcRun1}
-        \item Tune. The beam is large during the ramp, and reduced during squeeze. \cite{lhcRun1}
-        \item Collimators. Used for squeeze, used for betatron cleaning. Used to clean ``physics debris''. \cite{lhcRun1}
-    \end{itemize}
-\end{itemize}
+
+The first run of the LHC took place between 2010 and 2013.
+Collisions took place with beam energies between 3.5 and 4~TeV.\cite{lhcRun1}
+Run 1 provided the collision data in which the Higgs boson was discovered \ref{atlashiggs}.
+It also provided the basis for the steady improvement of the LHC.
+For example, as a result of the experience gained from operating the machine, it was possible to gradually decrease the bunch spacing from 150~ns (2010), to 75~ns (2011) finally to 50~ns (2011/2012). \cite{lhcRun1}
+
+The run began in 2010 with counter-rotating beams of energy 1.2~TeV.
+This energy, which is below the design energy of 7~TeV per beam, was selected as a result of earlier damage during operation in 2008.
+After verifying the stability of the machine, the energy was gradually increased to 3.5~TeV per beam.
+The first physics ready collisions began on February 27, with just two bunches per beam and containing relatively few protons each.
+Over the course of several months, the number of bunches and the number of particles per bunch were increased.
+The operation was not without difficulty: throughout the run, unidentified falling objects (UFOs) within the beam-pipe disrupted the beam and resulted in 60 beam dumps.
+The UFO events are speculated to be caused by water vapor solidifying on the top of the beam-pipe, and later fall through the beam.
+Furthermore, unexplained and mysterious oscillations in the beam tune (called the ``hump'') plagued operators. \cite{lhcRun1}
+The year ended with significant gains in the beam energy, bunch spacing, and bunch density.
+
+The second year of the run began on February 19 2011 with three weeks of recommissioning.
+The first physics beams began on March 13 at 3.5 TeV and 32 bunches per beam.
+This was gradually increased to 200 bunches, with 75~ns spacing.
+The bunch density was also increased to 1.34$\times10^{11}$ ppb.
+On April 21, the LHC reached an instantaneous luminosity of $4.6\times10^{33}~\cms$, which broke the previous record from the Tevatron.
+It is at some time during 2011 that the hump disappeared from the tune plots, leaving the mystery unresolved.
+Overall, the second year was the first to provide productive physics data. The mean stable beam time was 6.1 hours, which corresponds to 33\% efficiency.
+In total, 5.6~\fb of data was provided. \cite{lhcRun1}
+
+In years 2012 and 2013, the investment in carefully developing the LHC paid off with a wealth of physics data.
+The beam energy was increased to 4~TeV in order to increase the Higgs production cross section.
+The first stable beams at 4~TeV, holding only three bunches, were circulated in April 5 2012.
+After a month of commissioning, the first physics beams were provided on May 4.
+The nominal beam design was 1374 bunches with 50~ns bunch spacing\footnote{Due to the arrangement of the bunches, only 1368 bunches collided inside ATLAS. At the time, there was also a plan to have private bunches colliding only in LHCb.}.
+The bunch intensity was also increased to 1.7$\times10^{11}$ ppb, and the run stable beam efficiency was also improved to 36.5\%.
+% Emittance 2-2.5 microns
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/experiment/lhc/run1Lumi.eps}
+\caption{ (from: https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResults)}
+\label{fig:run1Lumi}
+\end{figure}
+
+The performance of the LHC during Run 1 enjoyed dramatic improvement over time.
+This is evident in Figure \ref{fig:run1Lumi} which shows the integrated luminosity for various years, as recorded by ATLAS.
+The rate at which the machine delivered data grew steadily, as a result of the iterative study and tuning that took place during Run 1.
+The machine operation was far from perfect, however,and the cryogenic system was most problematic causing 25-30\% of all downtime, followed by the injector systems.
+Resolving these issues was a major goal for Run 2. \cite{lhcRun1}
+
+    % \item \textbf{Beam Cycle} (probably, should use run2 resource) \cite{lhcRun1}
+    % \begin{itemize}
+    %     \item Injection. Beam is ``scraped'' by transfer line collimator's. In run 1, about 2-4\% of the beam is lost. This done in SPS. The collimator jaws heat and outgas, so these are opened as soon as injection is finished. Rings are filled consecutively (as opposed to alternating bunches) because ALICE requested it (it reduces their background??). \cite{lhcRun1}
+    %     \item Ramp. The ramping speed is limited by dipole current ramp rate of 10 A/s, which corresponds to 6 GeV/s. A ``flat top'' of 300 s, during which the tune decay is corrected for. \cite{lhcRun1}
+    %     \item Separation/crossing angles. {\color{red} Warning, confused} Crossing angle is 170 micro radians. Separation is on the order of mm. Horizontal separation in P1,P2. Vertical in P5,P8. Hence in IR1 beam 1 moves downward/inside. \cite{lhcRun1}
+    %     \item Collisions. When start, tails of bunches are expelled, leading to a brief drop in expected beam lifetime. The expected lifetime of the beam is optimized by reducing the chromaticity {\color{blue} \url{https://cds.cern.ch/record/302491/files/p77.pdf}(the change in linear parameters of transverse motion with beam energy).} HOW do they reduce chromaticity? \cite{lhcRun1}
+    %     \item Tune. The beam is large during the ramp, and reduced during squeeze. \cite{lhcRun1}
+    %     \item Collimators. Used for squeeze, used for betatron cleaning. Used to clean ``physics debris''. \cite{lhcRun1}
+    % \end{itemize}
+% \end{itemize}
 
 \subsubsection{Run 2}
-\begin{itemize}
-    \item Between 2015 and 2018, beam energies of 6.5 TeV and provided lumi for 160 fb$^{-1}$. \cite{lhcRun2}
-    \item Peak lumi is twice design, due to small emmitance and $\beta*$ of 30 cm. \cite{lhcRun2}
-    \item Combined squeeze and ramp stages \cite{lhcRun2}
-    \item 25 ns bunch spacing \cite{lhcRun2}
-    \item \textbf{2015} \cite{lhcRun2}
-    \begin{itemize}
-        \item First year of 6.5 TeV energy, with 25 ns bunch spacing. \cite{lhcRun2}
-        \item First beams April 5 2015. First stable beams June 3. \cite{lhcRun2}
-        \item Relaxed $\beta*=80cm$, but due to shift in the ``optical waist'' position of the beam profile, the effective $\beta*=86cm$. (This leads to a slightly lower luminosity) \cite{lhcRun2}
-        \item Reached 2244 bunches by end of year. Train length is 144 bunches. \cite{lhcRun2}
-        \item Intensity ramp-up limited by heat load due to e-clouds. The heating effects the cryosystems. This despite efforts to scrub. Scrubbing done with low intensity bunches. \cite{lhcRun2}
-        \item Beam 2 (15R8) had a UFO storm. The beamscrean was warmed to 80 K. An obstacle was left at bottom of the chamber called ULO (Unidentified lying object). The beam was steered around ULO.ULO remained an optical for full Run 2. ULO turned out to be plastic wrapping from installation. \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{2016} \cite{lhcRun2}
-    \begin{itemize}
-        \item First beams March 25. Target $\beta*=40cm$. 25ns bunch spacing. Again, limited to 144 bunches per train. Finally reached 2220 bunches. \cite{lhcRun2}
-        \item June 26, LHC reached design lumi of 1.0e34 $cm^{-2}s^{-1}$. \cite{lhcRun2}
-        \item Introduced BCMS (Batch Compression Merging and Splitting), lower transverse beam size with respect to the nominal production scheme. 20\% increase in Lumi1e 1.4e34 $cm^{-2}s^{-1}$.  \cite{lhcRun2}
-        \item CMS received 5-10\% higher lumi, caused by oblong beams with low vertical emittance. The crossing plane for ATLAS is vertical, while for CMS it is horizontal. \cite{lhcRun2}
-        \item In August 10, short circuit in one of dipole magnets in sector 12. Decision to replace the magnet, which lead to extended shutdown. \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Batch Compression Merging and Splitting}
-    \begin{itemize}\scriptsize
-        \item The Linac 2 beam is continuous \cite{freyermuth}
-        \item The PSB has 4 rings, each of which can be overfilled by injecting the Linac 2 beam in different positions. This overfilling increases emittance. \cite{freyermuth}
-        \item The ``nominal'' scheme to fill the PS from the PSB was to inject 6 bunches. Each bunch is longitudinally split into 3 bunches, then by 2, and again by 2. Total 72 bunches. \cite{freyermuth}
-        \item The BCMS scheme does two things. First, 8 (instead of 6) bunches are injected to PS and spread out over two PSB cycles. This reduces the emittance in the PSB, since the required intensity is lower, and injection is spread out over fewer turns. The 8 bunches are merged to 4, then split 3x2x2. Total 48 bunches, therefore more cycles needed to fill LHC, but get higher lumi. \cite{freyermuth}
-    \end{itemize}
-    \item \textbf{Luminosity Anti-leveling with crossing angle}
-    \begin{itemize}\scriptsize
-        \item At IP beams cross at an angle. This leads to 30-40\% loss in lumi. \cite{gorzawski}
-        \item The angle is set based on the intensity of the beams. Prior to 2017, the beam angle was set based on the initial intensity of the beams. Peak beam intensity \cite{gorzawski}
-        \item Some lumi can be recovered by reducing the crossing angle as the beams decay.  \cite{gorzawski}
-        \item A study was conducted during machine development, using standard physics setup with few bunches. \cite{gorzawski}
-        \item Leveling is slow, over the course of several minutes. The adjustments for the study were in steps of 20-85 microradians. \cite{gorzawski}
-        \item Corresponding TCT (Collimators jaws) move. \cite{gorzawski}
-        \item Study was successful, and recommended implementation is 2017  \cite{gorzawski}
-    \end{itemize}
-    \item \textbf{2017} \cite{lhcRun2}
-    \begin{itemize}
-        \item Introduced crossing angle anti-leveling. This procedure is applied in steps of 10 microradians. Gain of 3-4\% integrated lumi per fill. {\color{blue} More info from \cite{gorzawski}} \cite{lhcRun2}
-        \item 16L2 problem. Seen during commissioning were sudden losses, and large background radiation. This due to condensed air that had leaked into the magnet replacement. Tried heating the beam screen, but failed and got worse. Big drop in lumi around August. Tried to reduce the e-cloud via 8b4e cleaning sequence. This reduced the cloud, and a high-lumi version was used for physics starting in august. \cite{lhcRun2}
-        \item 8b4e is 8 beam bunches, four empty buckets. \cite{lhcRun2}
-        \item Higher squeeze partway through run to beta*=30cm.  \cite{lhcRun2}
-        \item Lumi record set at 2.06e34 $cm^{-2}s^{-1}$. This is too high for ATLAS, so was leveled to 1.5e34 $cm^{-2}s^{-1}$ for physics. \cite{lhcRun2}
-        \item 50 fb$^{-1}$ delivered \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{2018} \cite{lhcRun2}
-    \begin{itemize}
-        \item Unable to remove all water trapped in beam pipe (16L2 problem). Heating the pipe exacerbated the situation.  \cite{lhcRun2}
-        \item First beam April 30 {\color{red} probably March 30, this is a mistake?}, with target beta* at 30cm, with further squeeze to 25cm.  \cite{lhcRun2}
-        \item First collisions on April 17, very quick. The intensity rampup was ahead of schedule. \cite{lhcRun2}
-        \item The 16L2 problem resulted in beam dumps, and was rectified by running 900 bunch beams for several hours after a dump. \cite{lhcRun2}
-        \item 66 fb$^{-1}$ delivered. \cite{lhcRun2}
-    \end{itemize}
-    \item Run 2 history: \cite{lhcRun2}
-    \item Remember the marmot! \cite{lhcRun2}
-    \begin{center}
-    \includegraphics[width=1\textwidth]{figures/experiment/run2History.png}
-    \end{center}
-    \item Key points from table \cite{lhcRun2}
-    \begin{itemize}
-        \item Lumi, pileup, bunches \cite{lhcRun2}
-        \item The leveling seen in Half crossing angle \cite{lhcRun2}
-        \item Stored energy \cite{lhcRun2}
-        \item Commissioning days \cite{lhcRun2}
-        \item Physics days \cite{lhcRun2}
-        \item Stable beam efficiency \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Tunes} \cite{lhcRun2}
-    \begin{itemize}
-        \item The tune is adjusted over the course of injection, ramp, and collisions. \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Chromaticity} \cite{lhcRun2}
-    \begin{itemize}
-        \item Controlled to $\pm$2 units during filling. Typical values Q are +20 during filling, +15 during operation. \cite{lhcRun2}
-        \item See \cite{fuchsberger} for notes on chromaticity definition \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Beam optics} \cite{lhcRun2}
-    \begin{itemize}
-        \item Local optics corrections were often reusable from year to year, which added reliability \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Emittance} \cite{lhcRun2}
-    \begin{itemize}
-        \item Measured by BSRT, with 10\% accuracy. \cite{lhcRun2}
-        \item Stable in 2016-18 at 1.4-1.7 micrometers, which increased to 1.9um after the ramp. \cite{lhcRun2}
-        \item Horizontal emittance growth due to intra-beam scattering is estimated at 0.3-0.5um/hour. Measured at 0.3-0.5 + 0.6 um/hour, additional due to e-cloud \cite{lhcRun2}
-        \item Vertical emittance growth is not expected, but appears possibly due to e-cloud, is 0.3-0.6um/hour. \cite{lhcRun2}
-        \item Very small emittance growth due to synchrotron radiation. \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{RF and bunch length} \cite{lhcRun2}
-    \begin{itemize}
-        \item Target bunch length 1.1ns, which decreases due to synchrotron radiation over the course of the run. It is expanded periodically. \cite{lhcRun2}
-        \item Nominal RF frequency is 400,789,711 \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Electron clouds} \cite{lhcRun2}
-    \begin{itemize}
-        \item Work was done to mitigate, but impossible to remove them \cite{lhcRun2}
-        \item Causes heat load in magnets. The heat load depends on the bunch pattern, indicating the source is from e-cloud. \cite{lhcRun2}
-        \item High chromaticity helped stabilize beam in presence of e-clouds. \cite{lhcRun2}
-    \end{itemize}
-    \item \textbf{Machine Cycle} \cite{lhcRun2}
-    \begin{enumerate}
-        \item \textbf{Threading} The beam was injected with low bunch intensity, stopped on collimators at each IR. The trajectory is adjusted at each step. Then several orbits are averaged to get beam position, and steering takes place. With later runs, fewer corrections needed, since beam position does not change much more than 1-2mm. \cite{lhcRun2}
-        \item \textbf{Injection} SPS bunchspacing is 250ns, and reduced to 200ns over Run 2 to get more bunches in. Steering was needed, at some times for fill. Steering done only for 12-bunch trains. Most fills only have one 12-bunch train to use for steering. \cite{lhcRun2}
-        \item \textbf{Ramp and squeeze} Standard ramp time is 1210s. During ramp, squeeze is normally done after reaching 2 TeV. The ramping pattern is parabolic-exponential-linear-parabolic. Squeeze continues after ramp. Adjusting the beam optics is done in steps to avoid problem tunes. \cite{lhcRun2}
-        \item \textbf{Collisions} Beams are steered to collide at all interaction points. \cite{lhcRun2}
-        \item \textbf{Luminosity leveling} leveled to target 1.5e34$cm^{-2}s^{-1}$ when possible. Anti-leveling by adjusting crossing angle started in 2017 in steps of 10microradians. Leveling of beta* from 30cm to 27cm to 25cm added in 2018. \cite{lhcRun2}
-        \item \textbf{Beam oscillations} Observed dipolar disturbances in beams during stable beams. Earthquakes were measured from as far away as New Zealand. Tidal deformation also observed. Distortions due to mechanical resonances as well. HL-LHC civil engineering also detected due to ground compactors. \\ \cite{lhcRun2}
-        \begin{center}
-        \includegraphics[width=0.6\textwidth]{figures/experiment/orbit.png}
-        \end{center}
-    \end{enumerate}
-    \item UFO rates between 1-20 per hour, but only 4 dumps caused by UFO's in 2018. Sometimes due to quenches. \cite{lhcRun2}
-    \item 16L2 problem. Probably caused by frozen water introduced after magnet replacement. Heating the beampipe lead to worse problem. Bunch structure changed to 8b4e bunch structure. Before 2018, 8L of nitrogen were flushed in. This improved the situation and BCMS beams could be used. Cleaning fills were used after dumps. \cite{lhcRun2}
-    \item Heavy ion history \cite{lhcRun2}
-    \begin{itemize}
-        \item 2015 Pb-Pb \cite{lhcRun2}
-        \item 2016 Pb-p \cite{lhcRun2}
-        \item 2017 Xe \cite{lhcRun2}
-        \item 2018 Pb-Pb \cite{lhcRun2}
-    \end{itemize}
-\end{itemize}
 
+The second operation of the LHC took place between 2015 and 2018.
+This run is characterized by a higher beam energy: 6.5~TeV per beam throughout the run.
+It is also characterized by innovative strategies to increase the delivered luminosity.
+Key among these improvements are a small emittance and $\beta^*$, and reduced 20~ns bunch spacing.
+
+The machine cycle begins with threading: the beam is injected with low bunch intensity and stopped on collimators at stages throughout the rings.
+The trajectory is adjusted at each stop before proceeding to the next one.
+Threading takes place primarily at the beginning of the year, since fewer corrections are needed when the machine is in a steady state.
+When an complete orbit can be made by a 12-bunch beam, the position of several orbits is averaged, and then adjusted, in a process called steering.
+When the orbits are stable, the rest of the beam is injected \footnote{This is done sequentially, rather than simultaneously, for each beam. This is because simultaneous injection heated the injection collimators causing them to off gas.}.
+When the full beam has been injected, it undergoes a combined \emph{ramp and squeeze}\footnote{Combining ramp and squeeze was an innovation to increase the beam-on efficiency. Previously the squeeze was performed after ramping.}.
+During ramp, the beam is accelerated while the dipole magnets simultaneously ramp up their fields.
+The standard ramp time is 1210s. 
+The ramping pattern is parabolic-exponential-linear-parabolic, and takes approximately 20 minutes. 
+During the squeeze, the beam optics are adjusted in steps to reach a particular $\beta^*\approx30$~cm target in the interaction regions.
+The squeeze continues after ramp.
+Once it is complete, the beams are steered to collide.
+
+During the whole process, the beam tune and chromaticity are delicately adjusted.
+For example, the chromaticity is controlled to $\pm$2 during filling, and has typical values of +20 during filling and +15 during operation. \cite{lhcRun2}
+The positive chromaticity enhances beam stability, in particular head-tail instability within bunches.
+% The SPS bunch spacing is 200-250~ns.
+
+It is desirable to maintain a target luminosity (1.5\times{34}\cms), with a process called luminosity leveling.
+This is accomplished by adjusting the crossing angle $\theta_c$ (introduced in 2017), and the value of $\beta^*$ (introduced in 2018).
+Since the beam is extremely sensitive to perturbation, these adjustments are made in small steps of 10 microradians, and $\approx3$~cm.
+The beam is so sensitive to external sources that tidal effects, earthquakes, and HL-LHC civil engineering have all been observed in the radial orbit evolution over time, as shown in Figure \ref{fig:tides}.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/experiment/lhc/tides.png}
+\caption{The evolution of the radial orbit $dp/p$. The LHC ring distorts under tidal forces, which is seen in the long period oscillation. The effect of an earthquake in New Zealand appears just after 13:00. Figure from Operation and Configuration of the LHC in Run 2 \cite{lhcRun2}}
+\label{fig:tides}
+\end{figure}
+
+The first 6.5~TeV beams with 25~ns bunch spacing arrived on April 5 2015.
+After a brief commissioning, the first stable beams were delivered on June 3.
+The run began with a conservative $\beta^*=80$~cm.
+Luminosity increased throughout the year, with beams of 2244 bunches per beam contributing to a peak instantaneous luminosity of $5.0\times10^{33}\cms$ by the end of the year.
+In all, the LHC delivered 4.2~\fb of physics collisions to ATLAS during 88 days in 2015.
+This was constrained by a large heat load due to unexpectedly intense electron clouds, which saturated the cryosystems's cooling ability.
+The e-clouds are problematic and lead to emittance growth of 0.6~$\mu$m/hour.
+Low intensity beams were used in an effort to push the e-clouds out of the beam pipe (scrubbing), but these were ineffective.
+A particularly bad incident took place in Beam 2 (15R8), where a UFO blocked a large portion of the beam pipe.
+It was suspected that this was a piece of ice, so the beamscreen was heated to 80~k, but again this was ineffective.
+Eventually, the beam was steered around the object (called the ULO, or unidentified lying object).
+The object remained in place for the full duration of Run 2, occasionally changing shape.
+Eventually, when the machine was opened at the end of the run, the ULO was discovered to be a piece of plastic wrapping, possibly from installation.
+
+Beams arrived the following year in March 25 2016, with an ambitious target of $\beta^*=40$~cm and 25~ns bunch spacing.
+During commissioning, the number of bunches per beam was steadily increased to 2220.
+Physics beams arrived on June 26, and with that the LHC finally delivered its design instantaneous luminosity of $1.0\times10^{34}\cms$.
+Improvements over the course of the year include a new bunch preparation and reduced transverse beam size lead to a peak luminosity of $1.4\times10^{34}\cms$. \cite{lhcRun2}
+Unfortunately, CMS received 5-10\% more collisions due the collision geometry. \footnote{The crossing plane for ATLAS is vertical, while for CMS it is horizontal. The early 2016 beams were oblong with low vertical emittance, leading to a more favorable luminosity reduction factor for CMS (Equation \ref{eqn:lumiReduce}).}
+The year concluded with the only major problem being an August 10 short circuit in a sector 12 dipole magnet, which required replacement\footnote{This is aside from the problem where a beech marten chewed through a transformer cable at p8, leading to several days of shutdown.}.
+A record 38.5~\fb of physics collision were delivered during 146 days to ATLAS in 2016.
+
+One of the key improvements introduced during 2016 was the new bunch preparation, \emph{Batch Compression Merging and Splitting} (BCMS).
+The beam from Linac 2 is continuous, however the later machines, starting with the PSB, accelerate bunches of protons. \cite{freyermuth}
+To increase the throughput of the PSB, each of its four rings can be \emph{overfilled} by injecting the Linac 2 beam in different positions.
+Overfilling increases emittance, which limits the output luminosity that can be achieved with this strategy.
+%Nominal scheme
+The ``nominal'' scheme to fill the PS from the PSB was to inject 6 bunches.
+Each bunch is longitudinally split into 3 bunches, then by 2, and again by 2, resulting in a total 72 bunches. \cite{freyermuth}
+%BCMS scheme
+The BCMS scheme changes two things.
+First, the overfilling of the PSB is reduced to two cycles.
+Next, 8 (instead of 6) bunches are injected to PS.
+This reduces the emittance in the PSB, since the required intensity is lower, and injection is spread out over fewer turns.
+The 8 bunches are merged to 4, then split by 3, then 2, then 2.
+This totals in 48 bunches which means more cycles are needed to fill LHC.
+This is offset by the gain from reducing transverse emittance, and therefore increased luminosity. \cite{freyermuth}
+
+The next year began with additional commissioning due to the replaced dipole.
+The first beams were injected on April 29, and physics beams were delivered on May 23 with 2556 bunches per beam.
+During commissioning, a problem in 16L2 lead to losses and unusual background radiation caused by e-clouds.
+This was caused by air that had leaked into vacuum and condensed during the magnet replacement.
+An attempt was made to evaporate the gas by heating the beam screen to 80~k, but this exacerbated the problem.
+Eventually, a bunch pattern (8b4e: eight bunches, four empty) designed to scrub the e-cloud was adopted with acceptable results.
+Beginning in August, a full luminosity version of 8b4e was adopted.\cite{lhcRun2}
+Despite this setback, a more aggressive squeeze down to $\beta^*=30$~cm resulted in a luminosity record of $2.1\times10^{34}\cms$.
+This is too high for ATLAS data collection, so it was leveled to $1.5\times10^{34}\cms$.
+A new record of 50~\fb of collisions was delivered during 140 days in 2017.\cite{lhcRun2}
+
+A key improvement introduced in 2017 is luminosity anti-leveling by adjusting the crossing angle.
+The beam crosses the interaction point at an angle $\theta_c$.
+This leads to a 30-40\% loss in luminosity. \cite{gorzawski}
+Prior to 2017, the beam angle was set based on the initial intensity of the beams, at their intensity. \cite{gorzawski}
+Reducing the crossing angle as the beam intensity decays can help recover some of the delivered luminosity.
+A study was conducted during a machine development period, using standard physics setup and few bunches. \cite{gorzawski}
+The leveling is performed slowly over the course of several minutes in steps of 20-85 microradians.
+This resulted in a gain of 3-4\% integrated luminosity per fill.
+
+The first beams of 2018 were injected on April 30, and physics beams arrived ahead of schedule on May 17.
+Despite efforts to heat up the beam pipe during the shutdown, the 16L2 problem persisted\footnote{In fact, heating the pipe seems to have enhanced the problem. An estimated 0.1 gram of water vapor remained in each beam line.}.
+As the year progressed, low intensity 900 bunch beams were used after a fill to reduce the e-clouds.
+It is also remarkable to note that $\beta^*$ reached $25$~cm during collisions.
+This final year of Run 2 benefited from the development of previous years, and successfully delivered 66~\fb of collisions during 145 days.
+
+
+\begin{table}[htp]
+\begin{center}
+\caption{Summary of the beam conditions during Run 2. \cite{lhcRun2}}
+{
+\begin{tabular}{l r r r r r}\toprule
+Parameter & 2015 & 2016 & 2017 & 2018  \\
+Maximum bunches per beam                 &2244 &2220 &2556 &2556 \\
+Emittance ($\mu$m)                       & 3.5 & 2.2 & 2.2 & 1.9 \\
+$\beta^*$ (cm)                           & 80  & 40  & 30-40 & 25-30 \\
+Total beam energy (MJ)                   & 280 & 270 & 330 & 320  \\
+Average stable beam (hours)              & 6.8 & 11.2& 8.2 & 8.3  \\
+Delivered integrated luminosity (\fb)    & 4.2 & 38.5 & 50  & 66   \\
+Instantaneous luminosity ($10^{34}\cms$) & 0.5 & 1.4 & 2.1 & 2.1  \\
+Average pile-up                          & 13  & 25  & 38  & 37   \\
+Stable beam efficiency (\%)              & 35  & 49  & 49  & 49   \\
+\bottomrule\end{tabular} %remember cline{1-2}
+}
+\label{tab:run2}
+\end{center}
+\end{table}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.8\textwidth]{figures/experiment/lhc/run2Lumi.pdf}
+\caption{ (from: https://twiki.cern.ch/twiki/bin/view/AtlasPublic/LuminosityPublicResults)}
+\label{fig:run2Lumi}
+\end{figure}
+
+The performance of the LHC during Run 2 enabled the machine to deliver a total of 156~\fb of collision data.
+The total delivered integrated luminosity, as well as that recorded by ATLAS, is shown in Figure \ref{fig:run2Lumi}.
+The number of commissioning days at the start of each year dropped from 58 down to 17 as the LHC was better understood.
+Local optical corrections could be reused from year to year.
+The maximum of bunches increased from 2244 up to 2556 per beam, and the stable beam efficiency increased from 35\% to 49\%.
+During the run, UFO events occurred at rates of 1-20 per hour.
+These and other run parameters are summarized in Table \ref{tab:run2}.
