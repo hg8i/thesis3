@@ -21,6 +21,8 @@
 \usepackage{slashed}
 \usepackage{mathalfa}
 \usepackage{float}
+\usepackage{overpic}
+\usepackage{afterpage}
 
 
 \usepackage{physics}
@@ -36,6 +38,12 @@
 
 
 \def\code#1{\texttt{#1}}
+
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1} }
+\usepackage{makecell}
+
+
 
 
 % feynman diagrams
@@ -53,12 +61,32 @@
 \newcommand*{\Wp}{\ensuremath{W^+}\xspace}
 \newcommand*{\Wm}{\ensuremath{W^-}\xspace}
 \newcommand*{\Z}{\ensuremath{Z^0}\xspace}
+\newcommand*{\jpsi}{\ensuremath{J/\psi}\xspace}
+\newcommand*{\vhmm}{\ensuremath{V(H\to\mu\mu)}\xspace}
+\newcommand*{\muu}{\ensuremath{m_{\mu\mu}}\xspace}
+\newcommand*{\mee}{\ensuremath{m_{ee}}\xspace}
+\newcommand*{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
+\newcommand*{\qqll}{\ensuremath{q\overline{q}\ell^+\ell^-}\xspace}
+\newcommand*{\llqq}{\ensuremath{\qqll}\xspace}
 \newcommand*{\e}{\ensuremath{e}\xspace}
 \newcommand*{\m}{\ensuremath{\mu}\xspace}
 \newcommand*{\h}{\ensuremath{H}\xspace}
+\newcommand*{\pt}{\ensuremath{p_\text{T}}\xspace}
+\newcommand*{\et}{\ensuremath{E_\text{T}}\xspace}
+\newcommand*{\xsbr}{\ensuremath{\sigma_\text{visible}\times\text{BR}}\xspace}
+\newcommand*{\lam}{\ensuremath{\Lambda}\xspace}
+
+% statistics
+\newcommand*{\cls}{\ensuremath{\text{CL}_\text{s}}\xspace}
+\newcommand*{\clb}{\ensuremath{\text{CL}_\text{b}}\xspace}
+\newcommand*{\clsb}{\ensuremath{\text{CL}_\text{s+b}}\xspace}
 
 % processes
 \newcommand*{\hmm}{\ensuremath{H\to\mm}\xspace}
+
+% units
+\newcommand*{\cms}{\ensuremath{\text{cm}^{-2}\text{s}^{-1}}\xspace}
+\newcommand*{\fb}{\ensuremath{\text{fb}^{-1}}\xspace}
 
 % variables
 \newcommand*{\met}{\ensuremath{E_T^\mathrm{miss}}\xspace}
@@ -83,4 +111,15 @@
 \newcommand{\longeqnote}[1]{& & \\ \notag  &  &  &  &  & \text{\small\llap{#1}}}
 
 \newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+
+
+\newcommand*{\POWHEG}{\textsc{Powheg}\xspace}
+\newcommand*{\POWHEGV}[1]{\textsc{Powheg}~#1\xspace}
+\newcommand*{\POWHEGBOX}{\textsc{Powheg-Box}\xspace}
+\newcommand*{\POWHEGBOXV}[1]{\textsc{Powheg-Box}~#1\xspace}
+\newcommand*{\PYTHIA}{\textsc{Pythia}\xspace}
+\newcommand*{\PYTHIAV}[1]{\textsc{Pythia}~#1\xspace}
+\newcommand*{\SHERPA}{\textsc{Sherpa}\xspace}
+\newcommand*{\SHERPAV}[1]{\textsc{Sherpa}~#1\xspace}
+\newcommand*{\GEANT}{\textsc{Geant}\xspace}
 

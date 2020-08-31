@@ -9,6 +9,12 @@ default: thesis.tex
 	# (To run bibtex also, "make full")
 	# ==================================================
 
+part: thesis.tex 
+	lualatex thesis.tex $<
+	-bibtex  $(basename $<)
+	lualatex thesis.tex $<
+	lualatex thesis.tex $<
+
 full: thesis.tex 
 	lualatex thesis.tex $<
 	-bibtex  $(basename $<)
