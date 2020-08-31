@@ -1,0 +1,44 @@
+\section{Statistical Analysis}\label{sec:ciStat}
+
+Statistical methods are used to distill two types of information from the collected dataset.
+First, what is the probability that the observed data is incompatible with the background-only hypothesis.
+Second, what is smallest putative signal such that, if extant, would produce a signal+background hypothesis that is incompatible with the observed data.
+The former is answered by a significance test, described in Section \ref{sec:ciSigTest}, while the latter is answered by setting a limit, described in Section \ref{sec:ciLimitSetting}.
+
+\subsection{CLs}
+
+The fundamental tool used to compare two hypotheses is the \emph{test statistic}.
+While this can be any quantity calculated from data, an optimal choice for the test statistic may be made to best resolve the difference between the two hypotheses.
+The Neyman-Person lemma states that the likelihood ratio test is the most likely to reject the null hypotheses given the alternate hypotheses is true.
+The likelihood ratio is defined:
+\begin{equation}\begin{split}
+\Lambda(x)=\frac{\mathcal{L}(\theta_1|x)}{\mathcal{L}(\theta_0|x)},
+\end{split}\end{equation} 
+where $\mathcal{L}(\theta_0|x)$ and $\mathcal{L}(\theta_1|x)$ are the likelihoods to observe data $x$ under the null and alternate hypotheses, respectively.
+Data measured at larger values of $\Lambda(x)$ are \emph{less compatible} with the background hypothesis.
+
+The PDF of $\Lambda(x)$ is defined under both the null and alternate hypotheses.
+Taking first the PDF under the null hypothesis, $\Lambda_0(x)$.
+The integral of the test statistic $\Lambda_0(x)$ above a given observed value of $x$, $x_\text{obs}$, defines the \emph{p-value} $p_0$ of the observation.
+This is the probability to observe a value of $x$ that is \emph{less} compatible with the null hypothesis than the observed value.
+The complement of the p-value, calculated under the null hypothesis, defines the value $\clb\equiv1-p_0$.
+An analogous value, $\clsb$, is defined for the likelihood ratio under the alternative hypothesis, $\Lambda_1(x)$.
+For a measured $x_\text{obs}$, $p_1$ is the integral of $\Lambda_1(x)$ above that point, and $\clsb\equiv1-p_1$
+Finally the ratio of these two values defines $\cls\equiv \clsb/\clb$.
+The motivation 
+
+\subsection{Statistical Model}
+
+Each statistical question is answered through the comparison of null and alternate hypotheses.
+% The 
+
+
+\subsection{Significance test}\label{sec:ciSigTest}
+
+A hypothesis test is performed in each of the four signal regions of the analysis.
+The null hypothesis predicts the number of background events in the signal region, using the integral of the extrapolated fitted background-only functional form (Equations \ref{eqn:ciBkgEe} and \ref{eqn:ciBkgMm}).
+The alternative hypothesis predicts the same number of background events as the null hypothesis, with the addition of a number of signal events.
+The alternative hypothesis is fit to the observed data.
+
+
+\subsection{Limit test}\label{sec:ciLimitSetting}

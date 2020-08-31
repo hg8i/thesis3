@@ -2,4 +2,40 @@
 
 \section{Simulation}
 \section{Physics Data}
-\section{Physics Objects}
+\section{Physics Objects}\label{sec:physObjects}
+
+Electrons:
+BADCLUSELECTRON
+electron energy is calibrated using \code{es2017\_R21\_v1} (\code{ESModel})
+\code{MediumLLH} identification
+\emph{Gradient} isolation
+
+Muons:
+
+% ########################################################
+% High-$p_T$ selection
+% ########################################################
+The High-Pt selection uses CB muons passing Medium selection with at least three hits in three MS stations. Regions of the MS where the alignment is suboptimal are vetoed. Requiring three MS stations reduces the reconstruction efficiency by about 20\% but improves the pT resolution of muons above 1.5 TeV by 30\%.
+
+
+
+
+% ########################################################
+\code{FCTightTrackOnly} isolation
+% ########################################################
+
+% ########################################################
+% Bad Muon Veto
+% ########################################################
+In accordance with the high-$p_\mathrm{T}$ selection prescription, the bad muon veto is applied, rejecting muons if the relative error on their measured $q/p$ is larger than a $p_\mathrm{T}$-dependent threshold recommended by MCP \cite{MCP_recommendations}.
+
+\subsubsection{Bad Muon Veto}
+\label{sec:bmv}
+The goal of the Bad Muon Veto cut is to reject muons in the tails of the $\sigma_{p_\mathrm{T}}/p_\mathrm{T}$ distributions. The selection is based on a cut on the relative uncertainty of the $q/p$ measurement. As the resolution worsens at high-$p_\mathrm{T}$, the efficiency would also decrease at high-$p_\mathrm{T}$.
+The expected resolution of the momentum measurement is parametrized as a function of $\mathrm{p_T}$ in five different $\eta$ regions, following the usual parametrization: $\sigma_{rel}^{exp} = \sqrt{(p_0/p_\mathrm{T})^{2} + p_1^2 + (p_2\cdot p_\mathrm{T})^{2}}$. The $\eta$ regions are chosen to coincide with specific regions of the ATLAS detector having different $\mathrm{p_T}$ resolution, and are defined as follows: $|\eta| \leq 1.05,\ 1.05 < |\eta| \leq 1.3,\ 1.3\ < |\eta| \leq\ 1.7,\ 1.7\ < |\eta|\ \leq\ 2.0,$ and $|\eta| > 2.0$.
+
+A cut on the relative uncertainty of the $q/p$ measurement of the muon ($\frac{\sigma(q/p)}{(q/p)}$) is applied as:
+\begin{equation}\label{cut}
+\frac{\sigma(q/p)}{(q/p)} < C(p_\mathrm{T})\cdot \sigma_{rel}^{exp}
+\end{equation}
+where C($p_\mathrm{T}$) is a $p_\mathrm{T}$-dependent coefficient, which is constant for $p_\mathrm{T}$< 1 TeV and decreases linearly if $p_\mathrm{T}$ > 1 TeV. In the original formulation of the cut, used until 2018, the initial value of C($p_\mathrm{T}$) was equal to 1.8. A Bad Muon Veto optimization study was undertaken in order to improve the efficiency of this criterion. Increasing the initial value of C($p_\mathrm{T}$) up to 2.5, the cut efficiency improves while still effectively removing the tails of the resolution distributions. An efficiency gain of up to 5\% with respect to the previous definition of the Bad Muon Veto, has been observed. This new formulation has been already used in \cite{ATLAS-CONF-2019-001} and will be used in all the future ATLAS analyses. This criterion is fully efficient below 1 TeV, and introduces an additional inefficiency of 7\% at 2.5 TeV to the high-$p_\mathrm{T}$ selection.

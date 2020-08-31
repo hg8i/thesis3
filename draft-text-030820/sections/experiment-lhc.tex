@@ -5,7 +5,7 @@ The LHC provides the unique laboratory conditions in which detectors like ATLAS 
 The construction, maintenance, and operation of the LHC continues to be an enormous task carried out by thousands of dedicated scientists and engineers. Without their ongoing efforts, the achievements of ATLAS and the other LHC experiments would be impossible.
 
 The LHC is impressive not just in absolute terms, but also in comparison to previous accelerators.
-The three other large superconducting accelerators, the Tevatron\footnote{Decommissioned in 2011.}, HERA, and RHIC, all operate with fields of approximately 5~T. The LHC exceeds this with fields of 8~T.
+The three other large superconducting accelerators, the Tevatron\footnote{Decommissioned in 2011.}, HERA\footnote{Decommissioned in 2007}, and RHIC, all operate with fields of approximately 5~T. The LHC exceeds this with fields of 8~T.
 The machine is also enormous. It has a circumference of 26.7~km. It takes 15 days to cool down a sector.
 The LHC, designed to reach collision energies of 14 TeV, is also the first hadron accelerator with enough synchrotron radiation to effect the design of the cooling and vacuum systems \cite{lyndon}.
 
@@ -188,9 +188,9 @@ These parameters are described in this section.
 
 The first parameter to consider is the \emph{emittance}, $\epsilon$, defined in Equation \ref{eqn:emittance}.
 It is a measure of the distribution of the particles in a beam in position-momentum phasespace.
-The emittance is given as
+The emittance is defined as
 \begin{equation}\begin{split}\label{eqn:emittance}
-\epsilon = \frac{6\pi}{B}(w^2-D^2(\frac{dp}{p})^2),
+\epsilon \equiv \frac{6\pi}{B}\left(w^2-D^2\left(\frac{dp}{p}\right)^2\right),
 \end{split}\end{equation} 
 where $w$ is the RMS beam width, $D$ is the dispersion, $B\approx(w/\epsilon)$ is the beta function, and $\frac{dp}{p}$ is the relative momentum spread.
 The emittance is often divided into longitudinal and transverse components.
@@ -213,7 +213,12 @@ The frequency of betatron oscillations is higher than that of the orbit.
 The number of vertical or horizontal betatron oscillations made during one orbit is called the vertical or horizontal \emph{tune} respectively.
 The horizontal and vertical tunes must be carefully picked using a tune diagram, such as shown in Figure \ref{fig:tune}.
 Resonances are illustrated as lines, and the tunes must be selected together to avoid disruptive resonances.
-In practice, tunes are continually over the course of beam injection, ramping up beam energy, and eventual collisions.
+The beam density, $N$, as well as emittance and $\beta$ modify the tune tune $Q$:
+\begin{equation}\begin{split}
+    \delta Q\propto-\frac{N}{\beta\gamma^2\epsilon^*}.
+\end{split}\end{equation} 
+For example, when the PSB was renovated the emittance was reduced, and the energy ($\gamma$) was increased to compensate for the in on tune.
+In practice, tunes are adjusted continually by adjusting these parameters over the course of beam injection, ramping up beam energy, and eventual collisions.
 
 Related to the longitudinal emittance are \emph{synchrotron oscillations}: longitudinal oscillation along the direction of the beam.
 This takes place at a much lower frequency than that of betatron oscillations: at the LHC it is less than one oscillation per orbit.
@@ -224,14 +229,14 @@ In optics, light rays of different wavelengths are focused differently by a glas
 There is a persistent analogy between optics and beam dynamics (often called beam optics). Like light, beams are bent and focused by magnets. 
 Particles with large momentum experience weaker focusing strength from focusing quadrupoles, a process called \emph{chromatic aberration}.
 Chromaticity quantifies this momentum dependence.
-To put it explicitly, chromaticity $Q'$ is the tune change $\Delta Q$ caused by a momentum change $\Delta p/p$. \cite{fuchsberger}
+To put it explicitly, chromaticity $Q'$ is the tune change $\Delta Q$ caused by a relative momentum change $\Delta p/p$. \cite{fuchsberger}
 \begin{equation}
     \Delta Q = Q'\frac{\Delta p}{p},
 \end{equation}
 where
 \begin{equation}
 \begin{split}
-    \frac{\Delta p}{p} = \frac{\frac{\Delta f}{f}}{\eta}; \quad\text{and}\quad \eta = \frac{1}{\gamma_r}-\alpha_c. \\
+    \frac{\Delta p}{p} = \frac{\Delta f/f}{\eta}; \quad\text{and}\quad \eta = \frac{1}{\gamma_r}-\alpha_c. \\
 \end{split}
 \end{equation}
 Here, $\Delta f$ is change in RF frequency, and $f$ is the nominal frequency \footnote{400,788,860 Hz at the LHC.} 
@@ -437,7 +442,7 @@ The beam is so sensitive to external sources that tidal effects, earthquakes, an
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
-\includegraphics[width=0.6\textwidth]{figures/experiment/lhc/tides.png}
+\includegraphics[width=0.99\textwidth]{figures/experiment/lhc/tides.png}
 \caption{The evolution of the radial orbit $dp/p$. The LHC ring distorts under tidal forces, which is seen in the long period oscillation. The effect of an earthquake in New Zealand appears just after 13:00. Figure from Operation and Configuration of the LHC in Run 2 \cite{lhcRun2}}
 \label{fig:tides}
 \end{figure}

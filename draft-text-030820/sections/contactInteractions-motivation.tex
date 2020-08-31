@@ -1,0 +1,53 @@
+\section{Motivation}\label{sec:ciMotivation}
+
+The presence of a new interaction can be detected at an energy much lower than that required to produce direct evidence of the existence of a new gauge boson. The charged weak interaction responsible for nuclear $\beta$ decay provides such an example. A non-renormalizable description of this process was successfully formulated by Fermi in the form of a four-fermion contact interaction~\cite{Fermi:1934hr}. A contact interaction can also accommodate deviations from the SM in proton--proton scattering due to quark and lepton compositeness, where a characteristic energy scale $\Lambda$ corresponds to the binding energy between fermion constituents. A new interaction or compositeness in the process $q\overline{q} \to \ell^+\ell^-$ can be described by the following four-fermion contact interaction Lagrangian~\cite{eichten, Eichten:1984eu},
+
+\begin{equation}\label{eqn:ciLagrangian}
+\begin{array}{r@{\,}c@{}c@{\,}l@{\,}l}
+\mathcal L = \frac{g^2}{\Lambda^2}\;[ && \eta_{\mathrm{LL}}&\, (\overline q_{\mathrm L}\gamma_{\mu} q_{\mathrm L})\,(\overline\ell_{\mathrm L}\gamma^{\mu}\ell_{\mathrm L}) \nonumber \\
+& +&\eta_{\mathrm{RR}}& (\overline q_{\mathrm R}\gamma_{\mu} q_{\mathrm R}) \,(\overline\ell_{\mathrm R}\gamma^{\mu}\ell_{\mathrm R}) \\
+&+&\eta_{\mathrm{LR}}& (\overline q_{\mathrm L}\gamma_{\mu} q_{\mathrm L}) \,(\overline\ell_{\mathrm R}\gamma^{\mu}\ell_{\mathrm R}) \\
+&+&\eta_{\mathrm{RL}}& (\overline q_{\mathrm R}\gamma_{\mu} q_{\mathrm R}) \,(\overline\ell_{\mathrm L}\gamma^{\mu}\ell_{\mathrm L})& ] \: ,\nonumber
+\end{array}
+\end{equation}
+
+\noindent where $g$ is a coupling constant chosen by convention to satisfy $g^2/4\pi = 1$, $\Lambda$ is the contact interaction scale, and $q_{\mathrm L,R}$ and $\ell_{\mathrm L,R}$ are left-handed and right-handed quark and lepton fields, respectively. The parameters $\eta_{ij}$, where $i$ and $j$ are L or R (left or right),  define the chiral structure of the new interaction. Different chiral structures are investigated here, with the left-right model obtained by setting $\eta_{\mathrm{LR}} = \pm 1$ and $\eta_{\mathrm{RL}} = \eta_{\mathrm{LL}} = \eta_{\mathrm{RR}} = 0$. Likewise, the left-left, right-left, and right-right models are obtained by setting the corresponding parameters to $\pm 1$, and the others to zero. The sign of $\eta_{ij}$ determines whether the interference is constructive ($\eta_{ij} = -1$) or destructive ($\eta_{ij} = +1$). 
+
+In the context of CI searches with dilepton final states at the LHC, the terms in Equation \ref{eqn:CIlagrangian} take the form of $\eta_{ij}\left(\bar{q}_i\gamma_{\mu}q_i\right)\left(\bar{\ell}_j\gamma^{\mu}\ell_j\right)$, where $q_i$ and $\ell_j$ are the quark and lepton fields, respectively.
+The differential cross-section for the process $q\bar{q}\rightarrow\ell^+\ell^-$, in the presence of CI, can be separated into the SM DY term plus terms involving the CI.
+This separation is given in Equation \ref{eqn:cixs}.
+\begin{equation}
+\frac{\text{d}\sigma}{\text{d}m_{\ell\ell}} = \frac{\text{d}\sigma_\textrm{DY}}{\text{d}m_{\ell\ell}} - \eta_{ij}\frac{F_\textrm{I}}{\Lambda^2} + \frac{F_\textrm{C}}{\Lambda^4},
+\label{eqn:cixs}
+\end{equation}
+Here, the first term accounts for the DY process, the second term corresponds to the interference between the DY and CI processes, and the third term corresponds to the pure CI contribution.
+The latter two terms include $F_\textrm{I}$ and $F_\textrm{C}$, respectively, which are functions of the differential cross-section with respect to $m_{\ell\ell}$ with no dependence on $\Lambda$~\cite{Eichten:1984eu}.
+The interference can be constructive or destructive and it is determined by the sign of $\eta_{ij}$.
+
+\begin{figure}[htb]
+\begin{center}
+\begin{equation}\begin{split}
+\left|
+\feynmandiagram [medium,baseline=(v.base),horizontal=v to b] {
+i1 [particle=\(q\)] -- [fermion] v -- [fermion] i2 [particle=\(\overline{q}\)],
+v -- [photon, edge label=\(\gamma/Z\)] b,
+f1 [particle=\(\ell^{+}\)] -- [fermion] b -- [fermion] f2 [particle=\(\ell^{-}\)],
+};
++
+\feynmandiagram [medium,baseline=(v.base),horizontal=a to c] {
+a[particle=\(q\)] --[fermion] v[blob] --[fermion] b[particle=\(\overline{q}\)],
+c[particle=\(\ell^{+}\)] --[fermion] v --[fermion] d[particle=\(\ell^{-}\)],
+};
+\right|^2
+\end{split}\end{equation} 
+
+\end{center}
+\vspace{-.4cm}
+\caption{Leading-order production mechanism for Drell-Yan with additional contact term with scale $\Lambda$ in the dilepton final state.}
+\label{FeynmanCI}
+\end{figure}
+
+Previous searches for CI have been carried out in neutrino--nucleus and electron--electron scattering~\cite{Anthony:2005pm}, as well as electron--positron~\cite{Abdallah:2008ab, Schael:2006wu}, electron--proton~\cite{Aaron:2011mv}, and proton--antiproton colliders~\cite{Abulencia:2006iv,Abazov:2009ac}. Searches for CI have also been performed by the ATLAS and CMS Collaborations~\cite{Aad:2014wca, Khachatryan:2014fba}. The strongest exclusion limits for $\ell\ell q q$ CI in which all quark flavours contribute come from the previous ATLAS non-resonant dilepton analysis conducted using 36.1\fb of proton--proton ($pp$) collision data at $\sqrt{s}$ = 13~TeV~\cite{Aaboud:2016cth}. That combined analysis of the dielectron and dimuon channels set lower limits at 95\% credibility level (C.L.) on the left-left model of $\Lambda$ $=$ 40.1~TeV and $\Lambda$ $=$ 25.4~TeV, for constructive and destructive interference, respectively, given a uniform positive 1/$\Lambda^2$, shown in Figure~\ref{LOZp}.
+
+Other ATLAS studies of note include the 2012/2014 search for contact interactions at $7/8$ TeV at ATLAS \cite{EXOT-2013-19}, \cite{EXOT-2012-17}.
+
