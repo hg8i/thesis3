@@ -67,7 +67,7 @@ These are illustrated in Figure \ref{fig:ciThyVar}.
 %     \label{tab:ISSBreakdown}
 % \end{table}
 
-\subsubsection{Experimental Simulated Systematics}\ref{sec:ciExpSyst}
+\subsubsection{Experimental Simulated Systematics}\label{sec:ciExpSyst}
 
 Uncertainty about the response and performance of the detector lead to systematic experimental uncertainties.
 Among the experimental uncertainty sources in the dielectron channel, the dominant ones are the electron identification at low dielectron masses ($\leq 5\%$, below $\sim2000$~GeV) and the uncertainty in the electromagnetic energy scale at higher dielectron masses ($\leq 15\%$).
@@ -107,10 +107,10 @@ These are both measured using statistical ensembles.
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}}
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}} 
 \subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}} \\
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}}
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}}
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}} 
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}} 
 \caption{Distributions of the differences between fits to the nominal dataset, and the toy datasets, for each SR.}
 \label{fig:ciBkgEuSyst}
 \end{figure}
@@ -147,13 +147,14 @@ The standard deviation of these distributions is taken to define the systematic 
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}}
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{example-image-a}}} \\
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/iss/toyNSSDist-mm-const-all-noGaus.png}}}
-\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/iss/toyNSSDist-mm-dest-all-noGaus.png}}}
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/toyUncert/toyNSSDist-ee-const-all-noGaus.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/toyUncert/toyNSSDist-ee-dest-all-noGaus.pdf}}} \\
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/toyUncert/toyNSSDist-mm-const-all-noGaus.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.45\textwidth]{figures/ci/toyUncert/toyNSSDist-mm-dest-all-noGaus.pdf}}}
 \caption{Distributions of the Induced Spurious-Signal.}
 \label{fig:ciBkgIssSyst}
 \end{figure}
+
 
 % What needs to be measured
 The sub-leading uncertainty on the background estimate is called the induced spurious-signal (ISS) uncertainty.

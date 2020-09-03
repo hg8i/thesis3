@@ -2,7 +2,7 @@
 
 The search for non-resonant features in the dilepton invariant-mass spectra is concerned with collisions that produce two leptons.
 This section details the event selection, data, and simulation used in the analysis.
-Finally, comparisons between the recorded data and simulation are provided in Section \ref{sec:ciKine}.
+Finally, comparisons between the recorded data and simulation are provided.
 
 
 \subsection{Event Selection}
@@ -133,38 +133,20 @@ This choice is made due to the preferable electron \et resolution at high energy
 The data used in this analysis was collected during the LHC's Run 2.
 The recorded integrated luminosity of the collisions is $139\pm2$ \fb. \cite{ATLAS-CONF-2019-021}
 
-The data yield rate, broken into the different runs and periods for each year, are shown in Figures ~\ref{fig:yields2015} to \ref{fig:yields2018}.
+The data yield rate, broken into the different runs and periods for each year, are shown in Figure ~\ref{fig:ciYields}.
 These plots count events after applying the full selections.
 
-
-\begin{figure}[!h]
+\begin{figure}[ht!]
+\captionsetup[subfigure]{position=b}
 \centering
-\begin{overpic}[width=0.99\textwidth]{figures/ci/dataMc/compare_data_yields2015.pdf}\end{overpic}
-\caption{Data yields for the 2015 run period for the inclusive $ee$ (above) and $\mu\mu$ (below) selections.}
-\label{fig:yields2015}
+\subfloat[][]{{\includegraphics[width=0.48\textwidth]{figures/ci/dataMc/compare_data_yields2015.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.48\textwidth]{figures/ci/dataMc/compare_data_yields2016.pdf}}}\\
+\subfloat[][]{{\includegraphics[width=0.48\textwidth]{figures/ci/dataMc/compare_data_yields2017.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.48\textwidth]{figures/ci/dataMc/compare_data_yields2018.pdf}}}
+\caption{Data yields for the each run period for the inclusive $ee$ (above) and $\mu\mu$ (below) selections.}
+\label{fig:ciYields}
 \end{figure}
-
-\begin{figure}[!h]
-\centering
-\begin{overpic}[width=0.99\textwidth]{figures/ci/dataMc/compare_data_yields2016.pdf}\end{overpic}
-\caption{Data yields for the 2016 run period for the inclusive $ee$ (above) and $\mu\mu$ (below) selections.}
-\label{fig:yields2016}
-\end{figure}
-
-\begin{figure}[!h]
-\centering
-\begin{overpic}[width=0.99\textwidth]{figures/ci/dataMc/compare_data_yields2017.pdf}\end{overpic}
-\caption{Data yields for the 2017 run period for the inclusive $ee$ (above) and $\mu\mu$ (below) selections.}
-\label{fig:yields2017}
-\end{figure}
-
-\begin{figure}[!h]
-\centering
-\begin{overpic}[width=0.99\textwidth]{figures/ci/dataMc/compare_data_yields2018.pdf}\end{overpic}
-\caption{Data yields for the 2018 run period for the inclusive $ee$ (above) and $\mu\mu$ (below) selections.}
-\label{fig:yields2018}
-\end{figure}
-
+\clearpage
 
 \subsection{Simulation}
 
@@ -174,7 +156,6 @@ This analysis uses simulated invariant-mass distributions for three purposes:
     \item Testing a variety of choices made during the analysis. In particular, with respect to choosing a functional form that matches the expected background shape and with respect to choosing the control and signal regions.
     \item Measuring the impact of experimental and theoretical uncertainties on the results.
 \end{enumerate}
-This section describes these simulated distributions.
 
 All simulation-based background contributions are scaled by their respective cross-sections and summed to obtain the simulated background $m_{\ell\ell}$ distribution.
 The main simulated backgrounds in decreasing order of contribution to the full mass spectrum are: Drell--Yan (DY), top-quark pair ($t\bar{t}$), single-top-quark and diboson production.
@@ -253,10 +234,16 @@ Dilepton mass-dependent higher-order QCD production corrections for the signals 
 Similarly, electroweak corrections for the signals are applied in the CI reweighting along with the interference effects, correcting from LO to NLO.
 These signal shapes are used for optimisations as well as for calculations of the cross-section and acceptance times efficiency.
 
+Several distributions of kinematic variables are provided in the following figures.
+First the invariant mass distributions are shown in in Figure \ref{fig:ciMassMcPlot}.
+These plots show the distribution of simulated events along with data events for both \ee and \mm selections.
+Several representative contact interaction shapes are included for reference.
+Looking at the simulation, these plots clearly show the relative composition of the background distributions.
+The plots of the \ee selection additionally include the multi-jet and $W+$jets background.
+The following figures show some kinematic variables for each selection.
+Fully simulated resonant signals are included in these as illustrations, as the CI signal is reweighted only in the invariant-mass distribution.
 
-
-\subsection{Kinematic Distributions}\label{sec:ciKine}
-
+\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -277,9 +264,12 @@ These signal shapes are used for optimisations as well as for calculations of th
     \subcaption{}
 \end{minipage}
 \caption{Invariant-mass distributions in the $ee$ channel (top) and $\mu\mu$ channel (bottom). Plots on the left show selected constructive CI signal shapes imposed on top of the simulated distribution, while plots on the right show the same for destructive CI signal shapes.}
-\label{fig:}
+\label{fig:ciMassMcPlot}
 \end{figure}
+\clearpage
+}
 
+\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -302,7 +292,10 @@ These signal shapes are used for optimisations as well as for calculations of th
 \caption{Kinematic distributions in the $ee$ channel. (a) $E_T^\text{miss}$, (b) dielectron \pt, leading electron $\phi$, and subleading electron $\phi$.}
 \label{fig:}
 \end{figure}
+\clearpage
+}
 
+\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -325,7 +318,10 @@ These signal shapes are used for optimisations as well as for calculations of th
 \caption{Kinematic distributions in the $ee$ channel. (a) leading electron $\eta$, (b) subleading electron $\eta$, leading electron \pt, and subleading electron \pt.}
 \label{fig:}
 \end{figure}
+\clearpage
+}
 
+\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -348,7 +344,10 @@ These signal shapes are used for optimisations as well as for calculations of th
 \caption{Kinematic distributions in the $\mu\mu$ channel. (a) $E_T^\text{miss}$, (b) dielectron \pt, leading muon $\phi$, and subleading muon $\phi$.}
 \label{fig:}
 \end{figure}
+\clearpage
+}
 
+\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -371,6 +370,7 @@ These signal shapes are used for optimisations as well as for calculations of th
 \caption{Kinematic distributions in the $\mu\mu$ channel. (a) leading muon $\eta$, (b) subleading muon $\eta$, leading muon \pt, and subleading electron \pt.}
 \label{fig:}
 \end{figure}
+\clearpage
+}
 
-
-\clearpage  
+\clearpage
