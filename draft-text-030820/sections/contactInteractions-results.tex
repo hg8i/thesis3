@@ -202,15 +202,6 @@ Then, this \nsig can be compared to the limits on \nsig to determine whether the
 \subsection{Limits on $\Lambda$}
 \label{sec:limLambda}
 
-The observations in the signal regions are incompatible with many contact interaction models.
-The following tables assess which signal models may be counted as excluded.
-To this end, the hypotheses defined in \ref{eqn:ciNullLikelihood} and \ref{eqn:ciAltLikelihood} are compared to the observed data.
-Both the single lepton channel hypotheses (\ee and \mm), as well as the dilepton combination (\ll), are considered.
-The observed and expected limits set at 95\% confidence level on the contact interaction scale \lam are shown in Table \ref{tab:lambdaLimits1}.
-The highest limit is the exclusion of \lam below 35.8~TeV for \ll constructive CI with left-left chirality.
-This is an incredible energy scale, equivalent the energy needed to transport an electron through a stack of AA batteries reaching from the earth to the sun, and then on past Jupiter.
-Also notable is the exclusion of \lam below 28.8~TeV for \ll destructive CI with left-right and right-left chiralities.
-
 \begin{table}[h!]
 \begin{center}
 \caption{Expected and observed lower limits at 95$\%$ CL on $\Lambda$ in TeV for the dielectron and dimuon channels separately and the combined dilepton channel and for CI signal hypotheses with constructive and destructive interference and different chiralities.}
@@ -239,6 +230,16 @@ Int. & Channel & Exp./Obs. & LL & LR & RL & RR \\
 \end{center}
 \end{table}
 
+The observations in the signal regions are incompatible with many contact interaction models.
+The following tables assess which signal models may be counted as excluded.
+To this end, the hypotheses defined in \ref{eqn:ciNullLikelihood} and \ref{eqn:ciAltLikelihood} are compared to the observed data.
+Both the single lepton channel hypotheses (\ee and \mm), as well as the dilepton combination (\ll), are considered.
+The observed and expected limits set at 95\% confidence level on the contact interaction scale \lam are shown in Table \ref{tab:lambdaLimits1}.
+The highest limit is the exclusion of \lam below 35.8~TeV for \ll constructive CI with left-left chirality.
+This is an incredible energy scale, equivalent the energy needed to transport an electron through a stack of AA batteries reaching from the earth to the sun, and then on past Jupiter.
+Also notable is the exclusion of \lam below 28.8~TeV for \ll destructive CI with left-right and right-left chiralities.
+
+
 The limits shown in table \ref{tab:lambdaLimits1} are set without theoretical uncertainty on the signal model.
 The choice of the signal model corresponds to the choice of the signal+background hypothesis, and consequently there is no uncertainty related to that definition.
 Alternative signal models, corresponding to possible theoretical variations, may also be used to set limits on \lam.
@@ -246,12 +247,12 @@ These alternative models predict either enhanced or diminished signal event even
 Two models are considered: one with $+1\sigma$ theoretical increase to the event yield, and one with $-1\sigma$ theoretical reduction to the event yield.
 The limits set on these alternative models are given in Table \ref{tab:limits_on_lambda_theoryUp} for $+1\sigma$ Table \ref{tab:limits_on_lambda_theoryDn} for $-1\sigma$.
 
-\begin{table}[htp]
+\afterpage{
+\begin{minipage}{\textwidth}
+% \begin{table}[htp]
 \begin{center}
-\caption{Expected and observed lower limits at 95$\%$ CL on $\Lambda$ in TeV for the dielectron and dimuon channels separately
-and for the combined electron-muon channel, for a theoretical variation on the CI signal hypotheses with constructive
-and destructive interference and different chiralities.
-The CI signal hypothesis has been increased by $+1\sigma_\text{s}^\text{Theory}$.}
+\label{tab:limits_on_lambda_theoryUp}
+\captionof{table}{Expected and observed lower limits at 95$\%$ CL on $\Lambda$ in TeV where the CI signal hypothesis has been increased by $+1\sigma_\text{s}^\text{Theory}$.}
 {\begin{tabular}{r c c c c c c c c c c c}\toprule
 Int. & Channel & Exp./Obs. & LL & LR & RL & RR \\
 \midrule
@@ -273,16 +274,9 @@ Int. & Channel & Exp./Obs. & LL & LR & RL & RR \\
  & \multirow{2}{*}{$\ell\ell$} & Expected & 26.5 & 29.2 & 29.2 & 26.9 \\
 & & Observed & 26.9 & 29.9 & 29.9 & 27.3 \\
 \bottomrule\end{tabular}}\\
-\label{tab:limits_on_lambda_theoryUp}
-\end{center}
-\end{table}
-
-\begin{table}[htp]
-\begin{center}
-\caption{Expected and observed lower limits at 95$\%$ CL on $\Lambda$ in TeV for the dielectron and dimuon channels separately
-and for the combined electron-muon channel, for a theoretical variation on the CI signal hypotheses with
-constructive and destructive interference and different chiralities.
-The CI signal hypothesis has been reduced by $-1\sigma_\text{s}^\text{Theory}$.}
+\vspace{1em}
+\captionof{table}{Expected and observed lower limits at 95$\%$ CL on $\Lambda$ in TeV where the CI signal hypothesis has been reduced by $-1\sigma_\text{s}^\text{Theory}$.}
+\label{tab:limits_on_lambda_theoryDn}
 {\begin{tabular}{r c c c c c c c c c c c}\toprule
 Int. & Channel & Exp./Obs. & LL & LR & RL & RR \\
 \midrule
@@ -304,9 +298,11 @@ Int. & Channel & Exp./Obs. & LL & LR & RL & RR \\
  & \multirow{2}{*}{$\ell\ell$} & Expected & 24.5 & 26.5 & 26.5 & 24.8 \\
 & & Observed & 25.1 & 27.4 & 27.4 & 25.4 \\
 \bottomrule\end{tabular}} \\
-\label{tab:limits_on_lambda_theoryDn}
 \end{center}
-\end{table}
+% \end{table}
+\end{minipage}
+\clearpage
+}
 
 The limits on \lam shown in Table \ref{tab:lambdaLimits1} are shown in the plots of Figure \ref{fig:limLamb}.
 The plots (a) and (b) show the limits set in the \ee and \mm channels.

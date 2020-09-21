@@ -1,5 +1,41 @@
 \section{Uncertainties}\label{sec:hmmSyst}
 
+\subsection{Uncertainty of background model}\label{sec:hmmBkgUncert}
+
+The background model $f_\text{B}(\muu)$ described in Section \ref{sec:hmmBkg} provides an estimate of background multiplicity in $\muu\in[120,130]$~GeV based on a fit to data.
+This estimate is subject to particular statistical sampling that has produced observed data, which impact the resulting fitted function.
+The degree to which such fluctuations result in changes to the estimated background defines an uncertainty $\sigma_\text{b}$ on that estimate.
+
+The procedure to estimate $\sigma_\text{b}$ is based on fits to an ensemble of pseudo-datasets.
+First, the data distribution is fit following the procedure in Section \ref{sec:hmmBkg} in order to produce a nominal PDF shape.
+Then, the nominal PDF is randomly sampled to produce a pseudo-dataset of observations with the same multiplicity as the observed data.
+Each pseudo-dataset is fit by the $f_\text{B}(\muu)$, and the background expectation is computed.
+The standard deviation of background expectations from all the pseudo-datasets is a measure of $\sigma_\text{b}$.
+
+\begin{table}[htp]
+\caption{Uncertainties on the number of background events with invariant-mass in $\muu\in[120,130]$~GeV.}
+\begin{center}
+\begin{tabular}{l r}
+\toprule
+Category & $\sigma_\text{b}$ [\%] \\
+\midrule
+    3-Lepton               &  4.49 \\
+    4-Lepton               &  5.70 \\
+\midrule
+    4-Lepton High-Purity   &  6.14 \\
+    3-Lepton High-Purity   &  6.32 \\
+    3-Lepton Middle-Purity &  4.62 \\
+\bottomrule
+\end{tabular}
+\label{tab:hmmSigmsB}
+\end{center}
+\end{table}
+
+The uncertainty $\sigma_\text{b}$ is measured for each of the inclusive and exclusive categories under analysis.
+The size of the ensemble of pseudo-toys used is one thousand for each measurement.
+The resulting values are listed in Table \ref{tab:hmmSigmsB}.
+
+
 \subsection{Reweighted background shape}\label{sec:hmmRw}
 
 The division of the inclusive categories into sub-categories based on the MVA discriminant reduces the number of expected background events in those categories.
@@ -86,20 +122,20 @@ Together these define the leading uncertainties on the measured signal strength,
 
 \begin{table}[htp]
 \begin{center}
-\begin{tabular}{l l l l}
+\begin{tabular}{l r r r}
 \toprule
 Category & max$(|\nss/ds|)$ & max(\nss) \\
 \midrule
-3-Lepton 0.391 & 1.674 \\
-4-Lepton 0.114 & 1.354 \\
+3-Lepton & 0.391 & 1.674 \\
+4-Lepton & 0.114 & 1.354 \\
 \midrule
-3-Lepton High-Purity 0.114 & 0.458 \\
-3-Lepton Middle-Purity 0.357 & 2.145 \\
-4-Lepton High-Purity 0.117 & 1.108 \\
+3-Lepton High-Purity & 0.114 & 0.458 \\
+3-Lepton Middle-Purity & 0.357 & 2.145 \\
+4-Lepton High-Purity & 0.117 & 1.108 \\
 \bottomrule
 \end{tabular}
-\caption{}
-\label{tab:}
+\caption{Estimates of the spurious signal in each category. First max$(|\nss/ds|)$ is the absolute value of the spurious signal divided by the statistical uncertainty on the measurement, maximized amongst signals with invariant masses in the range $\muu\in[120,130]$~GeV. Next max(\nss) provides the same number without the denominator.}
+\label{tab:hmmSs}
 \end{center}
 \end{table}
 
@@ -126,6 +162,8 @@ The primary uncertainties are related to muon reconstruction.
 Muon momentum scale and resolutions are measured by three systematics: MUON\_SCALE, MUON\_MS, and MUON\_ID. 
 The latter two are uncertainties on the resolutions from the MS and ID measurements.
 There is also uncertainty on the efficiency of isolation, reconstruction, trigger, and the track-to-trigger-association (TTVA). \cite{muonReco}
+These efficiencies are measurements in their own right, and the corresponding uncertainties are broken down into systematic (SYS) and statistical (STAT) uncertainties.
+% https://cds.cern.ch/record/2665704/files/ATL-COM-PHYS-2019-176.pdf
 % Electron
 Measurements of energy and resolution is modeled in simulated signal samples based on careful studies. \cite{elecReco}
 The uncertainties on on both energy and resolution lead to small uncertainties on the signal amplitude.
@@ -134,106 +172,51 @@ The simulated dataset is scaled by a factor that reflects the efficiency loss du
 This introduces a systematic uncertainty called Pile Up Reweighting.
 % MET
 Uncertainties on the scale and resolution of \met are measured as well.
-
-These are summarized in Table \ref{tab:hmmExpUncert}.
-Each number describes the impact on the signal amplitude as a result of a $1\sigma$ shift in the corresponding experimental quantity in the simulation.
-
-{\color{red} luminosity}
+% Jets
+Uncertainties related to jets impact signal yields primarily through the b-jet veto.
+These depend on b-tagging efficiency, the uncertainty in the number of tracks associated with the jets, as well as in the jet reconstruction efficiency, energy scale and resolution.
+These are summed in quadrature and counted as a combined ``jet'' systematic.
 
 \begin{table}[htp]
+\caption{Experimental systematic uncertainties on the fractional change induced by a systematic on the signal yield in a specific category.}
 \begin{center}
-\begin{tabular}{l l l l}
+{\small
+\begin{tabular}{l r r r}
 \toprule
-Systematic Uncertainty   & 4-Lepton High-Purity   & 3-Lepton High-Purity  & 3-Lepton Middle-Purity   \\
+Systematic Uncertainty   & \centered{4-Lepton\\ High-Purity [\%]}   & \centered{3-Lepton\\ High-Purity [\%]}  & \centered{3-Lepton\\ Middle-Purity [\%]}   \\
 \midrule
- Muon ISO Efficiency STAT   & 0.04\%   & 0.04\%   & 0.03\%   \\
- Muon ISO Efficiency SYS   & 0.41\%   & 0.42\%   & 0.42\%   \\
- Muon RECO Efficiency STAT   & 0.18\%   & 0.18\%   & 0.18\%   \\
- Muon RECO Efficiency SYS   & 0.78\%   & 0.78\%   & 0.72\%   \\
- Muon Trigger Efficiency STAT   & 0.09    & 0.12\%   & 0.12\%   \\
- Muon Trigger Efficiency SYS   & 0.16    & 0.21\%   & 0.23\%   \\
- Muon TTVA Efficiency STAT   & 0.04\%   & 0.04\%   & 0.04\%   \\
- Muon TTVA Efficiency SYS   & 0.01\%   & 0.01\%   & 0.01\%   \\
- Muon ID   & -0.00    & -0.04    & -0.04\%   \\
- Muon MS   & -0.04    & -0.00    & -0.01\%   \\
- Muon SCALE   & -0.08    & -0.11    & -0.07\%   \\
+ Muon ISO Efficiency STAT   & 0.04   & 0.04   & 0.03   \\
+ Muon ISO Efficiency SYS   & 0.41   & 0.42   & 0.42   \\
+ Muon RECO Efficiency STAT   & 0.18   & 0.18   & 0.18   \\
+ Muon RECO Efficiency SYS   & 0.78   & 0.78   & 0.72   \\
+ Muon Trigger Efficiency STAT   & 0.09    & 0.12   & 0.12   \\
+ Muon Trigger Efficiency SYS   & 0.16    & 0.21   & 0.23   \\
+ Muon TTVA Efficiency STAT   & 0.04   & 0.04   & 0.04   \\
+ Muon TTVA Efficiency SYS   & 0.01   & 0.01   & 0.01   \\
+ Muon ID   & -0.00    & -0.04    & -0.04   \\
+ Muon MS   & -0.04    & -0.00    & -0.01   \\
+ Muon SCALE   & -0.08    & -0.11    & -0.07   \\
  \midrule
- Electron Resolution   & 0.04\%   & -0.07\%   & 0.09\%   \\
- Electron Scale   & 0.06\%   & -0.07\%   & 0.13\%   \\
+ Electron Resolution   & 0.04   & -0.07   & 0.09   \\
+ Electron Scale   & 0.06   & -0.07   & 0.13   \\
  \midrule
- Pile Up Reweighting   & -0.64\%   & -1.16\%   & 0.34\%   \\
+ Jet & 0.64 & 5.06 & 1.80 \\
+ \met & 0.03 & 0.30 & 0.11 \\
+ Pile Up Reweighting   & -0.64   & -1.16   & 0.34   \\
  \midrule
- MET\_SoftTrk\_ResoPara   & 0.02\%   & -0.16\%   & -0.05\%   \\
- MET\_SoftTrk\_ResoPerp   & 0.02\%   & -0.24\%   & -0.08\%   \\
- MET\_SoftTrk\_Scale   & 0.00\%   & 0.07\%   & -0.06\%   \\
- \midrule
+ Total & 1.30  & 5.28 & 2.05 \\
 \bottomrule
 \end{tabular}
-\caption{}
-\label{tab:}
+\label{tab:hmmExpUncert}
+}
 \end{center}
 \end{table}
 
+These are summarized in Table \ref{tab:hmmExpUncert}.
+Each number describes the impact on the signal amplitude as a result of a $1\sigma$ shift in the corresponding experimental quantity in the simulation.
+The combined experimental uncertainties are substantially smaller than the spurious signal uncertainty.
 
-\begin{center}
-\begin{longtable}{|l|l|l|l|l|}
-\hline
-Systematic uncertainty   & VH4Lep-High   & VH3Lep-High  & VH3Lep-Low   \\
- FT\_EFF\_B\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
- FT\_EFF\_C\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
- FT\_EFF\_extrapolation   & 0.00\%   & 0.00\%   & 0.00\%   \\
- FT\_EFF\_extrapolation\_from\_charm   & 0.00\%   & 0.00\%   & 0.00\%   \\
- FT\_EFF\_Light\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
- JET\_BJES\_Response   & 0.00\%   & 0.00\%   & 0.00\%   \\
- JET\_EffectiveNP\_Detector1   & -0.00\%   & -0.05\%   & 0.02\%   \\
- JET\_EffectiveNP\_Detector2   & -0.00\%   & -0.01\%   & 0.00\%   \\
- JET\_EffectiveNP\_Mixed1   & -0.00\%   & -0.02\%   & 0.01\%   \\
- JET\_EffectiveNP\_Mixed2   & 0.01\%   & 0.07\%   & -0.02\%   \\
- JET\_EffectiveNP\_Mixed3   & -0.00\%   & -0.05\%   & 0.02\%   \\
- JET\_EffectiveNP\_Modelling1   & -0.14\%   & -0.83\%   & 0.25\%   \\
- JET\_EffectiveNP\_Modelling2   & 0.01\%   & 0.07\%   & -0.03\%   \\
- JET\_EffectiveNP\_Modelling3   & -0.01\%   & -0.06\%   & 0.03\%   \\
- JET\_EffectiveNP\_Modelling4   & -0.00\%   & -0.01\%   & 0.00\%   \\
- JET\_EffectiveNP\_Statistical1   & 0.00\%   & -0.02\%   & 0.01\%   \\
- JET\_EffectiveNP\_Statistical2   & 0.01\%   & 0.11\%   & -0.04\%   \\
- JET\_EffectiveNP\_Statistical3   & 0.00\%   & -0.00\%   & -0.00\%   \\
- JET\_EffectiveNP\_Statistical4   & -0.00\%   & 0.02\%   & -0.01\%   \\
- JET\_EffectiveNP\_Statistical5   & 0.00\%   & -0.02\%   & 0.01\%   \\
- JET\_EffectiveNP\_Statistical6   & 0.00\%   & -0.02\%   & 0.01\%   \\
- JET\_EtaIntercalibration\_Modelling   & -0.16\%   & -1.47\%   & 0.54\%   \\
- JET\_EtaIntercalibration\_NonClosure\_2018data   & -0.04\%   & -0.12\%   & 0.04\%   \\
- JET\_EtaIntercalibration\_NonClosure\_highE   & 0.00\%   & 0.00\%   & 0.00\%   \\
- JET\_EtaIntercalibration\_NonClosure\_negEta   & 0.00\%   & -0.02\%   & -0.00\%   \\
- JET\_EtaIntercalibration\_NonClosure\_posEta   & -0.00\%   & -0.04\%   & 0.02\%   \\
- JET\_EtaIntercalibration\_TotalStat   & -0.02\%   & -0.25\%   & 0.08\%   \\
- JET\_fJvtEfficiency   & 0.00\%   & 0.00\%   & 0.00\%   \\
- JET\_Flavor\_Composition   & -0.42\%   & -3.44\%   & 1.14\%   \\
- JET\_Flavor\_Response   & 0.19\%   & 1.37\%   & -0.43\%   \\
- JET\_JER\_DataVsMC\_MC16   & -0.10\%   & 0.37\%   & -0.20\%   \\
- JET\_JER\_EffectiveNP\_1   & 0.00\%   & -1.26\%   & 0.61\%   \\
- JET\_JER\_EffectiveNP\_2   & 0.06\%   & -0.16\%   & 0.11\%   \\
- JET\_JER\_EffectiveNP\_3   & -0.04\%   & 0.59\%   & -0.28\%   \\
- JET\_JER\_EffectiveNP\_4   & -0.01\%   & 0.46\%   & -0.33\%   \\
- JET\_JER\_EffectiveNP\_5   & 0.06\%   & 0.07\%   & -0.05\%   \\
- JET\_JER\_EffectiveNP\_6   & -0.02\%   & 0.11\%   & -0.12\%   \\
- JET\_JER\_EffectiveNP\_7   & -0.03\%   & -0.08\%   & 0.06\%   \\
- JET\_JER\_EffectiveNP\_8   & 0.04\%   & -0.00\%   & 0.07\%   \\
- JET\_JER\_EffectiveNP\_9   & -0.05\%   & 0.01\%   & -0.02\%   \\
- JET\_JER\_EffectiveNP\_10   & 0.06\%   & 0.09\%   & -0.07\%   \\
- JET\_JER\_EffectiveNP\_11   & -0.07\%   & -0.11\%   & 0.07\%   \\
- JET\_JER\_EffectiveNP\_12restTerm   & -0.00\%   & -0.16\%   & 0.09\%   \\
- JET\_JvtEfficiency   & 0.11\%   & 0.02\%   & 0.20\%   \\
- JET\_Pileup\_OffsetMu   & -0.09\%   & -1.09\%   & 0.41\%   \\
- JET\_Pileup\_OffsetNPV   & -0.11\%   & -0.88\%   & 0.27\%   \\
- JET\_Pileup\_PtTerm   & -0.00\%   & 0.01\%   & -0.02\%   \\
- JET\_Pileup\_RhoTopology   & -0.29\%   & -2.14\%   & 0.68\%   \\
- JET\_PunchThrough\_MC16   & 0.00\%   & -0.00\%   & 0.00\%   \\
- JET\_SingleParticle\_HighPt   & 0.00\%   & 0.00\%   & 0.00\%   \\
- \caption{Experimental systematic uncertainties on the fractional change induced by a systematic on the signal yield in a specific category.}
-\label{tab:hmmExpUncert}
-\end{longtable}
-\end{center}
+Finally, the uncertainty on the integrated luminosity of the dataset is 2.7\%. \cite{LUCID2}
 
 
 
-The combined experimental uncertainties are smaller than the spurious signal uncertainty.
