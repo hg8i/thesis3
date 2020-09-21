@@ -12,7 +12,7 @@ They will later be revisited to provide mathematically precise definitions in th
 After this, the Standard Model of particle physics (SM) will be described.
 Finally, two sections will present interpretation of the SM in the context of the work of this thesis. First for Higgs coupling to muons, and next for contact interactions.
 
-\subsection{Particles}
+\subsubsection{Particles}
 Fundamental particles are the most basic building block of matter.
 They are defined by several properties including their mass, their charge, and their spin.
 The (SM) identifies a number of fundamental particles that appear as mathematical objects within the theory.
@@ -56,12 +56,11 @@ These particles are summarized in Table \ref{tab:particles}.
 & & Bottom            & $b$ & -1/3 & 1/2 &  $4.18\pm0.04\times10^{3}$ \\
 \midrule
 \multicolumn{2}{c}{\multirow{6}{*}[0em]{\begin{sideways}Bosons\end{sideways}}} & Photon & $\gamma$ & 0 & 1 & $<1\times10^{-24}$ \\
-& & Gluon   & $g$ & 0 & 1 & 0 \\
-& & Z       & \Z  & 0 & 1 & $91.1876\times 10^3$ \\
-& & W       & \Wp & 1 & 1 & $80.39\times 10^3$ \\
-& & W       & \Wm &-1 & 1 & $80.39\times 10^3$ \\
-& & Higgs   & \h  & 0 & 0 & $125.18\times 10^3$ \\
-& & Graviton& $g$ & 0 & 2 & $<1\times 10^{-38}$ \\
+& & Gluon         & $g$ & 0 & 1 & 0 \\
+& & Z boson       & \Z  & 0 & 1 & $91.1876\times 10^3$ \\
+& & W boson       & \W  & $\pm$1 & 1 & $80.39\times 10^3$ \\
+& & Higgs boson   & \h  & 0 & 0 & $125.18\times 10^3$ \\
+& & Graviton      & $g$ & 0 & 2 & $<1\times 10^{-38}$ \\
 \bottomrule
 \end{tabular}
 }
@@ -69,9 +68,23 @@ These particles are summarized in Table \ref{tab:particles}.
 \end{center}
 \end{table}
 
-\subsection{Space}
+\subsubsection{Spacetime}
 
-\subsection{Interactions}
+Spacetime is the four dimensional manifold that particles inhabit at a macroscopic scale.
+Three of these are spacial dimensions, and one is time: 3+1-dimensional spacetime. 
+The distinction between these is described by the special theory of relativity: rotations from one spacial dimension to another take place in Euclidean space, while rotations from a spacial dimension into time take place in a hyperbolic space.
+None of this should be taken at face value, or as posed by Ehrenfest in 1917, \emph{in what way does it become manifest in the fundamental laws of physics that space has three dimensions?} 
+One point to consider is the stability of elliptical orbits in a two-body system.
+If the number of space dimensions exceeds three, then stable circular orbits under gravity are impossible.
+In fact, this result holds for the quantum orbits of electrons around a nucleus as well. 
+Therefore if one is to find one's self in a universe with atoms, chemistry, and planets, then the number of spacial dimensions for these to take place in is limited to three. \cite{ehrenfest}
+This limit on space dimensions suggests the question: why one time dimension?
+In the case of multiple time dimensions, solutions to partial differential equations such as those that describe the laws of physics are ambiguous.
+This is analogous to the situation in 3+1-dimensional spacetime wherein predictions outside the lightcone are impossible.
+It has been argued by Tegmark that this precludes observers as the lack of predictability renders reality incomprehensible.\cite{tegmark-time}
+
+
+\subsubsection{Interactions}
 Until the discovery of the Higgs boson, there were four known forces through which particles might interact: gravity, the electromagnetic force, the weak nuclear force, and the strong nuclear force.
 An interaction between two or more particles entails the exchange of momentum between the participants.
 For each force, the momentum exchange is mediated by a boson.
@@ -104,3 +117,55 @@ Higgs            & Higgs      &  $10^{-xx}$ &    \\
 \end{table}
 
 \subsection{Units}
+
+Enormous concentrations of energy are required to enable the production of certain massive particles, and to facilitate certain interactions.
+In order to study these, it is convenient to define units of measure that are suited to describe such energies and length scales.
+
+Energies are measured in units of \emph{electronvolts}, eV.
+This is equal to the energy required to move an electron through one volt of electric potential
+This is a small amount of energy, essentially the amount needed to move an electron from one terminal of a AA battery to the other.
+In the scope of discovered particles and interactions, eV are often presented along with metric prefixes.
+One mega-electronvolt (MeV) is one million eV, and is the energy scale reached by the earliest circular particle accelerators with fixed magnetic fields called cyclotrons. 
+One giga-electronvolt (GeV) is one billion eV, and became accessible with the development of synchrotron accelerators that gradually increased their fields to reach higher energies.
+One tera-electronvolt (TeV) is one trillion eV.
+The stack of AA batteries required to accelerate an electron to 1 TeV would reach from Earth to Mars at its closest approach.
+The TeV scale was first reached at the Large Hadron Collider at CERN.
+The particular energy scales of interest in this thesis range from tens of GeV to tens of TeV.
+
+Several quantities are useful describing interactions between particles: energy, mass, momentum, distance and time.
+The unit of eV already describes quantities of energy.
+In standard international (SI) units, energy is measured in units of joules $J$ equal to kg$\frac{\text m^2}{\text s^2}$. Mass is therefore expressible as energy divided by velocity squared.
+A convenient velocity to use is the speed of light, $c$.
+In this case, mass is expressed in units of GeV/$c^2$.
+Likewise, momentum, which is measured in SI units as kg$\frac{\text m}{\text s}$, can be expressed in units of GeV/$c$.
+Distance and time can be expressed with the aid of the reduced Planks constant $\hbar=6.58\times10^{-25}$GeV$\cdot$s.
+Using $\hbar$, distance is measured in units of $\hbar c/$GeV and time is measured in units of $\hbar/$GeV.
+These are referred to as \emph{Planck units} and are commonly used throughout this thesis along with SI units following standard practice in this field.
+In cases where their presence can be inferred from the quantity, the constants $\hbar$ and $c$ are often suppressed leaving powers of GeV.
+These units are summarized in Table \ref{tab:units}.
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{l l l l}
+\toprule
+Dimension & SI Units & Natural Units & Abbreviated Units \\
+\midrule
+Energy    &    1.602$\times10^{-10}$J               & GeV            & GeV \\
+Mass      &    1.783$\times10^{-27}$kg              & GeV/$c^2$      & GeV \\
+Momentum  &    5.344$\times10^{-19}$kg$\cdot$m/s    & GeV/$c$        & GeV \\
+Distance  &    1.973$\times10^{-16}$m               & $\hbar c/$GeV  & GeV$^{-1}$ \\
+Time      &    6.582$\times10^{-25}$s               & $\hbar/$GeV    & GeV$^{-1}$ \\
+\bottomrule
+\end{tabular}
+\caption{Description of the units used to describe dimensions in this thesis. Each row lists equivalent quantities.}
+\label{tab:units}
+\end{center}
+\end{table}
+
+The probability that two marbles rolled towards each other will collide is proportional to their respective cross-sectional areas.
+Likewise, the probability of a particular interaction between particles is measured in units of area.
+The unit \emph{barn} is defined such that 1b=$10^{-28}\text m^2$.
+It was named during the Manhattan Project by Marshall Holloway and C. P. Baker after the two rejected the idea of naming the unit ``John'' after John Manley due to the ``use of the term for purposes other than the name of a person''. \cite{holloway}
+As the progenitors remark, the barn is quite a large area to describe particle interactions. 
+Therefore prefixed versions like picobarn ($1\text{pb}=10^{-12}$b) and femptobarn ($1\text{fb}=10^{-15}$b) are commonly used.
+The barn is essentially an SI unit. If it were to be expressed in the natural units of Table \ref{tab:units}, it would be approximately equal to $2568\frac{\hbar^2 c^2}{\text{GeV}^2}$.

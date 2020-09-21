@@ -1,0 +1,239 @@
+\section{Uncertainties}\label{sec:hmmSyst}
+
+\subsection{Reweighted background shape}\label{sec:hmmRw}
+
+The division of the inclusive categories into sub-categories based on the MVA discriminant reduces the number of expected background events in those categories.
+Simultaneously, this reduces the number of simulated background events that appear in those categories.
+When this happens, statistical fluctuations in the simulated background become more significant compared to the overall size of the dataset, resulting in bumpy \muu distributions.
+This undermines this approximation that the simulated background models the underlying PDF that generates background events.
+To counteract this, a reweighting procedure is used to map the background simulation shape from the inclusive categories onto the exclusive categories defined after the MVA cuts.
+
+The reweighting procedure is concerned with the differential \muu shape of the background in the inclusive categories, $B_\text{incl}(\muu)$, and the exclusive categories, $B_\text{excl}(\muu)$.
+The ratio is defined between these in each of the exclusive categories, $R=\frac{B_\text{incl}(\muu)}{B_\text{excl}(\muu)}$.
+A second degree polynomial is used to define the PDF in Equation \ref{eqn:hmmRw}.
+\begin{equation}\begin{split} \label{eqn:hmmRw}
+f_R(x)=&1+x*c_0+c 1*(x)^2 \\
+x=&\frac{\muu-110}{50} \\
+\end{split}\end{equation} 
+Here, \muu is measured in GeV.
+This polynomial has two free parameters $c_0$ and $c_1$, as well as the over all normalization.
+The Equation \ref{eqn:hmmRw} is fit to the ratio $R$ for each of the exclusive categories.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/reweight/4lep0.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/reweight/3lep0.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/reweight/3lep1.pdf}}}
+\caption{Illustration of the steps of the reweighting procedure shown for the exclusive categories: 4-lepton high-purity (a), 3-lepton high-purity (b), and 3-lepton high-purity (c).}
+\label{fig:hmmRw}
+\end{figure}
+
+Figure \ref{fig:hmmRw} shows the reweighting procedure applied to the simulated diboson background in each category.
+First the polynomial of Equation \ref{eqn:hmmRw} is fit to the ratio $R$ in each category.
+These ratios are shown in the lower half of the figures in red.
+Then, the inverse of the polynomial is convolved with the exclusive distribution, shown in red, to produce a shape similar to the exclusive distribution, shown in blue.
+The reweighted shape, shown in black dots, is seen to conform to the shape of the exclusive distribution.
+The reweighted shape is also smoother than the exclusive simulation shape due to the larger number of events present in its dataset.
+This feature will be helpful in the subsequent measurements of uncertainties.
+
+\subsection{Spurious Signal Uncertainty}
+
+When the S+B model of Equation \ref{eqn:hmmSbFunc} is fit to a dataset, the fitted value of \mus is the signal strength for which the dataset is most likely.
+This is interpreted as a measure of the signal strength found in that dataset. 
+\footnote{The distinction is subtle, but essential in frequentest statistics.}
+When fit to the underlying background PDF, it is ideal for signal strength to be measured at \mus=0.
+A deviation from this corresponds to the spurious measurement of signal in a dataset in which it does not exist.
+This bias is named \emph{spurious signal}, or \nss, and is the dominant uncertainty associated with this analysis.
+
+It is not a straight forward task to measure the spurious signal associated with a model, because the underlying background distributions is unknown. 
+An approximation of \nss may be made from the \mus measured when fitting the S+B model to the simulated background dataset.
+This makes the implicit assumption that the discretely simulated dataset accurately represents the true underlying background PDF.
+Statistical fluctuations in the simulated background limit the accuracy of this assumption.
+Instead fits of the model to the simulated background shape are interpreted as upper limits on the size of \nss, since the recovered \mus includes both the true \nss as well as a measurement statistical power of the simulation.
+Therefore instead of measuring \nss, a procedure is designed to constrain the size of the spurious signal. 
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/ss/ss-4lep0.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/ss/ss-3lep0.pdf}}}
+\subfloat[][]{{\includegraphics[width=0.32\textwidth]{figures/hmm/ss/ss-3lep1.pdf}}}
+\caption{Measurements of the spurious signal relative to the statistical uncertainty on that measurement, $\nss/dS$, shown as a function of signal mass \muu. The measurements are shown in three exclusive categories: 4-lepton high-purity (a), 3-lepton high-purity (b), and 3-lepton high-purity (c). The measurements are made both on the smoothed reweighted background distributions (blue), and the fully simulated background distributions (red). The improvement when using the reweighted distribution is evident in the smaller measured spurious signals.}
+\label{fig:hmmSsScan}
+\end{figure}
+
+% Scanning signal mass
+The result of fitting the S+B model to the background simulation depends strongly on the number of events simulated with invariant mass \muu=125~GeV. 
+This is because the signal component of that model peaks sharply in that region.
+Since this number of events is subject to statistical fluctuations, the measured \nss is subject to these as well.
+In fact, the statistical fluctuations may act to counterbalance the true \nss, resulting in an underestimate of the spurious signal.
+To avoid this, a series of alternative S+B models are defined with identical signal components offset by some invariant mass.
+These are produced with peaks in the range $\muu\in[120,130]$~GeV.
+Each S+B model is fit to the same background distribution, which exposes the signal component to different statistical fluctuations.
+The relative spurious signal $\nss/dS$ is defined as the measured \mus as a fraction of the statistical constraint on \mus.
+This is plotted as a function of signal mass \muu in Figure \ref{fig:hmmSsScan}.
+A smooth evolution of the relative spurious signal is an indication that the \nss is measured consistently.
+
+% Smoothed templates
+The plots in Figure \ref{fig:hmmSsScan} show the relative spurious signal measured from the simulated background exclusive categories, using both the fully simulated datasets and the reweighted datasets described in Section \ref{sec:hmmRw}.
+Here the benefit of using the smoother background representation is seen, since in general the $\nss/dS$ measured on the reweighted distribution has a smaller magnitude than the fully simulated distribution.
+The result with the fully simulated dataset is included for illustration, but is not used further.
+The maximum absolute value of \nss measured in the range $\muu\in[120,130]$~GeV is taken to define the limit on the spurious signals.
+This measurement is performed both in the inclusive and exclusive categories.
+These are given in Table \ref{tab:hmmSs}.
+Together these define the leading uncertainties on the measured signal strength, \mus. 
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{l l l l}
+\toprule
+Category & max$(|\nss/ds|)$ & max(\nss) \\
+\midrule
+3-Lepton 0.391 & 1.674 \\
+4-Lepton 0.114 & 1.354 \\
+\midrule
+3-Lepton High-Purity 0.114 & 0.458 \\
+3-Lepton Middle-Purity 0.357 & 2.145 \\
+4-Lepton High-Purity 0.117 & 1.108 \\
+\bottomrule
+\end{tabular}
+\caption{}
+\label{tab:}
+\end{center}
+\end{table}
+
+\subsection{Experimental and Theoretical Uncertainties}
+
+Uncertainty on the signal simulation arise from limited knowledge of theoretical and experimental that determine it. 
+The primary consequence of this uncertainty is that the number of events expected to be reconstructed from the Standard Model VH signal processes is not precisely known.
+Theoretical uncertainties cause it to be uncertain how many events the Standard Model may predict.
+Experimental uncertainties lead to uncertainty in how many events may be reconstructed given the prediction of the standard model.
+In each case, the impact on the amplitude of the signal shape in each category is estimated with a comparison to a signal simulated under an variation corresponding to the theoretical and experimental uncertainties.
+
+The primary sources of theoretical uncertainty on signal production are well studied. \cite{CERNYellowReport4}
+The largest is on the scale of the strong coupling $\alpha_s$, which leads to changes in the signal amplitude ranging from 3.1-3.5\%.
+Next is uncertainty due to the choice of the parton distribution function, with amplitude effects that ranges from 2.1-2.8\%.
+The uncertainty on the branching ratio of the Higgs decaying to two muons is 1.23\%. \cite{CERNYellowReport4}
+These are all significantly smaller than the spurious signal uncertainty.
+This analysis is formulated to make distinctions between signal+background and background-only hypotheses.
+In this formulation, there is no uncertainty on the signal model itself, but instead these uncertainties describe a range of alternative signal models which may be tested independently.
+
+Experimental uncertainty on signal production dictates the uncertainty in efficiency to reconstruct signal events. 
+Although this is primarily due to systematic uncertainties related to muon detection, systematics related to election, jet, and \met are also considered.
+
+The primary uncertainties are related to muon reconstruction.
+Muon momentum scale and resolutions are measured by three systematics: MUON\_SCALE, MUON\_MS, and MUON\_ID. 
+The latter two are uncertainties on the resolutions from the MS and ID measurements.
+There is also uncertainty on the efficiency of isolation, reconstruction, trigger, and the track-to-trigger-association (TTVA). \cite{muonReco}
+% Electron
+Measurements of energy and resolution is modeled in simulated signal samples based on careful studies. \cite{elecReco}
+The uncertainties on on both energy and resolution lead to small uncertainties on the signal amplitude.
+% PRW
+The simulated dataset is scaled by a factor that reflects the efficiency loss due to pileup effects in data.
+This introduces a systematic uncertainty called Pile Up Reweighting.
+% MET
+Uncertainties on the scale and resolution of \met are measured as well.
+
+These are summarized in Table \ref{tab:hmmExpUncert}.
+Each number describes the impact on the signal amplitude as a result of a $1\sigma$ shift in the corresponding experimental quantity in the simulation.
+
+{\color{red} luminosity}
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{l l l l}
+\toprule
+Systematic Uncertainty   & 4-Lepton High-Purity   & 3-Lepton High-Purity  & 3-Lepton Middle-Purity   \\
+\midrule
+ Muon ISO Efficiency STAT   & 0.04\%   & 0.04\%   & 0.03\%   \\
+ Muon ISO Efficiency SYS   & 0.41\%   & 0.42\%   & 0.42\%   \\
+ Muon RECO Efficiency STAT   & 0.18\%   & 0.18\%   & 0.18\%   \\
+ Muon RECO Efficiency SYS   & 0.78\%   & 0.78\%   & 0.72\%   \\
+ Muon Trigger Efficiency STAT   & 0.09    & 0.12\%   & 0.12\%   \\
+ Muon Trigger Efficiency SYS   & 0.16    & 0.21\%   & 0.23\%   \\
+ Muon TTVA Efficiency STAT   & 0.04\%   & 0.04\%   & 0.04\%   \\
+ Muon TTVA Efficiency SYS   & 0.01\%   & 0.01\%   & 0.01\%   \\
+ Muon ID   & -0.00    & -0.04    & -0.04\%   \\
+ Muon MS   & -0.04    & -0.00    & -0.01\%   \\
+ Muon SCALE   & -0.08    & -0.11    & -0.07\%   \\
+ \midrule
+ Electron Resolution   & 0.04\%   & -0.07\%   & 0.09\%   \\
+ Electron Scale   & 0.06\%   & -0.07\%   & 0.13\%   \\
+ \midrule
+ Pile Up Reweighting   & -0.64\%   & -1.16\%   & 0.34\%   \\
+ \midrule
+ MET\_SoftTrk\_ResoPara   & 0.02\%   & -0.16\%   & -0.05\%   \\
+ MET\_SoftTrk\_ResoPerp   & 0.02\%   & -0.24\%   & -0.08\%   \\
+ MET\_SoftTrk\_Scale   & 0.00\%   & 0.07\%   & -0.06\%   \\
+ \midrule
+\bottomrule
+\end{tabular}
+\caption{}
+\label{tab:}
+\end{center}
+\end{table}
+
+
+\begin{center}
+\begin{longtable}{|l|l|l|l|l|}
+\hline
+Systematic uncertainty   & VH4Lep-High   & VH3Lep-High  & VH3Lep-Low   \\
+ FT\_EFF\_B\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ FT\_EFF\_C\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ FT\_EFF\_extrapolation   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ FT\_EFF\_extrapolation\_from\_charm   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ FT\_EFF\_Light\_systematics   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ JET\_BJES\_Response   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ JET\_EffectiveNP\_Detector1   & -0.00\%   & -0.05\%   & 0.02\%   \\
+ JET\_EffectiveNP\_Detector2   & -0.00\%   & -0.01\%   & 0.00\%   \\
+ JET\_EffectiveNP\_Mixed1   & -0.00\%   & -0.02\%   & 0.01\%   \\
+ JET\_EffectiveNP\_Mixed2   & 0.01\%   & 0.07\%   & -0.02\%   \\
+ JET\_EffectiveNP\_Mixed3   & -0.00\%   & -0.05\%   & 0.02\%   \\
+ JET\_EffectiveNP\_Modelling1   & -0.14\%   & -0.83\%   & 0.25\%   \\
+ JET\_EffectiveNP\_Modelling2   & 0.01\%   & 0.07\%   & -0.03\%   \\
+ JET\_EffectiveNP\_Modelling3   & -0.01\%   & -0.06\%   & 0.03\%   \\
+ JET\_EffectiveNP\_Modelling4   & -0.00\%   & -0.01\%   & 0.00\%   \\
+ JET\_EffectiveNP\_Statistical1   & 0.00\%   & -0.02\%   & 0.01\%   \\
+ JET\_EffectiveNP\_Statistical2   & 0.01\%   & 0.11\%   & -0.04\%   \\
+ JET\_EffectiveNP\_Statistical3   & 0.00\%   & -0.00\%   & -0.00\%   \\
+ JET\_EffectiveNP\_Statistical4   & -0.00\%   & 0.02\%   & -0.01\%   \\
+ JET\_EffectiveNP\_Statistical5   & 0.00\%   & -0.02\%   & 0.01\%   \\
+ JET\_EffectiveNP\_Statistical6   & 0.00\%   & -0.02\%   & 0.01\%   \\
+ JET\_EtaIntercalibration\_Modelling   & -0.16\%   & -1.47\%   & 0.54\%   \\
+ JET\_EtaIntercalibration\_NonClosure\_2018data   & -0.04\%   & -0.12\%   & 0.04\%   \\
+ JET\_EtaIntercalibration\_NonClosure\_highE   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ JET\_EtaIntercalibration\_NonClosure\_negEta   & 0.00\%   & -0.02\%   & -0.00\%   \\
+ JET\_EtaIntercalibration\_NonClosure\_posEta   & -0.00\%   & -0.04\%   & 0.02\%   \\
+ JET\_EtaIntercalibration\_TotalStat   & -0.02\%   & -0.25\%   & 0.08\%   \\
+ JET\_fJvtEfficiency   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ JET\_Flavor\_Composition   & -0.42\%   & -3.44\%   & 1.14\%   \\
+ JET\_Flavor\_Response   & 0.19\%   & 1.37\%   & -0.43\%   \\
+ JET\_JER\_DataVsMC\_MC16   & -0.10\%   & 0.37\%   & -0.20\%   \\
+ JET\_JER\_EffectiveNP\_1   & 0.00\%   & -1.26\%   & 0.61\%   \\
+ JET\_JER\_EffectiveNP\_2   & 0.06\%   & -0.16\%   & 0.11\%   \\
+ JET\_JER\_EffectiveNP\_3   & -0.04\%   & 0.59\%   & -0.28\%   \\
+ JET\_JER\_EffectiveNP\_4   & -0.01\%   & 0.46\%   & -0.33\%   \\
+ JET\_JER\_EffectiveNP\_5   & 0.06\%   & 0.07\%   & -0.05\%   \\
+ JET\_JER\_EffectiveNP\_6   & -0.02\%   & 0.11\%   & -0.12\%   \\
+ JET\_JER\_EffectiveNP\_7   & -0.03\%   & -0.08\%   & 0.06\%   \\
+ JET\_JER\_EffectiveNP\_8   & 0.04\%   & -0.00\%   & 0.07\%   \\
+ JET\_JER\_EffectiveNP\_9   & -0.05\%   & 0.01\%   & -0.02\%   \\
+ JET\_JER\_EffectiveNP\_10   & 0.06\%   & 0.09\%   & -0.07\%   \\
+ JET\_JER\_EffectiveNP\_11   & -0.07\%   & -0.11\%   & 0.07\%   \\
+ JET\_JER\_EffectiveNP\_12restTerm   & -0.00\%   & -0.16\%   & 0.09\%   \\
+ JET\_JvtEfficiency   & 0.11\%   & 0.02\%   & 0.20\%   \\
+ JET\_Pileup\_OffsetMu   & -0.09\%   & -1.09\%   & 0.41\%   \\
+ JET\_Pileup\_OffsetNPV   & -0.11\%   & -0.88\%   & 0.27\%   \\
+ JET\_Pileup\_PtTerm   & -0.00\%   & 0.01\%   & -0.02\%   \\
+ JET\_Pileup\_RhoTopology   & -0.29\%   & -2.14\%   & 0.68\%   \\
+ JET\_PunchThrough\_MC16   & 0.00\%   & -0.00\%   & 0.00\%   \\
+ JET\_SingleParticle\_HighPt   & 0.00\%   & 0.00\%   & 0.00\%   \\
+ \caption{Experimental systematic uncertainties on the fractional change induced by a systematic on the signal yield in a specific category.}
+\label{tab:hmmExpUncert}
+\end{longtable}
+\end{center}
+
+
+
+The combined experimental uncertainties are smaller than the spurious signal uncertainty.

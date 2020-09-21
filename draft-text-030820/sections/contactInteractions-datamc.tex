@@ -12,13 +12,7 @@ This reduces the total number of data events considered for the analysis to {\co
 
 % GRL
 Only events recorded during good operation of the detector are used.
-The following Good Run Lists identify the data taking periods during which the data used for analysis was collected.
-\begin{itemize}
-	\item 2015: data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS \\ \_StandardGRL\_All\_Good\_25ns.xml
-	\item 2016: data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04 \\ \_PHYS\_StandardGRL\_All\_Good\_25ns.xml
-	\item 2017: data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown \\ \_PHYS\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-	\item 2018: data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS \\ \_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-\end{itemize}
+The list of events meeting this requirement are known as the Good Run List, which is summarized in Section \ref{sec:physData}.
 
 % Trigger
 The first requirement for an event to be considered is the trigger: events must be identified as interesting by the ATLAS trigger system in order to be recorded.
@@ -233,6 +227,8 @@ These weights are applied to the LO DY events to transform these into the CI sig
 Dilepton mass-dependent higher-order QCD production corrections for the signals are computed with the same methodology as for the DY background, correcting from LO to NNLO.
 Similarly, electroweak corrections for the signals are applied in the CI reweighting along with the interference effects, correcting from LO to NLO.
 These signal shapes are used for optimisations as well as for calculations of the cross-section and acceptance times efficiency.
+
+\subsection{Kinematic Distributions}
 
 Several distributions of kinematic variables are provided in the following figures.
 First the invariant mass distributions are shown in in Figure \ref{fig:ciMassMcPlot}.

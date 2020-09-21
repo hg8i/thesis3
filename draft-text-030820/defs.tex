@@ -25,6 +25,7 @@
 \usepackage{afterpage}
 
 
+
 \usepackage{physics}
 \usepackage{braket} % include after physics
 \usepackage{xspace}
@@ -32,7 +33,7 @@
 \usepackage{multirow}
 \usepackage{indentfirst}
 
-\usepackage{caption}
+\usepackage[margin=1.5cm]{caption}
 \usepackage{subcaption}
 % \usepackage[splitrule]{footmisc}
 \interfootnotelinepenalty=10000
@@ -43,6 +44,7 @@
 
 \usepackage{dcolumn}
 \newcolumntype{d}[1]{D{.}{.}{#1} }
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 \usepackage{makecell}
 
 
@@ -58,7 +60,9 @@
 % particles
 \newcommand*{\pp}{\ensuremath{pp}\xspace}
 \newcommand*{\mm}{\ensuremath{\upmu\upmu}\xspace}
+\newcommand*{\tautau}{\ensuremath{\tau\tau}\xspace}
 \newcommand*{\ee}{\ensuremath{ee}\xspace}
+\let\llt\ll % booya!
 \renewcommand*{\ll}{\ensuremath{\ell\ell}\xspace}
 \newcommand*{\W}{\ensuremath{W^\pm}\xspace}
 \newcommand*{\Wp}{\ensuremath{W^+}\xspace}
@@ -66,6 +70,7 @@
 \newcommand*{\Z}{\ensuremath{Z^0}\xspace}
 \newcommand*{\jpsi}{\ensuremath{J/\psi}\xspace}
 \newcommand*{\vhmm}{\ensuremath{V(H\to\mu\mu)}\xspace}
+\newcommand*{\mh}{\ensuremath{m_{H}}\xspace}
 \newcommand*{\muu}{\ensuremath{m_{\mu\mu}}\xspace}
 \newcommand*{\mee}{\ensuremath{m_{ee}}\xspace}
 \newcommand*{\mll}{\ensuremath{m_{\ell\ell}}\xspace}
@@ -75,27 +80,73 @@
 \newcommand*{\m}{\ensuremath{\mu}\xspace}
 \newcommand*{\h}{\ensuremath{H}\xspace}
 \newcommand*{\pt}{\ensuremath{p_\text{T}}\xspace}
+\newcommand*{\httt}{\ensuremath{H_\text{T}}\xspace}
 \newcommand*{\et}{\ensuremath{E_\text{T}}\xspace}
+\newcommand*{\met}{\ensuremath{E_T^\mathrm{miss}}\xspace}
+\newcommand*{\sqrts}{\ensuremath{\sqrt{s}}\xspace}
+\newcommand*{\sqrths}{\ensuremath{\sqrt{\hat{s}}}\xspace}
+
+% chiralities
+\newcommand*{\fl}{\ensuremath{f_\text{L}}\xspace}
+\newcommand*{\fr}{\ensuremath{f_\text{R}}\xspace}
+\newcommand*{\flp}{\ensuremath{f'_\text{L}}\xspace}
+\newcommand*{\frp}{\ensuremath{f'_\text{R}}\xspace}
+\newcommand*{\ufl}{\ensuremath{\overline{f}_\text{L}}\xspace}
+\newcommand*{\ufr}{\ensuremath{\overline{f}_\text{R}}\xspace}
+\newcommand*{\uflp}{\ensuremath{\overline{f}'_\text{L}}\xspace}
+\newcommand*{\ufrp}{\ensuremath{\overline{f}'_\text{R}}\xspace}
+
+% mandelstram
+\newcommand*{\shat}{\ensuremath{\hat{s}}\xspace}
+\newcommand*{\uhat}{\ensuremath{\hat{u}}\xspace}
+\newcommand*{\that}{\ensuremath{\hat{t}}\xspace}
+\newcommand*{\qbar}{\ensuremath{\overline{q}}\xspace}
+\newcommand*{\ubar}{\ensuremath{\overline{u}}\xspace}
+\newcommand*{\dbar}{\ensuremath{\overline{d}}\xspace}
+\newcommand*{\pbar}{\ensuremath{\overline{p}}\xspace}
+\newcommand*{\fbar}{\ensuremath{\overline{f}}\xspace}
+\newcommand*{\tbar}{\ensuremath{\overline{t}}\xspace}
+\newcommand*{\bbar}{\ensuremath{\overline{b}}\xspace}
+\newcommand*{\cbar}{\ensuremath{\overline{c}}\xspace}
+
+\newcommand*{\neutralcone}{\ensuremath{\pt^\text{neu20}}\xspace}
+\newcommand*{\ptcone}{\ensuremath{\pt^\text{cone20}}\xspace}
+\newcommand*{\ptvarconeMuon}{\ensuremath{\pt^\text{varcone30}}\xspace}
+\newcommand*{\ptvarconeElec}{\ensuremath{\pt^\text{varcone20}}\xspace}
+\newcommand*{\etcone}{\ensuremath{\et^\text{topocone20}}\xspace}
 \newcommand*{\xsbr}{\ensuremath{\sigma_\text{visible}\times\text{BR}}\xspace}
 \newcommand*{\acceff}{\ensuremath{\mathcal{A}\times\epsilon_\text{sig}}\xspace}
 \newcommand*{\lam}{\ensuremath{\Lambda}\xspace}
 \newcommand*{\nsig}{\ensuremath{N_\text{sig}}\xspace}
 \newcommand*{\nbkg}{\ensuremath{N_\text{bkg}}\xspace}
 
+% Generators
+\newcommand*{\powheg}{\textsc{Powheg-Box}\xspace}
+\newcommand*{\sherpa}{\textsc{Sherpa}\xspace}
+\newcommand*{\madgraph}{\textsc{MadGraph5}\_aMC@NLO\xspace}
+\newcommand*{\pythia}{\textsc{Pythia}\xspace}
+\newcommand*{\evtgen}{\textsc{EvtGen}\xspace}
+\newcommand*{\geant}{\textsc{Geant}\xspace}
+
+
+
+
 % statistics
 \newcommand*{\cls}{\ensuremath{\text{CL}_\text{s}}\xspace}
 \newcommand*{\clb}{\ensuremath{\text{CL}_\text{b}}\xspace}
 \newcommand*{\clsb}{\ensuremath{\text{CL}_\text{s+b}}\xspace}
+\newcommand*{\mus}{\ensuremath{\mu_\text{S}}\xspace}
+\newcommand*{\nss}{\ensuremath{N_\text{ss}}\xspace}
 
 % processes
 \newcommand*{\hmm}{\ensuremath{H\to\mm}\xspace}
+\newcommand*{\nr}{\ensuremath{non-resonant}\xspace}
 
 % units
 \newcommand*{\cms}{\ensuremath{\text{cm}^{-2}\text{s}^{-1}}\xspace}
 \newcommand*{\fb}{\ensuremath{\text{fb}^{-1}}\xspace}
 
 % variables
-\newcommand*{\met}{\ensuremath{E_T^\mathrm{miss}}\xspace}
 
 \newcommand*{\half}{\ensuremath{\frac{1}{2}}\xspace}
 \newcommand*{\as}{\ensuremath{\alpha_s\xspace}}
@@ -117,6 +168,7 @@
 \newcommand{\longeqnote}[1]{& & \\ \notag  &  &  &  &  & \text{\small\llap{#1}}}
 
 \newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+
 
 
 \newcommand*{\POWHEG}{\textsc{Powheg}\xspace}
