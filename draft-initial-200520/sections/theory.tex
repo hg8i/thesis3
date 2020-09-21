@@ -1,0 +1,1664 @@
+\chapter{Theory}
+
+% ##############################################################
+\section{The Universe and the Atom}
+% ##############################################################
+
+% What is in the universe
+% How math describes complex systems
+% How math describes fundamental systems
+% The order of the chapter
+
+\begin{itemize}
+    \item In a coarse sense, the universe consists of: Particles, Space that they inhabit, Interactions within and between these
+    \item It is a fact, and historically not an intuitive fact, that these things and many others are well described by mathematics.
+    \item This chapter provides the mathematical context for the work of modern high energy particle physics.
+\end{itemize}
+
+\begin{itemize}
+    \item Before proceeding, reflect on the mathematical nature of reality
+    \item Many complex phenomena are described approximately by math
+    \begin{itemize}
+        \item A swinging pendulum is described by a 2nd order differential equation, neglecting effects like the deformation of the material.
+        \item A satellite's orbit of the moon is described approximately by Kepler's laws of planetary motion, but this neglects the effects of mass concentrations near the surface that perturb the orbit and lead Apollo 11 to over-correct its orbit.
+    \end{itemize}
+    \item The degree to which these systems and others are described by math is suggestive of an approximate isomorphism between the mathematical structure, and the system
+\end{itemize}
+
+\begin{itemize}
+    \item Start with an outline of the components of the universe, to better understand what it is that we wish to use Math to describe.
+    \item Next, define the mathematical structures. Here we will take a top-down approach beginning with Group theory.
+    \item Next, understand how this structure gives rise to the observable phenomena
+    \item Next, look at the particular dynamics of $H\to\mu\mu$
+    \item Finally look at the dynamics of Contact interactions
+\end{itemize}
+
+
+% --------------------------------------------------------------
+\subsection{Space}
+\begin{itemize}
+    \item Universe was born 14B years ago
+    \item Experienced rapid inflation, and then stopped
+    \item Space is still expanding
+    \item There is evidence that the expansion is accelerating now after being steady for X-billion years.
+    \item To the best measurements, space is flat, and infinite
+    \item We see 3 space and 1 time dimensions
+    \item Empty space is described by symmetries: rotational, translational, and boost. Together, these make the Poincare group.
+    \item Space is also locally curved: the curvature effects energy, and energy effects the curvature.
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Particles}
+\begin{itemize}
+    \item A fundamental particle is something that cannot be broken down into smaller components. This is the human experience of particles, but the remainder of this chapter will develop a more rigorous definition
+    \item Particles are identified by their properties: mass, spin, charge under forces
+    \item There are bosons with integer spin, and fermions with half-integer spins
+    \item Within bosons, there are photons, gluons, W, Z, H. These carry forces.
+    \item With in fermions, there are quarks and leptons
+    \item Quarks carry fractional electric charge, and color charge. They combine to make composite Hadrons (baryons and mesons)
+    \item Charged leptons: e, mu, tau, carry electric charge. The heavier leptons have short lives and will decay to lower mass/energy states
+    \item Un-charged leptons: neutrinos only interact weakly.
+\end{itemize}
+
+\begin{itemize}
+    \item Barn Named at Purdue during dinner by authors. \cite{holloway}
+    \item Could not think of great person associated with the field. Oppenheimer was too long. The director, John Manley: last name too long, first name means toilet. \cite{holloway}
+    \item "For nuclear processes, ``as big as a barn''. \cite{holloway}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Interactions}
+% An interaction means an exchange of momentum between two or more particles
+% Particles interact with each other through the five forces: Gravity, Weak, Electromagnetic, Strong, and Higgs
+% In nature, interactions are mediated by gauge and scalar bosons 
+
+
+% ##############################################################
+\section{Mathematical Structures}
+% ##############################################################
+
+% --------------------------------------------------------------
+\subsection{Groups and their Properties}
+\begin{itemize}
+    \item Noether's Theorem: continuous symmetry in the action-> conserved quantity. Energy and momentum conserved. \cite{robinson}
+    \item Symmetry: something that stays the same after operation \cite{robinson}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Group definition}
+\begin{itemize}
+    \item A group is a set of elements $G=(g_1,g_2,...)$ and a product rule. The requirements are \cite{wells}
+    \begin{enumerate}
+        \item Closure: $g_ig_j$ in group \cite{wells}
+        \item Associative: $g_i(g_jg_k)=(g_ig_j)g_k$ \cite{wells}
+        \item Unique Identity (in group) $g_iI=g_i$ \cite{wells}
+        \item Unique inversion for everything in group: $g_i^-1g_i=I$ \cite{wells}
+    \end{enumerate}
+    \item For Abelian group, commutative property: $g_ig_j=g_jg_i$ \cite{wells}
+    \item Groups: set of objects (G) and an operation (*). \cite{robinson}
+    \begin{itemize}
+        \item Associativity, closure, identity, inverse \cite{robinson}
+    \end{itemize}
+    \item Order: number of elements in group. Can be finite, or infinite. Elements can be discrete, or continuous. \cite{robinson}
+    \item Group can be written out in multiplication table, for which each row/column must contain exactly one instance of each member \cite{robinson}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Group actions}
+\begin{itemize}
+    \item \textbf{Transformations} for collection G of invertaible transformations $x'=T(x)$ \cite{ibragimov}
+    \begin{itemize}
+        \item G contains identity I \cite{ibragimov}
+        \item G contains inverse $T^{-1}$ for any $T\in G$ \cite{ibragimov}
+        \item G contains product of $T_1T_2$ for any $T\in G$ \cite{ibragimov}
+    \end{itemize}
+    G is a group if for any x in set of objects S, $T(x)=x'\in S$.
+    \item The generators of multi-parameter transformation groups form specific linear spaces known as Lie algebras. \cite{ibragimov}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Representations}
+\begin{itemize}
+    \item Group elements are nxn matrices acting on n-vector physical states. (this is a representation) \cite{wells}
+        \item In general, group transformation, you have set of objects $\phi$ that transform in representation R of group G. $U_i^j$ is a representation matrix. \cite{wells}
+        \begin{equation}\begin{split}
+        \phi_i\to\phi_i'=U_i^j\phi_j
+        \end{split}\end{equation}
+        \item Unitary matrices $U_i^j$  \cite{wells}
+        \item Reducible representations can be broken up into pieces and treated individually. \cite{wells}
+    \item \textbf{Representations} \cite{hokim}
+    \begin{itemize}
+        \item Multiplets of particles form basis vectors of \emph{irreducible representations}. \cite{hokim}
+        \item Trivial one-dimensional representation \cite{hokim}
+        \item Fundamental representation: the set of transformations ${\exp(-i\pmb\alpha\cdot\pmb\tau/2)}$. These act on a \textbf{carrier space} of dimension 2, whose basis vectors $\psi$ transform under SU(2) as: \cite{hokim}
+        \begin{equation}\begin{split}
+        \psi\to\psi'=&S^a_b\psi^b\\
+        \phi_a\to\phi'_a=&(S^{-1})^b_a\\
+        =&(S^\dagger)^b_a\phi_b \\
+        =&(S^b_a)^*\phi_b \\
+        \end{split}\end{equation}
+        The \textbf{conjugate} of the fundamental representation has basis $\phi$.
+        \item All higher representations of a group are constructed from fundamental representation by tensor multiplication. \cite{hokim}
+    \item \textbf{Representations} \cite{robinson}
+    \begin{itemize}
+        \item Definition: a specific set of numbers or objects that form a group. \cite{robinson}
+        \item Consider 3 element group. One representation is additive integers mod 3: $e=0, g_1=1, g_2=2$ with addition operation. Another representation is multiplication $e=1,g_1=e^{i2\pi/3},g_2=e^{i4\pi/3}$ \cite{robinson}
+        \item In the notation here, (G,*) is group and operator, while D(G) is a representation, and elements D(e), D(g1) are matrix elements of the group in the representation. The operator * is matrix multiplication: $D(g_i)\cdot D(g_j)=D(g_i*g_j)$. \cite{robinson}
+        \item Find D for arbitrary group, using relationship $[D(g_k)]_{ij}=\braket{g_i|D(g_k)|g_j}$, where $g_i$ are orthonormal unit vectors. This is a cookbook recipe for finding the matrix: \cite{robinson}
+        \begin{equation}\begin{split}
+            [D(g_k)]_{ij}=&\braket{g_i|D(g_k)|g_i} \\
+                         =&\braket{g_i|g_k\cdot g_i};\quad\text{Dot product defined by group} \\
+                         =&\braket{g_i|g_?}
+        \end{split}\end{equation}
+        This \emph{representation} is called the \textbf{Regular Representation}
+    \end{itemize}
+    \item \textbf{Reducibility} \cite{robinson}
+    \begin{itemize}
+        \item Regular representation is mxm matrix, where m is order(G). But can find smaller matrix representation. \cite{robinson}
+        \item If no smaller representation exists, is irreducible \cite{robinson}
+    \end{itemize}
+    \item \textbf{Simplicity} \cite{pfeifer}
+    \begin{itemize}
+        \item Lie algebra is simple (note, SU(n) are) if it is not Abelian and does not contain invariant Lie subalgebra. \cite{pfeifer}
+        \item Abelian: [a,b]=0 for all a,b. Or say all structure constants are zero \cite{pfeifer}
+        \item Subalgebra: subset of elements, same commutator, and is proper if not one of the trivial subsets. \cite{pfeifer}
+        \item Invariant if $[a,b]\in L'$ if $a\in L'$ and $b\in L$  \cite{pfeifer}
+    \item The \textbf{Ado Theorem states}: Every abstract Lie algebra is isomorphic to a Lie algebra of matrices with normal commutator. \cite{pfeifer}
+    \end{itemize}
+    \item Tensor $T^{a_1,...,a_n}$ is basis for linear representations of group. Is rank $n$. If is irreducible then has $n+1$ independent components. \cite{hokim}
+    \item Possible to assume basis functions are orthonormalized without restriction. \cite{pfeifer}
+    \item Useful consequences since $\braket{\psi_m|\psi}=\sum_{k=1}^d c_k\braket{\psi_m|\psi_k}=c_m$ \cite{pfeifer}
+    \begin{equation}\begin{split}
+    \ket{\psi}=\sum_{j=1}^d\ket{\psi_j}\braket{\psi_j|\psi}\\
+    \sum_{j=1}^d\ket{\psi_j}\bra{\psi_j}=1 \\
+    \end{split}\end{equation}
+    \item Matrices multiply in analogy to corresponding operators. \cite{pfeifer}
+    \begin{equation}\begin{split}
+    \braket{\psi_i|xy\psi_k}=\sum_{j=1}^d\braket{\psi_i|x\psi_j}\braket{\psi_j|y\psi_k} \\
+    x\psi_k=\sum_{l=1}^d\Gamma(x)_{lk}\psi_l \\
+    \Gamma(xy)=\Gamma(x)\Gamma(y) \\
+    \end{split}\end{equation}
+    \item \textbf{Representation}: for every elements x,y in L, there is a dxd matrix R(x) with: \cite{pfeifer}
+    \begin{equation}\begin{split}
+    R(\alpha x+\beta y)=&\alpha R(x)+\beta R(y) \\
+    R([x,y])=&[R(x),R(y)] \\
+    \end{split}\end{equation}
+    \item The vector space of the functions of an irreducible representation is called a \textbf{multiplet}. \cite{pfeifer}
+    \item Weyl proved that every finite dimensional representation of a semi-simple algebra decomposes into the direct sum of irreducible representations. \cite{pfeifer}
+    \item Construct new representation with non-singular dxd matrix S: \cite{pfeifer}
+    \begin{equation}\begin{split}
+    \Gamma'(x)=S^{-1}\Gamma(x)S \\
+    \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Structure Constants}
+\begin{itemize}
+    \item \textbf{Structure constants} \cite{pfeifer}
+    \begin{equation}\begin{split}
+    [e_i,e_k]=\sum_{l=1}^nC_{ikl}e_l
+    \end{split}\end{equation}
+    Where $C_{ikl}$ are structure constants. This equation is true since we know the commutator product is also in the algebra's space. $C_{ikl}$ defined relative to the basis.
+    \item Asymmetry relationship leads to condition $C_{ikl}=-C_{kil}$ (but this isn't the full result) \cite{pfeifer}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Adjoint}
+\begin{itemize}
+    \item \textbf{Adjoint representation} \cite{robinson}
+    \begin{itemize}
+        \item The Adjoint representation is formed from \cite{robinson}
+        \begin{equation}\begin{split}
+        [T^a]_{bc}\equiv-if_{abc}
+        \end{split}\end{equation}
+        Which fulfills the requirement of $[X_i,X_j]=if_{ijk}X_k$. Note, only exists for non-abelian group since commutator is zero for abelian group, hence f is zero.
+    \end{itemize}
+    \item Product of two elements: \cite{robinson}
+    \begin{equation}\begin{split}
+        e^{i\alpha_iX_i}e^{i\beta_jX_j}=&e^{i(\alpha_iX_i+\beta_jX_j)-\half[\alpha_iX_i,\beta_jX_j]}\\
+    \end{split}\end{equation}
+    The Baker-Campbell-Hausdorff formula. The brackets is commutator, which must be a linear combination of generators. So:
+    \begin{equation}\begin{split}
+    [X_i,X_j]=if_{ijk}X_k
+    \end{split}\end{equation}
+    Where $f_{ijk}$ is the \textbf{structure constants} of the group.
+    \item \textbf{Adjoint} (or regular) representation, with dimension equal to that of group, and generator matrix elements correspond to structure constants $(I_i)_{jk}=-i\epsilon_{ijk}$. \cite{hokim}
+    \end{itemize}
+    \item \textbf{Adjoint matrices} \cite{pfeifer}
+    \begin{itemize}
+        \item Consider that the commutator can be written via structure constants: \cite{pfeifer}
+        \begin{equation}\begin{split}
+        [a,e_k]=\sum_{l=1}^n (\pmb{ad(a)}_{lk}e_l
+        \end{split}\end{equation}
+        Where, equivalent to structure constants, the adjoint matrices $\pmb{ad(a)}$ are used, with the definition:
+        \begin{equation}\begin{split}
+        \pmb{ad(e_i)}_{lk}=C_{ikl}
+        \end{split}\end{equation}
+    \end{itemize}
+    \item \textbf{Killing form} \cite{pfeifer}
+    \begin{itemize}
+        \item Defined as B(a,b) for adjoint representations $\pmb{ad(a)}$: \cite{pfeifer}
+        \begin{equation}\begin{split}
+        B(a,b)=&Tr(ad(a) ad(b)) \\
+        B(e_i,e_j)=&Tr(ad(e_i) ad(e_j)) \\
+        B(e_i,e_j)=& \sum_{lk}C_{ikl}C{jlk} \\
+        \end{split}\end{equation}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Lie Algebras}
+\begin{itemize}
+        \item Lie group is has continuous members, is differentiable with respect to the gauge parameter. \cite{wells}
+        \item The Lie algebra is \cite{wells}
+        \begin{equation}\begin{split}
+        [T^a,T^b]=if^{abc}T^c
+        \end{split}\end{equation}
+    \item \textbf{One-parameter group} \cite{ibragimov}
+    \begin{itemize}
+        \item Continuous parameter a, where a is all real numbers in interval $U\subset R$ \cite{ibragimov}
+        \item Unique value of $a=a_0$ in U for the Identity transformation $T_{a_0}=I$. \cite{ibragimov}
+    \end{itemize}
+    \item \textbf{Lie equations} \cite{ibragimov}
+    \begin{itemize}
+        \item Lie's assertion: one-parameter local groups are determined by their infinitesimal transformations. Lie equations convert a operator or transformation, to a one-parameter local group. \cite{ibragimov}
+    \end{itemize}
+    \item \textbf{An algebra} is the set of all linear combinations of basis vectors $\ket{g_i}$ for the group: \cite{robinson}
+    \begin{equation}\begin{split}
+    C[G]\equiv\left\{\sum_{i=0}^{n-1}c_i\ket{g_i}\vert c_i\in \mathbb{C} \forall i\right\}
+    \end{split}\end{equation}
+    This is in an Euclidean space.
+    \item A representation can act on an element of the algebra (simple product rule). \cite{robinson}
+    \item \textbf{A module} is the Euclidean space of $q$ basis objects $\ket{m_i}$ that group elements can \textbf{act on}: \cite{robinson}
+    \begin{equation}\begin{split}
+    CM\equiv\left\{\sum_{i=0}^{q-1}c_i\ket{m_i}\vert c_i\in \mathbb{C} \forall i\right\}
+    \end{split}\end{equation}
+    This is in an Euclidean space. $M=\{m_0,...,m_q\}$. Note, a module is also a group.
+    \item Cayley tables, are 1) discrete, 2) finite \cite{robinson}
+    \item \textbf{Invariant subspace} is a subspace which always contains the same points: points move around within a subspace. \cite{robinson}
+    \item \textbf{Lie Algebras}: parameterized by continuous variables (simple definition) \cite{robinson}
+    \begin{itemize}
+        \item Consider continuous rotation with $\theta\in[0,2\pi)$, have $g(\theta)$ instead of $g_i$. We also have $\theta_1+\theta_2=\theta_3\in G$. \cite{robinson}
+        \begin{equation}\begin{split}
+            g(\theta)\doteq \begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}
+        \end{split}\end{equation}
+    \end{itemize}
+    \item Lie algebra comprises elements a,b,c which may be matrices. There must be a Lie product [a,b] or commutator, but not necessarily of the normal form. For square matrices: $[a,b]=ab-ba$ \cite{pfeifer}
+    \item Lie algebra elements form vector space. \cite{pfeifer}
+    \item Definition of Lie algebra L \cite{pfeifer}
+    \begin{enumerate}\scriptsize
+        \item $[a,b]\in L$ for all a,b in L \cite{pfeifer}
+        \item $\alpha a+\beta b\in L$ for all a,b in L (hence, 0 belongs to algebra) \cite{pfeifer}
+        \item Asymmetry relationship $[a,b]=-[b,a]$ and linear relationship $[\alpha a+\beta b,c]=\alpha[a,c]+\beta[b,c]$ \cite{pfeifer}
+        \item Jacobi identity: \cite{pfeifer}
+        \begin{equation}\begin{split}
+        [a,[b,c]]+[b,[c,a]]+[c,[a,b]]=0
+        \end{split}\end{equation}
+        Which holds for square matrices and the ``normal'' commutation
+        \item Must have finite dimension, with linearly independent elements as basis: $x=\sum_{j=1}^n\xi_je_j$ \cite{pfeifer}
+    \end{enumerate}
+    \item Short definition: Lie algebra is a vector space with an alternate product satisfying the Jacobi condition. \cite{pfeifer}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Generators}
+\begin{itemize}
+    \item \textbf{Generators} \cite{robinson}
+    \begin{itemize}
+        \item Transformation from close to identity $D_n(g(\alpha_i))\eval_{\alpha_i=0}=\mathbb{I}$ (summing over i), we can expand in Taylor series: \cite{robinson}
+        \begin{equation}\begin{split}
+            D_n(g(\delta\alpha_i))\approx&\mathbb{I}+\delta\alpha_i\frac{\partial D_n(g(\alpha_i))}{\partial\alpha_i}\eval_{\alpha_i=0} +...\\
+            \approx&\mathbb{I}+i\delta\alpha_i X_i+... \\
+        \end{split}\end{equation}
+        This gives an \textbf{an approximate representation}, with \textbf{generators} defined as:
+        \begin{equation}\begin{split}
+        X_i\equiv-i\frac{\partial D_n}{\partial\alpha_i}\eval_{\alpha_i=0} \\
+        \end{split}\end{equation}
+        We want to write a finite representation in terms of infinite (N) number of these infinitesimal generators:
+        \begin{equation}\begin{split}
+        \delta\alpha_i=&\alpha_i/N\\
+        \lim_{N\to\infty}(1+i\delta\alpha_iX_i)^N=&\lim_{N\to\infty}(1+i\frac{\alpha_i}{N}X_i)^N\\
+        =&e^{i\alpha_iX_i} \\
+        \end{split}\end{equation}
+        \item One generator per parameter specifying elements in group. \cite{robinson}
+        \item \textbf{Dimension of group} is number of generators, also number of group parameters. \cite{robinson}
+    \end{itemize}
+    \item Algebra for Lie group. Since there are infinite elements in the group, the algebra can't be defined as the $\infty-$dimension vector space of those elements. Instead, use space spanned by the generators. \cite{robinson}
+        \item Infinitesimal transformation, where $T^a$ are a basis for all infinitesimal transformations. These are called ``generators'' for the group. \cite{wells}
+        \begin{equation}\begin{split}
+        U(\epsilon)_i^j=(1+i\epsilon^aT^a)_i^j
+        \end{split}\end{equation}
+        We are summing over $a$ for each basis matrix. $\epsilon^a$ are gauge parameters.
+    \item \textbf{Rank}: number of generators of group that can be simultaneously diagonalized. SU(2) for example, has generators of 1/2 Pauli matrices $\sigma^1,\sigma^2,\sigma^3$, of which $\sigma^3/2=\begin{pmatrix}\half&0\\0&-\half\end{pmatrix}$ is diagonal. Hence SU(2) has rank 1. The rank of a group gives the number of conserved quantum numbers.
+    \item \textbf{Infinitesimal transformations and generators} \cite{ibragimov}
+    \begin{itemize}
+        \item Group G, canonical parameter a, with $x'^i=f^i(x,a)$ \cite{ibragimov}
+        \item Expand $f^i(x,a)$ in taylor series around a=0. Get infinitesimal transformation: \cite{ibragimov}
+        \begin{equation}\begin{split}
+        x'^i\approx&x^i+a\xi^i(x) \\
+        \xi^i(x)=&\frac{\partial f^i(x,a)}{\partial a}\eval_{a=0} \\
+        \end{split}\end{equation}
+        $\xi^i$ define a vector, called the tangent vector field of the group G. Called this because it is tangent to the G-orbit. \emph{Any point of a path curve, passing through x, is carried by G onto the same curve.} Picture this with rotating a point around an origin, and the tangent vector to that.
+        We define the \textbf{generators}:
+        \begin{equation}\begin{split}
+        X=\xi^i(x)\frac{\partial}{\partial x^i}
+        \end{split}\end{equation}
+    \end{itemize}
+    \item Example with rotations. Consider group: \cite{ibragimov}
+    \begin{equation}\begin{split}
+    x'=x\cos{a}+y\sin{a} \\
+    y'=y\cos{a}-x\sin{a} \\
+    \end{split}\end{equation}
+    Use eqn to calculate $\xi$:
+    \begin{equation}\begin{split}
+        \xi^0=&\frac{\partial(x\cos{a}+y\sin{a}}{\partial a}\eval_{a=0} \\
+        =&(-x\sin{a}+y\cos{a})\vert_{a=0} \\
+        =&y\\
+        \xi^1=&\frac{\partial(y\cos{a}-x\sin{a}}{\partial a}\eval_{a=0} \\
+        =&-(y\sin{a}+x\cos{a})\vert_{a=0} \\
+        =&-x\\
+    \end{split}\end{equation}
+    Leading to approximate infinitesimal transformations:
+    \begin{equation}\begin{split}
+    x'\approx&x+ya \\
+    y'\approx&y-xa \\
+    \end{split}\end{equation}
+    And generator for rotation group:
+    \begin{equation}\begin{split}
+        X=y\frac{\partial}{\partial x}-x\frac{\partial}{\partial y}
+    \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Specific Groups}
+\begin{itemize}
+        \item S stands for special, which means matrices have determinant 1 \cite{wells}
+        \item U stands for unitary, matrices are unitary, eg $TT^\dagger=T^\dagger T=I$, identity matrix. \cite{wells}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{GL(n)}
+% Poincare Group
+\begin{itemize}
+    \item \textbf{General Linear Group} GL(n): the group of n-dimensional transformations from anywhere to anywhere. Representation is all non-singular nxn matrices. In general, can be defined for $GL(n,\mathbb{C})$, with subgroup $GL(n,\mathbb{R})$. \cite{robinson}
+    \item \textbf{Special Linear Group} $SL(n,\mathbb{C})$: the subgroup of $GL(n,\mathbb{C})$ with transformations that preserve the volume of parallelepipeds built from n-vectors. This restricts matricies to det=1, which is a subgroup since $det|A\cdot B|=1$. Rotations are part of this, but squishes are as well. \cite{robinson}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Euclidean Group}
+\begin{itemize}
+    \item Translations, rotations, reflections
+    \item \textbf{Orthogonal group} O(n), is the subgroup for which the $r^2$ is invariant, and using only $\mathbb{R}$. \cite{robinson}
+    \begin{equation}\begin{split}
+    r^2=&r^T\cdot r \\
+    r^T\to&r'^T=r^TR^T \\
+    r\to&r'=Rr \\
+    r^2\to&r^TR^TRr=r \\
+    \end{split}\end{equation}
+    Hence, $R^TR=\mathbb{I}$, which means rows and columns of R are orthogonal.
+    \item \textbf{Special Orthogonal Group} SO(n): a subgroup of O(n), and using only $\mathbb{R}$, the fact that $R^T=R^{-1}$ means that $(det|R|)^2=1$, so $det|R|=\pm1$. Restricting to matrices with positive determinant gives SO(n). Negative det matrices, for example, flip on parity. \cite{robinson}
+    \item \textbf{SO(2)} \cite{robinson}
+    \begin{itemize}
+        \item Rotations in the plane that leaves $r^2=x^2+y^2=\begin{pmatrix}x&y\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}$ invariant. \cite{robinson}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Special Orthogonal Group SO(m,n)} % Lorentz Group
+\begin{itemize}
+    \item \textbf{Lorentz Group} SO(m,n): generalizes SO(n) for $x^ay_a=x_1y_1+...-x_my_m...-x_{m+n}y_{m+n}$. The Lorentz Group is SO(1,3). \cite{robinson}
+    \item Lorentz Transformations: $x'^\mu=L^\mu_\nu x^\nu$, where: \cite{robinson}
+    \begin{equation}\begin{split}
+    \eta_{\mu\nu}=\begin{pmatrix}-1&&&\\&1&&\\&&1&\\&&&1\end{pmatrix}
+    \end{split}\end{equation}
+    The constraint on the transformations is that $\eta_{\mu\nu}L^\mu_\alpha L^\nu_\beta=\eta_{\alpha\beta}$ in order to keep inner products invariant.
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Poincare Group}
+% Lagrangian Groups
+\begin{itemize}
+    \item \textbf{Translations} \cite{ibragimov}
+    \begin{itemize}
+        \item Transformation, from one frame P to another frame P', $e=(e_1,e_2)$ \cite{ibragimov}
+        \begin{equation}\begin{split}
+        x'=x+ae_1 \\
+        y'=y+be_2 \\
+        \end{split}\end{equation}
+        This is equivalent to a translation, or displacement.
+    \end{itemize}
+    \item \textbf{Rotations} \cite{ibragimov}
+        \begin{equation}\begin{split}
+        x'=x\cos{a}+y\sin{a} \\
+        y'=y\cos{a}-x\sin{a} \\
+        \end{split}\end{equation}
+    \item \textbf{Galilean transformation}, for a given velocity V. This transformation is the Galilean group's transformation. \cite{ibragimov}
+    \begin{equation}\begin{split}
+    t'=&t \\
+    x'=&x+tV \\
+    \end{split}\end{equation}
+    \item Group of all translations \cite{ibragimov}
+    \begin{equation}\begin{split}
+    x'=x+a\\
+    \end{split}\end{equation}
+    When a=0, identity. Has all properties: $T_aT_b=T_{a+b}$, $T_a^{-1}=T_{-a}$, $T_{a=0}=I$.
+    \item Can define subgroup, as long as all transformations are in it. \cite{ibragimov}
+    \item A group is continuous, if any transformations $T_a$, $T_b$ can be connected by continuous set of transformation elements in the group. \cite{ibragimov}
+    \item Local group, only defined for transformation compositions (a+b) that are close to identity. For example, $x\to\frac{x}{1-ax}$. Becomes undefined when $a=1/x$, where it reaches a singularity. \textbf{Rotation group is local, since parameters loose uniqueness.} \cite{ibragimov}
+    \item Global group, if composition of transformation is defined for all points x. \textbf{Translation group is global. Lorentz transformation as well.} \cite{ibragimov}
+    \begin{equation}\begin{split}
+    x'=&x\cosh{a}+y\sinh{a} \\
+    y'=&y\cosh{a}+x\sinh{a} \\
+    \end{split}\end{equation}
+    \item \textbf{Translation group} \cite{ibragimov}
+    \begin{equation}\begin{split}
+    x'=x+a_1 \\
+    y'=y+a_2 \\
+    z'=z+a_3 \\
+    \end{split}\end{equation}
+    Where there are subgroups for each individual dimension.
+    \item \textbf{Euclidean group}, formed from composition of translation and rotation subgroups: \cite{ibragimov}
+    \begin{equation}\begin{split}
+    x'=x\cos{a}+y\sin{a}+a_1 \\
+    y'=y\cos{a}-x\sin{a}+a_2 \\
+    \end{split}\end{equation}
+    \item \textbf{Poincare group}, with group parameter c as speed of light in vacuum. \cite{ibragimov}
+    \begin{equation}\begin{split}
+        t'=&t\cosh(a/c)+(x/c)\sinh(a/c) \\
+        x'=&x\cosh(a/c)+ct\sinh(a/c) \\
+    \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Unitary Group U(n)}
+\begin{itemize}
+    \item \textbf{Unitary group} U(n) is formed by the set of all unitary $R^\dagger R=\mathbb{I}$ nxn matrices. \cite{robinson}
+    \item U(1) unitary group $\psi_n\to e^{i\alpha}\psi_n$ can't lead to interaction between fields. \cite{hokim}
+    \item U(2) would be with 2x2  complex matrices (8 constants). \cite{hokim}
+    \begin{equation}\begin{split}
+    \psi=&\begin{pmatrix}\psi_p\\\psi_n\end{pmatrix} \\
+    \psi^a\to\psi'^a=U^a_b\psi^b \quad(a,b=1,2) \\
+    \end{split}\end{equation}
+    \item Unitary condition $U^\dagger U=UU^\dagger=1$, which enforces there being 4 real constants. \cite{hokim}
+    \item One can factor out the complex phase from U(2): $U=e^{i\alpha}S$. The remaining matrices S form a group SU(2): \cite{hokim}
+    \begin{equation}\begin{split}
+    S^\dagger S=1 \\
+    \det{S}=1 \\
+    \end{split}\end{equation}
+    With 3 independent parameters:
+    \begin{equation}\begin{split}
+    S=\exp{-\frac{i}{2}(\alpha_1\tau_1+\alpha_2\tau_2+\alpha_3\tau_3)}
+    \end{split}\end{equation}
+    Where $\alpha_i$ are real constants, and $\tau_i$ are 2x2 Hermitian and traceless matrices (Pauli matrices).
+    \item \textbf{U(n)} \cite{pfeifer}
+    \begin{itemize}
+        \item Elements of u(N) algebra are anti-Hermitian: $h=-\half ih$ with Hermitian matrix $h$. \cite{pfeifer}
+    \end{itemize}
+    \item The complex vector space $m(N,\mathcal{C})=u(N)\oplus iu(N)$ \cite{pfeifer}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Special Unitary Group SU(n)}
+\begin{itemize}
+    \item \textbf{Special Unitary Group} SU(n): is the complex analog to SO(n), where instead \cite{robinson}
+    \begin{equation}\begin{split}
+    r^2=&r^\dagger\cdot r \\
+    r\to&r'=Rr \\
+    r^\dagger\to&r'^\dagger=r^\dagger R^\dagger \\
+    r^2\to&r^\dagger R^\dagger Rr \\
+    \end{split}\end{equation}
+    Hence, requires $R^\dagger R=\mathbb{I}$, eg Unitary matricies. Further requirement following from SO(n) is the $det|R|=1$ requirement.
+        \item SU(2) is used in angular momentum in QM. The fundamental representation has generators of Pauli matrices: \cite{wells}
+        \begin{equation}\begin{split}
+        T^a=\frac{\sigma^a}{2}\quad(a=1,2,3)
+        \end{split}\end{equation}
+        Irreducible representations exist for alternative spins. All SU(2) representations are real (the complex conjugate of the generators T can be multiplied to produce T, eg $XT_{\overline{R}}^aX^{-1}=T_R^a$).
+        \item Strong force invariant under SU(2) isospin symmetry, up/down quards transform as j=1/2 doublet. \cite{wells}
+        \begin{equation}\begin{split}
+        \begin{pmatrix}u\\d\end{pmatrix}\to\exp{\left(i\theta^a\frac{\sigma^a}{2}\right)}\begin{pmatrix}u\\d\end{pmatrix}
+        \end{split}\end{equation}
+        $\theta^a$ is constant, not depend on $x$.
+        \item Weak force invariant under $\text{SU}(2)_L$. Acts only on left-handed fermion fields. The irreducible j=1/2 representations of $\text{SU}(2)_L$ are the left-handed pairs of fermions $\begin{pmatrix}\nu_{eL}\\e_L\end{pmatrix}$, $\begin{pmatrix}u_L\\d_L\end{pmatrix}$, etc. $\theta$ transformation can be function of $x$. \cite{wells}
+    \item The Pauli matrices $I_i=\tau/2$ are generators for SU(2), with structure constant of totally antisymmetric Levi-Civita tensor $\epsilon^{123}=+1$. \cite{hokim}
+    \textbf{Rank}: number of generators of group that can be simultaneously diagonalized. SU(2) for example, has generators of 1/2 Pauli matrices $\sigma^1,\sigma^2,\sigma^3$, of which $\sigma^3/2=\begin{pmatrix}\half&0\\0&-\half\end{pmatrix}$ is diagonal. Hence SU(2) has rank 1. The rank of a group gives the number of conserved quantum numbers.
+    \item SU(2) has rank 1 \cite{hokim}
+    \item \textbf{SU(n)} \cite{pfeifer}
+    \begin{itemize}
+        \item \textbf{Hermitian matrices}: the adjoint of the matrix (the conjugate complex and transposed (reflected on diagonal) is identical: \cite{pfeifer}
+        \begin{equation}\begin{split}
+        \lambda^\dagger=\lambda \\
+        \lambda^*_{ik}=\lambda_{ki} \\
+        \end{split}\end{equation}
+        \item Dimension of SU(n) comes from counting the \textbf{traceless} Hermitian basis matrices. It is $n^2-1$, while removing the traceless condition would be $n^2$. \cite{pfeifer}
+        \item su(N) is a subalgebra of real u(N) \cite{pfeifer}
+        \item su(N) is simple \cite{pfeifer}
+    \end{itemize}
+    \item Anti-Hermitian: $a^\dagger=-a$. \cite{pfeifer}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Special Unitary Group SU(2)}
+{\color{red}\textbf{Just SU(2)}}
+\begin{itemize}
+    \item \textbf{SU(2)} \cite{robinson}
+    \begin{itemize}
+        \item Structure constants are $f_{ijk}=\epsilon{ijk}$, the totally antisymmetric tensor.  \cite{robinson}
+        \item The matrix representations of the group act on vectors. The eigenvalues and eigenvectors of these matrices relate to physical states \cite{robinson}
+        \item Call generators $J^1,J^2,J^3$ with $J^3$ is diagonal. Therefore, $J^3$ has eigenvectors that are basis of the space SU(2) acts on \cite{robinson}
+        \item Pick $j$ as the greatest eigenvalue. Work out with raising and lowering operators, that there are 2j+1 states. j can be half-integer. \cite{robinson}
+        \item For $j=\half$: $J^3_\half=\begin{pmatrix}\half&0\\0&\half\end{pmatrix}$. Then use $[J^a_j]_{m',m}=\braket{j,m'|J^a|j,m}$, and the raising/lowering operators \cite{robinson}
+        \begin{equation}\begin{split}
+        J^\pm\equiv&\frac{1}{\sqrt{2}}(J^1\pm iJ^2) \\
+        J^1=&\frac{1}{\sqrt{2}}(J^-+J^+) \\
+        J^1=&\frac{i}{\sqrt{2}}(J^--J^+) \\
+        \end{split}\end{equation}
+        \item The solution for J is the \emph{Pauli Spin Matrices} \cite{robinson}
+        \item ``Particles with spin \half are described by the j=\half representation.'' \cite{robinson}
+        \item ``Quantum spin is not a rotation through spacetime, but through a mathematically constructed spinor space.'' Measurement of angular momentum is a combination of both spin and spacetime angular momentum. \cite{robinson}
+    \end{itemize}
+    \item su(2) Killing form: \cite{pfeifer}
+    \begin{equation}\begin{split}
+        B(e_i,e_j)=& \sum_{lk}C_{ikl}C{jlk} \\
+        =&-2 \\
+        B=-2\mathcal{I} \\
+    \end{split}\end{equation}
+    \item su(2) Quadratic Casimir operator. Define $e_i=-iJ_i$ \cite{pfeifer}
+    \begin{equation}\begin{split}
+    [J_1,J_2]=&iJ_3 \quad\text{With cyclic perms}A \\
+    J^2=&J_1^2+J_2^2+J_3^2 \quad\text{Casimir operator} \\
+    \end{split}\end{equation}
+    The operators $J^2$ and $J_3$ have same eigenstates shown on p27 (familiar from spin).
+    \item \textbf{Functional multiplet} example is su(2) spin eigenstates $\ket{j,j},\ket{j,j-1},...,\ket{j,-j+1},\ket{j,-j}$ \cite{pfeifer}
+    \item The operators $J_\pm$ and $J_3$ make up complexified version of su(2), called $sl(2,\mathcal{C})$. \cite{pfeifer}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Special Unitary Group SU(3)}
+{\color{red}\textbf{Just SU(3)}}
+\begin{itemize}
+    \item Hypercharge $Y=N_B+S=2(Q-I_3)$ is the conservation of baryon number and strangeness. \cite{hokim}
+    \item \textbf{Fundamental representation} \cite{hokim}
+    \begin{itemize}
+        \item Unitary, unimodular (det=+-1) complex 3x3 matrices, which form the Lie group SU(3). \cite{hokim}
+        \item SU(3) group is 2nd rank \cite{hokim}
+        \item Basic spinor $q^a$ has 3 components corresponding to upness ($I3=1/2$, S=0), downness ($I3=-1/2$, S=0), and strangeness ($S=-1$, isosinglet). \cite{hokim}
+        \begin{equation}\begin{split}
+        q^a=&\begin{pmatrix}u\\d\\s\end{pmatrix} \\
+        q^a\to&q'^a=U^a_bq^b \\
+        \end{split}\end{equation}
+        \item 3x3 complex matrices have 18 parameters (18 basis matrices). Unimodular (det=+-1) requirement removes one DoF. Unitary ($U^\dagger U=UU^\dagger=1$) condition removes 9 DoF. This means group has dimension  \cite{hokim}
+        \item An element of the SU(3) group can be represented by 8 matrices $\lambda_i$: \cite{hokim}
+        \begin{equation}\begin{split}
+            S=\exp\left[-\frac{i}{2}\sum_{i=1}^8\alpha_i\lambda_i\right]
+        \end{split}\end{equation}
+        \item $\lambda_i$ are Gell-Mann matrices (defined earlier). One notes that $\lambda_1,\lambda_2,\lambda_3$ are similar to Pauli matricies for which isospin group was defined. Two other SU(2) subgroups of SU(3) are V-spin and U-spin subgroup. \cite{hokim}
+        \item C(Fundamental)=\half, where $Tr[F_i(R)F_j(R)]=if_{ijk}F_k(R)$. \cite{hokim}
+    \end{itemize}
+    \item \textbf{Adjoint Representation}, A \cite{hokim}
+    \begin{itemize}
+        \item Generators ($F_i$) are defined via the structure function $(F_i)_{jk}\equiv-if_{ijk}$, and are 8x8 matrices. \cite{hokim}
+        \item C(Adjoint)=3, where $Tr[F_i(R)F_j(R)]=if_{ijk}F_k(R)$. \cite{hokim}
+    \end{itemize}
+    \item \textbf{Quadratic Casimir Operator} \cite{hokim}
+    \begin{itemize}
+        \item Define operator $F^2=F_iF_i$ (summing over $i$) \cite{hokim}
+        \item $F^2$ is proportional to identity, because it commutes with every generator of group: \cite{hokim}
+        \begin{equation}\begin{split}
+        F^2(R)=C_2(R)\pmb I_R
+        \end{split}\end{equation}
+        Where $C_2(R)$ is the casimir operator: $C_2(R)d(R)=C(R)d(G)$. In fundamental representation, d(G)=8, d(f)=3 and C(f)=\half, so $C_2(f)=4/3$. In Adjoint, d(G)=8, d(A)=8, C(a)=3, so $C_2(f)=3$
+    \end{itemize}
+    \item \textbf{Vector spaces of representations} \cite{hokim}
+    \begin{itemize}
+        \item Suppose $\psi^a$, and $\phi^a$ are triplets that transform under \cite{hokim}
+        \begin{equation}\begin{split}
+        \psi^a\to& S^a_b\psi^b ; \quad\text{contravariant}\\
+        \psi_a\to& \psi_b(S^\dagger)^b_a ; \quad\text{covariant}\\
+        \end{split}\end{equation}
+        \item Tensor transformations: upper index contravariantly, lower covariantly \cite{hokim}
+        \begin{equation}\begin{split}
+        T^a_{bc}\to&S^a_{a'}T^{a'}_{b'c'}(S^\dagger)^{b'}_b(S^\dagger)^{c'}_c \\
+        T^{ab}_c\to&S^a_{a'}S^b_{b'}T^{a'b'}_{c'}(S^\dagger)^{c'}_c \\
+        \end{split}\end{equation}
+        \item The representation $R(n,m)$ has irreducible tensors $T(n,m)$ (eg $T(1,2)=T^a_{bc}$). The dimension of the representation is \cite{hokim}
+        \begin{equation}\begin{split}
+        d(R(n,m))=\half(n+1)m+1)(n+m+2) \\
+        \end{split}\end{equation}
+    \end{itemize}
+    \item Quark belongs to R(1,0) and antiquark (it's conjugate) belong to R(0,1). \cite{hokim}
+\end{itemize}
+
+
+% --------------------------------------------------------------
+\subsection{Physics with Lagrangians}
+\begin{itemize}
+    \item Theory invariant under group $\to$ conserved quantity corresponding to group rank \cite{hokim}
+    \item Symmetry: something that stays the same after operation \cite{robinson}
+    \item A Lagrangian represents structure of a system, and a symmetry represents a change to Lagrangian that preserves this structure \cite{robinson}
+    \item \textbf{What it all means} \cite{robinson}
+    \begin{itemize}
+        \item Physical inteaction described by Lie group in some representation \cite{robinson}
+        \item Particles that interact with that force are described by eigenvectors of the Cartan generators of the group \cite{robinson}
+        \item The eigenvalues of the particles are physically measurable charges \cite{robinson}
+        \item Number of charges equal to dimension of representation \cite{robinson}
+        \item Force carrying particles are described by generators of Lie group \cite{robinson}
+        \item Cartan generators are force-carrying particles which can interact with any particle charged under that group via momentum transfer, but via change charge (since Cartan generators aren't raise/lower operators). \cite{robinson}
+        \item Non-Cartan generators are force-carry particles that interact with particles charged under that group byu transfer momentum, but also change charge. \cite{robinson}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Equations of Motion}
+\begin{itemize}
+    \item Dirac equation \cite{wells}
+        \begin{equation} %recall split
+        \begin{split}
+            (i\slashed{\partial}-m)\Psi=0
+        \end{split}
+        \end{equation}
+        Where $\gamma^\mu a_\mu=\slashed{a}$, and $\Psi$ is a four component spinor. The four components describe spin and particle/antiparticle DoFs. The Dirac equation has solutions of the form
+        \begin{equation}\begin{split}
+        \Psi(x)=&u(p,s)e^{-ip\cdot x} \\
+               =&\sqrt{m}\begin{pmatrix}\chi_s\\\chi_s\end{pmatrix}e^{-im\cdot x}
+        \end{split}\end{equation}
+        The 2nd is solved in the rest frame. Where $\chi_s$ are 2-vectors, picked to be orthonormal.
+    \item Reversing the energy, we get similar solution for antiparticles \cite{wells}
+        \begin{equation}\begin{split}
+        \Psi(x)=&v(p,s)e^{ip\cdot x} \\
+               =&\sqrt{m}\begin{pmatrix}\xi_s\\-\xi_s\end{pmatrix}e^{im\cdot x}
+        \end{split}\end{equation}
+        The 2nd is solved in the rest frame.
+    \item Dirac equation admits solutions with $p^0=E<0$, $p^2=m^2$ as well. Since electrons are fermions, have Pauli exclusion, so maybe all low energy states are a Dirac sea. An absence or hole in the sea is a positron. \cite{wells}
+    \item Alternative interpretation from Feynman and Stuckelberg is that positron is an electron moving backwards in time. \cite{wells}
+    \item Weyl equation. In the case of $m=0$. Define \cite{wells}
+        \begin{equation}\begin{split}
+        \sigma^\mu=&(\sigma^0,\sigma^1,\sigma^2,\sigma^3) \\
+        \overline{\sigma}^\mu=&(\sigma^0,-\sigma^1,-\sigma^2,-\sigma^3) \\
+        \end{split}\end{equation}
+        The massless Hamiltonian $H\Psi=(\vec{\alpha}\cdot\vec{P}+\beta m)\Psi$ becomes $H=\vec{\alpha}\cdot\vec{P}$ with two solutions. These are the Weyl equations:
+        \begin{equation}\begin{split}
+            i\overline{\sigma^\mu}\partial_\mu\psi_L=&0 \\
+            i\sigma^\mu\partial_\mu\psi_R=&0 \\
+        \end{split}\end{equation}
+    \item Notably, the Weyl equation is the Dirac equation with $m=0$. \cite{wells}
+        \begin{equation}\begin{split}
+            (i\slashed{\partial}-m)\Psi=&0; \quad \text{Dirac} \\
+            \Psi=&\begin{pmatrix}\Psi_L\\\Psi_R\end{pmatrix} \quad \text{Define} \\
+            \gamma^\mu =& \begin{pmatrix}0&\sigma^\mu\\\overline{\sigma}^\mu&0\end{pmatrix} ;\quad\text{Recall} \\
+            i\begin{pmatrix}0&\sigma^\mu\\\overline{\sigma}^\mu&0\end{pmatrix}\partial_\mu\begin{pmatrix}\Psi_L\\\Psi_R\end{pmatrix}=&m\begin{pmatrix}\Psi_L\\\Psi_R\end{pmatrix} \quad \text{Therefore}
+        \end{split}\end{equation}
+        Which is the Weyl equations if $m=0$.
+    \item One way to look at this is that the fundamental particle is the Weyl, and the Dirac fermions consist of two components. This is true since in SM fermions don't have a Dirac mass. \cite{wells}
+        \begin{equation}\begin{split}
+        \Psi=\begin{pmatrix}\chi\\\xi^\dagger\end{pmatrix}
+        \end{split}\end{equation}
+    \item For Majorana  \cite{wells}
+        \begin{equation}\begin{split}
+        \Psi=\begin{pmatrix}\chi\\\chi^\dagger\end{pmatrix}
+        \end{split}\end{equation}
+        Obeys Dirac equation, is own antiparticle. Possible form for neutrinos.
+    \item The shortcoming of Dirac equation is it's fixed number of particles, which is not physical. \cite{wells}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Fields}
+\begin{itemize}
+    \item In QFT we consider fields as operators, one for each point in spacetime $x^\mu$. So $\phi(x)$ is an operator with \emph{label} x. The operator corresponds to field strength, and act on states eg $\phi(x)\ket{0}$. Vacuum: $\ket{0}$, one particle at $t=x^0$: $\phi(x)\ket{0}$. \cite{wells}
+    \item The classical Dirac field $\Psi(x)$ is a set fo four functions, so quantumly it is four operators. We have $\overline{\Psi}(x)=\Psi^\dagger\gamma^0$. \cite{wells}
+    \item Vector field $A^\mu(x)$ is operator that adds/subtracts photons. \cite{wells}
+    \item Behavior of fields scalar $\phi(x)$, Dirac $\Psi(x)$, Weyl $\psi(x)$, vector $A^\mu(x)$ is described by Lagrangian action $S=\int^{t_f}_{t_i}L(q_n,\dot{q_n})dt$. \cite{wells}
+    \item Fermion fields have dimension 3/2 mass, and scalar has 1. \cite{wells}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Action}
+\begin{itemize}
+    \item Recall Euler-Lagrange equation, that dictates the equations of motion of a mechanical system: \cite{wells}
+        \begin{equation}\begin{split}
+            \frac{\partial L}{\partial q_n}-\frac{d}{dt}\left(\frac{\partial L}{\partial\dot{q}_n}\right)=0
+        \end{split}\end{equation}
+    \item Define Lagrangian Density for fields, and corresponding action $S=\int d^4x\mathcal{L}(\phi,\partial_\mu\phi)$. \cite{wells}
+        \begin{equation}\begin{split}
+            \frac{\partial\mathcal{L}}{\partial\phi}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\delta_\mu\phi)}\right)=0; \quad\text{(Could use $\partial$ instead of $\delta$)}
+        \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Lagrangians}
+\begin{itemize}
+        \item Singlet is object that transforms into itself. Lagrangian is an example of this. QED Lagrangian acomplishes this because each term has zero charge so $Q=0$. \cite{wells}
+    \item A simple Lagrangian Density for a scalar, allows the derivation of the Klein-Gordon equation: \cite{wells}
+            \begin{equation}\begin{split}
+            \mathcal{L}=&\frac{1}{2}\partial_\mu\phi\partial^\mu\phi-\frac{1}{2}m^2\phi^2 \\
+            \frac{\partial\mathcal{L}}{\partial\phi}=&-m^2\phi \\
+            \partial_\mu\frac{\partial\mathcal{L}}{\partial(\delta_\mu)}=&\partial_\mu\partial^\mu\phi \\
+            \partial_\mu\partial^\mu\phi+m^2\phi=&0; \quad\text{Klein-Gordon wave equation}
+            \end{split}\end{equation}
+    \item A general Lagrangian density for a set of fields $\Phi_j$ is the sum over fields j, and following: \cite{wells}
+        \begin{equation}\begin{split}
+            \frac{\partial\mathcal{L}}{\partial\Phi_j}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\delta_\mu\Phi_j)}\right)=0; \quad\text{(Could use $\partial$ instead of $\delta$)}
+        \end{split}\end{equation}
+    \item A Lagrangian density for Dirac fields, $\Psi(x)$: \cite{wells}
+        \begin{equation}\begin{split}
+            \mathcal{L}=i\overline{\Psi}\gamma^\mu\partial_\mu\Psi-m\overline{\Psi}\Psi \\
+        \end{split}\end{equation}
+        Where $\overline{\Psi}=\Psi^\dagger\gamma^0$ is the Hermitian Conjugate. This is lorentz invariant. Taking the derivatives, you end up with equation of motion
+        \begin{equation}\begin{split}
+            i\gamma^\mu\partial_\mu\Psi-m\Psi=0; \quad\text{Dirac Equation}
+        \end{split}\end{equation}
+        \item Hermitian Conjugate: $\braket{\psi|H\psi}=\braket{H^\dagger\psi|\psi}$ \cite{wells}
+    \item Lagrangian density for EM field \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_\text{EM}=&-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
+        =&-\frac{1}{4}(\partial_\mu A_\nu-\partial_\nu A_\mu)(\partial^\mu A^\nu-\partial^\nu A^\mu)
+        \end{split}\end{equation}
+        Leading to an equation of motion identical to Maxwell's equations without a current $J^\mu$
+        \begin{equation}\begin{split}
+        \partial_\mu F^{\mu\nu}=0
+        \end{split}\end{equation}
+        With a current $J^\mu$, we add to Lagrangian the term $\mathcal=-eJ^\mu A_\mu$, and get equation of motion:
+        \begin{equation}\begin{split}
+        \partial_\mu F^{\mu\nu}-eJ^\nu=0
+        \end{split}\end{equation}
+    \item Free field theories before, where $\mathcal{L}$ is quadratic in fields. Introduce $\phi^4$ coupling: \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&\frac{1}{2}\partial_\mu\phi\partial^\mu\phi-\frac{1}{2}m^2\phi^2-\frac{\lambda}{24}\phi^4 \\
+        \end{split}\end{equation}
+            \begin{center}
+            \begin{turn}{45}
+            \feynmandiagram [horizontal=i1 to f2]
+            {
+            a--[scalar]x[dot]--[scalar]b;
+            c--[scalar]x--[scalar]d;
+            };
+            \end{turn}
+            \end{center}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Quantization}
+\begin{itemize}
+    \item Hilbert space of QFT. The vacuum state $\ket{0}$ gets annihilated by lowering operator: $a_{\vec{k}}\ket{0}=0$. Creation operator produces a state with single particle with momentum $\vec{k}$: $a_{\vec{k}}^\dagger\ket{0}=\ket{{\vec{k}}}$. \cite{wells}
+    \item How great is it that we can make a simple universe with two particles, and approximate the universe that we live in. \cite{wells}
+    \item Quantizing Dirac field. Begin with anti-commuting operators \\ \cite{wells}
+        \begin{center} %recall split
+        \begin{tabular}{l l}\toprule
+        $b_{\vec{p},s}$ & Electron annihilation operator \\
+        $d_{\vec{p},s}^\dagger$ & Positron creator operator \\
+        $d_{\vec{p},s}$ & Positron annihilation operator \\
+        $b_{\vec{p},s}^\dagger$ & Electron creator operator \\
+        \bottomrule\end{tabular} %remember cline{1-2}
+        \end{center}
+        \begin{equation}\begin{split}
+            \Psi(\vec{x})=\sum^2_{s=1}\int d\tilde{p}[u(p,s)e^{i\vec{p}\cdot\vec{x}}b_{\vec{p},s} + v(p,s)e^{-i\vec{p}\cdot\vec{x}}d_{\vec{p},s}^\dagger ] \\
+            \overline{\Psi}(\vec{x})=\sum^2_{s=1}\int d\tilde{p}[\overline{u}(p,s)e^{-i\vec{p}\cdot\vec{x}}b_{\vec{p},s}^\dagger + \overline{v}(p,s)e^{i\vec{p}\cdot\vec{x}}d_{\vec{p},s} ]
+        \end{split}\end{equation}
+        And a vacuum state:
+        \begin{equation}\begin{split}
+        b_{\vec{p},s}^\dagger\ket{0}=\ket{e^-_{\vec{p},s}}
+        \end{split}\end{equation}
+        With Fermi-Dirac statistics
+        \begin{equation}\begin{split}
+        \ket{e_{\vec{k},r}^-;e_{\vec{p},s}^-} =
+        -\ket{e_{\vec{p},s}^-;e_{\vec{k},r}^-}
+        \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Matrix Element}
+\begin{itemize}
+        \item \textbf{Scattering and cross-sections} \cite{wells}
+        \begin{itemize}
+            \item Matrix element \cite{wells}
+            \item Cross section: expected number $N_s$ events when two sets of particles $N_a$ and $N_b$ collide, with area $A$. \cite{wells}
+            \begin{equation}\begin{split}
+            N_s=&\frac{N_aN_b}{A}\sigma \\
+            =&\sigma\int L~dt
+            \end{split}\end{equation}
+            \item 1 barn = $10^{-24}$ cm$^2$. \cite{wells}
+            \item $pp$ cross-section approximately 0.075 barns, depending on the threshold of what an event is. \cite{wells}
+            \item Projection for scattering \cite{wells}
+            \begin{equation}\begin{split}
+            \braket{f|i}=\mathcal{M}_{i\to f}(2\pi)^4\delta^{(4)}(p_a+p_b-\sum k_i)
+            \end{split}\end{equation}
+            Where $\mathcal{M}_{i\to f}$ is reduced matrix element.
+            \item Total probability \cite{wells}
+            \begin{equation}\begin{split}
+            \mathcal{P}_{i\to f}=\frac{\braket{f|i}^2}{\braket{i|i}\braket{f|f}}
+            \end{split}\end{equation}
+            Which relates to total scattering events
+            \begin{equation}\begin{split}
+            N_s=N_aN_b\sum_f\mathcal{P}_{i\to f}
+            \end{split}\end{equation}
+            \item Differential cross section \cite{wells}
+            \begin{equation}\begin{split}
+            d\sigma=&|\mathcal{M}_{i\to f}|^2\frac{|\vec{k}_1|}{64\pi^2E^2_\text{CM}|\vec{p}_a|}d\Omega \\
+            d\Omega=&d\phi d(\cos{\theta}) \\
+            d\sigma=&|\mathcal{M}_{i\to f}|^2\frac{|\vec{k}_1|}{32\pi E^2_\text{CM}|\vec{p}_a|}d(\cos\theta)  ; \quad\text{Doing $\phi$ integration} \\
+            d\sigma=&|\mathcal{M}_{i\to f}|^2\frac{1}{32\pi E^2_\text{CM}}d(\cos\theta) ; \quad\text{For massless} \\
+            \end{split}\end{equation}
+            \item Mandelstam \cite{wells}
+            \begin{equation}\begin{split}
+            s=&(p_a+p_b)^2=(k_1+k_2)^2 \\
+            t=&(p_a-k_1)^2=(k_2-p_b)^2 \\
+            u=&(p_a-k_2)^2=(k_1-p_b)^2 \\
+            \mathcal{M}_s=&(-i\mu)^2\frac{i}{s-m^2} \\
+            \mathcal{M}_t=&(-i\mu)^2\frac{i}{t-m^2} \\
+            \mathcal{M}_u=&(-i\mu)^2\frac{i}{u-m^2} \\
+            \end{split}\end{equation}
+        \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Feynman Diagrams}
+\begin{itemize}
+        \item Dirac fermion+scalar rule, with \textbf{yukawa coupling}. For $H\to\mu\mu$, $y$ is proportional to muon mass. \cite{wells}
+        \begin{equation}\begin{split}
+            \mathcal{L}_\text{int}=&-y\phi\overline{\Psi}\Psi \\
+                \feynmandiagram [inline=(d.base), horizontal=d to b] {
+                a -- [fermion] b -- [fermion] c,
+                b -- [scalar] d [particle=\(\phi\)],
+                };
+                =& -iy\delta_a^b
+            \end{split}\end{equation}
+            Where $a$, $b$ are spinor indicies for $\overline{\Psi}$ and $\Psi$.
+        \item $u(p,s)_a$, $v(p,s)_a$, $\overline{u}(p,s)^a$, $\overline{v}(p,s)^a$. These are the coefficients of the creation/annihilation operators in the expansion of a field in terms of those operators. For a scalar field, these are 1. For Dirac fermions, they have spinor indicies (given here). \cite{wells}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Particle Decay}
+\begin{itemize}
+    \item \textbf{Decay processes} \cite{wells}
+    \begin{itemize}
+        \item $N(t)=e^{-\Gamma t}N(0)$, where $\Gamma$ is quoted in rest rrame. $\tau=1/\Gamma$ is lifetime at rest. \cite{wells}
+        \item For particle mass $M$ at rest, the differential width can be derived from the normalized projection of the final state onto the initial state (page 59).  \cite{wells}
+        \begin{equation}\begin{split}
+        d\Gamma=&\frac{1}{2M}|\mathcal{M}|^2d\Phi_n \\
+        d\Phi_n=&(2\pi)^4\delta^{(4)}(p-\sum_ik_i)\prod^n_{i=1}\left(\frac{d^3\vec{k}_i}{(2\pi)^32E_i}\right) \\
+        E_i=&\sqrt{\vec{k}_i^2+m_i^2}
+        \end{split}\end{equation}
+        The latter is the n-body differential Lorentz-invariant phase space for $n$ final states. An integral over the desired final state phase space is performed to get the $\Gamma$.
+        \item For 2-body decay, \cite{wells}
+        \begin{equation}\begin{split}
+        d\Phi_2=&\frac{K}{16\pi^2M}d\phi_1d(\cos{\theta_1}) \\
+        d\Gamma=&\frac{K}{32\pi^2M^2}|\mathcal{M}|^2d\phi_1d(\cos{\theta_1}) \\
+        \end{split}\end{equation}
+        Where $K$ is the final state energy of the back-to-back decay products:
+        \begin{equation}\begin{split}
+        E_1+E_2=\sqrt{K^2+m_1^2}+\sqrt{K^2+m_2^2}=M
+        \end{split}\end{equation}
+        \item If $m_1=m_2=m$ \cite{wells}
+        \begin{equation}\begin{split}
+        d\Gamma=&\frac{|\mathcal{M}|^2}{64\pi^2M}\sqrt{1-4m^2/M^2}d\phi_1d(\cos\theta_1)
+        \end{split}\end{equation}
+        If decay is unpolarized (no initial spin), then $d\phi_1d(\cos\theta_1)\to4\pi$
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Renormalization}
+\begin{itemize}
+    \item Cutoffs on loop momentum during integration are called regularization. \cite{wells}
+    \item \textbf{Renormalization} \cite{wells}
+    \begin{itemize}
+        \item Strong interaction coupling is not small, hence HO loops matter. \cite{wells}
+        \item We can redefine coupling as ``running coupling'', a function $g(\mu)$ in terms of mass scale (renormalization scale). \cite{wells}
+        \item Cross section can be written as polynomial in $\ln(\mu/\overline{m})$, and  then picking $\mu\approx\overline{m}$ obliterates these. This is renormalizability. \cite{wells}
+        \item Experiments give running parameters {\color{red} find nice RHIC plot} \cite{wells}
+        \item In general, you have a relationship where coupling blows up at small renorm scale \cite{wells}
+        \begin{equation}\begin{split}
+        \alpha_s(\mu)=\frac{2\pi}{b_0\ln(\Lambda_\text{QCD}/\mu)}=\frac{g^2_3}{4\pi}
+        \end{split}\end{equation}
+        \item Experiments with large energy, larger than $\Lambda_\text{QCD}$, have smaller coupling, and therefore more accurate. This is asymptotic freedom, since quarks become free and coupling is small. \cite{wells}
+        \item $\Lambda_\text{QCD}\approx210$MeV, if top is excluded. \cite{wells}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsubsection{Symmetry Breaking}
+\begin{itemize}
+    \item \textbf{Global Symmetry breaking} \cite{wells}
+    \begin{itemize}
+        \item Laws of physics are invariant under a symmetry transformation, but the vacuum state is not. \cite{wells}
+        \item Global->transformation not depend on spacetime \cite{wells}
+        \item Local/gauge->different at each point. \cite{wells}
+        \item For scalar lagrangian, with complex scalar field $\phi$ \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&\partial^\mu\phi^*\partial_\mu\phi-V(\phi,\phi^*) \\
+        V(\phi,\phi^*)=&m^2\phi^*\phi+\lambda(\phi^*\phi)^2 \\
+        \end{split}\end{equation}
+        Where $\phi$ transforms under U(1):
+        \begin{equation}\begin{split}
+        \phi(x)\to e^{i\alpha}\phi(x)
+        \end{split}\end{equation}
+        \item If $m^2>0$ and $\lambda>0$: minimum at $\phi=0$ \cite{wells}
+        \item If $\lambda<0$: no minimum, unbound from below for large $\phi$ \cite{wells}
+        \item If $m^2<0$ and $\lambda>0$: mexican hat shape \cite{wells}
+        \begin{equation}\begin{split}
+        |\phi_\text{min}|^2=&\frac{v^2}{2} \\
+        v=&\sqrt{-m^2/\lambda} \\
+        \end{split}\end{equation}
+        \item Phase not defined for minimum, but can pick phase $Im(\phi_\text{min})=0$ \cite{wells}
+        \item This sets VEV, however the VEV is NOT invariant under U(1) \cite{wells}
+        \begin{equation}\begin{split}
+        \text{VEV}=\braket{0|\phi(x)|0}=&\frac{v}{\sqrt{2}} \\
+        \braket{0|\phi'(x)|0}=&e^{i\alpha}\frac{v}{\sqrt{2}} \\
+        \end{split}\end{equation}
+        \item Can write field in component real scalar fields $I$ and $R$ \cite{wells}
+        \begin{equation}\begin{split}
+        \phi(x)=&\frac{1}{\sqrt{2}}[v+R(x)+iI(x)] \\
+        \phi^*(x)=&\frac{1}{\sqrt{2}}[v+R(x)-iI(x)] \\
+        \end{split}\end{equation}
+        Solving for potential
+        \begin{equation}\begin{split}
+        V(\phi,\phi^*)=&m^2\phi^*\phi+\lambda(\phi^*\phi)^2 \\
+        (v=\sqrt{-m^2/\lambda}) \\
+                      =&\lambda(\phi^*\phi-v^2/2)^2-\lambda v^4/4 \\
+        V(R,I)=&\frac{\lambda}{4}[(v+R)^2+I^2-v^2]^2 \\
+        =&\lambda v^2R^2+\lambda vR(R^2+I^2)+\frac{\lambda}{4}(R^2+I^2)^2 \\
+        \end{split}\end{equation}
+        \begin{enumerate}\scriptsize
+            \item This gives us RRR, RII and RRRR, RRII, IIII interaction verticies. \cite{wells}
+            \item Also, a mass term $\lambda v^2$ for $R$ \cite{wells}
+            \item I is massless though \cite{wells}
+        \end{enumerate}
+        \item Can write field in terms of $h(x)$ and $G(x)$ \cite{wells}
+        \begin{equation}\begin{split}
+        \phi(x)=&\frac{1}{\sqrt{2}}[v+h(x)]e^{iG(x)/v} \\
+        \phi^*(x)=&\frac{1}{\sqrt{2}}[v+h(x)]e^{-iG(x)/v} \\
+        V(h)=&\lambda v^2h^2+\lambda vh^3+\frac{\lambda}{4}h^4 \\
+        \end{split}\end{equation}
+        So $G$ corresponds to the phase of $\phi$
+        \item Taking the derivative parts of the lagrangian shows interactions for G field \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_\text{derivatives}=&\partial^\mu\phi^*\partial_\mu\phi\\
+        =&\frac{1}{2}\partial^\mu h\partial_\mu h+\frac{1}{2}(1+\frac{h}{v})^2\partial^\mu G\partial_\mu G \\
+        \end{split}\end{equation}
+        \item Combining derivative part with potential part, and expanding \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&\partial^\mu\phi^*\partial_\mu\phi-V(\phi,\phi^*) \\
+        =&\frac{1}{2}\partial^\mu h\partial_\mu h+\frac{1}{2}(1+\frac{h}{v})^2 \partial^\mu G\partial_\mu G -\lambda^2h^2-\lambda vh^3-\frac{\lambda}{4}h^4 \\
+        &\text{Separating into int/prop parts:} \\
+        \mathcal{L}_\text{quadratic}=&\frac{1}{2}\partial^\mu h\partial_\mu h-\frac{1}{2}m_h^2h^2+\frac{1}{2}\partial^\mu G\partial_\mu G; \quad(m_h^2=2\lambda v^2)\\
+        \mathcal{L}_\text{int}=&(\frac{1}{v}h+\frac{1}{2v^2}h^2)\partial^\mu G\partial_\mu G-\lambda vh^3-\frac{\lambda}{4}h^4 \\
+        \end{split}\end{equation}
+        This gives us a massless Nambu-Goldstone boson, and a massive h. Note the verticies implied by the lagrangian, and the propagators.
+        \item Transfromations under U(1) \cite{wells}
+        \begin{equation}\begin{split}
+        G\to G'=&G+\alpha v \\
+        h\to h'=&h \\
+        \end{split}\end{equation}
+    \end{itemize}
+    \item \textbf{Local Symmetry Breaking (Higgs mechanism)} \cite{wells}
+    \begin{itemize}
+        \item Just another example for U(1), fermion $\psi$ with charge Q, coupling g, and vector field $A^\mu$ \cite{wells}
+        \item Transformations \cite{wells}
+        \begin{equation}\begin{split}
+        \psi(x)\to&e^{iQ\theta(x)}\psi(x) \\
+        \overline{\psi}(x)\to&e^{-iQ\theta(x)}\overline{\psi}(x) \\
+        A_\mu(x)\to&A_\mu(x)-\frac{1}{g}\partial_\mu\theta(x) \\
+        \end{split}\end{equation}
+        \item Break gauge symmetry with complex scalar field with charge 1 \cite{wells}
+        \begin{equation}\begin{split}
+            \phi(x)\to&e^{i\theta(x)}\phi(x) \\
+            \phi^*(x)\to&e^{-i\theta(x)}\phi^*(x) \\
+        \end{split}\end{equation}
+        \item Derivitives \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu\psi=&(\partial_\mu+iQgA_\mu)\psi \\
+        D_\mu\phi=&(\partial_\mu+igA_\mu)\phi\\
+        D_\mu\phi^*=&(\partial_\mu-igA_\mu)\phi^*\\
+        \end{split}\end{equation}
+        \item Introduce potential term \cite{wells}
+        \begin{equation}\begin{split}
+        V(\phi,\phi^*)=&m^2\phi^*\phi+\lambda(\phi^*\phi)^2 \\
+        \end{split}\end{equation}
+        So again, if $m^2<0$ then the VEV is $v/\sqrt{2}$.
+        \item Use same decomposition into h, G fields as in global sym section \cite{wells}
+        \item We get a more complicated Derivative, making definition of vector field useful \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu\phi=&\frac{1}{\sqrt{2}}\left[\partial_\mu h+ig(A_\mu+\frac{1}{gv}\partial_\mu G)(v+h)\right] e^{iG/v} \\
+        V_\mu=&A_\mu+\frac{1}{gv}\partial_\mu G \\
+        D_\mu\phi=&\frac{1}{\sqrt{2}}\left[\partial_\mu h+igV_\mu(v+h)\right] e^{iG/v} \\
+        D_\mu\phi^*=&\frac{1}{\sqrt{2}}\left[\partial_\mu h-igV_\mu(v+h)\right] e^{-iG/v} \\
+        \end{split}\end{equation}
+        \item The lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&\frac{1}{2}[\partial^\mu h\partial_\mu h+g^2(v+h)^2V^\mu V_\mu]-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}-\lambda(vh+h^2/2)^2 \\
+        -\frac{1}{4}F^{\mu\nu}F_{\mu\nu}=&-\frac{1}{4}(\partial_\mu V_\nu-\partial_\nu V_\mu)(\partial^\mu V^\nu-\partial^\nu V^\mu) \\
+        \end{split}\end{equation}
+        Here, h gains mass $m_h^2=2\lambda v^2$. Unlike with global symmetry, G disapears from lagrangian. The vector field also gains mass $m_V^2=g^2v^2$.
+        \item The dissapearance of G from lagrangian is termed {\color{blue}"eating"}. This is called the higgs mechanism. What has happened is that the DoF from the scalar field has shifted into the massive V boson. The original A field has 2 DoF, and G has one. The massive V boson has 3 DoF since it can be longitudinally polarized. This is equivalant to picking a choice of $\theta(x)$ proportional to G, which cancels out G in the definition of $\phi$. \cite{wells}
+        \item $\phi(x)$ is scalar higgs field. h(x) is called Higgs boson. {\color{red} This is simplified version, real version has 3 vector fields.} \cite{wells}
+    \end{itemize}
+    \item \textbf{Chiral symmetry breaking} \cite{wells}
+    \begin{itemize}
+        \item Possible to have VEV for fermion-antifermion pair \cite{wells}
+        \item $\braket{0|\overline{\Psi}\Psi|0}!=0$ \cite{wells}
+        \item For $q\overline{q}$ pairs, this happens, as well as for protons and neutrons. The three pions are the Pseudo Nambu-Goldstone bosons. Not full NB bosons, since chiral symmetry is approximate. \cite{wells}
+    \end{itemize}
+\end{itemize}
+
+
+% ##############################################################
+\section{Standard Model}
+% ##############################################################
+\begin{itemize}
+    \item 1949 Fermi-Yang model for mesons based on p, n combinations. This was a SU(2) group theory. \cite{hokim}
+    \item 1956 Sakata added hyperon with -1 strangeness to describe strange mesons. This was a SU(3) group theory, using a triplet. \cite{hokim}
+    \item 1961 Gell-Mann and Ne'eman's eightfold-way model used an octet of SU(3). \cite{hokim}
+    \item 1964 Gell-Mann and Zweig model for Quarks. Uses triplet. \cite{hokim}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Quantum Field Theory}
+\begin{itemize}
+    \item 2x2 Pauli matrices \cite{wells}
+        \begin{equation}
+        \begin{split}
+        \sigma^0=\begin{pmatrix}1&0\\0&1\end{pmatrix} ;\quad
+        \sigma^1=\begin{pmatrix}0&1\\1&0\end{pmatrix} ;\quad
+        \sigma^2=\begin{pmatrix}0&-i\\i&0\end{pmatrix} ;\quad
+        \sigma^3=\begin{pmatrix}1&0\\0&-1\end{pmatrix} ;\quad
+        \end{split}
+        \end{equation}
+    \item The four $\gamma^\mu$ matrices  \cite{wells}
+        \begin{equation}
+        \begin{split}
+        \gamma^0=\begin{pmatrix}0&\sigma^0\\\sigma^0&0\end{pmatrix} ;&\quad
+        \gamma^{i>0}=\begin{pmatrix}0&\sigma^i\\-\sigma^i&0\end{pmatrix} ;\quad \\
+        \gamma^\mu &= \begin{pmatrix}0&\sigma^\mu\\\overline{\sigma}^\mu&0\end{pmatrix}
+        \end{split}
+        \end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Chirality}
+\begin{itemize}
+    \item Chirality is the transformation under parity
+    \item Charged EW interaction between left/right fermions/antifermion only. Parity violation.
+    \item Neutral EW interaction, LL fermions interact more strongly than RR - chirality violation
+    \item Only left-handed components of particles, and right-handed components of antiparticles, interact weakly.
+    \item Chiral theory: violates parity symmetry
+    \item Vector theory: not violate parity symmetry
+    \item Helicity $h=\frac{\vec{p}\cdot\vec{S}}{|\vec{p}|}$. Not is undefined for $\vec{p}=0$ and is not lorentz invariant unless speed of light. Helicity has eigenvalues $\pm1/2$. $+1/2$ is Right, $-1/2$ is Left. Examples of left/right states for $\vec{S}_z$ are \cite{wells}
+        \begin{equation}
+        \begin{split}
+        \Psi_\text{Left} &= \begin{pmatrix}\sqrt{2E}\\0\\0\\0\end{pmatrix}\\
+        \Psi_\text{Right} &= \begin{pmatrix}0\\\sqrt{2E}\\0\\0\end{pmatrix}
+        \end{split}
+        \end{equation}
+    \item Define projections onto L and R states, essentially a massless approximation \cite{wells}
+    \begin{equation} \begin{split}
+    P_L=&\begin{pmatrix}1&0\\0&0\end{pmatrix} \\
+    P_R=&\begin{pmatrix}0&0\\0&1\end{pmatrix} \\
+    \gamma_5=&\begin{pmatrix}-1&0\\0&1\end{pmatrix} \\
+    P_L=&\frac{1-\gamma_5}{2} \\
+    P_R=&\frac{1+\gamma_5}{2} \\
+    \end{split} \end{equation}
+    Note, under normal convention, $P_L$ projects states for Right positrons, etc.
+    \item \textbf{Parity}: $x\to-x$ \\ \cite{wells}
+        \begin{center}
+        \begin{tabular}{l r r r r r}\toprule
+        Term                    & Number & Pairity & Type \\
+        $\overline{\Psi}_1\Psi_2$ & 1 & +1 & Scalar \\
+        $\overline{\Psi}_1\gamma_5\Psi_2$ & 1 & -1 & Pseudo-Scalar \\
+        $\overline{\Psi}_1\gamma^\mu\Psi_2$ & 4 & (-1)$^\mu$ & Vector \\
+        $\overline{\Psi}_1\gamma^\mu\gamma_5\Psi_2$ & 4 & -(-1)$^\mu$ & Axial-vector \\
+        $\frac{i}{2}\overline{\Psi}_1[\gamma^\mu,\gamma^\nu]\Psi_2$ & 6 & (-1)$^\mu$(-1)$^\nu$ & Tensor \\
+        \bottomrule\end{tabular} %remember cline{1-2}
+        \end{center}
+        Where $(-1)^\mu$ is (1,-1,-1,-1)
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Guage Theory}
+\begin{itemize}
+    \item Gauge transformations for function of spacetime $\theta$ \cite{wells}
+    \begin{equation}\begin{split}
+        A_\mu(x)\to&A_\mu(x)-\frac{1}{e}\partial_\mu\theta(x)\\
+        \Psi(x)\to&e^{iQ\theta}\Psi(x) \\
+        \overline{\Psi}(x)\to&e^{iQ\theta}\overline{\Psi}(x) \\
+        \partial_\mu\Psi\to&\partial_\mu(e^{iQ\theta}\Psi)=e^{iQ\theta}\partial_\mu\Psi+iQ\Psi\partial_\mu\theta \\
+        D_\mu\Psi\to&e^{iQ\theta}D_\mu\Psi \\
+    \end{split}\end{equation}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Quantum Electrodynamics}
+\begin{itemize}
+        \item \textbf{QED} \cite{wells}
+        \begin{itemize}
+            \item Abelian \cite{wells}
+            \item Lagrangian \cite{wells}
+            \begin{equation}\begin{split}
+            \mathcal{L}_\text{0}=&-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+\overline{\Psi}(i\gamma^\mu\partial_\mu-m)\Psi; \quad\text{free Lagrangian} \\
+            \mathcal{L}_\text{int}=&-eQ\overline{\Psi}\gamma^\mu\Psi A_\mu; \quad\text{interaction Lagrangian} \\
+            \mathcal{L}=&-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+i\overline{\Psi}\gamma^\mu D_\mu\Psi-m\overline{\Psi}\Psi; \quad\text{full Lagrangian}
+            \end{split}\end{equation}
+            Where $J^\mu=Q\overline{\Psi}\gamma^\mu\Psi$ is the current density $J^\mu=(\rho,\vec{J})$. $A_\mu$ is the electromagnetic field. $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$. The charge of the electron, $e$, is the (energy dependant running) coupling. It is related to the fine structure constant $\alpha\equiv\frac{e^2}{4\pi}=1/137...$. $e$ increases a bit with energy.
+            \item Recall that $\Psi$ and $\overline{\Psi}$ are both defined in terms of creation/annihilated operators \cite{wells}
+            \begin{equation}\begin{split}
+            \Psi(\vec{x})=\sum_{s=1}^2\int d\tilde{p}[u(p,s)e^{i\vec{p}\cdot\vec{x}}b_{\vec{p},s}+v(p,s)e^{-i\vec{p}\cdot\vec{x}}d^\dagger_{\vec{p},s}] \\
+            \overline{\Psi}(\vec{x})=\sum_{s=1}^2\int d\tilde{p}[\overline{u}(p,s)e^{-i\vec{p}\cdot\vec{x}}b^\dagger_{\vec{p},s}+\overline{v}(p,s)e^{i\vec{p}\cdot\vec{x}}d_{\vec{p},s}] \\
+            \end{split}\end{equation}
+            Where $u(p,s)$, $v(p,s)$, $\overline{u}(p,s)$, $\overline{v}(p,s)$ are a basis for solutions to the Dirac equation (examples pg 34). The creation/annihilaton operators b,d.
+            \item Recall that $A_\mu$ can be written as fourier expansion \cite{wells}
+            \begin{equation}\begin{split}
+            A_\mu=\sum_{\lambda=0}^3\int d\tilde{p}[\epsilon_\mu(p,\lambda)e^{i\vec{p}\cdot\vec{x}}a_{\vec{p},\lambda}+\epsilon^*_\mu(p,\lambda)e^{-i\vec{p}\cdot\vec{x}}a^\dagger_{\vec{p},\lambda}]
+            \end{split}\end{equation}
+            Where polarization fourvectors, orthonormal.
+            \begin{equation}\begin{split}
+            \epsilon^\mu(p,\lambda)\epsilon^*_\mu(p,\lambda') = \begin{cases}
+                +1 &\lambda=\lambda'=0\\
+                -1 &\lambda=\lambda'\in[1,2,3]\\
+                 0 &\lambda\ne\lambda'\\
+            \end{cases}
+            \end{split}\end{equation}
+            And a gauge choice can be made such that $\epsilon^\mu=(0,\vec{\epsilon})$. And since the polarization is orthogonal to momentum 3-vector: $p_\mu\epsilon^\mu=0$
+            \item Invariant under gauge transformations. Seen with covariant derivative $D_\mu\Psi=(\partial_\mu+iQeA_\mu)\Psi$ \cite{wells}
+            \item Gauge fixing: pick Lorentz gauge $\partial_\mu A^\mu=0$, so we can modify free lagrangian with additional term: $\mathcal{L}_0^\xi=\mathcal{L}-\frac{1}{2\xi}(\partial_\mu A^\mu)2$. This leads to a propagator $\frac{i}{p^2+i\epsilon}\left[-g_{\mu\nu}+(1-\xi)\frac{p_\mu p_\nu)}{p^2}\right]$. Depending on the calculation, $\xi=1$ for Feynman gauge, and $\xi=0$ for Landau gauge. \cite{wells}
+            \item \textbf{\color{red}All Feynman rules listed page 83} \cite{wells}
+        \end{itemize}
+        \item Notes about QED \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu=&\partial_\mu+iQeA_\mu \quad\text{Covariant derivative}\\
+        F_{\mu\nu}=&\partial_\mu A_\nu-\partial_\nu A_\mu \quad\text{Field strength} \\
+        \mathcal{L}=&-\frac{1}{4}F^{\mu\nu}F_{\mu\nu}+i\overline{\Psi}\slashed{D}\Psi-m\overline{\Psi}\Psi; \quad\text{Lagrangian}
+        \end{split}\end{equation}
+        \item Invariant under gauge parameter. \cite{wells}
+        \begin{equation}\begin{split}
+        A_\mu\to A_\mu-\frac{1}{e}\partial_\mu\theta \\
+        \Psi\to e^{iQ\theta}\Psi \\
+        \end{split}\end{equation}
+        The gauge transformations form a group, rejpresented by $U_Q(\theta)=e^P{iQ\theta}$
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Quantum Chromodynamics}
+\begin{itemize}
+        \item Strong force invariant under SU(2) isospin symmetry, up/down quards transform as j=1/2 doublet. \cite{wells}
+        \begin{equation}\begin{split}
+        \begin{pmatrix}u\\d\end{pmatrix}\to\exp{\left(i\theta^a\frac{\sigma^a}{2}\right)}\begin{pmatrix}u\\d\end{pmatrix}
+        \end{split}\end{equation}
+        $\theta^a$ is constant, not depend on $x$.
+    \item \textbf{QCD} \cite{wells}
+    \begin{itemize}
+        \item SU(3), dimension 8, generators of Lie algebra of fundamental representation \cite{wells}
+        \begin{equation}\begin{split}
+        T^a=\frac{1}{2}\lambda^a\quad\text(a=1,...,8)
+        \end{split}\end{equation}
+        \item $\lambda^a$ are Gell-Mann matrices \cite{wells}
+        \begin{equation}\begin{split}
+        \lambda^1=&\begin{pmatrix}0&1&0\\ 1&0&0\\ 0&0&0\end{pmatrix} \\
+        \lambda^2=&\begin{pmatrix}0&-i&0\\ i&0&0\\ 0&0&0\end{pmatrix} \\
+        \lambda^3=&\begin{pmatrix}1&0&0\\ 0&-1&0\\ 0&0&0\end{pmatrix} \\
+        \lambda^4=&\begin{pmatrix}0&0&1\\ 0&0&0\\ 1&0&0\end{pmatrix} \\
+        \lambda^5=&\begin{pmatrix}0&0&-i\\ 0&0&0\\ i&0&0\end{pmatrix} \\
+        \lambda^6=&\begin{pmatrix}0&0&0\\ 0&0&1\\ 0&1&0\end{pmatrix} \\
+        \lambda^7=&\begin{pmatrix}0&0&0\\ 0&0&-i\\ 0&i&0\end{pmatrix} \\
+        \lambda^8=&\frac{1}{\sqrt{3}}\begin{pmatrix}1&0&0\\ 0&1&0\\ 0&0&-2\end{pmatrix} \\
+        \end{split}\end{equation}
+    \end{itemize}
+    \item Yang-Mills Lagrangian \cite{wells}
+    \begin{itemize}
+        \item Non-Abelian (non-commuting elements) \cite{wells}
+        \item $\Psi_i$ are dirac fermion fields, with index $i$ corresponding to a representation \cite{wells}
+        \item Transformation \cite{wells}
+        \begin{equation}\begin{split}
+        \Psi_i\to&U_i^j\Psi_j \\
+        U=&\exp{(i\theta^aT^a)}\\
+        \Psi_i\to&(1+i\epsilon^aT^a)_i^j\Psi_j \\
+        \Psi^{\dagger i}\to&\Psi^{\dagger j}(1-i\epsilon^aT^a)_i^j \\
+        \overline{\Psi}^{i}\to&\overline{\Psi}^{j}(1-i\epsilon^aT^a)_i^j \\
+        A_\mu^a\to&A\mu^a-\frac{1}{g}\partial_\mu\epsilon^a-f^\text{abc}\epsilon^bA^c_\mu \quad\text{f are structure constants}\\
+        D_\mu\Psi_i\to&(1+ie^aT^a)_i^jD_\mu\Psi_j \\
+        F^a_{\mu\nu}\to&F^a_{\mu\nu}-f^{abc}\epsilon^bF^c_{\mu\nu} \\
+        \end{split}\end{equation}
+        \item Singlet is $\overline{\Psi}^i\Psi_i$, which allows for a mass term in the lagrangian $\mathcal{L}_m=-m\overline{\Psi}^i\Psi_i$. \cite{wells}
+        \item To have a derivative, define covariant derivative: \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu\Psi_i=\partial_\mu\Psi_i+igA_\mu^aT_i^{aj}\Psi_j
+        \end{split}\end{equation}
+        Where $A_\mu^a$ is a gauge field, with adjoint representation index a, spacetime vector index $\mu$. Number of $A_\mu^a$ equal to number of generators, which is gauge group dimension.
+        \item Construct lagrangian by defining antisymmetric field strength tensor, one for each Lie algebra generator $a$. \cite{wells}
+        \begin{equation}\begin{split}
+        F^a_{\mu\nu}=&\partial_\mu A^a_\nu-\partial_\nu A^a_\mu-gf^{abc}A_\mu^bA_\nu^c \\
+        \mathcal{L}_\text{gauge}=&-\frac{1}{4}F^{\mu\nu a}F^a_{\mu\nu} \\
+        \mathcal{L}_\text{fermions}=&i\overline{\Psi}^i\gamma^\mu D_\mu\Psi_i-m\overline{\Psi}^i\Psi_i \\
+        \mathcal{L}_\text{Yang-Mills}=&\mathcal{L}_\text{gauge}+\mathcal{L}_\text{fermions} \\
+        \end{split}\end{equation}
+        \item YM theory can't describe W boson, since $m_V^sA_\mu^aA^a\mu$ is not invariant. Need a scalar (higgs).  \cite{wells}
+    \end{itemize}
+    \item \textbf{QCD} \cite{wells}
+    \begin{itemize}
+        \item QCD is based on Yang-Mills theory with gauge group $\text{SU}(3)_c$. \cite{wells}
+        \item Quarks transform in {\color{red}fundamental 3} representation, given by the Gell-Man matrices. \cite{wells}
+        \item The subscript indicates the symmetry acts on color degrees of freedom \cite{wells}
+        \item Each quark Dirac field transforms separately \cite{wells}
+        \begin{equation}\begin{split}
+        u=&\begin{pmatrix}u_\text{red}\\u_\text{blue}\\u_\text{green}\end{pmatrix} \\
+        \overline{u}=&(\overline{u}_{\overline{\text{red}}},\overline{u}_{\overline{\text{green}}},\overline{u}_{\overline{\text{blue}}})
+        \end{split}\end{equation}
+        \item Quarks transform as \cite{wells}
+        \begin{equation}\begin{split}
+        u\to e^{i\theta^a(x)T^a}u \quad\text{SU(3)}_c \\
+        u\to e^{i\theta(x)Q_u}u \quad\text{U(1)}_\text{EM} \\
+        \end{split}\end{equation}
+        Where $Q$ is quark charge (fractional)
+        \item For each 8 generator matrices, there is a gauge vector boson, gluon. Denoted $G_\mu^a$. \cite{wells}
+    \end{itemize}
+
+    \item $\alpha_s(M_{Z^0}=0.1184\pm0.0007$, and measured from 1.88 GeV to 209 GeV. \cite{bethke}
+    \item Self coupling of gluons implies $\alpha_s$ grows large at large distance/small momentum transfer. \cite{bethke}
+    \item Quarks carry one color charge, hadrons are colorless. Gluons carry two color charges. \cite{bethke}
+    \item QCD doesn't predict value of \as, but does predict functional form with respect to energy. Therefore, is measured by experiment. \cite{bethke}
+    \item \as gets small at small distance, hence asymptotic freedom. \cite{bethke}
+    \item Energy dependence of \as given by \cite{bethke}
+    \begin{equation}\begin{split}
+    Q^2\frac{\partial\alpha_s(Q^2)}{\partial Q^2}=&\beta(\alpha_s(Q^2))
+    \end{split}\end{equation}
+    Where $\beta$ function is calculated perturbatively:
+    \begin{equation}\begin{split}
+    \beta(\as(Q^2))=&-\beta_0\as^2(Q^2)-\beta_1\as^3(Q^2)-\beta_2\as^4(Q^2)-\beta_3\as^5(Q^2)+\mathcal{O}(\as^6) \\
+    \beta_0=&\frac{33-2N_f}{12\pi}\\
+    \beta_1=&\frac{153-19N_f}{24\pi^2}\\
+    \beta_2=&\frac{77139-15099N_f+325N_f^2}{3456\pi^3}\\
+    \beta_3=&\frac{29243-6946.3N_f+405.089N_f^2+1.49931N_f^3}{256\pi^4}\\
+    \end{split}\end{equation}
+    Where $N_f$ is number of quarks in interaction, at energy scale. The numbers are derived from group constants for $SU(3)$, $C_A=N$ and $C_F=4/3$. \\
+    This is solved to 1-loop, neglecting terms above $\beta_0$:
+    \begin{equation}\begin{split}
+    \as(Q^2)=&\frac{\as(\mu)}{1+\as(\mu)\beta_0\ln\frac{Q^2}{\mu^2}} \\
+    =&\frac{1}{\beta_0\ln(Q^2/\Lambda^2)} \\
+    \Lambda^2=&\frac{\mu^2}{\exp{(1/(\beta_0\as(\mu^2)))}} \\
+    \end{split}\end{equation}
+    For a known measurement at $\mu$. Here, $\Lambda$ is defined for clarity, and is the energy scale where \as diverges.
+    \item Following this form, energy scales below about 1 GeV \as exceeds 1, and perturbative expansion not valid. \cite{bethke}
+    \item These figures illustrate two things: the shape of \as, and the dependence on loop corrections. Notice how in 2nd plot, \as can converge. \\ \cite{bethke}
+    \begin{center}
+    \includegraphics[width=0.5\textwidth]{../notes/theory/figures/plot.png}
+    \end{center}
+    \item Changes in renormalization scale $\mu$ that lead to a change in the observable are considered systematic higher order uncertainties. No agreed upon way of doing this. \cite{bethke}
+    \item For MC, at large distances, becomes non-perturbative. Then Hadronization models are used. Based on ``string fragmentation'' or ``cluster fragmentation''.  \cite{bethke}
+    \item \as can be measured from DIS, which is one of the oldest methods. Can range over wide energy range. Measured from e-p and p-p beam sat HERA for example. A cited study finds $\as(M_{Z^0}=0.1142\pm0.0023$ (hep-ph/0607200). This number is from lep-p and lep-deut scattering. \cite{bethke}
+    \item \as can also be measured from EW precision data. One of the cleanest ways to do this is with $R_Z=\Gamma(Z^0\to\text{Hadrons})/\Gamma(Z^0\to e^+e^-)$. A value using this method is $\as(M_{Z^0}=0.1193^{+0.0028}_{-0.0027}\pm0.0005$ arxiv:0811.0009 \cite{bethke}
+    \item World average, taking into account correlated errors via minimization of $\chi^2=\sum(x_i\overline{x})(C^{-1})_{ij}(x_j\overline{x})$, where $\overline{x}$ is weighted by inverse error average. Find $\alpha_s(M_{Z^0}=0.1184\pm0.0007$. \cite{bethke}
+    \item Summary of measurements \cite{bethke}
+    \begin{center}
+    \includegraphics[width=0.6\textwidth]{../notes/theory/figures/alphas.png}
+    \end{center}
+    \begin{itemize}
+        \item Heavy Quarkonia: meson states with heavy charm/bottom. For example by measuring $R_\gamma=\Gamma(\Upsilon\to\gamma gg)/\Gamma(\Upsilon\to ggg)$ \cite{bethke}
+        \item DIS described above \cite{bethke}
+        \item ee Annihilation. \cite{bethke}
+    \end{itemize}
+
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Electroweak Interaction}
+\begin{itemize}
+        \item Weak force invariant under $\text{SU}(2)_L$. Acts only on left-handed fermion fields. The irreducible j=1/2 representations of $\text{SU}(2)_L$ are the left-handed pairs of fermions $\begin{pmatrix}\nu_{eL}\\e_L\end{pmatrix}$, $\begin{pmatrix}u_L\\d_L\end{pmatrix}$, etc. $\theta$ transformation can be function of $x$. \cite{wells}
+    \item \textbf{W boson} \cite{wells}
+    \begin{itemize}
+        \item The effective field theory with (V-A)(V-A) can be easily replaced with mediator.  Lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_\text{int}=-\frac{g}{\sqrt{2}}(W^{+\rho}J^-_\rho+W^{-\rho}J^+_\rho)
+        \end{split}\end{equation}
+        Where W$^\pm$ is complex vector field. $J_\rho^-$ is charged current, which (p146) is the sum of all fermion pairs such that the charge is -1 (or +1), and having appropriate helicity. $J_\rho^+=(J_\rho^-)^*$.
+        \item Couplings \cite{wells}
+        \begin{equation}\begin{split}
+        G_F=&\frac{g^2}{4\sqrt{2}m_W^2} \\
+        g\approx&0.65\\
+        m_W=&80.4\text{GeV}\\
+        \end{split}\end{equation}
+        \item {\color{red}Feynman rules page 154/155} \cite{wells}
+    \end{itemize}
+    \item \textbf{Electroweak} \cite{wells}
+    \begin{itemize}
+        \item Four generators, because of four mediators. \cite{wells}
+        \item Only unbroken gauge group is EM gauge invariance \cite{wells}
+        \item W couples only with L-fermions, R-antifermions. \cite{wells}
+        \item Z couples differently with L-fermions and R-fermions \cite{wells}
+        \item $\gamma$ couples same to all fermions. \cite{wells}
+        \item Look up Glashow, Weinberg, Salam paper \cite{wells}
+        \item Weak isospin subgroup, $SU(2)_L$. L-fermions are doublets under this \cite{wells}
+            \begin{equation}\begin{split}
+            \begin{pmatrix}\nu_e\\e_L\end{pmatrix},\quad
+            \begin{pmatrix}\nu_\mu\\\mu_L\end{pmatrix},\quad
+            \begin{pmatrix}\nu_\tau\\\tau\end{pmatrix},\quad
+            \begin{pmatrix}u_L\\d_L\end{pmatrix},\quad
+            \begin{pmatrix}c_L\\s_L\end{pmatrix},\quad
+            \begin{pmatrix}t_L\\b_L\end{pmatrix}
+            \end{split}\end{equation}
+        \item The R-fermions are singlets \cite{wells}
+            \begin{equation}\begin{split}
+            \nu_e,e_R,
+            \nu_\mu,\mu_R,
+            \nu_\tau,\tau,
+            u_R,d_R,
+            c_R,s_R,
+            t_R,b_R,
+            \end{split}\end{equation}
+        \item $SU(2)_L$ generators similar to Pauli matrices $T^a=\sigma^a/2$ for a=1,2,3. These correspond to vector gauge boson fields $W_\mu^a$, with coupling g. \cite{wells}
+        \item Weak hypercharge subgroup, $U(1)_Y$. Coupling constant $g'$, and vector boson $B_\mu$. \cite{wells}
+        \item Weak hypercharge $Y$ is conserved. Different for L and R. Doublet members have same Y. \cite{wells}
+        \item Gauge part of lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_\text{gauge}=&-\frac{1}{4}W^a_{\mu\nu}W^{a\mu\nu}-\frac{1}{4}B_{\mu\nu}B^{\mu\nu} \\
+        W^a_{\mu\nu}=&\partial_\mu W^a_\nu-\partial_\nu W^a_\mu-g\epsilon^{abc}W^b_\mu W^c_\nu \\
+        B_{\mu\nu}=&\partial_\mu B_\nu-\partial_\nu B_\mu \\
+        \end{split}\end{equation}
+        Where $W^a_{\mu\nu}$ is $SU(2)_L$ \textbf{field strength}, and $B_{\mu\nu}$ is $U(1)_Y$ field strength. $\epsilon^{abc}$ is totally antisymmetric, with $\epsilon^{123}=1$, and is the structure constants for $SU(2)_L$.
+        \item Define covariant derivatives for fermion fields. \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu\begin{pmatrix}\nu_e\\e_L\end{pmatrix}=&[\partial_\mu+ig'B_\mu Y_{\ell_L}+igW^a_\mu T^a]\begin{pmatrix}\nu_e\\e_L\end{pmatrix} \\
+        D_\mu e_R=&[\partial_\mu+ig'B_\mu Y_{\ell_R}]e_R \\
+        \end{split}\end{equation}
+        $Y_{\ell_R}$ and $Y_{\ell_L}$ are weak hypercharges, and implied identity matrix before $\partial_\mu$ and $B_\mu$ in first eqn. Freedom to pick $Y_{\ell_R}=Q_\ell=-1$, fixing other hypercharge.
+        \item Identify SM $W^\pm$ in partial derivs \cite{wells}
+        \begin{equation}\begin{split}
+        W_\mu^+=&\frac{1}{\sqrt{2}}(W_\mu^1-iW_\mu^2) \\
+        W_\mu^-=&\frac{1}{\sqrt{2}}(W_\mu^1+iW_\mu^2) \\
+        \end{split}\end{equation}
+        \item Lagrangian with some interactions \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&i\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}\gamma^\mu D_\mu \begin{pmatrix}\nu_e\\e_L\end{pmatrix} \\
+        =&-\frac{g}{2}\overline{\nu}_e\gamma^\mu e_L(W_\mu^2-iW^2_\mu)-\frac{g}{2}\overline{e}_L\gamma^\mu \nu_e(W_\mu^2+iW^2_\mu) \\
+        \end{split}\end{equation}
+        \item $B_\mu$ and $W_\mu^3$ are neutral charge, but these mix to make Z and gamma. They mix with Weinberg angle \cite{wells}
+        \begin{equation}\begin{split}
+        \begin{pmatrix}W^3_\mu\\B_\mu\end{pmatrix}=&\begin{pmatrix}\cos{\theta_W}&\sin{\theta_W}\\-\sin{\theta_W}&\cos{\theta_W}\end{pmatrix} \begin{pmatrix}Z_\mu\\A_\mu\end{pmatrix}\\
+        \begin{pmatrix}Z_\mu\\A_\mu\end{pmatrix}=&\begin{pmatrix}\cos{\theta_W}&-\sin{\theta_W}\\\sin{\theta_W}&\cos{\theta_W}\end{pmatrix} \begin{pmatrix}W^3_\mu\\B_\mu\end{pmatrix}
+        \end{split}\end{equation}
+        To force photon to have correct coupling to fermions, subsitute these into the $D_\mu e_R$ covariant derivative equation. Then find $g'\cos{\theta_W}=e$. The equation for $D_\mu e_L$ gives $\frac{g}{2}\sin{\theta_W}-g'Y_{\ell_L}\cos{\theta_W}=e$. These define weak hypercharge coupling $g'$, and Weinberg angle $\theta_W$. Finally, requirement of neutrino to be zero charge gives $\frac{g}{2}\sin{\theta_W}+g'Y_{\ell_L}\cos{\theta_W}=0$. Solving these:
+        \begin{equation}\begin{split}
+        Y_{\ell_L}=&-1/2 \\
+        e=a&\frac{gg'}{\sqrt{g^2+g'^2}} \\
+        \tan{\theta_W}=&g'/g \\
+        \end{split}\end{equation}
+        \item Values near Z peak: \cite{wells}
+        \begin{enumerate}
+            \item g=0.652 \cite{wells}
+            \item g'=0.357 \cite{wells}
+            \item e=0.313 \cite{wells}
+            \item $\sin^2\theta_W$=0.231 \cite{wells}
+        \end{enumerate}
+        \item Electric charge of field $f$ is \cite{wells}
+            \begin{equation}\begin{split}
+            Q_f=T_f^3+Y_f
+            \end{split}\end{equation}
+            Where $T_f^3$ is +1/2 for upper doublet component, -1/2 for lower doublet component, and 0 for singlet. $Y$ defined earlieras $Y_{\ell_R}=-1$.
+        \item Interaction fermion with Z \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_{Zf\overline{f}}=&-Z^\mu\overline{f}\gamma_\mu(g_L^fP_L+g_R^fP_R)f \\
+        g_L^f=&g\cos\theta_WT^3_{f_L}-g'\sin\theta_WY_{f_L} \\
+        g_R^f=&-g'\sin\theta_WY_{f_R} \\
+        \end{split}\end{equation}
+        \begin{center}
+            \begin{tabular}{l r r r r r}\toprule
+            Fermion & $T^3_{f_L}$ & $Y_{f_L}$ & $Y_{f_R}$ & $Q_f$ \\
+            $\nu$ & \half & -\half & 0 & 0 \\
+            $e,\mu,\tau$ & -\half & -\half & -1 & -1 \\
+            $u,c,t$ & \half & $\frac{1}{6}$ & $\frac{2}{3}$ & $\frac{2}{3}$ \\
+            $d,s,b$ & -\half & $\frac{1}{6}$ & $-\frac{1}{3}$ & $-\frac{1}{3}$ \\
+            \bottomrule\end{tabular} %remember cline{1-2}
+        \end{center}
+        {\color{red} Use these (pg 217) to work out Z branching fraction.}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Electroweak Symmetry Breaking}
+\begin{itemize}
+    \item \textbf{EW Symmetry Breaking} \cite{wells}
+    \begin{itemize}
+        \item Complex scalar $SU(2)_L$ Higgs field with weak hypercharge $Y_\Phi=1/2$. \cite{wells}
+        \begin{equation}\begin{split}
+        \Phi=\begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}
+        \end{split}\end{equation}
+        Where both fields are complex scalar, and carry electric charge noted based on $Q=T_f^3+Y_f$ from above. It is a $SU(2)_L$ doublet, $SU(3)_c$ singlet.
+        \item Transformations \cite{wells}
+        \begin{equation}\begin{split}
+        SU(2)_L\quad\Phi(x)\to\Phi'(x)=&e^{i\theta^a(x)\sigma^a/2}\Phi(x) \\
+        U(1)\quad\Phi(x)\to\Phi'(x)=&e^{i\theta^a(x)/2}\Phi(x) \\
+        \end{split}\end{equation}
+        \item $\Phi^\dagger\Phi$ and $D^\mu\Phi^\dagger D_\mu\Phi$ are gauge singlets, can be used in lagrangian. \cite{wells}
+        \item Lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}=&D^\mu\Phi^\dagger D_\mu\Phi-V(\Phi,\Phi^\dagger) \\
+        V(\Phi,\Phi^\dagger)=&m^2\Phi^\dagger\Phi+\lambda(\Phi^\dagger\Phi)^2 \\
+        \end{split}\end{equation}
+        \item For $m^2<0$, then $\Phi=\begin{pmatrix}0\\0\end{pmatrix}$ is a maximum. \cite{wells}
+        \item For $m^2<0$, then minima are degenerate, with \cite{wells}
+        \begin{equation}\begin{split}
+        \Phi^\dagger\Phi=&v^2/2 \\
+        v=&\sqrt{-m^2/\lambda} \\
+        \end{split}\end{equation}
+        And defining VEV to be zero for charged component, via a $SU(2)_L$ gauge transformation.
+        \begin{equation}\begin{split}
+        \braket{0|\Phi|0}=\begin{pmatrix}0\\v/\sqrt{2}\end{pmatrix}
+        \end{split}\end{equation}
+        \item The $U(1)_{EM}$ gauge transformation is the remainder after fixing the VEV, and is a combination of $SU(2)_L$ and $U(1)_Y$: \cite{wells}
+        \begin{equation}\begin{split}
+        \Phi\to&\exp{i\theta \begin{pmatrix}1&0\\0&0\end{pmatrix}}\Phi \\
+        \phi^+\to& e^{i\theta}\phi^+ \\
+        \phi^0\to& \phi^0 \\
+        \end{split}\end{equation}
+        \item Write field $\Phi$ using vector and scalar fields G and h, as was done earlier \cite{wells}
+        \begin{equation}\begin{split}
+        \Phi(x)=&e^{iG^a(x)\sigma^a/2v} \begin{pmatrix}0\\(v+h(x))/\sqrt{2}\end{pmatrix} \\
+        =&\begin{pmatrix}0\\(v+h(x))/\sqrt{2}\end{pmatrix} \\
+        \end{split}\end{equation}
+        Where the latter was made with gauge choice ``unitary'' $\theta^a=-G^a/v$, so the transformation cancels out $G$ in eqn. h is electrically neutral real scalar boson.
+        \item Covariant derivitave \cite{wells}
+        \begin{equation}\begin{split}
+        D_\mu\Phi=&\frac{1}{\sqrt{2}}\begin{pmatrix}0\\\partial_\mu h\end{pmatrix}+\frac{i}{\sqrt{2}}\left[\frac{g'}{2}B_\mu+\frac{g}{2}W_\mu^a\sigma^a\right] \begin{pmatrix}0\\v+h\end{pmatrix}
+        \end{split}\end{equation}
+        Used to define $D^\mu\Phi^\dagger D_\mu\Phi$.
+        \item Lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_{\Phi\text{ kinetic}}=&D^\mu\Phi^\dagger D_\mu\Phi \\
+        =&\half\partial_\mu h\partial^\mu h+\frac{(v+h)^2}{4}\left[g^sW^+_\mu W^{-\mu}+\half(g^2+g'^2)Z_\mu Z^\mu\right] \\
+        \end{split}\end{equation}
+        The $v^2$ terms make mass for W and Z bosons, and there is no such term for photon field A.
+        \begin{itemize}
+            \item $m_W^2=\frac{g^2v^2}{4}$ \cite{wells}
+            \item $m_W^2=\frac{(g^s+g'^2)v^2}{4}$ \cite{wells}
+            \item v=246 GeV \cite{wells}
+            \item Note, $m_W/m_Z=\cos\theta_W$ \cite{wells}
+        \end{itemize}
+        \item {\color{red} Feynman rules p221} \cite{wells}
+        \item Higgs mass $m_h=\sqrt{2\lambda}v$. Before discovery of higgs, v was known by $\lambda$ was unknown. This arises from higgs potential \cite{wells}
+        \begin{equation}\begin{split}
+        V(h)=\lambda v^2h^2+\lambda vh^3+\frac{\lambda}{4}h^4 \\
+        \end{split}\end{equation}
+    \end{itemize}
+    \item {\color{blue} Fermion masses} \cite{wells}
+    \begin{itemize}
+        \item Gauge group representations for fermions are chiral: L transform in different representation than R fermions. \cite{wells}
+        \item Invalid mass term: \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_{\text{e mass}}=&-m_e\overline{e}e \\
+        e=&P_Le_L+P_Re_R \\
+        \overline{e}=&\overline{e}_LP_R+\overline{e}_RP_L\\
+        \overline{e}_L=&e_L^\dagger\gamma^0 \\
+        \overline{e}_R=&e_R^\dagger\gamma^0 \\
+        \mathcal{L}_{\text{e mass}}=&-m_e(\overline{e}_Le_R+\overline{e}_Re_L) \\
+        \mathcal{L}_{\text{f mass}}=&-m_f(\overline{f}_Lf_R+\overline{f}_Rf_L) \\
+        \end{split}\end{equation}
+        The this is a $SU(2)_L$ gauge doublet, since $e_R$ is singlet and $e_L$ is doublet. The lagrangian must be gauge singlet, hence forbidden.
+        \item Yukawa coupling \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_{\text{Yukawa}}=&-y_e\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}\begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}e_R+c.c.
+        \end{split}\end{equation}
+        Where $\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}$ and Higgs field have weak hypercharge +1/2. The $e_R$ field has -1, so net 0 hypercharge, hence $U(1)_Y$ singlet.
+        \item Transform under $SU(2)_L$ \cite{wells}
+        \begin{equation}\begin{split}
+        \begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}\to&e^{-i\theta^a\sigma^a/2}\begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}\\
+        \begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}\to&\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}e^{i\theta^a\sigma^a/2} \\
+        \end{split}\end{equation}
+        Hence lagrangian is signlet under $SU(2)_L$.
+        \item Unity guage for Higgs field ($\Phi(x)=\begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}\to\begin{pmatrix}0\\(v+h(x))/\sqrt{2}\end{pmatrix}$), to get mass \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_{\text{Yukawa}}=&-y_e\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}\begin{pmatrix}\phi^+\\\phi^0\end{pmatrix}e_R+c.c. \\
+        \mathcal{L}_{\text{Yukawa}}=&-y_e\begin{pmatrix}\overline{\nu}_e&\overline{e}_L\end{pmatrix}\Phi e_R+c.c. \\
+        \mathcal{L}_{\text{Yukawa}}=&-\frac{y_e}{\sqrt{2}}(v+h)\overline{e}e \\
+        \end{split}\end{equation}
+        Hence Mass term: $m_e=\frac{y_ev}{\sqrt{2}}$. Also hence coupling strength $-iy_e/\sqrt{2}$.
+        \item Neutrino also has Yukawa coupling, but disappears in unity guage. \cite{wells}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{The Standard Model Lagrangian}
+
+
+% ##############################################################
+\section{Physics Beyond the Standard Model}
+% ##############################################################
+
+% --------------------------------------------------------------
+\subsection{What's Missing}
+% Hierarchy problem
+% Dark matter
+% Cosmological constant problem
+% Strong CP problem
+% Neutrino oscillation
+
+
+% ##############################################################
+\section{Higgs Coupling to Muons}
+% ##############################################################
+% Known unknown
+
+% --------------------------------------------------------------
+\subsection{Motivation}
+
+% --------------------------------------------------------------
+\subsection{Yukawa Coupling}
+\begin{itemize}
+        \item Dirac fermion+scalar rule, with \textbf{yukawa coupling}. For $H\to\mu\mu$, $y$ is proportional to muon mass. \cite{wells}
+        \begin{equation}\begin{split}
+            \mathcal{L}_\text{int}=&-y\phi\overline{\Psi}\Psi \\
+                \feynmandiagram [inline=(d.base), horizontal=d to b] {
+                a -- [fermion] b -- [fermion] c,
+                b -- [scalar] d [particle=\(\phi\)],
+                };
+                =& -iy\delta_a^b
+            \end{split}\end{equation}
+            Where $a$, $b$ are spinor indicies for $\overline{\Psi}$ and $\Psi$.
+        \item $u(p,s)_a$, $v(p,s)_a$, $\overline{u}(p,s)^a$, $\overline{v}(p,s)^a$. These are the coefficients of the creation/annihilation operators in the expansion of a field in terms of those operators. For a scalar field, these are 1. For Dirac fermions, they have spinor indicies (given here). \cite{wells}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Production}
+
+% --------------------------------------------------------------
+\subsection{Decay}
+\begin{itemize}
+    \item \textbf{Higgs decay} \cite{wells}
+    \begin{itemize}
+        \item Lagrangian $\mathcal{L}_\text{int}=-y\phi\overline{\Psi}\Psi$, Yukawa interaction with $y$ coupling, and feynman rule $-iy$. \cite{wells}
+        \begin{equation}\begin{split}
+            \mathcal{L}_\text{int}=-\sum_fy_f\phi\overline{\Psi}_f\Psi_f
+        \end{split}\end{equation}
+        \item Diagram \cite{wells}
+            \feynmandiagram [inline=(d.base), horizontal=h to b] {
+            m1[particle=1] -- [fermion] b -- [fermion] m2[particle=2],
+            b -- [scalar] h [particle=H],
+            };
+        \item Matrix elements \cite{wells}
+        \begin{equation}\begin{split}
+            \mathcal{M}=&-iy\overline{u}_1v_2 \\
+            \mathcal{M}^*=&-iy\overline{v}_2u_1 \\
+            \mathcal{M}^2=&y^2(\overline{u}_1v_2)(\overline{v_2}u_1) \\
+            \sum_\text{spins}|\mathcal{M}^2|=&2y^2M^2\left(1-\frac{4m^2}{M^2}\right) \\
+        \end{split}\end{equation}
+        \item Plug into equation for $d\Gamma$ noted above: \cite{wells}
+        \begin{equation}\begin{split}
+            d\Gamma=&\frac{2y^2M^2\left(1-\frac{4m^2}{M^2}\right)}{64\pi^2M}\sqrt{1-4m^2/M^2}d\phi_1d(\cos\theta_1) \\
+            =&\frac{y^2M}{32\pi^2}\left(1-\frac{4m^2}{M^2}\right)^{3/2}d\phi_1d(\cos\theta_1) \quad\text{Simplify}\\
+            \Gamma=&\frac{y^2M}{8\pi^2}\left(1-\frac{4m^2}{M^2}\right)^{3/2}d\phi_1d(\cos\theta_1) \quad\text{After integration over angles}\\
+        \end{split}\end{equation}
+        \item Yukawa coupling approx proportional to mass $y_f\approx\frac{\overline{m}_f}{174\text{ GeV}}$, where $\overline{m}_f$ is related to mass. \cite{wells}
+        \item Under the approximation that $(1-4m^2_f/M^2/h)^{3/2}\approx1$, then the decay rate is \cite{wells}
+        \begin{equation}\begin{split}
+        \Gamma(h\to f\overline{f})=&\frac{n_fy_f^2M_h}{16\pi}\propto n_f\overline{m}_f^2 \\
+        \text{BR}(h\to f\overline{f})=&\frac{\Gamma(h\to f\overline{f})}{\Gamma_\text{total}}
+        \end{split}\end{equation}
+        \item $\Gamma_\text{total}\approx4.2\text{MeV}$ {\color{red} find updated source} \cite{wells}
+        \item Higher order corrections increase partial widths to quarks by about 10\%. \cite{wells}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Previous Work}
+
+
+% ##############################################################
+\section{Contact Interactions}
+% ##############################################################
+% Unknown known
+
+% --------------------------------------------------------------
+\subsection{Motivation}
+\begin{itemize}
+    \item Set out to identify observable consequences of fermion substructure \cite{eichten}
+    \item First limit with these observables set at 750 GeV by author. \cite{eichten}
+    \item Guage theories with preon binding are naturally having large lambda  \cite{eichten}
+    \item Note, the Peskin paper considers $ee\to jj$, while we essentially do the reverse. \cite{eichten}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Fermi theory of weak interactions}
+\begin{itemize}
+    \item \textbf{Fermi theory of weak interactions (contact)} \cite{wells}
+    \begin{itemize}
+        \item Muon decay four-fermion contact interaction Lagrangian \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}_\text{int}=-2\sqrt{2}G_F(\bar{\nu}_\mu\gamma^\rho P_L\mu)(\bar{e}\gamma_\rho P_L\nu_e) + \text{c.c.}
+        \end{split}\end{equation}
+        Where $G_F$ is Fermi constant, and $\nu$, $e$, $\mu$, $\nu$ all correspond to the external lines. c.c. is complex conjugate.
+        \item A candidate for muon decay with components that transform as vectors.  \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}^V_\text{int}=-G(\overline{\nu}_\mu\gamma^\rho\mu)(\overline{e}\gamma_\rho\nu_e)+\text{c.c.}
+        \end{split}\end{equation}
+        This is not correct, since Wu's Co decay shows only left-handed electrons produced. This means that right handed electrons, and left-handed antineutrinos are not seen to interact via weak interactions. This introduces a $P_L$ to operate on electron, and $P_R$ to operate on neutrino. The following Lagrangian does this
+        \item  \cite{wells}
+        \begin{equation}\begin{split}
+        \mathcal{L}^V_\text{int}=&-G(\overline{\nu}_\mu\gamma^\rho\mu)(\overline{e}\gamma_\rho\nu_e)+\text{c.c.} \quad\text{Vector component} \\
+        \mathcal{L}^A_\text{int}=&-G(\overline{\nu}_\mu\gamma^\rho\gamma_5\mu)(\overline{e}\gamma_\rho\gamma_5\nu_e)+\text{c.c.} \quad\text{Axial component} \\
+        \mathcal{L}_\text{int}=&-G(\bar{\nu}_\mu\gamma^\rho P_L\mu)(\bar{e}\gamma_\rho P_L\nu_e) + \text{c.c.} \quad\text{V-A (correct)} \\
+        \end{split}\end{equation}
+        \item Theories with negative mass couplings, such as $\Lambda^{-2}$ in CI, suffer from non-renormalizability. Canceling the divergences frol loops requries infinite number of couplings. Instead, you can use NR theory at lower energy as effective theory. \cite{wells}
+    \end{itemize}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Peskin's Lagrangian}
+\begin{itemize}
+    \item Two key points: \cite{eichten}
+    \begin{enumerate}
+        \item If either or both chiral components of $\psi$ are composite, then there must be a contact interaction \cite{eichten}
+        \begin{center}
+        \begin{equation}% recall spli}
+        \begin{split}
+        \mathcal{L}_{\psi\psi} = (g^2/2\Lambda^2) [& \eta_\text{LL}~\overline{\psi_\text{L}}\gamma_\mu\psi_\text{L}~\overline{\psi_\text{L}}\gamma^\mu\psi_\text{L} +\\
+                                                   & \eta_\text{RR}~\overline{\psi_\text{R}}\gamma_\mu\psi_\text{R}~\overline{\psi_\text{R}}\gamma^\mu\psi_\text{R} +\\
+                                                   & 2\eta_\text{RL}~\overline{\psi_\text{R}}\gamma_\mu\psi_\text{R}~\overline{\psi_\text{L}}\gamma^\mu\psi_\text{L}]
+        \end{split}
+        \end{equation}
+        \end{center}
+        This requires $\text{SU}(3)\otimes\text{SU}(2)\otimes\text{U}(1)$ invariance. $\mathcal{L}_{\psi\psi}$ does not conserve parity. $\Lambda$ defined such that $g^2/4\pi=1$.
+        \item If there is a $\psi-\psi$ scattering controled by gauge coupling $\alpha_\psi\ll1$, there is interference of the order $(4\pi\alpha_\psi/q^2)^{-1}(g/\Lambda)^2 = q^2/\alpha_\psi\Lambda^2$. This interference is model independent. Also, overwhelms $O(q^2/\Lambda^2)$ contribution from form factors. \cite{eichten}
+    \end{enumerate}
+\end{itemize}
+
+% --------------------------------------------------------------
+\subsection{Our Model}
+
+% --------------------------------------------------------------
+\subsection{Previous Work}
+

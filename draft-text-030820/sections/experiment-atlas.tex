@@ -1,0 +1,77 @@
+\section{ATLAS Detector}
+%ATLAS detector
+There are seven experiments around the circumference of the LHC located at the interaction points of the beams: four large experiments called CMS, ALICE, LHCb, and ATLAS as well as three small experiments called TOTEM, MoEDAL, and LHCf.
+This thesis uses data collected by the ATLAS (A Large Toroidal Lhc ApparatuS) detector.
+ATLAS is a multipurpose particle detector designed to maximize acceptance and precision in order to discover and study new particles.
+The detector has a cylindrical geometry that covers nearly the entire solid angle surrounding the IP.
+This section will 
+There are four sub-detectors that make up the ATLAS detector.
+
+% Note: principles of detection
+% \subsection{Design Philosophy}
+\subsection{Coordinate System}
+\subsection{Magnet System}
+%magnet
+The magnet system of ATLAS includes a thin superconducting solenoid surrounding the ID which generates a 2T magnetic field used for tracking particles in the ID.
+Further out from the IP is a larger toroidal magnet that creates a 4T magnetic field in the region of the Muon Spectrometer.
+Two separate magnets also produce a 4T field in the endcap regions.
+
+\subsection{Inner Detector}
+%ID
+Closest to the IP is the Inner Detector (ID) which covers $|\eta|<2.5$ and consists of three layers of silicon pixel detector, four layers of silicon strip detector, and a transition radiation detector.
+The ID provides particle tracking, momentum, identification for charged particles and jets, and signatures for both missing transverse energy and b-tagging.
+The principle of detection for the silicon semiconductor detectors is the drift of electron holes through the silicon and onto a cathode. \cite{det-id}
+
+\subsection{Calorimeters}
+%LAr
+Next there are two systems to provide calorimetry.
+The Liquid Argon calorimeter (LAr) whose combined detectors cover $|\eta|<3.2$ provides electromagnetic calorimetry.
+The LAr also provides hadronic calorimetry in the range $1.4<|\eta|<4.8$.
+The principle of detection for the LAr is ionized electron drift through liquid argon to deposit charge onto an accordion configuration of anodes.
+There is also a presampler to discriminate electrons from photons and compensate for energy lost through the detector.
+%Tile
+In addition to the LAr, an iron/scintillator calorimeter provides hadronic calorimetry in the range $|\eta|<1.7$.
+The active tiles are coupled to fiber optics that carry scintillation light to PMT's for readout.
+These are interspaced with iron absorbers.
+\subsubsection{Electromagnetic Calorimeter}
+\subsubsection{Hadronic Calorimeter}
+\subsubsection{Forward Calorimeter}
+
+\subsection{Muon System}
+%Muon
+The outermost ATLAS system is the Muon Spectrometer.
+This system consists of trigger and precision detectors with overlapping acceptance.
+Resistive Plate Chambers (RPC) in $|\eta|<1.05$ and Thin Gap Chambers (TGC) in $1.05<|\eta|<2.7$ provide the trigger for the MS.
+Monitored Drift Rubes (MDT) in the barrel and endcap regions ($|\eta|<2.7$) provide precision tracking of muons along with the Cathode Strip Chambers (CSC) in the region from $2.0<|\eta|<2.7$.
+Muons play an important role in this analysis, which warrants a more detailed description of the muon system.
+The MDTs are single wire ($50\mu m$) drift tubes (aluminum, radius 30mm) filled with 7\% $CO_2$ and 93\% Ar gas.
+These tubes are arranged in multilayers of 3 or 4 layers of drift tubes.
+Multilayers are grouped together into chambers with two multilayers each.
+Together, the MDTs achieve a spatial resolution of $\approx80\mu m$ and a momentum resolution of 10\% at Pt=1TeV.
+The CSCs are multiwire proportional chambers with four $\eta$ layers and four $\phi$ layers of anodes.
+At their peak performance, the CSC have a resolution of $\approx60\mu$m.
+They are used in the high $\eta$ region where the particle rate ($>150 Hz/cm^2$) exceeds the tolerance of the MDTs.
+The RPCs provide the muon trigger and $\phi$ coordinates in the barrel region ($|\eta|<2.7$).
+These chambers consist of $\eta$ and $\phi$ planes of cathode and anode pads separated by a 2mm gas gap and a voltage gradient.
+The TGCs fill a role similar to the RPCs in the end-cap region ($|\eta|<1.05$).
+The TGCs are multiwire proportional chambers with several layers of $\eta$ and $\phi$ planes. \cite{det-muon}
+\subsubsection{MDT} % precision
+\subsubsection{CSC} % precision
+\subsubsection{RPC}
+\subsubsection{TGC}
+
+\subsection{Trigger System}
+\subsubsection{L1 Trigger}
+\subsubsection{HLT Trigger}
+\subsection{Data Acquisition}
+
+%\subsection{Reconstruction}
+%%particle ID and reconstruction
+%The detector subsystems described above together provide the information that is used to identify particles in an event.
+%The bending of tracks in the ID and the MS is used to measure a particle's charge (from the direction) and momentum (from the sagitta).
+%Since electrons usually are unable to penetrate all the way to the MS, a charged track in the ID and MS is usually produced by a muon.
+%Energy deposits in the calorimeters is associated with a track and corresponds to a particle's energy.
+%Electromagnetic particles (electrons, muons, and photons) produce showers in the LAr.
+%Strongly interacting particles (hadrons like protons and pions) produce broad showers in the hadronic calorimeter.
+%The momentum and energy of a particle defines its mass and therefore the particle ID.
+
