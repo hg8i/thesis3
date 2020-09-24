@@ -1,23 +1,68 @@
 \section{Multivariate Categorization}\label{sec:hmmBdt}
 
-This section describes the separation of the ``pre-cut'' 3-lepton and 4-lepton categories into ``post-cut'' sub-categories in order to enhance the overall sensitivity.
-Boosted decision trees (BDTs) are trained using the signal and background simulations in each of these categories.
+This section describes the division of the inclusive 3-lepton and 4-lepton categories into exclusive (``post-cut'') sub-categories.
+The definition of the exclusive categories is based on a multivariate discriminant that is a function of a number of kinematic variables.
+The discriminant is calculated using a \emph{boosted decision tree} (BDT) that is defined using the available information about signal and background kinematics from simulation.
+
+\afterpage{
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{\label{fig:bdtTree}{\includegraphics[width=0.25\textwidth]{figures/hmm/tree.png}}}
+\subfloat[][]{{\includegraphics[width=0.75\textwidth]{figures/hmm/treeEnsamble.png}}}
+\caption{}
+\label{fig:}
+\end{figure}
+\clearpage
+}
+
+At the basis of the BDT are trees and a dataset of $n$ entries and $m$ variables.
+In its present usage, the classification is an example of supervised learning, so the entries $x_i$ $i\in[1,...,n]$ are labeled as either signal or background with $y_i$.
+The elements of $x_i$ are variables $v_j$ $j\in[1,...,m]$.
+A decision tree maps an entry of the dataset $x_i$ consisting onto a discrete output space, such as ``signal or background''.
+Each node of the tree may represent a binary decision based on the variables of the entry.
+Alternatively the nodes with no children (leaves) may represent a decision, as illustrated in Figure \ref{fig:bdtTree}.
+A generalization of decision tree that assigns continuous weights to each leaf is a classification and regression tree (CART).
+A tree can be \emph{trained} to optimally map a set of input entries $x_i$ onto their corresponding labels $y_i$ simply by treating the distributions of input variables as PDFs and selecting cuts (a, b, ...) that result in the highest output fidelity.
+A single CART tends to struggle to succinctly represent the complexity of simulated physics datasets.
+This performance can be augmented by an ensemble of CARTs labeled $k$, each with an output function $f_k(x_i)$ as illustrated in Figure \ref{fig:bdtTree}.
+The sum of the CART output functions defines a new ensemble output function $f(x_i)=\hat{y}_i$.
+
+The strategy is then to develop an ensemble whose output functions accurately predict the corresponding label $y_i$ for unseen events.
+This is quantified by a regularized loss function,
+\begin{equation}\begin{split}\label{eqn:lossFunc}
+    \mathcal{L}(\phi)=\sum_i l(\hat{y}_i,y_i),
+\end{split}\end{equation} 
+where $l$ measures the difference between $\hat{y}_i$ and $y_i$.
+A training process is defined to select trees and weights in order to minimize Equation \ref{eqn:lossFunc}.
+
+Boosting is a method to minimize such loss functions, provided it is differentiable.
+Essentially it consists of iteratively expanding the ensemble of trees, with each addition addressing the miss-categorization of the previous ensemble.
+One algorithm, AdaBoost, performs this task by iteratively reweighting poorly categorized entries to be more important to the following tree.
+Another algorithm, Gradient Boosting, instead adds trees that are trained on the previous ensemble's poorly categorized entries.
+A recent descendent of AdaBoost and Gradient Boosting is XGBoost, which introduces a modified loss function,
+\begin{equation}\begin{split}\label{eqn:lossFuncXgb}
+    \mathcal{L}(\phi)=\sum_i l(\hat{y}_i,y_i)+\sum_k \Omega(f_k).
+\end{split}\end{equation} 
+In Equation \ref{eqn:lossFuncXgb}, $\Omega$ is a measure of the complexity a tree which reduces over-fitting of the loss function to the training dataset.
+XGBoost also introduces procedures to more quickly add and remove branches from trees while fitting the loss function.
+These result in an output function that can be trained quickly, and avoid obvious over-fitting.
+The XGBoost algorithm is used to construct the multivariate discriminant functions that are used in this analysis.
+\cite{xgboost}
 
 \subsection{Configuration}
 \label{sec:hmmBdtConfiguration}
 
 % Training details
-Different classifiers are used for both the 3-lepton and 4-lepton categories, but these share a common setup.
-The classifier algorithm used is XGBoost. \cite{xgboost} 
-
+Separate classifiers are trained for 3-lepton and 4-lepton categories, but there are a number of similarities.
 A 5-fold splitting of the available signal and background sample is used.
- Three fifths of each sample define the \emph{training} sample used to fit the BDT.
- One fifth of the sample defines a \emph{validation} sample used to evaluate the performance of the BDT, control the potential for over training to the testing sample, and to select the cuts on the BDT output used for categorization.
- One fifth of the sample defines a \emph{testing} sample which remains blinded until the choices related to the VH channels have been fixed.
- The output of the BDT on the testing sample represent the final result of the BDT and it is essential to refrain from making choices related to the BDT performance on the testing set.
- For example, selecting an optimal cut using the BDT testing set, and then using the same testing set to estimate signal strength, will result in an expected signal amplitude that is larger than that from an unexposed sample 
+Three fifths of each sample define the \emph{training} sample used to fit the BDT.
+One fifth of the sample defines a \emph{validation} sample used to evaluate the performance of the BDT, control the potential for over training to the testing sample, and to select the cuts on the BDT output used for categorization.
+One fifth of the sample defines a \emph{testing} sample which remains blinded until the choices related to the VH channels have been fixed.
+The output of the BDT on the testing sample represent the final result of the BDT and it is essential to refrain from making choices related to the BDT performance on the testing set.
+For example, selecting an optimal cut using the BDT testing set, and then using the same testing set to estimate signal strength, will result in an expected signal amplitude that is larger than that from an unexposed sample 
 (e.g. data).
- Making such choices using the \emph{validation} sample avoids this particular complication.
+Making such choices using the \emph{validation} sample avoids this particular complication.
 
 Cross validation is was introduced in order to maximise the benefit from the limited statistics available in simulated events. A cyclic permutation of the 5-fold splitting is used, such that a separate BDT is trained for each fifth of the total sample.
 
