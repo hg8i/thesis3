@@ -6,6 +6,10 @@ ATLAS is a multipurpose particle detector designed to maximize acceptance and pr
 The experiment has a cylindrical geometry 46~m in length and 25~m in diameter.
 The experiment is located at p1 on the LHC ring, and is constructed to cover nearly the entire solid angle surrounding the colliding beams. \cite{atlasFacts}
 
+The detector subsystems perform a variety of tasks.
+These range from measuring charge tracks left by particles, along with their energy and momentum.
+Some detectors specialize in precisely recording the effects of particles (hits), while others focus on quickly identifying patterns of interest for analysis (triggers).
+
 Throughout the design of the various systems, a key concern is the amount (or budget) of material that each introduces.
 Particles may loose energy, be absorbed, or produce secondary particles through interactions as they pass through these materials.
 With few exceptions, it is advantageous to reduce the total material that particles pass through.
@@ -82,7 +86,7 @@ Drift does not occur outside the depletion region in the absence of an electric 
 
 The first subsystem that particles pass through is the pixel detector.
 Here, the silicon is subdivided into a grid of many isolated \emph{pixels} that may be read out individually.
-Each pixel is 256~$\upmu$m thick with a typical surface area of $50\times400\upmu$~m$^2$.
+Each pixel is 256~\um thick with a typical surface area of $50\times400\um^2$.
 In the barrel, these are grouped into arrays of 24$\times$160 pixels for readout.
 Sixteen arrays are housed on a ``module'', which serves the repeating basis of the various pixel layers.
 Three layers of detectors are arranged in the barrel with radii of 4~cm, 11~cm, and 14~cm.
@@ -95,7 +99,7 @@ In the barrel, the strips are oriented differently depending on their layer, wit
 
 Finally, particles interact with the transition radiation tracker (TRT) positioned outside the SCT.
 This is a system of 4~mm diameter gaseous proportional-mode drift tubes.
-The tubes, or ``straws'', are made from wound Kapton with a gold-plated 31~$\upmu$m wire in the center.
+The tubes, or ``straws'', are made from wound Kapton with a gold-plated 31~\um wire in the center.
 The straws are filled with a drift gas mixture of xenon (70\%), carbon dioxide (27\%), and oxygen (3\$).
 During operation the Kapton is kept at a -1.5~kV.
 When a charged particle passes through a straw, it ionizes the gas and the resulting free electrons drift towards the grounded wire.
@@ -159,7 +163,7 @@ For homogeneous calorimeters such as those in ATLAS, the energy measured in the 
 This is limited by several uncertainties: the point of the first interaction, leakage of the shower out through the calorimeter.
 The measurement of energy by the calorimeters is specified by a resolution of the form in Equation \ref{eqn:caloRes}.
 \begin{equation}\begin{split}\label{eqn:caloRes}
-    \frac{\sigma_E}{E}=\frac{\sigma_a}{\sqrt{E}}\oplus\frac{\sigma_b}{E}\oplus\sigma_c.
+    \frac{\Delta E}{E}=\frac{\sigma_a}{\sqrt{E}}\oplus\frac{\sigma_b}{E}\oplus\sigma_c.
 \end{split}\end{equation} 
 Here, the term $\sigma_a$ is a stochastic uncertainty in photoelectric statistics.
 The term $\sigma_b\approx0$ at ATLAS.
@@ -236,28 +240,119 @@ The effective hadronic depth of the TileCal is $\sim7\lambda_I$.
 
 \subsection{Muon System}
 
-%Muon
-The outermost ATLAS system is the Muon Spectrometer.
-This system consists of trigger and precision detectors with overlapping acceptance.
-Resistive Plate Chambers (RPC) in $|\eta|<1.05$ and Thin Gap Chambers (TGC) in $1.05<|\eta|<2.7$ provide the trigger for the MS.
-Monitored Drift Rubes (MDT) in the barrel and endcap regions ($|\eta|<2.7$) provide precision tracking of muons along with the Cathode Strip Chambers (CSC) in the region from $2.0<|\eta|<2.7$.
-Muons play an important role in this analysis, which warrants a more detailed description of the muon system.
-The MDTs are single wire ($50\mu m$) drift tubes (aluminum, radius 30mm) filled with 7\% $CO_2$ and 93\% Ar gas.
-These tubes are arranged in multilayers of 3 or 4 layers of drift tubes.
-Multilayers are grouped together into chambers with two multilayers each.
-Together, the MDTs achieve a spatial resolution of $\approx80\mu m$ and a momentum resolution of 10\% at Pt=1TeV.
-The CSCs are multiwire proportional chambers with four $\eta$ layers and four $\phi$ layers of anodes.
-At their peak performance, the CSC have a resolution of $\approx60\mu$m.
-They are used in the high $\eta$ region where the particle rate ($>150 Hz/cm^2$) exceeds the tolerance of the MDTs.
-The RPCs provide the muon trigger and $\phi$ coordinates in the barrel region ($|\eta|<2.7$).
-These chambers consist of $\eta$ and $\phi$ planes of cathode and anode pads separated by a 2mm gas gap and a voltage gradient.
-The TGCs fill a role similar to the RPCs in the end-cap region ($|\eta|<1.05$).
-The TGCs are multiwire proportional chambers with several layers of $\eta$ and $\phi$ planes. \cite{det-muon}
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/muon.png}}}
+\subfloat[][]{\label{fig:atlasMsBarrel}{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/muonCross.eps}}}
+\caption{}
+\label{fig:atlasMs}
+\end{figure}
+
+The outermost detector system, the ATLAS Muon Spectrometer (MS), is the largest muon spectrometer ever constructed. \check
+The MS is able to identify muons and measure their transverse momentum, especially for those with $\pt>300$~GeV.
+In this task, it shares a similar geometry to the ID.
+The spectrometer is comprised of a barrel region with cylindrical layers of detectors at radii of 5, 7.5, and 10~m.
+The symmetrical end-cap regions consist of a four layers located at $z$ of 7, 10, 14, 21-23~m. 
+All layers have 16-fold symmetry in azimuth.
+The MS uses of four subsystems in different regions of pseudorapidity and for different tasks. 
+To provide fast hits to the trigger system in order to identify events containing muons, the Resistive Plate Chambers operate in the barrel ($|\eta|<1.05$) and the Thin Gap Chambers operate in the end-cap wheel ($1.05<|\eta|<2.7$).
+Precision tracking data for muons is provided by the Monitored Drift Rubes in the barrel ($|\eta|<2.7$) along with the Cathode Strip Chambers in the region from $2.0<|\eta|<2.7$.
+The various systems are shown in Figure \ref{fig:atlasMs}.
+\cite{muonTdr}
+
+The MS is required to measure muon momentum with a resolution,
+\begin{equation}\begin{split}
+    \frac{\Delta \pt}{\pt}<1\times10^{-4}\times p/\text{GeV}.
+\end{split}\end{equation} 
+This requires hit locations to be measured with an accuracy of 50~\um.
+Hits are registered using cylindrical coordinates in the $r-z$ plane.
+The $z$ coordinate is measured in the barrel region, where the toroidal magnetic field bends muons in the longitudinal direction.
+Meanwhile $r$ coordinate is measured in the end-caps, where magnetic field pushes muons in the radial direction. 
+
+
+%%Muon
+%The MDTs are single wire ($50\mu m$) drift tubes (aluminum, radius 30mm) filled with 7\% $CO_2$ and 93\% Ar gas.
+%These tubes are arranged in multilayers of 3 or 4 layers of drift tubes.
+%Multilayers are grouped together into chambers with two multilayers each.
+%Together, the MDTs achieve a spatial resolution of $\approx80\mu m$ and a momentum resolution of 10\% at Pt=1TeV.
+%The CSCs are multiwire proportional chambers with four $\eta$ layers and four $\phi$ layers of anodes.
+%At their peak performance, the CSC have a resolution of $\approx60\mu$m.
+%They are used in the high $\eta$ region where the particle rate ($>150 Hz/cm^2$) exceeds the tolerance of the MDTs.
+%The RPCs provide the muon trigger and $\phi$ coordinates in the barrel region ($|\eta|<2.7$).
+%These chambers consist of $\eta$ and $\phi$ planes of cathode and anode pads separated by a 2mm gas gap and a voltage gradient.
+%The TGCs fill a role similar to the RPCs in the end-cap region ($|\eta|<1.05$).
+%The TGCs are multiwire proportional chambers with several layers of $\eta$ and $\phi$ planes. \cite{det-muon}
 
 \subsubsection{MDT} % precision
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{\label{fig:atlasMdt}{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/mdt.png}}}
+\subfloat[][]{\label{fig:atlasMdtChamber}{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/mdtChamber.png}}}
+\caption{}
+\label{fig:}
+\end{figure}
+
+The Monitored Drift Tubes (MDT) are the single wire chambers that provide precision muon measurements in the majority of the MS.
+An MDT consists of a 30~mm aluminum tube cathode with a central 50\um gold-plated tungsten-rhenium wire anode.
+The tube is filled with a mixture of argon (91\%), nitrogen (4\%), and methane (5\%) pressurized to 3~bar.
+Charged particles passing through the tube ionize the gas, freeing a track electrons to drift towards the 3.2~kV wire over the course of $\approx500$~ns.
+The spacial resolution of a single MDT is 80~\um.
+This is shown in Figure \ref{fig:atlasMdt}.
+The radial displacement of the track is determined from the total drift time.
+Layers of MDTs are laminated together with glue and affixed to a support frame that holds them in precise positions.
+This is shown in Figure \ref{fig:atlasMdtChamber}.
+The central cross plate is adjustable to bend the outer aluminum tubes to match the gravitational sag of the anode wires.
+The deformation of the chamber is monitored by built in optical systems.
+
+As shown in Figure \ref{fig:atlasMs}, the MDT chambers are used throughout ATLAS except in the very high pseudorapidity region where particle flux exceeds their measurement rate.
+In the barrel ($|\eta|<1$), chambers are rectangular and arranged into three layers beginning outside the calorimeters, as shown in Figure \ref{fig:atlasMsBarrel}.
+In the end-cap ($|\eta|>1$), chambers are trapezoidal and positioned radially on either an inner or outer wheel.
+The MDT system is comprised of 1194 precision chambers, with a total of 370,000 output channels.
+
+\cite{muonTdr}
+
 \subsubsection{CSC} % precision
-\subsubsection{RPC}
-\subsubsection{TGC}
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{\label{fig:atlasCsc}{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/csc.png}}}
+\caption{}
+\label{fig:}
+\end{figure}
+
+The Cathode Strip Chambers (CSC) are multiwire proportional chambers that provide precision muon measurements in the region close to the interaction point and the beamline ($2<|\eta|<2.7$).
+The CSCs are designed to have short drift times ($<30$~ns) in order to avoid saturation from the high particle flux in this region.
+Like the MDTs, the spacial resolution of CSCs is 80~\um.
+They consist of anode wires strung perpendicularly to cathode strips as shown in Figure \ref{fig:atlasCsc}.
+The wires in the CSCs are 30~\um versions of those used in the MDTs, and the cathode strips are copper adhered to glass-reinforced epoxy.
+Four of these constructions are stacked on top of each other, separated by a closed cell foam, to complete a CSC chamber.
+The intermediate area is filled with a mixture of carbon dioxide (50\%), argon (30\%), and carbon tetrafluoride (20\%).
+
+When an ionizing particle passes through the CSC, it produces an electron avalanche onto adjacent anode wires.
+This induces a charge on the cathode strips, which in turn is amplified and read out.
+Long cathode strips provide coarse information, while short segmented cathodes provide precision hit data.
+The CSC system is comprised of 32 precision chambers, with a total of 67,000 output channels.
+\cite{muonTdr}
+
+\subsubsection{Trigger Chambers}
+
+The MDT and CSC chambers are supported by additional types of chamber that provide rapid data for the trigger decision.
+These are the Resistive Plate Chambers (RPC) in the barrel, and the Thin Gap Chambers (TGC) in the end-caps.
+These are positioned in close proximity to a corresponding precision chamber.
+The RPCs consist of two resistive plates coated in thin layers of graphite, held at 8.9~kV.
+A 2~mm gap between the plates is filled with gas (tetrafluoroethane with 3\% isobutane).
+An ionizing particle passing through the gap instigates an electron avalanche, which is read out by conductive strips on both sides of the gap.
+The strips are orthogonal to each other.
+Two RPC layers are combined in a station, separated by a 6~mm support.
+The RPC system is comprised of 596 trigger chambers, with a total of 355,000 output channels.
+The TGCs are multiwire proportional chambers with a small 2.8~mm gap.
+The 50~\um anode wires are held at 3.1~kV, and the chamber is filled with carbon dioxide (55\%) and $n$-pentane (45\%).
+The TGC system is comprised of 192 trigger chambers, with a total of 440,000 output channels.
+\cite{muonTdr}
 
 \subsection{Magnet System}
 
@@ -299,11 +394,41 @@ In order to reduce the amount of material that particles can interact with in th
 \cite{magnetTdr}
 
 \subsection{Trigger System}
-\subsubsection{L1 Trigger}
-\subsubsection{HLT Trigger}
 
-\subsection{Data Acquisition}
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\subfloat[][]{{\includegraphics[width=0.5\textwidth]{figures/experiment/atlas/trigger.png}}}
+\caption{}
+\label{fig:atlasTrigger}
+\end{figure}
 
+The nominal 24.96~ns bunch spacing for LHC beams results in 40 million bunch crossings per second.
+A beam with a luminosity of $1.5\times10^{34}$\cms produces approximately 30 collisions per bunch crossing.
+This results in approximately 1.2 billion collisions per second.
 During operation data is read from approximately one hundred million electronic output channels across approximately three million meters of cables. \cite{atlasFacts}
+The data recorded from a typical event is 1.5~MB, resulting in 156~EB worth of data generated by ATLAS per day.
+\footnote{For comparison, this is a sizable fraction of humanity's existing storage and roughly 30,000 times the total data collected by the Event Horizon Telescope.}
+The Trigger System is responsible for rapidly sorting through this data and selecting events to record and events to discard.
+It takes hit information from the ID, MS, and calorimeters and searches for signatures of interesting collisions.
+The trigger decision is made by computers in the nearby underground service area (USA15), so data must first be transmitted to these.
+A schematic of the trigger system is shown in Figure \ref{fig:atlasTrigger}.
 
+The first rejection of events reduces the event rate from $\approx1.2$~GHz to $\approx100$~MHz is performed by the Level-1 (L1) Trigger.
+This selects searches for the signatures of interesting particles (high-\pt muons, electrons, jets and others) in a subset of the detectors.
+When an event passes the L1 Trigger, it sends an ``accept'' signal is sent back to the detector.
+Meanwhile, various front-end electronics have stored precision hit data.
+When they receive a L1 accept, they transmit this data off the detector to USA15.
+Since the front-end electronics must store hit information while waiting for a possible L1 Trigger decision, the target time frame for this is 2~\us. 
+\cite{triggerTdr}
 
+The data is sent from the detector into \emph{readout buffers} (ROB) for temporary storage while the Level-2 (L2) Trigger evaluates the event with a broader set of criteria.
+The L2 trigger reduces the event rate down to $\approx1$~kHz.
+It works by searching \emph{regions-of-interest} (ROI) constructed by the preliminary L1 trigger information.
+Based on the $\eta-\phi$ location of the ROI, the trigger logic accessed the precision data stored in the ROBs.
+This process takes longer than the L1 decision, on the order of 10~ms.
+With the precision data available, the L2 trigger can make strict requirements on the kinematics of various objects.
+For example, this analysis uses muon and electron triggers that require leptons passing certain thresholds of \pt or \et, respectively.
+Events passing the L2 trigger are passed along for full reconstruction.
+The fully reconstructed events are filtered by the Event Filter, which reduces the rate down to  $\approx$100~Hz.
+\cite{triggerTdr}
