@@ -4,7 +4,6 @@ This section describes the division of the inclusive 3-lepton and 4-lepton categ
 The definition of the exclusive categories is based on a multivariate discriminant that is a function of a number of kinematic variables.
 The discriminant is calculated using a \emph{boosted decision tree} (BDT) that is defined using the available information about signal and background kinematics from simulation.
 
-\afterpage{
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
 \centering
@@ -13,20 +12,19 @@ The discriminant is calculated using a \emph{boosted decision tree} (BDT) that i
 \caption{}
 \label{fig:}
 \end{figure}
-\clearpage
-}
 
 At the basis of the BDT are trees and a dataset of $n$ entries and $m$ variables.
 In its present usage, the classification is an example of supervised learning, so the entries $x_i$ $i\in[1,...,n]$ are labeled as either signal or background with $y_i$.
 The elements of $x_i$ are variables $v_j$ $j\in[1,...,m]$.
 A decision tree maps an entry of the dataset $x_i$ consisting onto a discrete output space, such as ``signal or background''.
-Each node of the tree may represent a binary decision based on the variables of the entry.
+Each node of the tree may represent a binary decision, or split, based on the variables of the entry.
 Alternatively the nodes with no children (leaves) may represent a decision, as illustrated in Figure \ref{fig:bdtTree}.
 A generalization of decision tree that assigns continuous weights to each leaf is a classification and regression tree (CART).
-A tree can be \emph{trained} to optimally map a set of input entries $x_i$ onto their corresponding labels $y_i$ simply by treating the distributions of input variables as PDFs and selecting cuts (a, b, ...) that result in the highest output fidelity.
+A tree can be \emph{trained} to map a set of input entries $x_i$ onto their corresponding labels $y_i$ by treating the distributions of input variables as PDFs and selecting splits (a, b, ...) that result in the highest output fidelity.
 A single CART tends to struggle to succinctly represent the complexity of simulated physics datasets.
 This performance can be augmented by an ensemble of CARTs labeled $k$, each with an output function $f_k(x_i)$ as illustrated in Figure \ref{fig:bdtTree}.
-The sum of the CART output functions defines a new ensemble output function $f(x_i)=\hat{y}_i$.
+The output functions act as a \emph{model} of the provided dataset.
+The sum of the CART output functions defines a new ensemble output function $f(x_i)=\hat{y}_i$, also called the discriminant score.
 
 The strategy is then to develop an ensemble whose output functions accurately predict the corresponding label $y_i$ for unseen events.
 This is quantified by a regularized loss function,
@@ -34,44 +32,92 @@ This is quantified by a regularized loss function,
     \mathcal{L}(\phi)=\sum_i l(\hat{y}_i,y_i),
 \end{split}\end{equation} 
 where $l$ measures the difference between $\hat{y}_i$ and $y_i$.
-A training process is defined to select trees and weights in order to minimize Equation \ref{eqn:lossFunc}.
+A training process is defined to select trees, splits, and weights in order to minimize Equation \ref{eqn:lossFunc}.
 
-Boosting is a method to minimize such loss functions, provided it is differentiable.
-Essentially it consists of iteratively expanding the ensemble of trees, with each addition addressing the miss-categorization of the previous ensemble.
+\emph{Boosting} is a method to minimize such loss functions, provided it is differentiable, by ``boosting'' the capability of a CART.
+Essentially it consists of iteratively expanding an ensemble of trees, with each addition addressing the miss-categorization of the previous ensemble.
 One algorithm, AdaBoost, performs this task by iteratively reweighting poorly categorized entries to be more important to the following tree.
 Another algorithm, Gradient Boosting, instead adds trees that are trained on the previous ensemble's poorly categorized entries.
 A recent descendent of AdaBoost and Gradient Boosting is XGBoost, which introduces a modified loss function,
 \begin{equation}\begin{split}\label{eqn:lossFuncXgb}
     \mathcal{L}(\phi)=\sum_i l(\hat{y}_i,y_i)+\sum_k \Omega(f_k).
 \end{split}\end{equation} 
-In Equation \ref{eqn:lossFuncXgb}, $\Omega$ is a measure of the complexity a tree which reduces over-fitting of the loss function to the training dataset.
+In Equation \ref{eqn:lossFuncXgb}, $\Omega$ is a measure of the complexity a tree.
+XGBoost iteratively adds trees diminishing weights, shrinking their importance by a constant factor.
 XGBoost also introduces procedures to more quickly add and remove branches from trees while fitting the loss function.
-These result in an output function that can be trained quickly, and avoid obvious over-fitting.
+These result in an output function that can be trained quickly.
 The XGBoost algorithm is used to construct the multivariate discriminant functions that are used in this analysis.
 \cite{xgboost}
+
+% Overtraining
+It is a recurring theme in data analysis: to want an understanding of the underlying probability distributions that have produced a dataset, rather than of the dataset itself.
+This applies to tasks such as training BDTs to discriminate signal from background, as well as fitting a functional form to data to model a background distribution. 
+In both cases, the analytic model is derived is interpreted as knowledge of these underlying distributions.
+When solving an optimization problem such as those posed in Equations \ref{eqn:lossFunc} and \ref{eqn:lossFuncXgb}, the minimization algorithm has only the dataset at its disposal.
+This can lead to \emph{over-training} or \emph{over-fitting}, where the optimization of the loss function tunes the discriminant to the features of particular a dataset rather than the features of the underlying distributions.
+In general this problem correlates with the complexity of the model.
+It is combatted in part by penalizing the optimization by the complexity of the model, as is the case with the $\Omega$ function in the Equation \ref{eqn:lossFuncXgb}.
+
+From a physics analysis perspective, over-training may have two effects.
+The first is to reduce the efficacy of the discriminant when applied to a new dataset.
+This impacts the performance of the analysis, but it does not invalidate the results.
+The real danger to the integrity of the analysis is arises when the performance of the discriminant is inaccurately measured.
+This second effect is illustrated in the following example.
+Suppose a BDT is trained to discriminate identify signal events from a simulated dataset, and that same dataset is used to predict the number of signal events to expect in observed data.
+A signal-rich category is defined based on the discriminant score for events.
+In this case, simulated signal events tend to be over represented in the category
+The BDT will tend to identify simulated signal events with a higher efficiency compared to data signal events compared to signal in the data, leasing to an unconstrained uncertainty on the expected signal.
+Unlike the first effect, this type of error invalidates the double use of the training simulation for use in further measurements.
+
+\begin{figure}[h!]
+\captionsetup[subfigure]{position=b}
+\centering
+\includegraphics[width=0.75\textwidth]{figures/hmm/testTrainVal.pdf}
+\caption{The top row, $p_0$, shows an schematization of a dataset divided into five subsets with $k$-fold split with $k=5$.
+The blue boxes represent sets to be used for training, the green boxes for validation, the red boxes for testing.
+Five permutations of these assignments, $p_i$, are shown for the same dataset.
+In cross-validation, a separate MVA is fit to each permutation, such that each entry of the full dataset belongs to the testing set for a particular MVA.
+}
+\label{fig:testTrainVal}
+\end{figure}
+
+This problem is avoided with the introduction of $k$-fold split of the available simulated datasets into $k>2$ subsets of equal multiplicity.
+One subset is labeled as the ``testing'' set, and another is labeled as a ``validation'' set.
+The remaining subsets are combined as a ``training'' set.
+This is illustrated in the top of Figure \ref{testTrainVal.png}.
+The BDT is trained with the training set, and further predictions with respect to the simulation are performed with the testing set.
+Since the testing set has not been exposed to the BDT during training, there is no chance of over-training of the discriminant scores in the testing set.
+There remains the issue of selecting thresholds that define the signal-rich category in order to optimize, for example, the expected sensitivity.
+This choice is subject to the same concerns about over-training as the selection of trees during the training phase. 
+A third set, the validation set, is defined orthogonal to both the training and testing sets.
+This set is used to study the convergence of the training process, check for over-training effects that may reduce sensitivity, and most importantly to choose the discriminant thresholds for further categorization.
+
+The final consideration is to inefficiency that such a division of the simulation set entails.
+Simulated events are computationally expensive to produce.
+A \emph{cross-validation} scheme calls for the permutation of each of the $k$ subdivisions, such that each event appears once in a test set, available for further analysis.
+This is shown in Figure \ref{testTrainVal.png}.
+A separate BDT is trained with the training set from each permutation.
+This means that each event in the full dataset has one discriminant score from a BDT for which it is in the testing set, one for which it is in the validation set, and $k-2$ for which it was in the training set.
+The scores from the BDT for which an event was in the testing and validation sets are the testing and validation scores, respectively.
 
 \subsection{Configuration}
 \label{sec:hmmBdtConfiguration}
 
 % Training details
 Separate classifiers are trained for 3-lepton and 4-lepton categories, but there are a number of similarities.
+The first is in the treatments of the labeled that consist of simulated signal and background events.
 A 5-fold splitting of the available signal and background sample is used.
-Three fifths of each sample define the \emph{training} sample used to fit the BDT.
-One fifth of the sample defines a \emph{validation} sample used to evaluate the performance of the BDT, control the potential for over training to the testing sample, and to select the cuts on the BDT output used for categorization.
-One fifth of the sample defines a \emph{testing} sample which remains blinded until the choices related to the VH channels have been fixed.
+It is important to note that the testing sample remains blinded until all choices related to the categorization channels have been fixed.
 The output of the BDT on the testing sample represent the final result of the BDT and it is essential to refrain from making choices related to the BDT performance on the testing set.
-For example, selecting an optimal cut using the BDT testing set, and then using the same testing set to estimate signal strength, will result in an expected signal amplitude that is larger than that from an unexposed sample 
-(e.g. data).
-Making such choices using the \emph{validation} sample avoids this particular complication.
-
-Cross validation is was introduced in order to maximise the benefit from the limited statistics available in simulated events. A cyclic permutation of the 5-fold splitting is used, such that a separate BDT is trained for each fifth of the total sample.
+A cyclic permutation of the 5-fold splitting is used, such that a separate BDT is trained for each fifth of the total sample.
 
 % Samples
-Each BDT is trained using the simulated background, with all background components included in the training sample.
-The signal for the 4-lepton BDTs are the qqZH samples, while the signal for the 3-lepton BDTs are the W$^\pm$H samples. The per-event weights arising from scale factors and reweighing, along with the event corresponding to the campaign luminosity, cross section, etc are provided to the BDT. Negatively weighted events are removed, and the signal and background weights are both normalized.
-
+Each BDT is trained using the simulated background, in which all background components are included.
+The signal for the 4-lepton BDTs are the qqZH samples, while the signal for the 3-lepton BDTs are the W$^\pm$H samples.
+The per-event weights arising from scale factors and reweighing, along with the event corresponding to the campaign luminosity, cross section, are provided to the BDT.
+Negatively weighted events are removed, and the signal and background weights are both normalized.
 % Sample statistics
-The available events for training are shown in table \ref{tab:hmmSampleStatistics}.
+The numbers of available simulated events for training are shown in table \ref{tab:hmmSampleStatistics}.
 
 \begin{table}[htbp]
  \begin{center}
@@ -88,9 +134,12 @@ Sample               & Total Events & Training Events \\
 \end{table}
 
 % Training variables
-The set of variables provided as input for the BDT was chosen from a larger set of candidate variables.
-This set was reduced in order of ascending feature importance (measured by the number of times the variable is used for a decision weighted by the events categorized by the node) until the BDT performance suffers (measured by the AUC).
-Different variables are present for the 4-lepton and 3-lepton categories.
+The set of variables provided as input for the BDT was chosen from a larger set of candidate variables with physical motivations.
+This set was reduced in order of ascending \emph{feature importance}, defined as the number of times the variable is used for a decision node, weighted by the events categorized by the node.
+The reduction ceased when the performance of the BDT began to decline.
+The performance is measured using the validation scores and the area-under-curve as shown in Figure \ref{fig:hmmBdtRoc}.
+
+Different variables are defined based on the different final state topologies in the inclusive 4-lepton and 3-lepton categories.
 The variables for each are listed in Tables \ref{tab:hmm3lepVars} and \ref{tab:hmm4lepVars}.
 
 \begin{table}[htp]
@@ -190,7 +239,7 @@ Detailed definition: \href{https://scikit-learn.org/stable/modules/feature_selec
   \centering
   \includegraphics[height=7cm]{figures/hmm/bdtImportance/imp-4lep.pdf}
   \includegraphics[height=7cm]{figures/hmm/bdtImportance/imp-3lep.pdf}
-  \caption{The 4-lepton (left) and 3-lepton (right) variables shown with their respective feature importance, summed over each of the five BDT's trained for each cross validation permutation. $H$ stands for the Higgs candidate, $Z$ for the Z candidate, $l$ for the additional leptons in the event, and $j$ for the jets in the event. The number after the lepton or jet corresponds to the rank of it's $p_T$.}
+  \caption{The 4-lepton (left) and 3-lepton (right) variables shown with their respective feature importance, summed over each of the five BDT's trained for each cross-validation permutation. $H$ stands for the Higgs candidate, $Z$ for the Z candidate, $l$ for the additional leptons in the event, and $j$ for the jets in the event. The number after the lepton or jet corresponds to the rank of it's $p_T$.}
     \label{fig:hmmVarImport}
 \end{figure}
 
