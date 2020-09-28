@@ -261,6 +261,17 @@ Precision tracking data for muons is provided by the Monitored Drift Rubes in th
 The various systems are shown in Figure \ref{fig:atlasMs}.
 \cite{muonTdr}
 
+The function of the MS is to measure transverse momentum using a track of hits left by a muon as it bends in a strong magnetic field.
+The hits directly determine the sagitta $s$ of the track, which is related to the angle of magnetic deflection $\theta$ and radial coordinate by $s=\rho(1-\cos\theta/2)$.
+In a perpendicular magnetic field and for small $\theta$,
+\begin{equation}\begin{split}
+    s=\frac{eBL^2}{8p},
+\end{split}\end{equation} 
+where $B$ and $L$ are the strength and length of the magnetic field.
+This is limited by the measurement precision of the track, as well as the mostly constant uncertainty from multiple-scattering.
+This results in a relative resolution that grows linearly at high momentum.
+The total momentum of the muon can then be measured using the polar angle (with attendant uncertainty), $p=\pt/\sin{\theta}$.
+\cite{grupen}
 The MS is required to measure muon momentum with a resolution,
 \begin{equation}\begin{split}
     \frac{\Delta \pt}{\pt}<1\times10^{-4}\times p/\text{GeV}.
@@ -269,20 +280,7 @@ This requires hit locations to be measured with an accuracy of 50~\um.
 Hits are registered using cylindrical coordinates in the $r-z$ plane.
 The $z$ coordinate is measured in the barrel region, where the toroidal magnetic field bends muons in the longitudinal direction.
 Meanwhile $r$ coordinate is measured in the end-caps, where magnetic field pushes muons in the radial direction. 
-
-
-%%Muon
-%The MDTs are single wire ($50\mu m$) drift tubes (aluminum, radius 30mm) filled with 7\% $CO_2$ and 93\% Ar gas.
-%These tubes are arranged in multilayers of 3 or 4 layers of drift tubes.
-%Multilayers are grouped together into chambers with two multilayers each.
-%Together, the MDTs achieve a spatial resolution of $\approx80\mu m$ and a momentum resolution of 10\% at Pt=1TeV.
-%The CSCs are multiwire proportional chambers with four $\eta$ layers and four $\phi$ layers of anodes.
-%At their peak performance, the CSC have a resolution of $\approx60\mu$m.
-%They are used in the high $\eta$ region where the particle rate ($>150 Hz/cm^2$) exceeds the tolerance of the MDTs.
-%The RPCs provide the muon trigger and $\phi$ coordinates in the barrel region ($|\eta|<2.7$).
-%These chambers consist of $\eta$ and $\phi$ planes of cathode and anode pads separated by a 2mm gas gap and a voltage gradient.
-%The TGCs fill a role similar to the RPCs in the end-cap region ($|\eta|<1.05$).
-%The TGCs are multiwire proportional chambers with several layers of $\eta$ and $\phi$ planes. \cite{det-muon}
+\cite{muonTdr}
 
 \subsubsection{MDT} % precision
 

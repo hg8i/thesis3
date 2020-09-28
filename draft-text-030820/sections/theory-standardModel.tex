@@ -137,13 +137,13 @@ The fields transform under SU(3) transformations,
 \begin{equation}\begin{split}
     q\to&e^{i\theta^a(x)T^a}q,
 \end{split}\end{equation} 
-where $T^a=\half\lambda^a$ are the eight generators based on the Gall-Mann matrices $\lambda^a$ given in Equation \ref{eqn:gellmann}.
+where $T^a\equiv\half\lambda^a$ are eight generators based on the Gall-Mann matrices $\lambda^a$ given in Equation \ref{eqn:gellmann}.
 The Dirac field transforms under SU(3) with eight generators, similar to how it transforms under U(1) in Equation \ref{eqn:u1Transform} with only one generator.
-Their transformation is in the fundamental $\pmb3$ representation.
+Their transformation is in the fundamental representation.
 The functions $\theta^a(x)$ are eight group parameter functions (also called gauge parameters) of spacetime that identify the transformation.
 
 The derivative of the field $q$ introduces eight terms corresponding to each gauge parameter.
-In QED, the photon gauge field $A_\mu$ was introduced to make the derivative covariant.
+In QED, the photon gauge field $A_\mu$ was introduced to define a covariant derivative.
 In QCD, eight gluon gauge fields, $A_\mu^a$, are introduced which carry a lower spacetime index $\mu\in\{0,1,2,3\}$, and an upper representation index $a\in\{1,...,8\}$.
 Like $A_\mu$ in QED, $A_\mu^a$ transforms under the adjoint representation of SU(3) as a connection:
 \begin{equation}\begin{split}
@@ -155,8 +155,9 @@ The QCD Lagrangian can be written through combinations of these fields that are 
 % The covariant derivative, $D_\mu\Psi_i\equiv\partial_\mu\Psi_i+igA_\mu^aT_i^{aj}\Psi_j$, is defined to allow kinetic derivatives of the fermion fields.
 The covariant derivative is defined with the help of the eight gluon fields,
 \begin{equation}\begin{split}
-    D_\mu q_f\equiv\partial_\mu q_f+ig_sA_\mu^aT_i^{aj} q_f.
+    D_\mu\equiv\partial_\mu+ig_sA_\mu^aT^a.
 \end{split}\end{equation} 
+% checked in romao
 An antisymmetric field strength tensor, the QCD analog to the electromagnetic field tensor that appears in Equation \ref{eqn:qedLagrangian}, is defined as $F^a_{\mu\nu}\equiv\partial_\mu A^a_\nu-\partial_\nu A^a_\mu+g_sf^{abc}A_\mu^bA_\nu^c$.
 The product $F^{\mu\nu,a}F^a_{\mu\nu}$ includes terms with two, three, and four $A_\mu^a$ fields.
 Terms with two fields are part of the free Lagrangian, while terms with more fields describe multi-gluon vertices in the interaction Lagrangian.
