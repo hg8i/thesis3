@@ -5,28 +5,28 @@ This section details the event selection, data, and simulation used in the analy
 
 \subsection{Event Selection}\label{sec:hmmEv}
 
-All data events are required to pass a number of criteria before they are considered for analysis.
+All data events are required to pass several criteria before they are considered for analysis.
 Events are only considered if the ATLAS detector was in full operation.
 The events meeting this requirement comprise the Good Run List, as summarized in Section \ref{sec:physData}.
 
 Only a small fraction of the many events observed by ATLAS are useful to study. 
-The trigger system makes the decision on an event-by-event basis whether to record an event. 
+The trigger system decides on an event-by-event basis whether to record an event. 
 Since \hmm events have muons in their final state, the analysis uses a trigger selection that requires at least one high-\pt muon.
-The \pt threshold varies based on the year of data taking, depending on the configuration of the trigger system.
-In 2015 the minimum threshold was $\pt>20$~GeV, while in other years it was $\pt>26$~GeV.
-For muons with \pt between threshold and 50~GeV, a requirement that the muon's track in the ID be isolated from other tracks is added to reduce the background event rate.
+The \pt threshold varies based on the year of data taking, depending on the trigger system's configuration.
+In 2015 the minimum threshold was $\pt>20$~GeV, while in other years, it was $\pt>26$~GeV.
+For muons with \pt between threshold and 50~GeV, a requirement that the muon's track in the ID is isolated from other tracks is added to reduce the background event rate.
 The efficiency of the trigger requirement is $\approx90\%$.
 
 % Object selection
 After passing the trigger requirement, the physics objects that comprise the event are tabulated.
-The most important objects for leptonic VH \hmm are muons and electrons, but jets and \met are also used to remove background.
+The most important objects for leptonic VH \hmm are muons and electrons, but jets and \met are also used to remove the background.
 The definitions of the objects make use of identification and isolation requirements defined in Section \ref{sec:physObjects}.
 
 The muons considered in an event meet the requirements listed in Table \ref{tab:hmmMuonObjSel}.
 These can come from the Higgs decay, as well as the leptonic \W and \Z decays.
 These are selected to be relatively inclusive due to the rarity of \hmm decays.
 All four types of muons are used: CB, CT, ST, SA.
-A particularly low \pt threshold of 6~GeV is selected with with the four-muon ZH events in mind, since one of the four muons often has a low \pt.
+A particularly low \pt threshold of 6~GeV is selected with the four-muon ZH events in mind since one of the four muons often has a low \pt.
 
 % Muons
 \begin{table}[H]
@@ -48,8 +48,8 @@ A particularly low \pt threshold of 6~GeV is selected with with the four-muon ZH
 \end{table}
 
 The electrons are considered next, as these are produced by leptonic \W and \Z decays.
-With a similar motivation to the muons, this selection is relatively lenient in order to maximize the efficiency of the selection.
-Several criteria are included in order to retain as many prompt electrons as possible while reducing the inclusion of fake electrons.
+With a similar motivation to the muons, this selection is relatively lenient to maximize the selection's efficiency.
+Several criteria are included to retain as many prompt electrons as possible while reducing the inclusion of fake electrons.
 These are listed in Table \ref{tab:hmmEleObjSel}.
 
 \begin{table}[H]
@@ -94,7 +94,7 @@ Furthermore, jets are used to reduce the presence of ttH events in the selection
     \end{center}
 \end{table}
 
-Finally \met is included in the event, as a proxy for the undetected neutrino from leptonic \W decays.
+Finally, \met is included in the event, as a proxy for the undetected neutrino from leptonic \W decays.
 The \met is calculated from the \pt of all reconstructed muons, electrons, and tracks not identified with one of these.
 
 \begin{table}[htp]
@@ -117,38 +117,38 @@ Reject & Against & Condition \\
 \end{center}
 \end{table}
 
-When two objects are reconstructed in close proximity, and overlap removal scheme is applied to avoid treating the same detector signature as multiple objects.
-This scheme removes objects in accordance to the priorities listed in Table \ref{tab:hmmOr}.
+An overlap removal scheme is applied to avoid treating the same detector signature as multiple objects when two objects are reconstructed in close proximity.
+This scheme removes objects following the priorities listed in Table \ref{tab:hmmOr}.
 
 Once the objects within an event have been determined, the next step is to identify events with objects matching the final state of leptonic VH.
 All events are required at least one oppositely-charged muon pair that can serve as a candidate for \hmm.
 Two parallel selections are carried out: 3-lepton events are selected targeting the WH process, while 4-lepton events are selected targeting the ZH process.
 
-In events with two exactly two muons, these are required to be opposite charge. In events with more than two muons, later charge requirements are applied as described in table \ref{tab:hmmEv}. The leading $p_T$ muon is required to have $p_T>27$ GeV. The sub-leading $p_T$ muon is required to have $p_T>8$ Gev. The threshold for the sub-leading muon is lowered compared to the ggH/VBF selection in order to increase the signal yield efficiency. This change in conjunction with the lower $p_T$ threshold for all muons and the loosening of the opposite charge requirement increase WH signal yield by 16.9\% and ZH signal yield by 63\%.
+In events with two exactly two muons, these are required to be oppositely charged. In events with more than two muons, later charge requirements are applied, as described in table \ref{tab:hmmEv}. The leading $p_T$ muon is required to have $p_T>27$ GeV. The sub-leading $p_T$ muon is required to have $p_T>8$ Gev. The threshold for the sub-leading muon is lowered compared to the ggH/VBF selection to increase the signal yield efficiency. This change, in conjunction with the lower $p_T$ threshold for all muons and the loosening of the opposite charge requirement, increases WH signal yield by 16.9\% and ZH signal yield by 63\%.
 
 Two selections are used to target VH production: a \textbf{3-lepton} category that targets WH production where the W decays leptonically (electrons or muons), and a \textbf{4-lepton} category that targets ZH production where the Z decays leptonically (electrons or muons).
 The overall signal efficiency of the WH event selection is 45\%.
 The signal efficiency of the ZH event selection is 37\%.
 Both of the efficiencies are calculated with respect to the \W/\Z bosons decaying into electrons or muons.
 
-The leptonic VH production does not produce many b-jets, in contrast the top backgrounds and ttH signal production.
-A veto of events containing b-jets helps reduce these backgrounds, and also enhance the purity of the signal selection.
+The leptonic VH production does not produce many b-jets, in contrast to the top backgrounds and ttH signal production.
+A veto of events containing b-jets helps reduce these backgrounds and also enhances the purity of the signal selection.
 Section \ref{sec:expJets} describes how b-jets are identified with several working points for the efficiency of identifying a b-jet.
 The loosest working point, 85\%, is selected based on its reaction of the background.
 Figure \ref{fig:hmmBveto} illustrates signal and background yields in a comparison between vetos using the 60\% and 85\% working points.
 The looser 85\% working point constitutes a stricter veto, and it is seen to reduce the background yields in both the 4-lepton and 3-lepton selections.
-The signal yields are not substantially effected.
+The signal yields are not substantially affected.
 
-The steps of the cutflow are shown in table \ref{tab:hmmEv} which defines the 4-lepton and 3-lepton VH candidate categories.
+The steps of the cutflow are shown in table \ref{tab:hmmEv}, which defines the 4-lepton and 3-lepton VH candidate categories.
 The cuts proceed in the following order:
 \begin{itemize}
     \item Step 1: Veto events with 85\% WP b-tag jets
     \item Step 2: Require some total number of leptons ($e$ or $\mu$)
     \item Step 3: Require that an oppositely charged dimuon pair exists
-    \item Step 4: Require that a oppositely charged dimuon pair exists in the mass range [110,160] GeV
+    \item Step 4: Require that an oppositely charged dimuon pair exists in the mass range [110,160] GeV
     \item Step 5: Require that additional leptons of the correct sign exist
-    \item Step 6: Veto events where there are too many oppositely charged dimuon pairs an invariant mass in [80,105] GeV (``Z candidates''): 4-muon events may only have one $Z\to\mu\mu$ candidates, 3-lepton events may not have any $Z\to\mu\mu$ candidate. Events where the additional leptons are electrons are not affected.
-    \item Step 7: After ``pairing'' leptons to form H and Z or W candidates, require that the Higgs candidate has a mass in the mass range [110,160] GeV
+    \item Step 6: Veto events with too many oppositely charged dimuon pairs an invariant-mass in [80,105] GeV (``Z candidates''): 4-muon events may only have one $Z\to\mu\mu$ candidates, 3-lepton events may not have any $Z\to\mu\mu$ candidate. Events with electrons as the additional leptons are not affected.
+    \item Step 7: After ``pairing'' leptons to form H and Z or W candidates require that the Higgs candidate has a mass in the mass range [110,160] GeV
     \item Step 8: Apply $p_T$ requirements to leptons in order of their $p_T$
 \end{itemize}
 
@@ -184,7 +184,7 @@ Step & 4-lepton & 3-lepton \\\midrule
 
 The selection of oppositely charged muons for the Higgs candidate, and of additional leptons for the Z and W candidates is based on minimizing a $\chi^2$ calculation related to the mass (or transverse mass) of the candidates. This is shown in equations \ref{eq:hmmWhPairing} and \ref{eq:hmmZhPairing}. Here, for each candidate pairing, $\chi^{2,\text{cand}}$ is calculated from the Higgs candidate mass $M_H^\text{cand}$. For 4-lepton events, the Z candidate mass $M_Z^\text{cand}$ is used, and for 3-lepton events the transverse mass of the W candidate lepton and $E_T^\text{miss}$, $M_T^\text{cand}$, is used. Only pairings with oppositely charged muons are considered for $M_H^\text{cand}$, while all oppositely charged same flavor pairs are considered for $M_Z^\text{cand}$. Leptons of both flavors and charges are considered for $M_T^\text{cand}$. The pairing with the smallest $\chi^{2,\text{cand}}$ is selected.
 
-Other pairing procedures were considered, but the performance is worse. For example, in 4-$\mu$ events, selecting the highest $p_T$ opposite sign muon pair is 63.4\% less efficient than the $\chi^2$ pairing described above. Selecting the pair such that the Z candidate is closest to the Z mass is 8.7\% less efficient. To improve the pairing efficiency, the $\chi^2$ pairing is used.
+Other pairing procedures were considered but were rejected based on their performance. For example, in 4-$\mu$ events, selecting the highest $p_T$ opposite sign muon pair is 63.4\% less efficient than the $\chi^2$ pairing described above. Selecting the pair such that the Z candidate is closest to the Z mass is 8.7\% less efficient. The $\chi^2$ pairing is used to improve the pairing efficiency.
 
 \begin{equation}
   \label{eq:hmmWhPairing}
@@ -196,47 +196,47 @@ Other pairing procedures were considered, but the performance is worse. For exam
   \chi^{2,\text{cand}} = (M_H^\text{cand}-125\text{ GeV})^2/(3.0\text{ GeV})^2 + (M_Z^\text{cand}-91.1\text{ GeV} )^2/(3\text{ GeV})^2
 \end{equation}
 
-The cuts described in table \ref{tab:hmmEv} define two categories of events, 3-lepton and 4-lepton, which are referred to as ``pre-cut'' categories in relation the subsequent categorization cuts.
+The cuts described in table \ref{tab:hmmEv} define two categories of events, 3-lepton and 4-lepton, which are referred to as ``pre-cut'' categories in relation to the subsequent categorization cuts.
 The kinematic distributions of the leptons in these categories are illustrated in Section \ref{sec:hmmKine}.
 
 
 \subsection{Simulation}\label{sec:hmmSim}
 
 Simulated datasets play a central role in the present search strategy.
-All simulated datasets are scaled to match their corresponding cross section.
+All simulated datasets are scaled to match their corresponding cross-section.
 First, the simulated background and signal datasets allow an exploration of the efficiency of various event selection criteria.
-This eventually lead to the criteria listed in Table \ref{tab:hmmEv}.
-Next, simulated events are used to construct PDF distributions in a number of observable variables for both background and signal productions.
-This allows the development of a multivariate discriminant function that separates signal and background events on the basis of these variables.
-Simulated events are used at each step of this process: to determine the discriminant function with one set of simulated events, and to constrain the level of bias it may introduce with a second set of events.
+This eventually leads to the criteria listed in Table \ref{tab:hmmEv}.
+Next, PDF distributions are constructed from simulated events across several observable variables for both background and signal productions.
+This allows the development of a multivariate discriminant function that separates signal and background events based on these variables.
+Simulated events are used at each step of this process: to determine the discriminant function with one set of simulated events and constrain the level of bias it may introduce with a second set of events.
 After this, an unrelated third set is used to estimate the rates of signal and background events, as a function of dimuon invariant mass, at different levels of discrimination.
-The background rates, or background shape, is then useful to measure spurious signal and for testing the performance of empirical background models.
-The signal shape is used for these purposes as well, but most importantly it provides the signal component in the hypothesis test performed on the observed data.
-Finally, several theoretical and experimental variations on the signal shape is also used measure the impact of these uncertainties on the final result.
+The background rates, or background shape, are then used to measure spurious signal and validate the performance of empirical background models.
+The signal shape is used for these purposes as well, and most importantly, it provides the signal component in the hypothesis test performed on the observed data.
+Finally, several theoretical and experimental variations on the signal shape are used to measure the impact of these uncertainties on the final result.
 
 % Background ========================
-The main background production in the region of interest comes from Drell-Yan, Diboson, and top production mechanisms.
+The primary background production in the region of interest comes from Drell-Yan, Diboson, and top production mechanisms.
 These are defined in section \ref{sec:phenoBkg}.
 The background production mechanisms are simulated in several categories.
 The dominant mechanism that produces dimuon events is Drell-Yan (DY). Since DY events typically contain two leptons, this is reduced through the requirement of more than two leptons in the event.
-Samples are produced for for $t\tbar$ and single-top production. This background is mitigated by the choice of the b-jet veto in the event selection.
-After this are diboson productions of ZZ or WZ with leptonic decays. The diboson is topologically the most similar to the VH signal, making this the most difficult process to reject.
-Careful investigation of several observables with the MVA discriminant helps to reduce diboson production, but these events remain the dominant background after all selections are complete.
+Samples are produced for $t\tbar$ and single-top production. This background is mitigated by choice of the b-jet veto in the event selection.
+After this are diboson productions of ZZ or WZ with leptonic decays. The diboson is topologically the most similar to the VH signal, making this the most challenging process to reject.
+Careful investigation of several observables with the MVA discriminant reduces diboson production, but these events remain the dominant background after all selections are complete.
 
 The DY samples are generated with \sherpa 2.2.1 using the NNPDF3.0 PDF. 
 The DY \muu spectrum falls exponentially.
-In order to generate sufficient numbers of high-mass events, these are simulated in ranges of $x$, where $x$ is the maximum of the mediator \pt and the scalar parton \pt sum, \httt.
-These samples are produced to NLO for diagrams including fewer than three jets, and LO for diagrams including three or four jets.
+To generate sufficient numbers of high-mass events, these are simulated in ranges of $x$, where $x$ is the maximum of the mediator \pt and the scalar parton \pt sum, \httt.
+These samples are produced to NLO for diagrams, including fewer than three jets and LO for diagrams, including three or four jets.
 
 The $t\tbar$ and single-top samples are produced with \powheg v2 and the NNPDF3.0NLO PDF.
 The mass of the top quark is set to $m_t=172.5$.
 The $t\tbar$ cross section is calculated to NNLO using Top++2.0. \cite{Czakon:2011xx}
 The leading order $t\tbar$ Feynman diagrams are shown in Figure \ref{fig:phenoTtbar}.
-The cross sections of single-top production channels are calculated to NNLL accuracy following ATLAS's normal procedure. \cite{Kidonakis:2011wy, Kidonakis:2010ux}
+The cross-sections of single-top production channels are calculated to NNLL accuracy following the standard procedure. \cite{Kidonakis:2011wy, Kidonakis:2010ux}
 The leading order single-top Feynman diagrams are shown in Figure \ref{fig:phenoSingleTop}.
 Different samples are generated for $s$-channel and $t$-channel production through the exchange of a \W boson. A sample is produced for single-top production in association with a \W as well.
 
-The final background samples is composed of the diboson processes WZ and ZZ with leptonic decays.
+The final background samples are composed of the diboson processes WZ and ZZ with leptonic decays.
 These are produced with \sherpa 2.2.1 (for quark decays) and \sherpa 2.2.2 (for fully leptonic decays) and the NNPDF3.0 PDF.
 Some number of leptonic decays are needed in order to be interesting for the purpose of the analysis.
 One set of samples simulates $ZZ\to q\qbar\ll$ and $WZ\to q\qbar\ll$ events, while a second set simulates events with $\ll\ll$, $\ll\ell\nu$, and $\ll\nu\nu$ final states. \cite{ATL-PHYS-PUB-2017-005}
@@ -271,8 +271,8 @@ These provide an illustration of the composition of the background and signal co
     
 Other kinematic distributions ($p_T$, $\eta$, $\phi$) for the selected leptons are illustrated in Figures \ref{fig:hmmKineWhMuons} to \ref{fig:hmmKineZhLeps}.
 The muon candidates for the Higgs are called $\mu^1$ and $\mu^2$ in descending order of $p_T$. 
-Likewise for the 4-lepton category, the selected leptons for the Z candidate are named $\ell^1$ and $\ell^2$ again in descending order of $p_T$.
-In the 3-lepton category the single additional lepton for the \W candidate is named $\ell^1$.
+Likewise, for the 4-lepton category, the selected leptons for the Z candidate are named $\ell^1$ and $\ell^2$ again in descending order of $p_T$.
+In the 3-lepton category, the single additional lepton for the \W candidate is named $\ell^1$.
 
 
 

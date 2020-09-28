@@ -1,7 +1,7 @@
 \section{Signal Modeling}\label{sec:hmmSig}
 
 This section describes the signal contribution to the various categories defined in Section \ref{sec:hmmBdt}.
-The expected signal contribution in each category is modeled in the \muu distribution with the with the simulated datasets described in Section \ref{sec:hmmSim}.
+The expected signal contribution in each category is modeled in the \muu distribution with the simulated datasets described in Section \ref{sec:hmmSim}.
 As the production mechanism is essentially indistinguishable in terms of signal shape, no further effort is made to separate VH events from ggF, VBF, or ttH events.
 From this point, the ensemble of production mechanisms is combined and referred to as \emph{signal}.
 
@@ -91,7 +91,7 @@ This combines the signal prediction from Equation \ref{eq:hmmSignal} with the ba
 The Standard Model predicts a particular signal multiplicity, $N_{SM}$.
 The relative amplitude of the signal compared to the prediction of the Standard Model is defined as the \emph{signal strength}, \mus.
 A range of S+B hypotheses are possible, labeled by the signal strength.
-For example, \mus=1 describes hypothesis with the Standard Model signal strength, while \mus=0 describes a ``background-only'' (B) hypothesis.
+For example, \mus=1 describes a hypothesis with the Standard Model signal strength, while \mus=0 describes a ``background-only'' (B) hypothesis.
 
 The S+B hypothesis predicts the relative frequency of events as a function of \muu.
 It is defined in Equation \ref{eqn:hmmSbFunc} as the sum of the normalized signal shape PDF $f_\text{S}(\muu)$, and the normalized background PDF $f_\text{B}(\muu)$.
@@ -99,9 +99,9 @@ It is defined in Equation \ref{eqn:hmmSbFunc} as the sum of the normalized signa
 f_\text{S+B}(\muu) = N_\text{S}\times f_\text{S}(\muu) + N_\text{B}\times f_\text{B}(\muu)
 \end{split}\end{equation} 
 There are three free parameters in Equation \ref{eqn:hmmSbFunc}: the shape parameters $a$ and $b$ that describe the background, and $N_\text{S}\equiv\mus\times N_{SM}$ where \mus is free.
-Each of these may be adjusted by \code{minuit} in order to fit the data distribution in each category.
+Each of these may be adjusted by \code{minuit} to fit the data distribution in each category.
 The overall normalization of the function, when treated as a PDF, is normalized as was the case with the background-only function.
 
 In the case that a strong signal is not observed in the data, it is still possible to consider which S+B hypotheses are compatible and incompatible with the observation.
-In this case, some set of hypotheses, are considered excluded to a particular confidence level.
-To this end, a S+B hypothesis is defined by a fixed \mus, and free parameters $a$ and $b$.
+In this case, some set of hypotheses are considered excluded to a particular confidence level.
+To this end, an S+B hypothesis is defined by a fixed \mus, and free parameters $a$ and $b$.

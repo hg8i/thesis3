@@ -1,14 +1,14 @@
 \section{Background Modeling}\label{sec:hmmBkg}
 
 The results of this analysis are based on a comparison between signal and background hypotheses.
-The simulated background distributions provide a powerful tool to understand composition and kinematics of the backgrounds in each category.  
-These also provide a possible definition of a background hypothesis, but this definition imports a deal of theoretical assumptions.
+The simulated background distributions provide a powerful tool to understand the composition and kinematics of the backgrounds in each category.  
+These also provide a possible definition of a background hypothesis, but this definition imports many theoretical assumptions.
 Instead, an analytic background is developed from the data by fitting a functional form to the observation.
 
 The Figures \ref{fig:hmmPrecutMassHists} and \ref{fig:hmmPostcutMassHists} show the \muu shapes of the simulated background distributions in the pre-cut and post-cut categories respectively.
 In all cases, the background is described by a steeply falling \muu distribution with substantial contributions from \Z processes.
 This motivates the inclusion of a Breit-Wigner shape in the functional form with the parameters of the \Z boson.
-It is also important for the form to be flexible enough to describe the underlying background distribution, without being flexible enough to describe the statistical fluctuations of the observed dataset.
+It is also important for the form to be flexible enough to describe the underlying background distribution without being flexible enough to describe the observed dataset's statistical fluctuations.
 This motivates the inclusion of an exponential term that introduces only one flexible parameter.
 The function chosen is defined in Equation \ref{eqn:hmmBkgFunc}. 
 \begin{equation}\begin{split}\label{eqn:hmmBkgFunc}
@@ -16,13 +16,13 @@ The function chosen is defined in Equation \ref{eqn:hmmBkgFunc}.
 \end{split}\end{equation} 
 Here, \muu is the invariant-mass of the Higgs candidate dimuon, in GeV.
 The Breit-Wigner function, $f_{\text{BW},Z}$, uses the \Z mass $m_\text{BW}=91.2$~GeV and width $\Gamma_\text{BW}=2.49$~GeV.
-It is convolved with a Gaussian  the product of which is a Voigtian shape.
-The Gaussian helps describe detector resolution effects, and is centered at \muu with a width 2~GeV.
+It is convolved with a Gaussian, the product of which is a Voigtian shape.
+The Gaussian helps describe detector resolution effects and is centered at \muu with a width 2~GeV.
 Two parameters are left to be determined by their agreement to the data.
 The first, $a\in[0,1]$, represents the fraction of the background made of Breit-Wigner compared to the exponential term.
 The second, $b$, determines the decent of the exponential term.
 Equation \ref{eqn:hmmBkgFunc} is used to define a probability density function (PDF) over \mll from which observed events may have been sampled. 
-When it is used to model the dataset, PDF is normalized to number of events in the dataset, using a coefficient.
+When it is used to model the dataset, PDF is normalized to the number of events in the dataset, using a coefficient.
 Since this coefficient is a function of $a$ and $b$, and it does not impact the shape of the distribution, it is not discussed.
 
 The procedure to determine the free parameters is referred to as \emph{fitting} the functional form to the observed data.
