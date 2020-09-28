@@ -1,10 +1,10 @@
 \section{Physics at Hadron Colliders}
 
-The LHC collides protons together in order to create collisions with center of mass energy \sqrts.
-During a collision, the constituents of the protons may interact directly and exchange a substantial fraction of their proton's momentum, in a process called hard-scattering.
+The LHC collides protons together in order to create collisions with center-of-mass-energy \sqrts.
+During a collision, the protons' constituents may interact directly and exchange a substantial fraction of their proton's momentum, in a process called hard-scattering.
 These interactions may be quark-quark, quark-gluon, or gluon-gluon scattering events that can be described with a degree of fidelity by a matrix element complication.
-This is a messy process, and is complicated by the composite nature of the protons.
-This section describes the basis of how colliding protons may produce the types of events that are of interest for this thesis.
+This is a messy process and is complicated by the composite nature of the protons.
+This section describes how colliding protons may produce events that are of interest to this thesis.
 
 \subsection{Parton distribution function}
 
@@ -21,28 +21,28 @@ These consist of three valance quarks ($uud$), and a \emph{sea} or virtual quark
 When two protons collide with sufficient energy \footnote{On the scale of $\Lambda_\text{QCD}\approx218$~MeV.}, two types of qualitative processes take place.
 First is \emph{hard-scattering}, an interaction mediated by a large momentum exchange between typically two partons.
 Second is \emph{soft-scattering}, where the remaining partons interact through the low energy mediators.
-While both processes are interesting, hard interactions are of particular interest in this thesis, as these provide access to particularly high energy interactions.
+While both processes are interesting, hard-scattering interactions are of particular interest in this thesis, as these provide access to particularly high energy interactions.
 
-When two partons interact each carries a fraction of their respective proton's total energy \sqrts.
+When two partons interact, each carries a fraction of their respective proton's total energy \sqrts.
 The longitudinal component of the momentum fraction is termed Feynman's $x$.
-When a high energy probe particle collides with a proton, the probe will hard-scatter off of one of the proton's constituents be it a quark or gluon.
+When a high energy probe particle collides with a proton, the probe will hard-scatter off of one of the proton's constituents, be it a quark or gluon.
 In $pp$ collisions, the probe is a parton selected from a proton in the opposing beam.
-The of the probe probability to scatter of a particular parton $i$ depends on both its momentum fraction $x$ and the momentum exchange $Q$.
+The probability of the probe to scatter off a particular parton $i$ depends both on its momentum fraction $x$ and on the momentum exchange $Q$.
 This differential probability function, $f_i(x,Q)$, is called the parton distribution function (PDF).
 Hence, $f_u(x,Q)$ gives the that the probe will interact with an up quark, while $f_{\overline{s}}(x,Q)$ gives the corresponding probability for an interaction with an anti-strange quark.
 
-The dynamics within the proton that determine PDFs take place at low $Q$, where calculations are complicated by the large QCD coupling from Equation \ref{eqn:alphas}.
+The proton dynamics that determine PDFs occur at low $Q$, where calculations are complicated by the large QCD coupling from Equation \ref{eqn:alphas}.
 Instead of analytic calculations, PDFs functions are fit to experimental measurements.
 The resulting PDF shapes as a function of $x$ is shown in Figure \ref{fig:partDistFunc} for each parton.
-The valance quark ($u$ and $d$) are seen to have peaks between $x=0.1$ and $x=0.2$, indicating a relatively high frequency that these carry a large portion of the proton's momentum.
+The valance quarks ($u$ and $d$) are seen to have probability peaks between $x=0.1$ and $x=0.2$, indicating a relatively high frequency that these carry a large portion of the proton's momentum.
 In contrast, the sea quarks ($\overline{u}$, $\overline{d}$, $s/\overline{s}$, and $c/\overline{c}$) typically carry a much smaller momentum fraction.
-The $u$ and $d$ quarks contribute to the sea as well, and Figure \ref{fig:partDistFunc} actually separates out the valance component from the sea component for these.
+The $u$ and $d$ quarks contribute to the sea as well, and Figure \ref{fig:partDistFunc} separates the valance component from the sea component for these.
 The PDFs of the sea $u$ and $d$ quarks and anti-quarks are identical since these are produced in virtual pairs.
 The PDFs for gluons are shown scaled down by a factor of 10, as nearly half the proton's momentum is carried by gluons.\cite{wells}
 
 The differential cross sections of an $2\to X$ interaction, given in Equation \ref{eqn:diffCrossSection}, depend on the initial state particles.
 When two protons collide, the initial state particles of a hard-scattering process are selected randomly from each proton according to the parton distribution functions.
-Consequently the total cross section of a $pp$ collision corresponds to a sum over partons $i,j$ in each proton respectively, and an integral over momentum fractions.
+Consequently, the total cross-section of a $pp$ collision corresponds to a sum over partons $i,j$ in each proton, respectively, and an integral over momentum fractions.
 The $pp$ version of the differential cross section is given in Equation \ref{eqn:ppDiffCrossSection}.
 \begin{equation}\begin{split}\label{eqn:ppDiffCrossSection}
 d\sigma(pp\to X)=\sum_i\sum_j\int_0^1dx_i\int_0^1dx_j~d\sigma(ij\to X)f_i(x_i)f_j(x_j)
@@ -74,17 +74,17 @@ The total cross section for $pp\to X$ is defined by with a sum over parton speci
 As indicated by the shapes of PDF curves, the parton luminosity for a beam of energy \sqrts drops off as a function of \sqrths.
 \cite{quigg}
 
-As a consequence, although the LHC collides beams with \sqrts=13~TeV, the practical luminosity of collisions with \sqrths=13~TeV essentially vanishes.
+Consequently, although the LHC collides beams with \sqrts=13~TeV, the practical luminosity of collisions with \sqrths=13~TeV essentially vanishes.
 This limits the energy available in hard scattering to a fraction of \sqrts.
 For example, the invariant-mass of the most energetic two-jet event recorded by ATLAS in Run~2 is just $m_{jj}=8$~TeV.
 A second consequence of Equation \ref{eqn:partonLumi} arises from its dependence on the proton center of mass energy \sqrts (through $\tau$).
 Increasing the \sqrts greatly expands the parton luminosity at large \sqrths.
-Both of these effects are illustrated in Figure \ref{fig:partonLumi}, which plots the ratio of $gg$ parton luminosities at different center of mass energies to the LHC design value.
+Both of these effects are illustrated in Figure \ref{fig:partonLumi}, which plots the ratio of $gg$ parton luminosities at the different center-of-mass energies to the LHC design value.
 
 \section{Standard Model Dilepton Production}\label{sec:phenoBkg}
 
 Both the \hmm search and the non-resonant search share a similar interest in the dilepton invariant mass spectra.
-As such the backgrounds for these analyses share a similar composition produced by standard model processes.
+As such, the backgrounds for these analyses share a similar composition produced by standard model processes.
 The dominant hard-scattering processes that produce events with dilepton pairs in the high invariant-mass region at the LHC are described in this section.
 
 \begin{figure}[h!]
@@ -99,12 +99,12 @@ The dominant hard-scattering processes that produce events with dilepton pairs i
 \label{fig:phenoDy}
 \end{figure}
 
-The most significant lepton pair production mechanism in hadronic collisions was proposed in 1970 Sidney Drell and Tung-Mow Yan. 
-The process is described as the annihilation of partons from opposing protons in order to produce a massive intermediate state that carries the momentum exchange of the collision. \cite{drellYan}
+The most significant lepton pair production mechanism in hadronic collisions was proposed in 1970 by Sidney Drell and Tung-Mow Yan. 
+The process is described as the annihilation of partons from opposing protons to produce a massive intermediate state that carries the momentum exchange of the collision. \cite{drellYan}
 For collision energies below the \Z mass, this intermediate state is an off-shell photon.
-Above the \Z mass, both photons and \Z bosons mediate Drell-Yan production as illustrated in Figure \ref{fig:phenoDy}.
-The predicted differential cross section falls sharply as the produced dilepton pair's invariant mass grows.
-Although this prediction is inaccurate near the \Z mass where resonant production dominates, in the kinematic regions of interest for this thesis it describes the background to first order.
+Above the \Z mass, both photons and \Z bosons mediate Drell-Yan production, as illustrated in Figure \ref{fig:phenoDy}.
+The predicted differential cross-section falls sharply as the produced dilepton pair's invariant mass grows.
+Although this prediction is inaccurate near the \Z mass where resonant production dominates, in the kinematic regions of interest for this thesis, it describes the background to first order.
 
 \begin{figure}[h!]
 \captionsetup[subfigure]{position=b}
@@ -138,7 +138,7 @@ Although this prediction is inaccurate near the \Z mass where resonant productio
 \end{figure}
 
 The next leading source of dilepton events come from \emph{diboson} production.
-These described by diagrams, including those in Figure \ref{fig:phenoDibosn}, with two vector bosons \W or \Z in their final state.
+These are described by diagrams, including those in Figure \ref{fig:phenoDibosn}, with two vector bosons \W or \Z in their final state.
 The leading order production of these events is through the $q\qbar$ initial state.
 
 \begin{figure}[h!]
@@ -283,23 +283,23 @@ The result is, in some cases, a final state with multiple leptons.
 \label{fig:higgsCrossSection}
 \end{figure}
 
-The total production cross section for Higgs bosons at the LHC is 54.7~pb at N3LO precision \cite{higgsCross}.
+The total production cross-section for Higgs bosons at the LHC is 54.7~pb at N3LO precision \cite{higgsCross}.
 Higgs bosons are produced through several distinct mechanisms at the LHC.
 These are distinguished by both their initial states and the topology of their final states.
 The leading production, responsible for 89\% of all Higgs, is through gluon-gluon fusion (ggF).
 Although there is no direct coupling between gluons and the Higgs, the interaction is mediated by a heavy quark loop.
-The next leading production is vector boson fusion (VBF) with roughly 9\% the cross section as ggF.
+The next leading production mechanism is vector boson fusion (VBF), with roughly 9\% of the cross-section as ggF.
 In this process, the Higgs is produced through a ``collision'' of either \W or \Z bosons.
 The final state includes the Higgs, along with two quarks that rapidly patronize to form jets.
-The presence of two jets in the final state help distinguish VBF events from background processes, and ameliorates the challenge of its low cross section.
+The presence of two jets in the final state help distinguish VBF events from background processes and ameliorates the challenge of its low cross-section.
 The weakest production mechanisms are ttH and bbH, where the Higgs is produced in conjunction with a top or bottom quark pair.
 
-The production mechanisms with the third largest cross section are collectively called ``Higgs produced in association with a vector boson'', or VH.
+The production mechanisms with the third-largest cross-section are collectively called ``Higgs produced in association with a vector boson'', or VH.
 These are the primary focus for the \hmm search presented in this thesis.
 There are several ``sub-mechanisms'' that contribute to VH.
-Of these, the one with the largest cross section is the s-channel production with initial state quarks whimsically called \emph{Higgsstrahlung} in analogy to Bremsstrahlung radiation.
+Of these, the one with the largest cross-section is the s-channel production with initial state quarks whimsically called \emph{Higgsstrahlung} in analogy to Bremsstrahlung radiation.
 When the mediator boson is a \W, then Higgsstrahlung is responsible for the leading order WH production mechanism.
-As a result of the corresponding parton luminosities, the cross section of WH depends on the sign of the mediating $W$ boson: the production positively charged \Wp benefits from the enhanced PDF of valance $u$-quarks seen in Figure \ref{fig:partonLumi}. \check
+As a result of the corresponding parton luminosities, the cross-section of WH depends on the sign of the mediating $W$ boson: the production positively charged \Wp benefits from the enhanced PDF of valance $u$-quarks seen in Figure \ref{fig:partonLumi}. \check
 The cross section for WH is given in Equation \ref{eqn:whxs}.
 
 \begin{equation}\begin{split}\label{eqn:whxs}
@@ -314,13 +314,13 @@ The cross section for ZH in $pp$ collisions is given in Equation \ref{eqn:zhxs}.
 \end{split}\end{equation} 
 Here, $r\equiv-2Qx_W$, $\ell\equiv2(T_3-Qx_W$,
 $T_3$ is the third component of weak isospin for the left-handed $f$, $Q$ is its electric charge, and $x_W\equiv\sin^2\theta_W$.
-While Equation \ref{eqn:zhxs} describes the $q\qbar\to ZH$ cross section, it is also applicable to $\ell^+\ell^-$ collisions that might take place in future lepton colliders.
+While Equation \ref{eqn:zhxs} describes the $q\qbar\to ZH$ cross-section, it is also applicable to $\ell^+\ell^-$ collisions that might take place in future lepton colliders.
 This makes this process of particular interest for precision measurements of Higgs properties.
 
 Unlike with WH, the sub-leading mechanisms are not negligible for ZH.
 These consist of interactions with two initial state gluons where the Higgs is produced via a heavy quark loop.
-There are two diagrams to consider, one a ``box'' diagram, and one a ``triangle'' diagram.
-Together, these represent $\approx10\%$ of the total ZH cross section.
+There are two diagrams to consider: a ``box'' diagram and a ``triangle'' diagram.
+Together, these represent $\approx10\%$ of the total ZH cross-section.
 
 \begin{table}[htp]
 \begin{center}
@@ -346,7 +346,7 @@ ttH                       &  0.6137     & +6.0, -9.2 & $\pm3.5$  \\
 \end{table}
 
 The diagrams for VH processes, along with the other leading production mechanisms, are shown in Table \ref{tab:higgsProdDiagrams}.
-The cross sections and the associated theoretical uncertainties, are given in Table \ref{tab:higgsCrossSec}.
+The cross-sections and the associated theoretical uncertainties, are given in Table \ref{tab:higgsCrossSec}.
 As mentioned earlier, these cross sections depend on the Higgs mass. The Numbers in Table \ref{tab:higgsCrossSec} are calculated with \mh=125~GeV, and the functional dependence is shown in Figure \ref{fig:higgsCrossSection}.
 
 \begin{table}[p!]
@@ -506,7 +506,7 @@ The partial width of the Higgs boson decaying to two fermions is given by Equati
 \end{split}\end{equation} 
 Here, the $N_c=1$ for leptons (and 3 for quarks) and $G_F=1.166\times10^{-5}$~GeV$^{-2}$ is the Fermi coupling constant.
 The total width, $\Gamma$, is defined as the number of decays per time, per particles present.
-It is the sum of all partial widths such as the fermionic width in Equation \ref{eqn:higgsDecayFermions}.
+It is the sum of all partial widths, such as the fermionic width in Equation \ref{eqn:higgsDecayFermions}.
 The total width is equivalent to the reciprocal \emph{lifetime} of the particle $\tau$, which subsequently defines the particle's half-life as $\tau\ln2$.
 The partial width also dictates the \emph{branching ratio} that describes the fraction of decays to a particular final state.
 For \hmm decays, the branching ratio is therefore
@@ -517,16 +517,16 @@ For \hmm decays, the branching ratio is therefore
 
 This equation illuminates the central challenge when studying \hmm. 
 The total width of the Higgs is expected to be $4$~MeV and has been measured as $\Gamma=3.2^{+2.8}_{-2.2}$~MeV. \cite{cmsWidth}
-The quadratic dependence on the muon mass $m_f=m_\mu$ in the partial width $\Gamma(\hmm)$ leads to a very small branching ratio in the case of the light muon, given in Table \ref{tab:decayCrossSec}.
-The partial widths also depend on \mh. This is illustrated in Figure \ref{fig:higgsBr} for the branching ratios including and larger than \hmm.
+The quadratic dependence on the muon mass $m_f=m_\mu$ in the partial width $\Gamma(\hmm)$ leads to a small branching ratio in the case of the light muon, given in Table \ref{tab:decayCrossSec}.
+The partial widths also depend on \mh. This is illustrated in Figure \ref{fig:higgsBr} for the branching ratios, including and larger than \hmm.
 
 Experimentally, Higgs production and decay to two muons manifests itself in the dimuon invariant-mass spectrum as a resonance above a smoothly falling background.
-The width of the resonance is determined by the total width $\Gamma$, by making use of the uncertainty principle in natural units.
+The resonance width is determined by the total width, $ \Gamma $, by making use of the uncertainty principle in natural units.
 A free particle of mass $m$ with some likelihood to decay to a lower energy state can be described by a simple time dependant wave function,
 \begin{equation}\begin{split}
     \psi(t)=\psi(0)e^{-imt}e^{-\frac{\Gamma}{2}t}.
 \end{split}\end{equation} 
-Here, the first exponential represents the time evolution of a stable particle, while the second represents the decreasing probability that the particle has not decayed.
+Here, the first exponential represents a stable particle's time evolution, while the second represents the decreasing probability that the particle has not decayed.
 The $\Gamma$ is the decay rate and also inverse of the exponential time constant.
 The fourier transform of the wave equation describes the particle in energy space,
 \begin{equation}\begin{split}
@@ -537,17 +537,17 @@ The energy dependant cross section to observe a decay is proportional to $|\psi(
     \sigma(E)\propto\frac{1}{(E-m)^2+\Gamma^2/4}.
 \end{split}\end{equation} 
 Equation \ref{eqn:breitWigner} gives the relativistic Breit-Wigner function, which describes resonant features in energy spectra.
-The width of the resonance corresponds to the decay rate, therefore particles with long lifetimes $\tau$ produce narrow resonances.
+The resonance width corresponds to the decay rate; therefore, particles with long lifetimes $\tau$ produce narrow resonances.
 
-The phenomenology of \hmm is determined by these principles.
-The Higgs boson decays with a width $\Gamma$ and probability distribution of energies described by the Breit-Wigner function.
-In \hmm decays, this energy is converted into the invariant-mass of the dimuon pair, and results in a narrow resonance in the dimuon invariant mass spectrum.
+These principles determine the phenomenology of \hmm.
+The Higgs boson decays with a width $\Gamma$ and the probability distribution of energies described by the Breit-Wigner function.
+In \hmm decays, this energy is converted into the dimuon pair's invariant-mass and results in a narrow resonance in the dimuon invariant mass spectrum.
 In practice, the energy and momentum resolutions of ATLAS are insufficient to resolve the $\approx4$~MeV width of the Breit-Wigner shape.
-Instead a distribution described approximately a Gaussian function with a width corresponding to the invariant-mass resolution is observed.
+Instead, a distribution described approximately a Gaussian function with a width corresponding to the invariant-mass resolution is observed.
 
 % VH leptonic
 The final state \W or \Z in a VH event offers an opportunity to help identify Higgs events in the same way that the jets in VBF are useful.
-This is particularly true when the \W or \Z decays leptonically since these additional leptons offer a clean signal to help remove background.
+This is particularly true when the \W or \Z decays leptonically since these additional leptons offer a clean signal to help remove events from background production mechanisms.
 In the case of \W decays to $\ell^\pm\nu_\ell$ represent $\approx11\%$ of decays for each lepton flavor.
 Equation \ref{eqn:wDecayFermions} gives the partial width for leptonic \W decays.
 \begin{equation}\begin{split}\label{eqn:wDecayFermions}
@@ -567,9 +567,9 @@ The measured values of these branching fractions are given in Table \ref{tab:dec
 
 Contact interactions are a phenomenological description of new physics interactions above the energy scale accessible directly in collisions.
 Such interactions lead to increases in the event rate of high mass events in the dilepton invariant invariant-mass spectra. 
-A broad assortment of models predict such excesses, but of particular interest are models of composite quarks and leptons.
-Even within the space of compositeness models, there is great diversity and no consensus as to the plausibility of a single model. 
-As such, it is beneficial to consider the predictions in common with all compositeness models rather than a particular model.
+A broad assortment of models predicts such excesses, but particular interest models are models of composite quarks and leptons.
+Even within the space of compositeness models, there is great diversity and no consensus about the plausibility of a single model. 
+It is beneficial to consider the predictions in common with all compositeness models rather than a particular model.
 The putative components of fermions are called \emph{preons}, and they are expected to interact through a new strong gauge interaction called \emph{metacolor}.
 As is the case of the strong force, metacolor would be infrared confining and asymptotically free.
 Below a characteristic energy scale \lam, the interaction binds preons together metacolor singlets observed as quarks and leptons.
@@ -581,7 +581,7 @@ Early theoretical limits were set by Bhabha-scattering measurements that exclude
 
 The particular interest of this thesis is in flavor-diagonal contact interactions.
 These models allow either one or both of the fermion's chiral components (\fl and \fr) to be composite.
-The presence of parity violating in the standard model motivates the treatment of \fl and \fr as distinct species.
+The presence of parity-violating in the standard model motivates the treatment of \fl and \fr as distinct species.
 This leads to the general parity violating Lagrangian in Equation \ref{eqn:compLagrangian} which describes a general contact interaction.
 \begin{equation}\label{eqn:compLagrangian}
 \begin{array}{r@{\,}c@{}c@{\,}l@{\,}l}
@@ -615,16 +615,16 @@ c[particle=\(\ell^{+}\)] --[fermion] v --[fermion] d[particle=\(\ell^{-}\)],
 \label{fig:ciPheno}
 \end{figure}
 
-Contact interactions necessarily modify cross sections of fermion elastic scattering, such as the $q\qbar$ collisions at the LHC.
-In the SM the gauge coupling $\alpha_f$ controls high-mass processes through Drell-Yan production.
+Contact interactions necessarily modify cross-sections of fermion elastic scattering, such as the $q\qbar$ collisions at the LHC.
+In the SM, the gauge coupling $\alpha_f$ controls high-mass processes through Drell-Yan production.
 In their seminal work of 1983, Eichten, Lane, and Peskin showed that if $\alpha_f\llt1$, then the Lagrangian in Equation \ref{eqn:compLagrangian} produces interference of the order $\shat/\alpha_f\lam^2$ with the standard model processes. \cite{eichten}
-The diagrams for the dominant standard model process, and a generic contact interaction are shown in Figure \ref{fig:ciPheno}.
+The diagrams for the dominant standard model process and a generic contact interaction are shown in Figure \ref{fig:ciPheno}.
 The blob in the diagram for the contact interaction emphasizes the generality of Equation \ref{eqn:compLagrangian}. A particular physics model may replace this blob with, for example, an s-channel diagram mediated by the bound state of two prions.
 Two possible diagrams to replace the blob are given, for illustrative purpose, in Figure \ref{fig:ciBlobs}.
 
 Since these interactions depend on $q\qbar$ initial states, the relevant parton luminosities that determine the event rates are those of $u\ubar$ and $d\dbar$.
 Unfortunately, as illustrated in Figure \ref{fig:partDistFunc}, proton PDFs for $\ubar$ and $\dbar$ are relatively small since these are produced as virtual sea quarks.
-This suppresses the production of $q\qbar$ initial states, and consequently of this type of contact interaction.
+This suppresses the production of $q\qbar$ initial states, and consequently, of this type of contact interaction.
 If the LHC had been designed to use $p\pbar$ collisions of equal intensity, it would greatly enhance the $q\qbar$ luminosities.
 
 \begin{figure}[h!]
@@ -638,12 +638,12 @@ If the LHC had been designed to use $p\pbar$ collisions of equal intensity, it w
 \end{figure}
 
 %%% Specific ll-qq CI $$$
-This thesis focuses on \llqq contact interactions, which are a subset of those described by Equation \ref{eqn:compLagrangian}.
+This thesis focuses on \llqq contact interactions, a subset of those described by Equation \ref{eqn:compLagrangian}.
 Such models replace the unprimed $f$ with quarks, and the primed $f'$ with leptons.
-This interaction is possible if the quarks and leptons share common constituents, in which case interactions mediated by the constituents are possible as shown in Figure \ref{fig:ciBlobs} (a).
-This interaction is also possible if the fermions do not share common constituents as shown in Figure \ref{fig:ciBlobs} (b).
+This interaction is possible if the quarks and leptons share common constituents, in which case interactions mediated by the constituents are possible, as shown in Figure \ref{fig:ciBlobs} (a).
+This interaction is also possible if the fermions do not share common constituents, as shown in Figure \ref{fig:ciBlobs} (b).
 
-The Drell-Yan differential cross section is modified in the case of left-left compositeness, $\eta_{LL}=\pm1$ and $\eta_{LR}=\eta_{RL}=\eta_{RR}=0$.
+The Drell-Yan differential cross-section is modified in the case of left-left compositeness, $\eta_{LL}=\pm1$ and $\eta_{LR}=\eta_{RL}=\eta_{RR}=0$.
 
 \begin{flalign}\label{eqn:}
 \frac{d\hat{\sigma}}{d\that}(q_i\qbar_i\to\ll) =& \frac{\pi\alpha^2}{\shat^2}\left[A_i(\shat)\left(frac{\uhat}{\shat}\right)^2+B_i(\shat)\left(frac{\that}{\shat}\right)^2\right] \notag\\
@@ -661,7 +661,7 @@ $Q_i$ is the electric charge of the corresponding quark flavor. \cite{Eichten:19
 
 Despite their verbosity, these equations readily illuminate the phenomenology relevant to the contact interaction search.
 First, when setting $\eta_{LL}=0$, the standard model Drell-Yan production is recovered.
-Expanding the first power term in $A_i(\shat)$ yields a \emph{direct} term that contributes to the total cross section and scales as $\lam^{-4}$.
+Expanding the first power term in $A_i(\shat)$ yields a \emph{direct} term that contributes to the total cross-section and scales as $\lam^{-4}$.
 Removing the \lam defines the contact interaction form factor $F_C$,
 \begin{equation}\begin{split}
     % \Delta\left[\frac{d\hat{\sigma}}{d\that}\right] = \frac{\pi\alpha^2}{\shat^2}\left[\frac{\shat}{\alpha^2}\left(\frac{\uhat}{\shat}\right)^2 \right] /\lam^4
@@ -669,18 +669,18 @@ Removing the \lam defines the contact interaction form factor $F_C$,
 \end{split}\end{equation} 
 {\color{red} Check d\that vs d\mll}
 Since $F_C$ is strictly positive, it enhances the total \qqll cross section regardless of the sign of $\eta_{LL}$.
-The cross terms in the expansion dictate the interference of the contact interaction with Drell-Yan.
+The cross-terms in the expansion dictate the interference of the contact interaction with Drell-Yan.
 Again removing the \lam factor defines the interference form factor $F_I$,
 \begin{equation}\begin{split}
     F_I(\shat) \equiv -2\eta_{LL}\left[Q_i-\frac{L_iL_l}{4x_W(1-x_w)}\frac{\shat}{\shat-M_Z^2+iM_Z\Gamma_Z}\right]\frac{\pi\alpha\uhat^2}{\shat^3}.
 \end{split}\end{equation} 
 The sign of $F_I$ depends on the sign of $\eta_{LL}$.
-For $\eta_{LL}=-1$, $F_I$ contributes constructively to the total cross section, while for $\eta_{LL}=+1$ it leads to destructive interference that reduces the overall cross section.
+For $\eta_{LL}=-1$, $F_I$ contributes constructively to the total cross-section, while for $\eta_{LL}=+1$ it leads to destructive interference that reduces the overall cross-section.
 
-Together, $F_I$ and $F_C$ describe the effect of contact interactions as functions of collision energy, without making reference to the particular manifestation of fermion compositeness.
-The functional dependence on \shat leads to the expression of the interference form factor $F_I$ at relatively low energies compared to the direct form factor $F_C$.
-Experimentally this results in interference effects altering dilepton spectra at lower invariant-mass, and direct production always enhancing the spectra in the high mass tail.
-These effects are broad in the invariant-mass spectra, as opposed to the narrow resonance expected from \hmm production.
+Together, $F_I$ and $F_C$ describe the effect of contact interactions as functions of collision energy, without referring to the particular manifestation of fermion compositeness.
+The functional dependence on \shat leads to the expression of the interference form factor $F_I$ at relatively low energies than the direct form factor $F_C$.
+Experimentally, this results in interference effects altering dilepton spectra at lower invariant-mass and direct production always enhancing the spectra in the high mass tail.
+These effects are broad in the invariant-mass spectra instead of the narrow resonance expected from \hmm production.
 The modification to the total cross section has the form,
 \begin{equation}\label{eqn:cixsPheno}
 \frac{\text{d}\sigma}{\text{d}m_{\ell\ell}} = \frac{\text{d}\sigma_\textrm{DY}}{\text{d}m_{\ell\ell}} - \eta_{ij}\frac{F_\textrm{I}}{\Lambda^2} + \frac{F_\textrm{C}}{\Lambda^4}.
@@ -688,7 +688,7 @@ The modification to the total cross section has the form,
 
 Although various compositeness models predict variations on these results, there are two points to consider.
 First, the functional dependence on the energy \shat is common for all contact interactions. \cite{Eichten:1984eu}.
-Second, the modification to the effect on the total cross section is substantially of the same magnitude regardless of the form of compositeness.
+Second, the modification to the effect on the total cross-section is of the same magnitude regardless of the form of compositeness.
 Combined, these make the described formalism an attractive framework to study compositeness without reference to the particular model.
 
 
