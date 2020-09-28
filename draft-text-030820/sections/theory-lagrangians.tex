@@ -1,23 +1,23 @@
 \subsection{Physics with Lagrangians}\label{sec:smMath}
 
 The previous section dealt with the abstract notions of groups and relations.
-Representations of these groups to provide a useful description of the physical world.
-This section will discuss how these representations used with physics.
+Representations of these groups provide a useful description of the physical world.
+This section will discuss how these representations are used with physics.
 The task is to build a map between the mathematical structures, which are stripped of physical meaning, and the physical model.
 This is done through the framework of Quantum Field Theory (QFT).
 
-The connection between the abstract words of groups and symmetries, and the more concrete world of QFT is as follows.
+The connection between the abstract words of groups and symmetries and the more concrete world of QFT is as follows.
 The fields of fermions correspond to the modules of certain representations, on which the members of the algebra can act.
 Charges, the physical characteristics of particles that are conserved, correspond to the eigenvalues of the group's generators.
 The number of charges described by a group is equal to the dimension of the representation.
 Physical interactions through a force are described by the eigenvectors of the earlier defined Cartan generators of the group.
-The generators of the group describe particle that mediate forces to particles charged under the group.
-The force carrying particle described by the Cartan generators do not change corresponding charge of a particle.
-Non-Cartan generators however can change charge.
+The generators of the group describe particles that mediate forces to particles charged under the group.
+The force-carrying particles described by the Cartan generators do not change the corresponding charge of a particle.
+Non-Cartan generators, however, can change charge.
 
 \subsubsection{Hamilton's Principle}\label{sec:lagrangian}
 
-Hamilton's principle of least action considers a system defined by a field, $\phi$, and its four dimensional derivatives $\partial_\mu\phi$.
+Hamilton's principle of least action considers a system defined by a field, $\phi$, and its four-dimensional derivatives $\partial_\mu\phi$.
 The state evolves between two points in spacetime, $x_0$ and $x_1$.
 The \emph{action} is a functional of the path taken by $\phi$ between $x_0$ and $x_1$:
 \begin{equation}\begin{split}
@@ -37,25 +37,25 @@ Solving Equation \ref{eqn:el} for a given Lagrangian density yields the \emph{eq
 This raises the issue of what the fields $\phi(x)$ are.
 In QFT, \emph{operators} are introduced for each point in spacetime $x$.
 These operators, $\phi$, are labeled by their corresponding point as $\phi(x)$.
-As in quantum mechanics operators can intuitively thought of as representing a measurement. In this case, they represent a measurement of a corresponding field strength.
+As in quantum mechanics, operators can intuitively be thought of as representing a measurement. In this case, they represent a measurement of a corresponding field strength.
 The operators act on \emph{state} vectors that represent the physical system.
 For example, the operator $\phi$ can act on the vector representing the vacuum state, $\ket{0}$, at location $x$.
 The vacuum state represents the system in its lowest energy state, such that the eigenvalue of the Hamiltonian operating on the vacuum state is zero.
 This operation is denoted as $\phi(x)\ket{0}$.
-The behavior of fields is described by the Lagrangian.
+The Lagrangian describes the behavior of fields.
 
 A commonly used type of field is the \emph{scalar} field.
-Scalar fields are scalar valued, having a single value at all spacetime points $x$.
+Scalar fields are scalar-valued, having a single value at all spacetime points $x$.
 The Higgs boson is an example of particles represented by a scalar field.
 Another commonly used type of field is the \emph{Dirac} field.
 These fields are four-component, represented by 4-vectors.
 Fermions are an example of particles represented by Dirac fields.
-Finally,a commonly used type of field is the \emph{vector} field.
+Finally, a commonly used type of field is the \emph{vector} field.
 An example is the 4-vector from electromagnetism $A^\mu=(V,\vec{A})$ consisting of the electric potential $V$ and the magnetic potential $\vec{A}$.
 In the following paragraph, Lagrangians containing each of these fields are shown, along with the corresponding result of Equation \label{eqn:el}.
 
 
-The equations of motion for each field is derived from the Lagrangian.
+The equations of motion for each field are derived from the Lagrangian.
 As an example, a scalar field $\psi$ described by a simple Lagrangian given in Equation \ref{eqn:scalarLagrangian}.
 \begin{equation}\begin{split}\label{eqn:scalarLagrangian}
     \mathcal{L}_\text{scalar}=&\frac{1}{2}\partial_\mu\phi\partial^\mu\phi-\frac{1}{2}m^2\phi^2 \\
@@ -102,7 +102,7 @@ Interactions between particles complicate the Lagrangian with additional terms c
 
 \subsubsection{The Matrix Element}\label{sec:me}
 
-The Lagrangian formalism set out in Section \ref{sec:lagrangian} allows the definition of a model.
+The Lagrangian formalism set out in Section \ref{sec: Lagrangian} allows the definition of a model.
 The next step is to extract the observable predictions of the model.
 Nearly all observations of particles relate to the question: ``given some initial state, what is the probability of observing a final state''.
 In a particle collider, the initial state may be the colliding beams, and the final state may include some number of electrons.
@@ -122,7 +122,7 @@ To find the probability that an initial state with two particles $\ket{p_1;p_2}$
 Here, the complexities of the Hamiltonian's action on the initial state $\ket{p_1;p_2}$ has been conveniently rolled into the \emph{matrix element}, $|\mathcal{M}|$.
 
 Equation \ref{eqn:ifProj} shows a projection of one state onto another.
-The proper probability to evolve from the initial state to the final state must be normalized.
+The proper probability of evolving from the initial state to the final state must be normalized.
 Again, the canonical quantization is used to calculate $\braket{i|i}=4E_{p_1}E_{p_2}V^2$ and $\braket{f|f}=\prod_{i=1}^n2E_{k_i}V$ where $V$ is the volume of the box in which the experiment takes pace over time $T$.
 The full probability is
 \begin{equation}\begin{split}\label{eqn:ifProb}
@@ -140,7 +140,7 @@ The second and third terms define the instantaneous luminosity $L\equiv N_b^2/A$
 The cross-section $\sigma$ is commonly cited in convenient units of \emph{barns}, with an exact definition of $\text{b}\equiv10^{-24}\text{cm}^2$.
 Instantaneous luminosity benefits from no such useful shorthand, and is commonly cited in units of $\text{s}^{-1}\text{cm}^{-2}$.
 
-The cross-section is replaces $\mathcal{P}_{i\to f}$ as the measurable prediction of the model.
+The cross-section replaces $\mathcal{P}_{i\to f}$ as the measurable prediction of the model.
 The fourth term in Equation \ref{eqn:nCollisions} connects the cross-section back to the subject of the matrix element $|\mathcal{M}|$.
 It is useful to calculate the differential contribution to the cross-section $d\sigma$ given in Equation \ref{eqn:diffCrossSection}.
 \begin{equation}\begin{split}\label{eqn:diffCrossSection}
@@ -154,7 +154,7 @@ In a simple $2\to2$ process with center of mass energy $E'$, the differential ph
 \subsubsection{Particle Decay}
 {\color{red} [Could do a derivation here]}
 
-An useful corollary to the prediction of the cross section described in Section \ref{sec:me} is the description of particle decays derived from a model.
+A useful corollary to the prediction of the cross-section described in Section \ref{sec:me} is the description of particle decays derived from a model.
 Most massive particles are able to \emph{decay} to lower mass final states.
 This process takes place in a characteristic mean lifetime, $\tau$, within the particle's rest frame.
 The probability for a particle to have decayed after a time $t$, and moving in a frame with Lorentz factor $\gamma$, is given in Equation \ref{eqn:decay}.
@@ -187,10 +187,10 @@ This result allows the calculation of two-body decays.
 The details of the model are contained in the matrix element $\mathcal{M}$.
 
 \subsubsection{Feynman Rules}\label{sec:feynmanRules}
-The calculations of cross sections and differential widths in the preceding sections are, in principle, carried out through the expansion of the involved fields into expressions of creation and annihilation operators.
-The Hamiltonian from Equation \ref{eqn:ifProj} is in turn expressed in terms of these operators. 
+The calculations of cross-sections and differential widths in the preceding sections are, in principle, carried out through the expansion of the involved fields into expressions of creation and annihilation operators.
+The Hamiltonian from Equation \ref{eqn:ifProj} is, in turn, expressed in terms of these operators. 
 The non-commuting relationships between the creation/annihilation operators lead to a non-zero matrix element in Equations for the differential cross-section (Equation \ref{eqn:diffCrossSection}) and partial width (Equation \ref{eqn:diffWidth}).
-This process is complicated, but fortunately particular leading terms of the matrix element can often be abstracted and represented graphically with \emph{Feynman diagrams}.
+This process is complicated, but, fortunately, particular leading terms of the matrix elements can often be abstracted and represented graphically with \emph{Feynman diagrams}.
 These diagrams consist of \emph{vertices} that correspond to interactions between more than two particles, and \emph{lines} that correspond to the free propagation of an individual particle.
 
 The Feynman rules can be determined for a particular Lagrangian.
@@ -199,8 +199,8 @@ A general an interaction term containing $n$ different types of fields $\Phi^i_j
 \mathcal{L}_\text{int}=-\frac{\lambda}{\prod_{i=1}^n (m_i!)}\prod_{i=1}^n\prod_{j=1}^{m_i}\Phi^i_j.
 \end{split}\end{equation} 
 The part of the Hamiltonian $H_\text{int}$ that corresponds to the interaction is $H_\text{int}=-\int\mathcal{L}_\text{int}d^3\vec{x}$.
-The coupling constant in Equation \label{eqn:feynmanRuleInt} therefore appears in the Hamiltonian along with combinatorial factors that cancel the denominator. 
-This is in turn is used to calculate the Feynman rule for the interaction term's contribution to the matrix element is $-i\lambda$.
+The coupling constant in Equation \label{eqn:feynmanRuleInt} consequently appears in the Hamiltonian along with combinatorial factors that cancel the denominator. 
+This is used to calculate the Feynman rule for the interaction term's contribution to the matrix element is $-i\lambda$.
 Interactions are represented graphically in a Feynman diagram by a vertex showing the intersection of lines corresponding to each field $\Phi^i_j$.
 
 A term in a Lagrangian is called a \emph{free} term if it includes the same field $\Phi$ exactly twice.
@@ -213,11 +213,11 @@ The matrix $P$ includes constants and spacetime derivatives. A one dimensional e
 Free terms describe the free propagation of a field, without interactions.
 The part of the Hamiltonian $H_0$ that corresponds to the free term acts on the states in Equation \ref{eqn:ifProj}, which are eigenvectors of $H_0$.
 The eigenvalues of $H_0$ combine to form what is called the \emph{propagator}.
-The Feynman rule for the contribution of a free term to the matrix element is $i(P^{-1})_{ij}$, where spacial derivatives $\partial_\mu$ are replaced with the particle's momentum $-ip_\mu$.
-Propagators are represented by lines in Feynman diagrams, connected to vertices on either side. The vertices are labeled with $i$ and $j$ respectively.
+The Feynman rule for the contribution of a free term to the matrix element is $i(P^{-1})_{ij}$, where spatial derivatives $\partial_\mu$ are replaced with the particle's momentum $-ip_\mu$.
+Propagators are represented by lines in Feynman diagrams, connected to vertices on either side. The vertices are labeled with $i$ and $j$, respectively.
 
-Finally, the fields in the Lagrangian are expanded in term of creation and annihilation operators.
+Finally, the fields in the Lagrangian are expanded in terms of creation and annihilation operators.
 When these operators in the expansion of $H_\text{int}$ act on the initial or final states (depending on the operator), the coefficient is introduced into the matrix element.
-These must coefficients for a basis for the equation of motion.
+These coefficients form a basis for the equation of motion.
 A coefficient is introduced corresponding to each particle in the initial and final state.
 In Feynman diagrams, these are represented by external lines that do not connect to a vertex on one end.
