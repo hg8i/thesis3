@@ -90,10 +90,9 @@ For each force, the momentum exchange is mediated by a boson.
 Gluons mediate the strong nuclear force.
 The weak nuclear force is mediated by the \Wp, \Wm, and \Z bosons.
 Photons mediate the electromagnetic force.
-It is expected that gravity is mediated by a hypothetical particle called a graviton; however, this has not been observed.
+It is expected that gravity is mediated by a hypothetical particle called a graviton; however, this has not been observed. The gravitational interaction strength is more than an order of 40 magnitude smaller compared to the electromagnetic interaction. At the microscopic level, the interaction of the gravity could be ignored and is not included in the SM of particle physics.
 
-In 2012, the ATLAS and CMS experiments at the Large Hadron Collider at CERN discovered the Higgs boson.
-Like the bosons associated with the four canonical forces, the Higgs boson mediates a momentum exchange between particles.
+In 2012, the ATLAS and CMS experiments at the Large Hadron Collider at CERN discovered the Higgs boson. Like the vector bosons associated with the four canonical forces, the scalar particle, Higgs boson, mediates a momentum exchange between particles. The interactions with fermions are not universal, proportional to fermion's mass.
 
 \begin{table}[htp]
 \begin{center}
@@ -101,13 +100,13 @@ Like the bosons associated with the four canonical forces, the Higgs boson media
 {\footnotesize
 \begin{tabular}{c c l c c c c c c c}
 \toprule
-Interaction      & Carried By &  Strength   & Range [m]  \\
+Interaction typis      & Force carried By &  Relative strength   & The force range [m]  \\
 \midrule
 Strong           & Gluon      &  1          & $10^{-15}$ \\
 Electromagnetic  & Photon     &  $10^{-2}$  & $\infty$   \\
 Weak             & \W, \Z     &  $10^{-5}$  & $10^{-18}$ \\
-Gravity$^*$      & Graviton   &  $10^{-39}$ & $\infty$   \\
-Higgs            & Higgs      &  $10^{-xx}$ &    \\
+Gravity$^*$      & Graviton   &  $10^{-40}$ & $\infty$   \\
+Higgs            & Higgs      &  $< 10^{-5}$ &   $10^{-19}$ \\
 \bottomrule      
 \end{tabular}
 }
@@ -117,10 +116,12 @@ Higgs            & Higgs      &  $10^{-xx}$ &    \\
 
 \subsection{Units}
 
-Enormous energy concentrations are required to enable the production of certain massive particles and facilitate certain interactions.
-In order to study these, it is convenient to define units of measure that are suited to describe such energies and length scales.
+Enormous energy concentrations are required to enable the production of massive particles and facilitate interactions with small cross sections.
+In order to study these processes, it is convenient to define units of measurements using energy as 
+the basic unit to describe
+the particle mass, momentum, life-time, and their flight distance (length).
 
-Energies are measured in units of \emph{electronvolts}, eV.
+Energies are measured in units of \emph{electron-volts}, eV.
 This is equal to the energy required to move an electron through one volt of electric potential.
 One eV is a small amount of energy, nearly the amount needed to move a single electron from one terminal of a AA battery to the other.
 In the scope of discovered particles and interactions, eV are often presented along with metric prefixes.
@@ -128,26 +129,28 @@ One mega-electronvolt (MeV) is one million eV, and is the energy scale reached b
 One giga-electronvolt (GeV) is one billion eV, and became accessible with the development of synchrotron accelerators that gradually increased their fields to reach higher energies.
 One tera-electronvolt (TeV) is one trillion eV.
 The stack of AA batteries required to accelerate an electron to 1 TeV would reach from Earth to Mars at its closest approach.
-The TeV scale was first reached at the Large Hadron Collider at CERN.
+The TeV scale was first reached at the Tevatron  proton-antiproton collider at the Fermilab in US in 80th of last Century. The energy at the 
+Large Hadron Collider at CERN has been further increased to 13 TeV at 2015.
 The particular energy scales of interest in this thesis range from tens of GeV to tens of TeV.
 
 Several quantities are useful in describing interactions between particles: energy, mass, momentum, distance, and time.
 The unit of eV already describes quantities of energy.
-In standard international (SI) units, energy is measured in units of joules $J$ equal to kg$\frac{\text m^2}{\text s^2}$. Mass is, therefore, expressible as energy divided by velocity squared.
+In standard international (SI) units, energy is measured in units of joules $[J]$ that equals to [kg$\frac{\text m^2}{\text s^2}$]. Mass is, therefore, expressible as energy divided by velocity squared.
 A convenient velocity to use is the speed of light, $c$.
 In this case, mass is expressed in units of GeV/$c^2$.
 Likewise, momentum, which is measured in SI units as kg$\frac{\text m}{\text s}$, can be expressed in units of GeV/$c$.
-Distance and time can be expressed with the aid of the reduced Planks constant $\hbar=6.58\times10^{-25}$GeV$\cdot$s.
+Distance and time can be expressed with the aid of the reduced Planks constant $\hbar=6.58\times10^{-25}~$GeV$\cdot$~s.
 Using $\hbar$, distance is measured in units of $\hbar c/$GeV, and time is measured in units of $\hbar/$GeV.
 These are referred to as \emph{Planck units} and are commonly used throughout this thesis along with SI units following the field's standard practice.
-In cases where their presence can be inferred from the quantity, the constants $\hbar$ and $c$ are often suppressed, leaving powers of GeV.
+In cases where their presence can be inferred from the quantity, the constants $\hbar$ and $c$ are often taken as 1 in \emph{Ntural units}, leaving powers of GeV in all the measurement quantities.
 These units are summarized in Table \ref{tab:units}.
 
 \begin{table}[htp]
 \begin{center}
-\begin{tabular}{l l l l}
+\begin{tabular}{c c c c}
 \toprule
-Dimension & SI Units & Natural Units & Abbreviated Units \\
+Dimension & SI Units &  Planck Units & Natural Units \\
+          &          &               & $c=1$, $\hbar = 1$ \\
 \midrule
 Energy    &    1.602$\times10^{-10}$J               & GeV            & GeV \\
 Mass      &    1.783$\times10^{-27}$kg              & GeV/$c^2$      & GeV \\
@@ -162,9 +165,8 @@ Time      &    6.582$\times10^{-25}$s               & $\hbar/$GeV    & GeV$^{-1}
 \end{table}
 
 The probability that two marbles rolled towards each other will collide is proportional to their respective cross-sectional areas.
-Likewise, the probability of a particular interaction between particles is measured in units of area.
-The unit \emph{barn} is defined such that 1b=$10^{-28}\text m^2$.
-It was named during the Manhattan Project by Marshall Holloway and C. P. Baker after the two rejected the idea of naming the unit after John Manley due to the ``use of the term for purposes other than the name of a person''. \cite{holloway}
-As the progenitors remark, the barn is quite a large area to describe particle interactions. 
-Therefore prefixed versions like picobarn ($1\text{pb}=10^{-12}$b) and femptobarn ($1\text{fb}=10^{-15}$b) are commonly used.
-The barn is essentially an SI unit. If it were to be expressed in the natural units of Table \ref{tab:units}, it would be approximately equal to $2568\frac{\hbar^2 c^2}{\text{GeV}^2}$.
+Likewise, the probability of a particular interaction between particles is measured in units of area, called as cross-section.
+The unit \emph{barn} is defined such that 1b=$10^{-24}\text ~cm^2$.
+It was named during the Manhattan Project by Marshall Holloway and C. P. Baker after the two rejected the idea of naming the unit after John Manley due to the ``use of the term for purposes other than the name of a person''\cite{holloway}.
+As the progenitors remark, the barn is quite a large area to describe particle interactions. Therefore prefixed versions like picobarn ($1\text{pb}=10^{-12}$b) and femptobarn ($1\text{fb}=10^{-15}$b) are commonly used in colliding beam experiments.
+The barn is essentially an SI unit. If it were to be expressed in the natural units of Table \ref{tab:units}, it would be approximately equal to $2568~[\frac{\hbar^2 c^2}{\text{GeV}^2}$].
