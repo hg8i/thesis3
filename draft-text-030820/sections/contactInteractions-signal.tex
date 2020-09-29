@@ -126,13 +126,14 @@ The full signal shape is used in an extension of the background functions, Equat
 A signal shape, based on the morphed CI signals, is added to the background-only shape, producing an S+B functional form:
 \begin{align}
 \label{eqn:ciSB}
-f_\textrm{b+s}(m_{\ell\ell},\Lambda) = N_\textrm{b}\cdot f_\textrm{b}(m_{\ell\ell}) + N_\textrm{s}(\Lambda)\cdot f_\textrm{s}(m_{\ell\ell},\Lambda),
+f_\textrm{s+b}(m_{\ell\ell},\Lambda) = N_\textrm{b}\cdot f_\textrm{b}(m_{\ell\ell}) + N_\textrm{s}(\Lambda)\cdot f_\textrm{s}(m_{\ell\ell},\Lambda),
 \end{align}
 where $f_\textrm{s}(m_{\ell\ell},\Lambda)$ is the signal probability density function and $N_\textrm{s}(\Lambda)$ is the number of signal events in the CR.
 Both $f_\textrm{s}(m_{\ell\ell},\Lambda)$ and $N_\textrm{s}(\Lambda)$ are determined by the morphed CI signals.
 The parameter $N_\textrm{b}$ is the number of background events in the CR with the constraint $N_\textrm{b}+N_\textrm{s}(\Lambda)=N_\textrm{CR}$.
 The functional form of Equation \ref{eqn:ciSB} is useful because, even in when a large signal is present in the CR, the $N_\textrm{s}(\Lambda)\cdot f_\textrm{s}(m_{\ell\ell},\Lambda)$ term absorbs it.
 This leaves the background component undeflected by the presence of a signal.
+This property is validated through signal-injection tests detailed in Appendix \ref{sec:ciLinearity}.
 This makes Equation \ref{eqn:ciSB} a useful tool to constrain the degree to which the background-only functions (\ref{eqn:ciBkgEe} and \ref{eqn:ciBkgMm}) have been deflected by the presence of a signal in the CR.
 This will be further discussed, along with other systematic uncertainties, in Section \ref{sec:ciSyst}.
 
@@ -171,5 +172,3 @@ The pattern of varying multiplicity seen in Figure \ref{fig:ciNSigInSr} will lat
 \end{figure}
 \clearpage
 }
-
-\subsection{Linearity}\label{sec:ciLinearity}
