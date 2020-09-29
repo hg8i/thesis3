@@ -1,9 +1,9 @@
 \section{Systematic Uncertainties}\label{sec:ciSyst}
 
-For each hypothesis test performed in this analysis, the null hypothesis is termed ``background-only'' and the alternative hypothesis is termed ``signal+background''.
+For each hypothesis test performed in this analysis, the null hypothesis is termed ``background-only,'' and the alternative hypothesis is termed ``signal+background''.
 Both of these hypotheses predict an event yield in a signal region.
 The background-only hypothesis is derived from the background model described in Section \ref{sec:ciSig}.
-The uncertainties corresponding to its prediction are the uncertainties on the background model, and are described in Section \ref{sec:ciSystBkg}.
+The uncertainties corresponding to its prediction are the uncertainties on the background model and are described in Section \ref{sec:ciSystBkg}.
 Alternatively, the signal+background hypothesis also predicts a contribution to the event yield from a signal process.
 The uncertainties corresponding to its prediction come both from the background model and the signal process; these are described in Sections \ref{sec:ciSystBkg} and \ref{sec:ciSystSig} respectively.
 The groundwork for these uncertainties is described first in Section \ref{sec:ciSystVars}.
@@ -11,11 +11,11 @@ The groundwork for these uncertainties is described first in Section \ref{sec:ci
 \subsection{Simulated Background Variations}\label{sec:ciSystVars}
 
 A number of experimental and theoretical variations on the background shape are used in constructing the uncertainties on the background model and the signal processes.
-The variations considered are due to theoretical and experimental uncertainties in the simulated background, as well as the uncertainties in the backgrounds from multi-jet and $W$+jets processes.
+The variations considered are due to theoretical and experimental uncertainties in the simulated background, as well as those due to the uncertainties in the backgrounds from multi-jet and $W$+jets processes.
 The largest source of uncertainty in the simulated background is theoretical, and it is particularly large at the high end of the dilepton mass spectrum.
-The second largest source of uncertainty in the simulated background is experimental, and is mostly due to high-$p_\text{T}$ muon identification in the dimuon channel.
-The third largest source is the uncertainty in the multi-jet and $W$+jets background components, and is estimated from the data.
-Together, these uncertainties are referred to as \emph{systematic variations}, and are used to study the signal and background uncertainties.
+The second largest source of uncertainty in the simulated background is experimental and is mostly due to high-$p_\text{T}$ muon identification in the dimuon channel.
+The third largest source is the uncertainty in the multi-jet and $W$+jets background components and is estimated from the data.
+Together, these uncertainties are referred to as \emph{systematic variations} and are used to study the signal and background uncertainties.
 
 \subsubsection{Theoretical Simulated Systematics}\label{sec:ciThySyst}
 
@@ -69,7 +69,7 @@ These are illustrated in Figure \ref{fig:ciThyVar}.
 
 \subsubsection{Experimental Simulated Systematics}\label{sec:ciExpSyst}
 
-Uncertainty about the response and performance of the detector lead to systematic experimental uncertainties.
+Uncertainty about the response and performance of the detector leads to systematic experimental uncertainties.
 Among the experimental uncertainty sources in the dielectron channel, the dominant ones are the electron identification at low dielectron masses ($\leq 5\%$, below $\sim2000$~GeV) and the uncertainty in the electromagnetic energy scale at higher dielectron masses ($\leq 15\%$).
 In the muon channel, the dominant experimental uncertainties arise from the muon reconstruction efficiency at low dimuon masses ($\leq 20\%$, below $\sim4000$~GeV) and from the identification of high-\pt muons at higher dimuon masses ($\leq 50\%$).
 The full set of experimental uncertainties are illustrated for the electron channel in Figure \ref{fig:ciExpVarEe}, and for the muon channel in Figure \ref{fig:ciExpVarMm}.
@@ -91,11 +91,11 @@ The full set of experimental uncertainties are illustrated for the electron chan
 \subsubsection{Multijet Electron Background}
 
 The relative uncertainty of the simulated background due to the multi-jet and $W$+jets component rises from $\sim1\%$ at 1~TeV to $\sim10\%$ at 4~TeV.
-For the multi-jet and $W$+jets component variations, the modified shape is used each time along with the other nominal background components from simulation.
+For the multi-jet and $W$+jets component variations, the modified shape is used each time along with the other nominal background components from the simulation.
 This contribution is the smallest amongst all other variations in the CR.
 
 \subsection{Background Estimate}\label{sec:ciSystBkg}
-The background estimate describe in Section \ref{sec:ciBkg} predicts an event yield in the signal region, based on a functional form fit to the events observed in a control region.
+The background estimate described in Section \ref{sec:ciBkg} predicts an event yield in the signal region, based on a functional form fit to the events observed in a control region.
 Several assumptions are made in order to interpret this estimate as the prediction of the background hypothesis.
 Each assumption is made with a degree of uncertainty.
 This is quantified by the three systematic uncertainties described here: the extrapolation uncertainty, the induced spurious-signal (ISS) uncertainty, and the function bias uncertainty.
@@ -118,10 +118,10 @@ These are both measured using statistical ensembles.
 The leading uncertainty on the estimated background is named the extrapolation uncertainty.
 The functional form is fit in the CR to data collected in that region.
 Since many events occupy each CR ($\approx$72k muons and $\approx$54k electrons), the shape of the \mll data distribution approximates the shape of the underlying truth-PDF that generated it.
-However this approximation is not perfect due to statistical fluctuations in the CR.
+However, this approximation is not perfect due to statistical fluctuations in the CR.
 The extrapolation uncertainty quantifies the degree to which statistical fluctuations in the CR may lead to varying background estimates in the SR.
 
-This sort of uncertainty is present in other searches, and is sometimes called a ``function choice'' uncertainty.
+This sort of uncertainty is present in other searches and is sometimes called a ``function choice'' uncertainty.
 Previously this has been estimated by comparing the result of choosing different functional forms to fit to the data.  {\color{red} [add citations, eg W']}
 It is also possible to estimate this impact by looking at the constraints on and covariance of individual parameters of the functional form.
 The procedure detailed here forgoes these estimates for a more direct measurement of the impact of statistical fluctuations on the estimated background.
@@ -130,7 +130,7 @@ To measure this impact, the background functional form is fit to the data in eac
 This produces a smooth, \emph{nominal-PDF} that is the best available estimate of truth-PDF.
 The background estimate from this fit in the SR defines $N_\text{bkg}^\text{Fit Nominal}$.
 The nominal-PDF is used to generate an ensemble of \emph{pseudo-experiments}: toy datasets in the CR invariant-mass region with a multiplicity matching the dataset.
-\footnote{There is no uncertainty as to the multiplicity of the actual dataset, and so this exactly determines the toy dataset multiplicity. An alternative option would be to allow $\sqrt{N}$ fluctuation of the multiplicity of each toys. In this case, the toy datasets correspond to the thought experiment: ``if Run 2 had been repeated, lasting for the same duration, what dataset may have been collected?'' This is not the precise thought experiment of interest. Instead, because a fixed number of events have already been sampled from the truth-PDF, it is asked: ``if an alternative sampling of the truth-PDF had taken place, what dataset may have been collected?''}
+\footnote{There is no uncertainty as to the multiplicity of the actual dataset, and so this exactly determines the toy dataset multiplicity. An alternative option would be to allow $\sqrt{N}$ fluctuation of the multiplicity of each toy. In this case, the toy datasets correspond to the thought experiment: ``if Run 2 had been repeated, lasting for the same duration, what dataset may have been collected?'' This is not the precise thought experiment of interest. Instead, because a fixed number of events have already been sampled from the truth-PDF, it is asked: ``if an alternative sampling of the truth-PDF had taken place, what dataset may have been collected?''}
 Each toy dataset is then fit using the background functional form and the resulting function is extrapolated to the SR to provide a toy background estimate $N_{\text{bkg},i}^\text{Fit Toy}$.
 A comparison is made between the background estimate from the fit to the toy dataset and the nominal fit for each toy $i$:
 \begin{equation*}
@@ -160,12 +160,12 @@ The standard deviation of these distributions is taken to define the systematic 
 The sub-leading uncertainty on the background estimate is called the induced spurious-signal (ISS) uncertainty.
 This quantifies the systematic difference between the background model and the true underlying background-only distribution in the SR.
 The ISS how well the background model can be expected to model the underlying physical distribution from which the data has been sampled.
-If the background functional form were to be fit to the true background-PDF, then the difference between the fitted function and normalized PDF in the CR is the ISS.
-Since any missmodeling of the background, on average, leads to the identification of a signal even in the background-only scenario, this is missmodeling is called a \emph{spurious-signal}.
+If the background functional form were to fit the true background-PDF, then the difference between the fitted function and normalized PDF in the CR is the ISS.
+Since any miss-modeling of the background, on average, leads to the identification of a signal even in the background-only scenario, this miss-modeling is called a \emph{spurious-signal}.
 
 % Challenge with measuring it
 The ISS can not be measured directly, since the background-PDF is unknown.
-It is furthermore inaccurate to use the simulated background-only dataset to measure the ISS because this makes the improper assumption that the nominal simulation matches the shape of the true background-PDF.
+Furthermore, it is inaccurate to use the simulated background-only dataset to measure the ISS because this makes the improper assumption that the nominal simulation matches the shape of the true background-PDF.
 Instead, a new methodology called the \emph{statistical background ensemble} was developed to measure the ISS.
 The general theoretical motivation for the methodology is described in Appendix \ref{sec:backgroundEnsamble}.
 The method seeks to measure the ISS from an ensemble of possible background shapes, each weighted by a prior likelihood.
@@ -195,9 +195,9 @@ For each of the $n$ systematic variations, a standard Gaussian PDF is sampled to
 The result is that each $\vec{\theta}$ of the ensemble is drawn with a probability proportional to the prior probability of the corresponding background shape.
 Then, the background shapes $B'(\mll,\vec{\theta})$ and $B'(\mll,-\vec{\theta})$ are constructed.
 The use of both $\vec{\theta}$ and $-\vec{\theta}$ forces a symmetric sampling of the space of $\vec{\theta}$. 
-This reduces size of the ensemble required to sample the vector space.
+This reduces the size of the ensemble required to sample the vector space.
 
-This process is repeated to build an ensemble of background shapes, which are used to create 2000 Asimov toy datasets.
+This process is repeated to build an ensemble of background shapes used to create 2000 Asimov toy datasets.
 Each toy dataset is fit with the nominal background functional form.
 A comparison is made between SR yields of the fitted function and the Asimov dataset for each toy $i$:
 \begin{equation*}
@@ -214,7 +214,7 @@ The final uncertainty on the background estimate is the function bias uncertaint
 This uncertainty constrains the degree to which a signal, if present in the CR, may bias the background expectation in the SR.
 This is accomplished with the help of the S+B functional form of Equation \ref{eqn:ciSB}.
 The results in Section \ref{sec:ciLinearity} establish that fits of the S+B functional form predict background yields in the SR that are not measurably distorted by the presence of a signal.
-A comparison between the background expectations in the SR of the background-only and the S+B functional forms, when fitted to the data in the CR.
+A comparison is made between the background expectations in the SR of the background-only and the S+B functional forms when fitted to the CR data.
 The difference between these two backgrounds expectations is taken to provide the function bias uncertainty.
 
 The function bias uncertainty is small by construction.
@@ -224,12 +224,12 @@ The high-mass limit of the CR would be lowered until the bias vanished, with no 
 Because the non-resonant signals of interest vanish towards low-mass, reducing the upper limit of the CR would eventually remove the contribution from such a signal.
 
 The results of the function bias measurement are shown in Figure \ref{fig:ciFuncBias}.
-This measurement is repeated for each SR and for each chirality model.
+This measurement is repeated for each SR and each chirality model.
 A conservative choice of the largest bias for any given chirality is selected.
 None of the function bias measurements are significant compared to the dominant uncertainties on the background model.
 Indeed, the impact on the final results is under 2\%.
 
-This uncertainty is only considered for the limits on the contact interaction energy scale \lam, since it depends on the shape of those signals.
+This uncertainty is only considered for the limits on the contact interaction energy scale \lam since it depends on the shape of those signals.
 
 \afterpage{
 \begin{figure}[!htb]
@@ -261,11 +261,11 @@ This uncertainty is only considered for the limits on the contact interaction en
 \subsection{Signal Model}\label{sec:ciSystSig}
 The signal models used in this analysis are more traditional than the background model, and therefore the corresponding systematic uncertainties are fairly standard.
 There are both experimental and theoretical uncertainties to consider.
-The experimental uncertainties, described in Section \ref{sec:ciSigExpSyst}, are applied similarly to the CI signal model, and the model-independent signal production.
+The experimental uncertainties, described in Section \ref{sec:ciSigExpSyst}, are applied similarly to the CI signal model and the model-independent signal production.
 The theoretical uncertainties, described in Section \ref{sec:ciSigThySyst}, must be considered differently.
 The hypothesis test performed by this analysis compares the background hypothesis to the signal+background hypothesis.
-The choice of the signal model unambiguous: there is no uncertainty in what signal model is being tested.
-Theoretical variations, like the PDF choice and $\alpha_s$ scale are part of this signal model choice.
+The choice of the signal model unambiguous: there is no uncertainty in which signal model is being tested.
+Theoretical variations, like the PDF choice and $\alpha_s$ scale, are part of this signal model choice.
 Different theoretical choices describe different signal models.
 Therefore, these different signal models are tested for in separate hypothesis tests.
 
@@ -275,7 +275,7 @@ The experimental uncertainties under consideration are described in Section \ref
 These are produced as functions of invariant-mass \mll.
 The impact of each systematic on the CI signal model is the convolution of the CI shape in \mll and the systematic shape in \mll, but this is relatively independent of the signal shape.
 For different contact interactions, the impact of experimental systematics generally varies by less than 1\%.
-Thus for simplicity these are calculated for the LO DY shape in the CR and applied equally for each CI model.
+Thus, for simplicity, these are calculated for the LO DY shape in the CR and applied equally for each CI model.
 The experimental uncertainties are given in Table \ref{tab:ciExpVariationBonanza}.
 The sum in quadrature of the experimental uncertainties is used to constrain the signal prediction.
 The experimental uncertainties of the signal are $\leq 9\%$ for the electron channel and $\leq 22\%$ for the muon channel.
@@ -365,7 +365,7 @@ DY$\rightarrow \mu\mu$ & dest. ($m_{\mu\mu} \geq 2570$ GeV) & PRW & $\sim 0.0\% 
 
 \subsubsection{Theoretical}\label{sec:ciSigThySyst}
 The theoretical uncertainties under consideration are described in Section \ref{sec:ciThySyst}.
-These are useful in order to provide alternative signal models that correspond to the $1\sigma$ limits on theoretical parameters.
+These are useful to provide alternative signal models that correspond to the $1\sigma$ limits on theoretical parameters.
 The impact of the theoretical uncertainties on the signal yield is calculated in each SR.
 It is equal to the sum in quadrature of the convolution of the theory systematic shapes with the LO DY shape.
 
@@ -374,7 +374,7 @@ It is equal to the sum in quadrature of the convolution of the theory systematic
 
 The numerical values of the uncertainties are given in Table \ref{tab:ciUncerts}.
 For all cases, the relative uncertainties in the destructive SRs are larger than those in the constructive SRs.
-This is due to both the smaller size of the SR leading to less background and hence larger relative uncertainty, and the smaller size of the CR leading to a weaker constraint on the background model.
+This is due to both the smaller size of the SR leading to less background and larger relative uncertainty and the smaller size of the CR, leading to a weaker constraint on the background model.
 For the background estimates, the leading uncertainty in each SR is the extrapolation uncertainty, followed by the ISS uncertainty.
 Many of the experimental and theoretical systematics are measured separately for upward and downward fluctuations.
 
