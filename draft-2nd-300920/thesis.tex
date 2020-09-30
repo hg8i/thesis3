@@ -1,0 +1,59 @@
+\documentclass[12pt]{report}
+
+
+% Macro definitions, packages
+\input{defs.tex}
+
+% Bib info
+\usepackage{cite}
+% \addbibresource{resources.bib}
+% \usepackage[margin=0.7in]{geometry} % 1in for Umich
+\usepackage[margin=1.0in]{geometry} % 1in for Umich
+\setcounter{errorcontextlines}{50}
+
+\title{Searches for the rare decay of the Higgs boson to two muons and for new physics in dilepton final states with the ATLAS Experiment}
+\author{Aaron White}
+
+% \setstretch{0.9} % 1.5 for Umich
+\onehalfspacing
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\input{sections/introduction.tex}
+\input{sections/theory.tex}
+\input{sections/experiment.tex}
+\input{sections/phenomenology.tex}
+\input{sections/objectsDatasets.tex}
+% % % % \input{sections/statistics.tex}
+\input{sections/hmumu.tex}
+\input{sections/contactInteractions.tex}
+\input{sections/summary.tex}
+\input{sections/prospect.tex}
+
+
+\bibliography{resources}{}
+\bibliographystyle{plain}
+
+\appendix
+% \addcontentsline{toc}{chapter}{Appendices}
+
+% \input{appendices/mathNotation.tex}
+% \input{appendices/csmHardware.tex}
+% \input{appendices/dilepton.tex}
+% \input{appendices/hmumu.tex}
+% \input{appendices/hmumuOtherCats.tex}
+% \input{appendices/reinterpretation.tex}
+\input{appendices/backgroundEnsamble.tex}
+\input{appendices/ciLinearity.tex}
+
+
+
+
+
+
+
+\end{document}
