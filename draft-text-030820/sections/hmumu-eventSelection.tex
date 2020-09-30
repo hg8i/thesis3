@@ -6,7 +6,7 @@ This section details the event selection, data, and simulation used in the analy
 \subsection{Event Selection}\label{sec:hmmEv}
 
 All data events are required to pass several criteria before they are considered for analysis.
-Events are only considered if the ATLAS detector was in full operation.
+Events are considered only if they were recorded while the ATLAS detector was in full operation.
 The events meeting this requirement comprise the Good Run List, as summarized in Section \ref{sec:physData}.
 
 Only a small fraction of the many events observed by ATLAS are useful to study. 
@@ -14,12 +14,12 @@ The trigger system decides on an event-by-event basis whether to record an event
 Since \hmm events have muons in their final state, the analysis uses a trigger selection that requires at least one high-\pt muon.
 The \pt threshold varies based on the year of data taking, depending on the trigger system's configuration.
 In 2015 the minimum threshold was $\pt>20$~GeV, while in other years, it was $\pt>26$~GeV.
-For muons with \pt between threshold and 50~GeV, a requirement that the muon's track in the ID is isolated from other tracks is added to reduce the background event rate.
+Muons with a \pt below 50~GeV are required to have isolated tracks in the ID to reduce the background event rate.
 The efficiency of the trigger requirement is $\approx90\%$.
 
 % Object selection
 After passing the trigger requirement, the physics objects that comprise the event are tabulated.
-The most important objects for leptonic VH \hmm are muons and electrons, but jets and \met are also used to remove the background.
+The most important objects for leptonic VH \hmm are muons and electrons, but jets and \met are also used to reduce the background.
 The definitions of the objects make use of identification and isolation requirements defined in Section \ref{sec:physObjects}.
 
 The muons considered in an event meet the requirements listed in Table \ref{tab:hmmMuonObjSel}.

@@ -22,6 +22,9 @@ full: thesis.tex
 	lualatex thesis.tex $<
 	# Post thesis length to website!
 	pdfinfo thesis.pdf | grep Pages | awk '{print "http://www.hg8i.com/thesisPageCount/?pass=4&pageupdate=" $$2}' | xargs curl --silent --output /dev/null $$1
+	# --------------------------------------------------
+	pdfinfo thesis.pdf | grep Pages
+	# --------------------------------------------------
 
 	# ==================================================
 	# Finished:
