@@ -14,6 +14,9 @@ part: thesis.tex
 	-bibtex  $(basename $<)
 	lualatex thesis.tex $<
 	lualatex thesis.tex $<
+	# --------------------------------------------------
+	pdfinfo thesis.pdf | grep Pages
+	# --------------------------------------------------
 
 full: thesis.tex 
 	lualatex thesis.tex $<

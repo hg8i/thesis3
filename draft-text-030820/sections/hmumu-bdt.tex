@@ -9,7 +9,7 @@ The discriminant is calculated using a \emph{boosted decision tree} (BDT) that i
 \centering
 \subfloat[][]{\label{fig:bdtTree}{\includegraphics[width=0.25\textwidth]{figures/hmm/tree.png}}}
 \subfloat[][]{{\includegraphics[width=0.75\textwidth]{figures/hmm/treeEnsamble.png}}}
-\caption{}
+\caption{Figure (a) schematizes an individual decision tree, where in boolean splits based on the value of variables $v$ result in a categorization of signal or data as output. In a CART, the output is replaced by a continuous weight encoding ``signal-like'' versus ``background-like''. Figure (b) schematizes an ensemble of trees with different topologies, each defining an output function.}
 \label{fig:}
 \end{figure}
 
@@ -38,15 +38,15 @@ A training process is defined to select trees, splits, and weights to minimize E
 Essentially it consists of iteratively expanding an ensemble of trees, with each addition addressing the miss-categorization of the previous ensemble.
 One algorithm, AdaBoost, performs this task by iteratively reweighting poorly categorized entries to be more important to the following tree.
 Another algorithm, Gradient Boosting, instead adds trees that are trained on the previous ensemble's poorly categorized entries.
-A recent descendent of AdaBoost and Gradient Boosting is XGBoost, which introduces a modified loss function,
+A recent descendent of AdaBoost and Gradient Boosting is \xgb, which introduces a modified loss function,
 \begin{equation}\begin{split}\label{eqn:lossFuncXgb}
     \mathcal{L}(\phi)=\sum_i l(\hat{y}_i,y_i)+\sum_k \Omega(f_k).
 \end{split}\end{equation} 
 In Equation \ref{eqn:lossFuncXgb}, $\Omega$ is a measure of the complexity a tree.
-XGBoost iteratively adds trees diminishing weights, shrinking their importance by a constant factor.
-XGBoost also introduces procedures to more quickly add and remove branches from trees while fitting the loss function.
+\xgb iteratively adds trees diminishing weights, shrinking their importance by a constant factor.
+\xgb also introduces procedures to more quickly add and remove branches from trees while fitting the loss function.
 These result in an output function that can be trained quickly.
-The XGBoost algorithm is used to construct the multivariate discriminant functions that are used in this analysis.
+The \xgb algorithm is used to construct the multivariate discriminant functions that are used in this analysis.
 \cite{xgboost}
 
 % Overtraining
@@ -84,7 +84,7 @@ In cross-validation, a separate MVA is fit to each permutation, such that each e
 This problem is avoided by introducing the $k$-fold split of the available simulated datasets into $k>2$ subsets of equal multiplicity.
 One subset is labeled as the ``testing'' set, and another is labeled as a ``validation'' set.
 The remaining subsets are combined as a ``training'' set.
-This is illustrated in the top of Figure \ref{testTrainVal.png}.
+This is illustrated in the top of Figure \ref{fig:testTrainVal}.
 The BDT is trained with the training set, and further predictions with respect to the simulation are performed with the testing set.
 Since the testing set has not been exposed to the BDT during training, there is no chance of over-training of the discriminant scores in the testing set.
 There remains the issue of selecting thresholds that define the signal-rich category to optimize, for example, the expected sensitivity.
@@ -95,7 +95,7 @@ This set is used to study the convergence of the training process, check for ove
 The final consideration is to inefficiency that such a division of the simulation set entails.
 Simulated events are computationally expensive to produce.
 A \emph{cross-validation} scheme calls for the permutation of each of the $k$ subdivisions, such that each event appears once in a test set, available for further analysis.
-This is shown in Figure \ref{testTrainVal.png}.
+This is shown in Figure \ref{fig:testTrainVal}.
 A separate BDT is trained with the training set from each permutation.
 This means that each event in the full dataset has one discriminant score from a BDT for which it is in the testing set, one for which it is in the validation set, and $k-2$ for which it was in the training set.
 The scores from the BDT for which an event was in the testing and validation sets are the testing and validation scores, respectively.
@@ -104,12 +104,11 @@ The scores from the BDT for which an event was in the testing and validation set
 \label{sec:hmmBdtConfiguration}
 
 % Training details
-Separate classifiers are trained for 3-lepton and 4-lepton categories, but there are a number of similarities.
-The first is in the treatments of the labeled that consist of simulated signal and background events.
-A 5-fold splitting of the available signal and background sample is used.
-It is important to note that the testing sample remains blinded until all choices related to the categorization channels have been fixed.
-The output of the BDT on the testing sample represents the final result of the BDT, and it is essential to refrain from making choices related to the BDT performance on the testing set.
-A cyclic permutation of the 5-fold splitting is used, such that a separate BDT is trained for each fifth of the total sample.
+Separate classifiers are trained for 3-lepton and 4-lepton categories, but there are many similarities between these.
+A 5-fold splitting of the available signal and background simulation is used.
+It is important to note that the testing set remains blinded until all choices related to the categorization channels have been fixed.
+The output of the BDT on the testing set is final, and it is essential to refrain from making choices related to the procedure based on the testing set.
+A cyclic permutation of the 5-fold splitting is used, such that a separate BDT is trained for each fifth of the total simulation.
 
 % Samples
 Each BDT is trained using the simulated background, in which all background components are included.
@@ -122,22 +121,21 @@ The numbers of available simulated events for training are shown in table \ref{t
 \begin{table}[htbp]
  \begin{center}
 \begin{tabular}{l r r r}\toprule
-Sample               & Total Events & Training Events \\
+Simulation           & Total Events & Training Events \\
 4-lepton signal      & 20700        & 12508    \\
 4-lepton background  & 88314        & 53081    \\
 3-lepton signal      & 134936       & 80962    \\
 3-lepton background  & 185286       & 111107   \\
 \bottomrule\end{tabular} 
  \end{center}
- \caption{Numbers of MC events available for training, both in the full sample, and the 3/5 training sample statistics.}
+ \caption{Numbers of MC events available for training, both in the full simulation, and the 3/5 training sets statistics.}
 \label{tab:hmmSampleStatistics}
 \end{table}
 
 % Training variables
 The set of variables provided as input for the BDT was chosen from a broader set of candidate variables with physical motivations.
-This set was reduced in the order of ascending \emph{feature importance}, defined as the number of times the variable is used for a decision node, weighted by the events categorized by the node.
-The reduction ceased when the performance of the BDT began to decline.
-The performance is measured using the validation scores and the area-under-curve, as shown in Figure \ref{fig:hmmBdtRoc}.
+This set was reduced in the order of ascending \emph{feature importance}, defined as the number of times the variable is used for a decision node, weighted by the number of events categorized by the node during training.
+The reduction continued until the performance of the BDT began to decline.
 
 Different variables are defined based on the different final state topologies in the inclusive 4-lepton and 3-lepton categories.
 The variables for each are listed in Tables \ref{tab:hmm3lepVars} and \ref{tab:hmm4lepVars}.
@@ -221,64 +219,66 @@ Variable & Definition \\
 
 %%%%%%%%%%%% Variable importance
 
-\begin{figure}[htpb]
-  \centering
-  \includegraphics[height=0.48\textwidth]{figures/hmm/nJets/histo-3lep-nJets.pdf}
-  \includegraphics[height=0.48\textwidth]{figures/hmm/zCand/histo-4lep-auxDilep_mass.pdf}
-  \caption{Left: N Jets distribution for 3-lepton channel, right: Z candidate mass for 4-lepton channel. These are the highest ranked in feature importance for their category's respective BDT's.}
-    \label{fig:hmmImpVars}
-\end{figure}
+% \begin{figure}[htpb]
+%   \centering
+%   \includegraphics[height=0.48\textwidth]{figures/hmm/nJets/histo-3lep-nJets.pdf}
+%   \includegraphics[height=0.48\textwidth]{figures/hmm/zCand/histo-4lep-auxDilep_mass.pdf}
+%   \caption{Left: N Jets distribution for 3-lepton channel, right: Z candidate mass for 4-lepton channel. These are the highest ranked in feature importance for their category's respective BDT's.}
+%     \label{fig:hmmImpVars}
+% \end{figure}
 
-The importance of the variables used in the training is shown in the plots of figure \ref{fig:hmmVarImport}.
-In the 4-lepton case, the most important variable is the mass of the Z candidate, which helps identify the signal.
-In the 3-lepton case, the most important variable is the number of jets, which helps to separate out Top backgrounds.
-The distributions of these two variables are shown in figure \ref{fig:hmmImpVars}.
-Detailed definition: \href{https://scikit-learn.org/stable/modules/feature_selection.html}{\underline{here}}.
+The feature importance of the variables used in the training is shown in the plots of figure \ref{fig:hmmVarImport}.
+In the 4-lepton case, the most important variable is the mass of the \Z candidate, which helps identify the signal.
+In the 3-lepton case, the most important variable is the number of jets, which helps especially to separate out top quark backgrounds.
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[height=7cm]{figures/hmm/bdtImportance/imp-4lep.pdf}
-  \includegraphics[height=7cm]{figures/hmm/bdtImportance/imp-3lep.pdf}
-  \caption{The 4-lepton (left) and 3-lepton (right) variables shown with their respective feature importance, summed over each of the five BDT's trained for each cross-validation permutation. $H$ stands for the Higgs candidate, $Z$ for the Z candidate, $l$ for the additional leptons in the event, and $j$ for the jets in the event. The number after the lepton or jet corresponds to the rank of it's $p_T$.}
+  \includegraphics[height=8cm]{figures/hmm/bdtImportance/imp-4lep.pdf}
+  \includegraphics[height=8cm]{figures/hmm/bdtImportance/imp-3lep.pdf}
+  \caption{The 4-lepton (left) and 3-lepton (right) variables shown with their respective feature importance, averaged over the five BDTs trained for each cross-validation permutation. The importance of a variable is defined relative to the other variables.}
     \label{fig:hmmVarImport}
 \end{figure}
 
-\clearpage
-
-\subsection{Performance}
-\label{sec:hmmBdtPerform}
-
-The figure of merit for judging the BDT performance is the area under the receiver operating characteristic (ROC) curve (AUC). The ROC's for representative BDT's are shown for both 3- and 4-lepton categories in figure \ref{fig:hmmBdtRoc}. These show comparable performance for the BDT's of both categories and the impact of the relatively limited statistics of the 4-lepton sample. The signal and background samples shown in the ROC plots correspond to the same samples used for the training, so only WH and ZH signals are shown.
+The performance of a BDT is measured using the validation scores of the receiver operator curve (ROC).
+The ROC is a parametric function of the BDT discriminant, plotted as the rate of correct signal categorizations (true positive rate) compared to the rate of false categorization of background as signal (false positive rate).
+This is plotted in Figure \ref{fig:hmmBdtRoc} for a number of discriminant thresholds that define signal versus background.
+A figure of merit used to evaluate the ROC is area-under-curve (AUC).
+These show comparable performance for the BDTs of both categories and the impact of the relatively limited statistics of the 4-lepton sample.
+As a cross check, the ROC curve for the training set is plotted along with the validation set. The agreement between these, within statistical uncertainty, does not indicate clear over-training effects.
+The signal and background samples shown in the ROC plots correspond to the same samples used for the training; only WH and ZH signals are used in the definition of the ROC.
 
 \begin{figure}[htpb]
   \centering
   \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/roc-4lep-ZH-AllBackground-0-depth2-nEst80tag-new-AllBackground.pdf}
   \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/roc-3lep-WH-AllBackground-0-depth2-nEst50tag-new-AllBackground.pdf}
-  \caption{4 lepton (left) and 3 lepton (right) ROC curves for representative BDT's. Shown in black is the curve for the training set, while red shows the curve for the validation set (labeled test set). Error bars are statistical only. The AUC is labeled on each plot.}
+  \caption{4 lepton (left) and 3 lepton (right) ROC curves for representative BDT's. Shown in black is the curve for the training set, while red shows the curve for the validation set (labeled test set). Error bars are statistical uncertainties due to the size of the training and validation datasets. The AUC is labeled on each plot.}
     \label{fig:hmmBdtRoc}
 \end{figure}
 
-Figure \ref{fig:hmmBdtScoreLin} shows the BDT discriminant response for different categories of signal and background, scaled the samples cross-section and luminosity. The signal/background separation is more apparent in this plot than in those normalized to the physical expectation.
+% Figure \ref{fig:hmmBdtScoreLin} shows distributions of the BDT discriminant for different categories of signal and background, scaled the samples cross-section and luminosity.
+% The signal/background separation is more apparent in this plot than in those normalized to the physical expectation.
 
 
-\begin{figure}[htpb]
-  \centering
-  \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/bar20-4lep-ZH-AllBackground-0-depth2-nEst80tag-new-AllBackground.pdf}
-  \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/bar20-3lep-WH-AllBackground-0-depth2-nEst50tag-new-AllBackground.pdf}
-  \caption{4 lepton (left) and 3 lepton (right) distributions of the BDT discriminant, where the signal and background samples share a normalization. The signal distribution is that of the sample used for training, not the full signal MC sample.}
-    \label{fig:hmmBdtScoreLin}
-\end{figure}
+% \begin{figure}[htpb]
+%   \centering
+%   \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/bar20-4lep-ZH-AllBackground-0-depth2-nEst80tag-new-AllBackground.pdf}
+%   \includegraphics[width=0.48\textwidth]{figures/hmm/bdtHist/bar20-3lep-WH-AllBackground-0-depth2-nEst50tag-new-AllBackground.pdf}
+%   \caption{4 lepton (left) and 3 lepton (right) distributions of the BDT discriminant, where the signal and background samples share a normalization. The signal distribution is that of the sample used for training, not the full signal MC sample.}
+%     \label{fig:hmmBdtScoreLin}
+% \end{figure}
 
-Figure \ref{fig:hmmBdtScore} shows the BDT discriminant calculated in different categories and scaled by the samples cross-section and luminosity. The signal and background composition is more apparent in these plots: primarily, the target signal production mechanism is separated. Top backgrounds are particularly well separated owing in part to the high statistics available for these samples.
+Figure \ref{fig:hmmBdtScore} shows the BDT discriminant calculated in different categories and scaled by the samples cross-section and luminosity.
+The signal and background composition is more apparent in these plots: primarily, the target signal production mechanism is separated from other signals.
+The top backgrounds are particularly well separated owing in part to the high statistics available for these samples in the training sets.
 
-{\color{red} This paragraph section is slightly redundant. Merge into next section?}
-Exclusive categories are defined based on discriminant cuts that produce varying levels of signal purity.
-The category ``4-lepton high-purity'' is defined in the 4-lepton selection by requiring 4-lepton BDT score greater than 0.12. 
-Two categories are defined from the 3-lepton selection: ``3-lepton high-purity'' and ``3-lepton middle-purity''. 
-The former is selected by requiring 3-lepton BDT score greater than 0.7,
-and the latter is selected by requiring 3-lepton BDT score less than 0.7
-but greater than 0.1.
-The events failing VH categorization are still considered in the inclusive categories.
+% {\color{red} This paragraph section is slightly redundant. Merge into next section?}
+% Exclusive categories are defined based on discriminant cuts that produce varying levels of signal purity.
+% The category ``4-lepton high-purity'' is defined in the 4-lepton selection by requiring 4-lepton BDT score greater than 0.12. 
+% Two categories are defined from the 3-lepton selection: ``3-lepton high-purity'' and ``3-lepton middle-purity''. 
+% The former is selected by requiring 3-lepton BDT score greater than 0.7,
+% and the latter is selected by requiring 3-lepton BDT score less than 0.7
+% but greater than 0.1.
+% The events failing VH categorization are still considered in the inclusive categories.
  
 \begin{figure}[htpb]
   \centering
@@ -293,16 +293,16 @@ The events failing VH categorization are still considered in the inclusive categ
 \subsection{Categorization}
 
 The event selection results in two selections: 4-lepton and 3-lepton.
-Next, using the BDT discriminant scores, these selections are further divided into sub-categories based on the relative purity of the signal.
+Next, using the BDT discriminant scores, these selections are further divided into \emph{exclusive} categories based on the relative purity of the signal.
 The 4-lepton category is divided once into low-purity and high-purity categories.
 The 3-lepton category, since the event multiplicity is higher, is divided into low-, medium-, and high-purity categories.
 
 Each event belongs to both a validation dataset and a testing dataset, each of which has an associated discriminant score.
-The validation scores are considered when selecting the score thresholds between categories.
+The validation scores are considered when selecting the score thresholds delineating categories.
 The testing scores are used for the final hypothesis test and limit setting.
 An optimization scan over various thresholds of the expected significance is performed.
-The choice of thresholds made that results in the highest expected significance using the validation scores.
-These are specified in Table \ref{tab:hmmBdtCuts}.
+The thresholds are selected in order to produce the highest expected significance, based on the validation scores.
+These thresholds are specified in Table \ref{tab:hmmBdtCuts}.
 
 \begin{table}[htp]
 \begin{center}
@@ -337,7 +337,8 @@ Since the analysis of the data includes the signal model based on simulation, su
 \end{figure}
 \clearpage
 
-The high and middle-purity categories are considered for further analysis, while the low-purity events are only analyzed in the inclusive categories defined before the BDT cut.
+The high and middle-purity categories are considered for further analysis.
+The low-purity events, containing few expected signal events, are only analyzed in the inclusive categories defined prior to BDT cut.
 The distributions of \muu are shown in Figures \ref{fig:hmmPrecutMassHists} and \ref{fig:hmmPostcutMassHists}.
 The former shows the inclusive distribution before further categorization with the BDT discriminant.
 The latter shows the distributions in the categories defined in Table \ref{tab:hmmBdtCuts}.
