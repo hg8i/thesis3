@@ -29,7 +29,7 @@ Hamilton's principle states that action $S$ is minimized when the fields $\phi_i
 This minimization results in the Euler-Lagrange equation:
 \begin{equation}\begin{split}\label{eqn:el}
     % \frac{\partial\mathcal{L}}{\partial\phi}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\delta_\mu\phi)}\right)=0
-    \frac{\partial\mathcal{L}}{\partial\phi_i}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\partial(\delta_\mu\phi_i)}\right)=0
+    \frac{\partial\mathcal{L}}{\partial\phi_i}-\partial_\mu\left(\frac{\partial\mathcal{L}}{\delta(\partial\mu\phi_i)}\right)=0
 \end{split}\end{equation} 
 Solving Equation \ref{eqn:el} for a given Lagrangian density yields the \emph{equations of motion} for each field.
 
@@ -51,7 +51,7 @@ Another commonly used type of field is the \emph{Dirac} field.
 These fields are four-component, represented by 4-vectors.
 Fermions are an example of particles represented by Dirac fields.
 Finally, a commonly used type of field is the \emph{vector} field.
-An example is the 4-vector from electromagnetism $A^\mu=(V,\vec{A})$ consisting of the electric potential $V$ and the magnetic potential $\vec{A}$.
+An example is the electromagnetic potential from electromagnetism, $A^\mu=(V,\vec{A})$, which consists of the electric potential $V$ and the magnetic potential $\vec{A}$.
 In the following paragraph, Lagrangians containing each of these fields are shown, along with the corresponding result of Equation \label{eqn:el}.
 
 
@@ -63,14 +63,14 @@ As an example, a scalar field $\psi$ described by a simple Lagrangian given in E
 % \partial_\mu\frac{\partial\mathcal{L}}{\partial(\delta_\mu)}=&\partial_\mu\partial^\mu\phi \\
 % \partial_\mu\partial^\mu\phi+m^2\phi=&0; \quad\text{Klein-Gordon wave equation}
 \end{split}\end{equation}
-Plugging equation Equation \label{eqn:scalarLagrangian} into the Euler-Lagrange Equation \label{eqn:el} yields the Klein-Gordon equation of motion.
+Plugging equation Equation \ref{eqn:scalarLagrangian} into the Euler-Lagrange Equation \label{eqn:el} yields the Klein-Gordon equation of motion.
 An analogous Lagrangian can be written for Dirac fields, $\Psi$, and is given in Equation \ref{eqn:diracLagrangian}.
 \begin{equation}\begin{split}\label{eqn:diracLagrangian}
     \mathcal{L}_\text{Dirac}=i\overline{\Psi}\gamma^\mu\partial_\mu\Psi-m\overline{\Psi}\Psi \\
 \end{split}\end{equation} 
 Where $\overline{\Psi}=\Psi^\dagger\gamma^0$ is the Hermitian conjugate.
 Taking the derivatives in Equation \label{eqn:el} yields the Dirac equation of motion.
-Finally a Lagrangian for the vector field $A^\mu$ can be written, with the definition $F^{\mu\nu}\equiv\partial^\mu A^\nu-\partial^\nu A^\mu$, as shown in Equation \ref{eqn:vectorLagrangian}.
+Finally a Lagrangian for the vector field $A^\mu$ can be constructed with the definition of the field tensor $F^{\mu\nu}\partial^\mu A^\nu-\partial^\nu A^\mu$, as shown in Equation \ref{eqn:vectorLagrangian}.
 \begin{equation}\begin{split}\label{eqn:vectorLagrangian}
     \mathcal{L}_\text{vector}=&-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
 \end{split}\end{equation} 
@@ -80,25 +80,25 @@ The fields and their equation of motion are summarized in Table \ref{tab:fields}
 \begin{table}[htp]
 \begin{center}
 {\footnotesize
-\begin{tabular}{l | l l l l}
+\begin{tabular}{l l l l l}
 \toprule
 Field & Symbol & Equation of motion  \\
-Scalar & $\phi(x)$    & $\partial_\mu\partial^\mu\phi+m^2\phi=0$  \\
+\midrule
+Scalar & $\phi(x)$    & $\partial_\mu\phi\partial^\mu\phi+m^2\phi=0$  \\
 Dirac  & $\Psi(x)$    & $i\gamma^\mu\partial_\mu\Psi-m\Psi=0$  \\
 Vector & $A^\mu(x)$   & $\partial_\mu F^{\mu\nu}=0$  \\
-\multirow{2}{*}{Weyl} & \multirow{2}{*}{$\psi(x)$}   & $i\overline{\sigma}^\mu\partial_\mu\psi_L=0$ \\
-                      &                              & $i\sigma^\mu\partial_\mu\psi_R=0$  \\
-\midrule
+% \multirow{2}{*}{Weyl} & \multirow{2}{*}{$\psi(x)$}   & $i\overline{\sigma}^\mu\partial_\mu\psi_L=0$ \\
+%                       &                              & $i\sigma^\mu\partial_\mu\psi_R=0$  \\
 \bottomrule
 \end{tabular}
 }
-\caption{Summary of fields and their transformations. In some cases, additional symbols will be used to avoid ambiguity.}
+\caption{Summary of fields, along with examples of their equations of motion derived from the Euler-Lagrange equation for free fields.}
 \label{tab:fields}
 \end{center}
 \end{table}
 
 The Lagrangians of Equations \ref{eqn:scalarLagrangian}, \ref{eqn:diracLagrangian}, and \ref{eqn:vectorLagrangian} all describe freely propagating particles; scalar, Dirac, and vector particles respectively.
-Interactions between particles complicate the Lagrangian with additional terms containing multiple fields in a single term.
+Interactions between particles complicate the Lagrangian with terms containing more than two fields.
 
 \subsubsection{The Matrix Element}\label{sec:me}
 

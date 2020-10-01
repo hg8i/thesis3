@@ -275,7 +275,7 @@ Lepton 2 & $\psi_1=\begin{pmatrix}\nu_\mu\\\mu\end{pmatrix}_L$    & $\psi_2=\nu_
 Lepton 3 & $\psi_1=\begin{pmatrix}\nu_\tau\\\tau\end{pmatrix}_L$  & $\psi_2=\nu_{\tau R}$, $\psi_3=\tau_R$ \\
 \bottomrule
 \end{tabular}
-\caption{Definitions of $\psi_1$, $\psi_2$, and $\psi_3$.}
+\caption{Definitions of $\psi_1$ as left-handed doublets, and $\psi_2$ and $\psi_3$ as right-handed singlets, for different generations of fermion. To avoid confusion, it should be noted that there are no couplings to the right-handed neutrino fields in the Standard Model.}
 \label{tab:su2Doublets}
 \end{center}
 \end{table}
@@ -535,8 +535,7 @@ Name & Lagrangian Term & Drawing & Rule \\
 \toprule
 Name & Lagrangian Term & Drawing & Rule \\
 \midrule
--\frac{g}{\sqrt{2}}W_\mu^+[\nu_\ell\gamma^\mu \ell_L+\ubar\gamma^\mu d_L]
-\centered{Charged-current quark\\interaction}  & $\frac{g}{\sqrt{2}}W_\mu^+[\ubar\gamma^\mu d_L]$     & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson] v , v --[fermion] b[particle=\(q\)], {d[particle=\(q'\)]} --[fermion] v  };$} & $\frac{g}{2^{3/2}}(1-\gamma_5)$  \\[1.0em]
+\centered{Charged-current quark\\interaction}  & \centered{$\frac{g}{\sqrt{2}}W_\mu^+[\ubar\gamma^\mu d_L]$\\($u/d$ is an \\up/down-type quark)}     & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson] v , v --[fermion] b[particle=\(q\)], {d[particle=\(q'\)]} --[fermion] v  };$} & $\frac{g}{2^{3/2}}(1-\gamma_5)$  \\[1.0em]
 \centered{Charged-current lepton\\interaction} & $\frac{g}{\sqrt{2}}W_\mu^+\nu_\ell\gamma^\mu \ell_L$ & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson] v , v --[fermion] b[particle=\(\ell\)], {d[particle=\(\nu_\ell\)]} --[fermion] v  };$} & $\frac{g}{2^{3/2}}(1-\gamma_5)$  \\[1.0em]
 \centered{$\gamma W^+W^-$\\interaction}        & $\mathcal{L}_3$ & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson,momentum=\(k\)] v , v --[charged boson,momentum=\(q\)] b[particle=\(W^\nu\)], {d[particle=\(A_\mu\)]} --[boson,momentum=\(p\)] v  };$} & \centered{$ie[g^{\mu\nu}(p-q)^\rho+$\\$~~~g^{\nu\rho}(q-k)^\mu+$\\$~~~g^{\rho\mu}(k-p)^\nu]$}  \\[1.0em]
 \centered{$Z W^+W^-$\\interaction}             & $\mathcal{L}_3$ & \centered{$\feynmandiagram [ssmall,baseline=(v.base),horizontal=d to v] { {a[particle=\(W^\mu\)]} --[charged boson,momentum=\(k\)] v , v --[charged boson,momentum=\(q\)] b[particle=\(W^\nu\)], {d[particle=\(Z_\mu\)]} --[boson,momentum=\(p\)] v  };$} & \centered{$ig\cos(\theta_W)[g^{\mu\nu}(p-q)^\rho+$\\$~~~~~~~~~~~~~~g^{\nu\rho}(q-k)^\mu+$\\$~~~~~~~~~~~~~~g^{\rho\mu}(k-p)^\nu]$}  \\[1.0em]
@@ -547,7 +546,7 @@ Name & Lagrangian Term & Drawing & Rule \\
 \bottomrule
 \end{tabular}
 }
-\caption{Summary of the Feynman rules for the EW Lagrangian, including the scalar Higgs field. For convenience, $X^{\mu\nu,\rho\sigma}\equiv2g^{\mu\nu}g^{\rho\sigma}-g^{\mu\rho}g^{\nu\sigma}-g^{\mu\sigma}g^{\nu\rho}$. Fields marked ``$\mathcal{L}_3$'' and ``$\mathcal{L}_4$'' arise from the expansion of Equation \ref{eqn:ewNoInt} in terms of the corresponding numbers of vector fields.}
+\caption{Summary of the Feynman rules for the EW Lagrangian, including the scalar Higgs field. For convenience, $X^{\mu\nu,\rho\sigma}\equiv2g^{\mu\nu}g^{\rho\sigma}-g^{\mu\rho}g^{\nu\sigma}-g^{\mu\sigma}g^{\nu\rho}$. Fields marked ``$\mathcal{L}_3$'' and ``$\mathcal{L}_4$'' arise from the expansion of Equation \ref{eqn:ewNoInt}.}
 \label{tab:ewRules2}
 \end{center}
 \end{table}
@@ -598,10 +597,12 @@ Since the discovery of the Higgs boson, the full SM Lagrangian is often presente
 \begin{flalign}\label{eqn:smLagrangian}
 ~&~& \mathcal{L}_\text{SM} =& -\frac{1}{4}F^a_{\mu\nu}F^{a,\mu\nu}               &\text{gauge fields} &~ \notag\\
 ~&~&                        & +i\overline{\Psi}_i\slashed{D}\Psi_i+\text{h.c.}   &\text{covariant derivatives} &~ \notag\\
-~&~&                        & +\Psi_iy_{ij}\Psi_j\Phi+\text{h.c.}                &\text{Yukawa couplings} &~ \notag\\
+~&~&                        & +\overline{\Psi}_iy_{ij}\Psi_j\Phi+\text{h.c.}                &\text{Yukawa couplings} &~ \notag\\
 ~&~&                        & +D_\mu\Phi D^\mu\Phi-V(\Phi,\Phi^\dagger);         &\text{Higgs terms} &~
 \end{flalign}
-This form of the Lagrangian begins with a sum over the contracted the gauge field strength tensors $F^a$.
+This form of the Lagrangian begins with a sum over the contracted the gauge field strength tensors $F^a$, which includes the eight gluon fields from Equation \ref{eqn:qcdLagrangian2} and the four electroweak fields from Equation \ref{eqn:ewFieldTensor}.
 The next line contains the covariant derivatives acting on fermion fields $\Psi_i$. There is an implicit sum over index $i$ covering all fermions.
-The third line contains Yukawa couplings for each fermion, again summed over indices $i$ and $j$. \footnote{Here, the Yukawa coupling constants from Equation \ref{eqn:yukawaCoupling} have been replaced with matrices, as the fields $\Psi$ are gauge eigenstates, rather than mass eigenstates.}
+The third line contains Yukawa couplings for each fermion, again summed over indices $i$ and $j$.
+The Yukawa coupling constants are described compactly by $3\times3$ matrices, $y_{ij}=\frac{\sqrt{2}}{mv}$, that correspond to the masses from Equation \ref{eqn:fermionYukawaLagrangian}.
+This is because the fields $\Psi$ are gauge eigenstates, rather than mass eigenstates.
 The final line contains the scalar kinetic term and the Higgs potential.

@@ -1,9 +1,14 @@
 % ##############################################################
+Since the SM is constructed based on certain symmetry groups, 
+this class of the mathematical structure will be the focus of the remainder of this section.
 \section{The Universe and the Particles}
 % ##############################################################
 
-The Universe consists of the building blocks -- particles, the space they inhabit, and the interactions between them.
-The experimental observations are the foundations of the theory development which uses elegant mathematics to present the elementary particles and fundamental interactions, known as strong and electroweak interactions, presented in the Standard Model (SM) of particle physics.
+The Universe consists of particles, the space they inhabit, and the interactions between them.
+Experimental observations are the foundations of the our knowledge of these building blocks.
+The extent to which these components are described by mathematics is the profound, and historically unintuitive, foundation on which the field of physics is based.
+The most complete mathematical description of these building blocks based, on experimental knowledge, is the Standard Model (SM) of particle physics.
+This theory describes the known nature and behaviors of particles, with the exception of those behaviors related to gravity.
 This chapter provides the mathematical context for this description.
 
 To make this chapter self-contained, this section will first introduce a variety of topics related to particle physics.
@@ -13,24 +18,26 @@ After this, the SM will be described.
 The final two sections will present an interpretation of the SM in the context of this thesis. First for Higgs coupling to muons, and next for contact interactions.
 
 \subsubsection{Particles}
-Fundamental particles are the most basic building block of matter, observed in experiments with detectable properties, such as mass, charge, spin, life-time, decay modes, as well as their interaction coupling strength.
+Fundamental particles are the most basic unit of matter, with observable properties including mass, charge couplings, spin, and lifetime.
+Particles with integer spins are called bosons, while particles with half-integer spins are called fermions.
 The observed particles can be composite, such as quark bounded states, or elementary.
-The SM describes the matter particles at the most fundamental level -- no internal structures that appear as mathematical point-like objects within the theory.
-Particles with integer spins (0, 1, 2) are classified as Bosons, while particles with half-integer spins (\half) are classified as Fermions in the theory.
+The SM describes the matter particles at the most fundamental level, point-like, no internal structures that appear as mathematical objects within the theory.
+The SM describes the matter particles as fundamental, with no internal structures.
+
 
 % Fermions
-The Fermions are further divided into quarks with fractional electric charges and leptons with integer electric charge.
+The fermions are further divided into quarks with fractional electric charges and leptons with integer electric charge.
 Quarks commonly exist in bound-states consisting of two (meson) and three (baryon) quarks.
 In ascending mass, the charged leptons are the electron, the muon, and the tauon.
 The neutral leptons are neutrinos.
 % Bosons
-The vector bosons mediate forces between the particles.
+The bosons mediate forces between the particles.
 The most familiar boson, the photon, mediates the electromagnetic force between charged particles.
-The gluons carry the strong nuclear force, bounding the quarks inside hadrons.
+The gluons carry the strong nuclear force, binding quarks inside multi-quark composite particles called hadrons.
 The \W and \Z bosons carry the weak nuclear force, responsible for nuclear beta decays.
-Finally, the recently discovered Higgs boson mediates a momentum exchange between particles to generate masses of the particles.
+Finally, the recently discovered Higgs boson mediates a momentum exchange between particles.
 % Summary
-These particles are summarized in the SM shown in Table \ref{tab:particles}.
+The particles in the SM are summarized in Table \ref{tab:particles}.
 
 \begin{table}[htp]
 \begin{center}
@@ -90,7 +97,7 @@ For each force, the momentum exchange is mediated by a boson.
 Gluons mediate the strong nuclear force.
 The weak nuclear force is mediated by the \Wp, \Wm, and \Z bosons.
 Photons mediate the electromagnetic force.
-It is expected that gravity is mediated by a hypothetical particle called a graviton; however, this has not been observed. The gravitational interaction strength is more than an order of 40 magnitude smaller compared to the electromagnetic interaction. At the microscopic level, the interaction of the gravity could be ignored and is not included in the SM of particle physics.
+It is expected that gravity is mediated by a hypothetical particle called a graviton; however, this has not been observed. The gravitational interaction strength is more than an order of 40 magnitude smaller compared to the electromagnetic interaction. At the microscopic level, the interaction of the gravity could be ignored and is not included in the Standard Model.
 
 In 2012, the ATLAS and CMS experiments at the Large Hadron Collider at CERN discovered the Higgs boson. Like the vector bosons associated with the four canonical forces, the scalar particle, Higgs boson, mediates a momentum exchange between particles. The interactions with fermions are not universal, proportional to fermion's mass.
 
@@ -116,10 +123,8 @@ Higgs            & Higgs      &  $< 10^{-5}$ &   $10^{-19}$ \\
 
 \subsection{Units}
 
-Enormous energy concentrations are required to enable the production of massive particles and facilitate interactions with small cross sections.
-In order to study these processes, it is convenient to define units of measurements using energy as 
-the basic unit to describe
-the particle mass, momentum, life-time, and their flight distance (length).
+Enormous energy concentrations are required to enable the production of massive particles and facilitate rare interactions.
+In order to study these processes, it is convenient to define units of measurements using energy as the basic unit to describe the particle mass, momentum, lifetime, and travel distance.
 
 Energies are measured in units of \emph{electron-volts}, eV.
 This is equal to the energy required to move an electron through one volt of electric potential.
@@ -129,20 +134,21 @@ One mega-electronvolt (MeV) is one million eV, and is the energy scale reached b
 One giga-electronvolt (GeV) is one billion eV, and became accessible with the development of synchrotron accelerators that gradually increased their fields to reach higher energies.
 One tera-electronvolt (TeV) is one trillion eV.
 The stack of AA batteries required to accelerate an electron to 1 TeV would reach from Earth to Mars at its closest approach.
-The TeV scale was first reached at the Tevatron  proton-antiproton collider at the Fermilab in US in 80th of last Century. The energy at the 
-Large Hadron Collider at CERN has been further increased to 13 TeV at 2015.
+Although the Tevatron at Fermilab came close, the TeV scale was first reached at the Large Hadron Collider (LHC) at CERN.
+The energy at the LHC subsequently accelerated protons to energies of 7~TeV.
 The particular energy scales of interest in this thesis range from tens of GeV to tens of TeV.
 
 Several quantities are useful in describing interactions between particles: energy, mass, momentum, distance, and time.
 The unit of eV already describes quantities of energy.
-In standard international (SI) units, energy is measured in units of joules $[J]$ that equals to [kg$\frac{\text m^2}{\text s^2}$]. Mass is, therefore, expressible as energy divided by velocity squared.
+In standard international (SI) units, energy is measured in units of joules (J) equal to kg$\frac{\text m^2}{\text s^2}$.           
+Mass is, therefore, expressible as energy divided by velocity squared.
 A convenient velocity to use is the speed of light, $c$.
 In this case, mass is expressed in units of GeV/$c^2$.
 Likewise, momentum, which is measured in SI units as kg$\frac{\text m}{\text s}$, can be expressed in units of GeV/$c$.
-Distance and time can be expressed with the aid of the reduced Planks constant $\hbar=6.58\times10^{-25}~$GeV$\cdot$~s.
+Distance and time can be expressed with the aid of the reduced Planks constant $\hbar=6.58\times10^{-25}~$GeV$\cdot$s.
 Using $\hbar$, distance is measured in units of $\hbar c/$GeV, and time is measured in units of $\hbar/$GeV.
 These are referred to as \emph{Planck units} and are commonly used throughout this thesis along with SI units following the field's standard practice.
-In cases where their presence can be inferred from the quantity, the constants $\hbar$ and $c$ are often taken as 1 in \emph{Ntural units}, leaving powers of GeV in all the measurement quantities.
+In cases where their presence can be inferred from the quantity, the SI units are replaced such that the constants $\hbar$ and $c$ have numerical values of 1, leaving powers of GeV.
 These units are summarized in Table \ref{tab:units}.
 
 \begin{table}[htp]
@@ -164,9 +170,10 @@ Time      &    6.582$\times10^{-25}$s               & $\hbar/$GeV    & GeV$^{-1}
 \end{center}
 \end{table}
 
-The probability that two marbles rolled towards each other will collide is proportional to their respective cross-sectional areas.
-Likewise, the probability of a particular interaction between particles is measured in units of area, called as cross-section.
-The unit \emph{barn} is defined such that 1b=$10^{-24}\text ~cm^2$.
-It was named during the Manhattan Project by Marshall Holloway and C. P. Baker after the two rejected the idea of naming the unit after John Manley due to the ``use of the term for purposes other than the name of a person''\cite{holloway}.
-As the progenitors remark, the barn is quite a large area to describe particle interactions. Therefore prefixed versions like picobarn ($1\text{pb}=10^{-12}$b) and femptobarn ($1\text{fb}=10^{-15}$b) are commonly used in colliding beam experiments.
-The barn is essentially an SI unit. If it were to be expressed in the natural units of Table \ref{tab:units}, it would be approximately equal to $2568~[\frac{\hbar^2 c^2}{\text{GeV}^2}$].
+The probability that two marbles rolled towards each other will collide is proportional to their respective cross-sectional areas, called cross-sections.
+Likewise, the probability of a particular interaction between particles is measured in units of area.
+The unit \emph{barn} is defined such that 1b=$10^{-28}\text m^2$.
+It was named during the Manhattan Project by Marshall Holloway and C. P. Baker after the two rejected the idea of naming the unit after John Manley due to the ``use of the term for purposes other than the name of a person''.\cite{holloway}
+As the progenitors remark, the barn is quite a large area to describe particle interactions. 
+Therefore prefixed versions like picobarn ($1\text{pb}=10^{-12}$b) and femptobarn ($1\text{fb}=10^{-15}$b) are commonly used in colliding beam experiments.
+The barn is essentially an SI unit. If it were to be expressed in the natural units of Table \ref{tab:units}, it would be approximately equal to $2568\frac{\hbar^2 c^2}{\text{GeV}^2}$.

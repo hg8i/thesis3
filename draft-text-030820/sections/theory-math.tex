@@ -2,7 +2,7 @@
 \section{Mathematical Structures of Theory}
 % ##############################################################
 
-A theoretical mathematical structure consists of objects and the relations between them.
+A mathematical structure consists of objects and the relations between them.
 This statement is made with the highest degree of abstraction. The mathematical structure is defined without regard to \emph{what} the objects are.
 Despite the degree of abstraction, the concept of a mathematical structure is useful in the study of physical systems.
 There often exists a mathematical structure that exhibits, through analogy, the same components and interactions as a physical system.
@@ -10,8 +10,7 @@ In this case, by studying the mathematical structure, it is possible to study th
 This combination of abstraction and analogy makes mathematics a powerful tool for the study of physical systems.
 
 A broad selection of mathematical structures falls into the category of  \emph{Groups}.
-Since the SM is constructed based on certain symmetry groups, 
-this class of the mathematical structure will be the focus of the remainder of this section.
+This class will be the focus of the remainder of this section.
 
 Several resources were invaluable in the preparation of this chapter.
 The books \emph{Elementary Particles and Their Interactions} by Ho-Kim and Pham \cite{hokim}, \emph{The Lie Algebras su(N)} by Pfeifer\cite{pfeifer} and \emph{Transformation Groups and Lie Algebras} by Ibragimov\cite{ibragimov} provide a basis for the mathematics underlying the Standard Model.
@@ -358,7 +357,7 @@ For non-Abelian groups, the structure constants do not vanish and can define the
 This entails defining the \nxn elements of $n$ matrices.
 For a matrix $A^i$, it's elements are defined
 \begin{equation}\begin{split}\label{eqn:adjoint}
-[A^i]_{bc}\equiv-if_{abc}
+[A^i]_{jk}\equiv-if_{ijk}
 \end{split}\end{equation} 
 Since there is an adjoint representation matrix for each structure constant, the adjoint representation has a dimension equal to the rank of the group.
 
@@ -541,7 +540,7 @@ For an element of the U(n) representation $U$, elements of the O(n) module $x$ t
     x\to&x'=Ur \\
     x^2\to&x^\dagger U^\dagger Ur \\
 \end{split}\end{equation}
-The unitary condition for U(n) representations enforces $U^\dagger U=\ident$, and therefore the quantity $x^2$ is invariant under U(n) transformations.
+The unitary condition for U(n) representations keeps the quantity $x^2$ is invariant under U(n) transformations.
 
 The first unitary group, U(1), is represented by complex scalar numbers.
 This fact means that U(1) is an Abelian group by definition.
@@ -568,7 +567,7 @@ SU(2) will be discussed first, and then SU(3).
 SU(2) describes a broad range of physical systems, from the weak force, to strong isospin, to angular momentum.
 SU(2) is the complex analog to SO(2), represented by rotations in two-dimensional Euclidean space.
 
-As in all cases, the generators of an SU(2) representation depend on the representation.
+As in all cases, the generators of an SU(2) depend on the representation.
 The representation consisting of $2\times2$ matrices is the fundamental representation, and has generators related to the Pauli matrices, given in Equation \ref{eqn:pauli}.
 \begin{equation} \begin{split}\label{eqn:pauli}
     % \sigma^0=\begin{pmatrix}1&0\\0&1\end{pmatrix} ;\quad
@@ -630,12 +629,12 @@ As was the case with SU(2), SU(3) is non-Abelian, and the structure constants ca
 The result is the anti-symmetric tensor given in Equation \ref{eqn:su3structure}. \check
 % Calculated by hand - should check somewhere
 \begin{equation}
-\begin{split}\label{eqn:su3structure}.
+\begin{split}\label{eqn:su3structure}
 f_{ijk} =-f_{kji}= \begin{cases}
 +1 &\text{if (i,j,k)=(1,2,3) and cyclic permutations}\\
-\half &\text{if (i,j,k)=(147), (165), (246), (257), or (345) and cyclic permutations}\\
--\half &\text{if (i,j,k)=(367) and cyclic permutations}\\
-\frac{\sqrt{3}}{2} &\text{if (i,j,k)=(458), or (678) and cyclic permutations}\\
+\half &\text{if (i,j,k)=(1,4,7), (1,6,5), (2,4,6), (2,5,7), (7,6,3), or (3,4,5) and cyclic permutations}\\
+% -\half &\text{if (i,j,k)=(3,6,7) and cyclic permutations}\\
+\frac{\sqrt{3}}{2} &\text{if (i,j,k)=(4,5,8), or (6,7,8) and cyclic permutations}\\
 0 &\text{otherwise.}
 \end{cases} 
 \end{split}
