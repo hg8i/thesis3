@@ -11,7 +11,7 @@
 \usepackage[margin=1.0in]{geometry} % 1in for Umich
 \setcounter{errorcontextlines}{50}
 
-\title{Searches for the rare decay of the Higgs boson to two muons and for new physics in dilepton final states with the ATLAS Experiment}
+\title{\titleName}
 \author{Aaron White}
 
 % \setstretch{0.9} % 1.5 for Umich
@@ -19,9 +19,26 @@
 
 \begin{document}
 
-\maketitle
+\input{sections/title.tex}
 
 \tableofcontents
+
+\pagenumbering{Roman}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{sections/acknowledgements.tex}
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\cleardoublepage
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Abstract}
+\input{sections/abstract.tex}
+
+\pagenumbering{arabic}
+
 
 \input{sections/introduction.tex}
 \input{sections/theory.tex}
@@ -36,10 +53,12 @@
 
 
 \bibliography{resources}{}
-\bibliographystyle{plain}
+\bibliographystyle{plain,unsrt}
 
 \appendix
 % \addcontentsline{toc}{chapter}{Appendices}
+
+\input{appendices/groups.tex}
 
 % \input{appendices/mathNotation.tex}
 % \input{appendices/csmHardware.tex}
@@ -47,8 +66,10 @@
 % \input{appendices/hmumu.tex}
 % \input{appendices/hmumuOtherCats.tex}
 % \input{appendices/reinterpretation.tex}
-\input{appendices/backgroundEnsamble.tex}
-\input{appendices/ciLinearity.tex}
+
+% \input{appendices/appendixVectorField.tex}
+% \input{appendices/backgroundEnsamble.tex}
+% \input{appendices/ciLinearity.tex}
 
 
 

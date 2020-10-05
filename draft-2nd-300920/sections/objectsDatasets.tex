@@ -2,60 +2,6 @@
 
 \section{Simulation}
 
-The list of simulated datasets is provided in Table \ref{tab:simulatedDatasets}.
-
-\begin{table}[htp]
-\begin{center}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{l l l l l l l l}
-\toprule
-Process           & QCD      & EW       & ME Generator           & PS and Hadronization \\
-Drell-Yan         & NNLO     & NLO      & \powheg, CT10          & \pythia+\evtgen, CTEQ6L1   \\
-Drell-Yan         & LO       &          & \powheg, NDPDF23LO     & \pythia+\evtgen, NNPDF23LO \\
-$t\overline{t}$   & NLO      &          & \powheg, NDPDF3.0NLO   & \pythia+\evtgen, NNPDF23LO \\
-Single top        & NLO      &          & \powheg, NDPDF3.0NLO   & \pythia+\evtgen, NNPDF23LO \\
-Diboson           &          &          & \sherpa, CT10          & \sherpa, CT10              \\
-\midrule
-Drell-Yan         & NLO      & NLO      & \sherpa, NNPDF30NNLO   &                            \\
-$t\overline{t}$   & NNLO     &          & \powheg, NNPDF3.0LO    & \pythia+\evtgen            \\
-Single top        & NNLO     &          & \powheg, NNPDF3.0LO    & \pythia+\evtgen            \\
-Diboson           & NLO      &          & \sherpa, NNPDF3.0LO    & \pythia+\evtgen            \\
-ggH               & NNLO     &          & \powheg, PDF4LHC15     & \pythia+\evtgen            \\
-VBF               & NLO      &          & \powheg, NNPDF3.0      & \pythia+\evtgen            \\
-$qq/qg\to WH$     & NLO      &          & \powheg, NNPDF3.0      & \pythia+\evtgen            \\
-$qq/qg\to ZH$     & NLO      &          & \powheg, NNPDF3.0      & \pythia+\evtgen            \\
-$gg   \to ZH$     & LO       & LO       & \powheg, NNPDF3.0      & \pythia+\evtgen            \\
-ttH               & NLO      & NLO      & \madgraph, NNPDF3.0LO  & \pythia+\evtgen            \\
-\bottomrule
-\end{tabular}
-}
-\caption{Samples in the top are used in the \nr analysis, while samples in the bottom are used for the \hmm search. {\color{red} Missing LO/NLO for some samples, afterburner details}}
-\label{tab:simulatedDatasets}
-\end{center}
-\end{table}
-
-
 \section{Physics Data}\label{sec:physData}
 
-Both the \hmm search and the non-resonant search use the full dataset collected by ATLAS during the LHC's Run 2 period.
-Only events recorded during good operation of the detector are used.
-The Good Run Lists (GRL) identify the data taking periods during which the data used for analysis was collected.
-Table \ref{tab:GRLs} summarizes the datasets and luminosities for each year.
-
-\begin{table}[h]
-    \begin{center}\small
-        \begin{tabular}{ccl}
-            \toprule
-            Year & Luminosity ($\mathrm{pb}^{-1}$) & Good Runs List \\
-            \midrule
-            2015 & 3219.56 & \texttt{data15\_13TeV/20170619/physics\_25ns\_21.0.19.xml}\\[1ex]
-            2016 & 32995.4 & \texttt{data16\_13TeV/20180129/physics\_25ns\_21.0.19.xml}\\[1ex]
-            2017 & 44307.4 & \texttt{data17\_13TeV/20180619/physics\_25ns\_Triggerno17e33prim.xml}\\[1ex]
-            2018 & 58450.1 & \texttt{data18\_13TeV/20190318/physics\_25ns\_Triggerno17e33prim.xml}\\[1ex]
-            \bottomrule
-        \end{tabular}
-        \caption{Good Runs List.}
-        \label{tab:GRLs}
-    \end{center}
-\end{table}
 
